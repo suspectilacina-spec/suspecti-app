@@ -46,6 +46,7 @@ input::placeholder{color:#9C8A8C;}
 .snav-menu:not([open]) .snav-ico-x{display:none;}
 .snav-top a:hover,.snav-sub a:hover{color:#FFFFFF !important;}
 </style>
+<script src="forms.js"></script>
 </head>
 <body>
 <div style="font-family:'Manrope','Segoe UI',system-ui,sans-serif; color:#241518; background:#FAF6F3; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;">
@@ -406,7 +407,7 @@ input::placeholder{color:#9C8A8C;}
 <button type="submit" class="btn" style="align-self:flex-start; min-height:52px; padding:0 28px; border:0; border-radius:999px; background:#A3172F; color:#FFFFFF; font-size:16px; font-weight:600; cursor:pointer;">Mă abonez</button>
 </form>
 
-<p id="sent_nl" style="display:none;" role="status" style="margin:0; padding:24px; border-radius:20px; background:#FAF6F3; font-family:'Playfair Display',Georgia,serif; font-size:22px;">Mulțumim! Îți scriem când apare următoarea ediție în orașul tău.</p>
+<p id="sent_nl" role="status" style="display:none; margin:0; padding:24px; border-radius:20px; background:#FAF6F3; font-family:'Playfair Display',Georgia,serif; font-size:22px;">Mulțumim! Îți scriem când apare următoarea ediție în orașul tău.</p>
 
 <script>
 (function(){
@@ -416,8 +417,9 @@ input::placeholder{color:#9C8A8C;}
     f.addEventListener('submit', function(e){
       e.preventDefault();
       if (!f.checkValidity()) { f.reportValidity(); return; }
-      f.style.display = 'none';
-      if (s) s.style.display = '';
+      suspectiTrimite(f, s, function () {
+        return suspectiEmail('Abonare noutăți · ' + suspectiVal('nlCity'), { 'Email': suspectiVal('nlEmail'), 'Oraș': suspectiVal('nlCity'), 'Pagina': 'Acasă' });
+      });
     });
   }
 })();

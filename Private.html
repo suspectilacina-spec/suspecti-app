@@ -39,6 +39,7 @@ input::placeholder{color:#9C8A8C;}
 .snav-menu:not([open]) .snav-ico-x{display:none;}
 .snav-top a:hover,.snav-sub a:hover{color:#FFFFFF !important;}
 </style>
+<script src="forms.js"></script>
 </head>
 <body>
 <div style="font-family:'Manrope','Segoe UI',system-ui,sans-serif; color:#241518; background:#FAF6F3; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;">
@@ -133,7 +134,7 @@ input::placeholder{color:#9C8A8C;}
 <div style="display:flex; flex-direction:column; gap:4px;"><label for="evMsg" style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:#5A4649;">Mesaj</label><textarea id="evMsg" rows="3" placeholder="Spune-ne pe scurt ce ți-ai imagina" style="width:100%; font-size:16px; color:#241518; background:transparent; border:0; border-bottom:1px solid rgba(36,21,24,0.3); padding:10px 0; border-radius:0; resize:vertical; font-family:inherit;"></textarea></div>
 <label for="evAcord" style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#5A4649;"><input id="evAcord" type="checkbox" required="" style="margin-top:4px; width:18px; height:18px; accent-color:#A3172F;"> <span>Sunt de acord cu prelucrarea datelor pentru a primi o ofertă. Vezi <a href="Confidentialitate.html">Confidențialitate</a>.</span></label>
 <button type="submit" class="btn" style="align-self:flex-start; min-height:54px; padding:0 30px; border:0; border-radius:999px; background:#A3172F; color:#FFFFFF; font-size:16px; font-weight:600; cursor:pointer;">Cere o ofertă personalizată</button>
-</form><p id="sent_pr" style="display:none;" role="status" style="margin:0; padding:26px; border-radius:20px; background:#FAF6F3; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-weight:400; font-size:22px;">Mulțumim! Îți scriem în curând cu o propunere pentru petrecerea ta.</p>
+</form><p id="sent_pr" role="status" style="display:none; margin:0; padding:26px; border-radius:20px; background:#FAF6F3; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-weight:400; font-size:22px;">Mulțumim! Îți scriem în curând cu o propunere pentru petrecerea ta.</p>
 <script>
 (function(){
   var f = document.getElementById('form_pr');
@@ -142,8 +143,12 @@ input::placeholder{color:#9C8A8C;}
     f.addEventListener('submit', function(e){
       e.preventDefault();
       if (!f.checkValidity()) { f.reportValidity(); return; }
-      f.style.display = 'none';
-      if (s) s.style.display = '';
+      suspectiTrimite(f, s, function () {
+        return suspectiEmail('Cerere ofertă eveniment privat · ' + suspectiVal('evOcazie') + ' · ' + suspectiVal('evNume'), {
+          'Nume': suspectiVal('evNume'), 'Email': suspectiVal('evEmail'), 'Telefon': suspectiVal('evTel'), 'Oraș': suspectiVal('evOras'),
+          'Ocazia': suspectiVal('evOcazie'), 'Data estimată': suspectiVal('evData'), 'Participanți (aprox.)': suspectiVal('evNr'), 'Mesaj': suspectiVal('evMsg')
+        });
+      });
     });
   }
 })();

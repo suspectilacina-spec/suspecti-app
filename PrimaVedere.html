@@ -39,6 +39,7 @@ input::placeholder{color:#9C8A8C;}
 .snav-menu:not([open]) .snav-ico-x{display:none;}
 .snav-top a:hover,.snav-sub a:hover{color:#FFFFFF !important;}
 </style>
+<script src="forms.js"></script>
 </head>
 <body>
 <div style="font-family:'Manrope','Segoe UI',system-ui,sans-serif; color:#241518; background:#FAF6F3; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;">
@@ -174,7 +175,7 @@ input::placeholder{color:#9C8A8C;}
 <label for="pvAcord" style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#5A4649;"><input id="pvAcord" type="checkbox" required="" style="margin-top:4px; width:18px; height:18px; accent-color:#A3172F;"> <span>Sunt de acord să fiu contactat(ă) despre edițiile următoare. Vezi <a href="Confidentialitate.html">Confidențialitate</a>.</span></label>
 <button type="submit" class="btn" style="align-self:flex-start; min-height:54px; padding:0 30px; border:0; border-radius:999px; background:#A3172F; color:#FFFFFF; font-size:16px; font-weight:600; cursor:pointer;">Mă preînscriu</button>
 <p style="margin:0; font-size:13px; color:#5A4649;">Preînscrierea nu te obligă la nimic. Te anunțăm doar când apare o ediție nouă.</p>
-</form><p id="sent_pvd" style="display:none;" role="status" style="margin:0; padding:26px; border-radius:20px; background:#FAF6F3; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-weight:400; font-size:22px;">Mulțumim, ești pe listă! Îți scriem primul când anunțăm data pentru Sippin’ Singles.</p>
+</form><p id="sent_pvd" role="status" style="display:none; margin:0; padding:26px; border-radius:20px; background:#FAF6F3; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-weight:400; font-size:22px;">Mulțumim, ești pe listă! Îți scriem primul când anunțăm data pentru Sippin’ Singles.</p>
 <script>
 (function(){
   var f = document.getElementById('form_pvd');
@@ -183,8 +184,9 @@ input::placeholder{color:#9C8A8C;}
     f.addEventListener('submit', function(e){
       e.preventDefault();
       if (!f.checkValidity()) { f.reportValidity(); return; }
-      f.style.display = 'none';
-      if (s) s.style.display = '';
+      suspectiTrimite(f, s, function () {
+        return suspectiPreinscriere({ experiente: [SUSPECTI_EXP.primaVedere], nume: suspectiVal('pvNume'), email: suspectiVal('pvEmail'), telefon: suspectiVal('pvTel'), oras: suspectiVal('pvOras') });
+      });
     });
   }
 })();

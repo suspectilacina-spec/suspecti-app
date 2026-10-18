@@ -39,6 +39,7 @@ input::placeholder{color:#9C8A8C;}
 .snav-menu:not([open]) .snav-ico-x{display:none;}
 .snav-top a:hover,.snav-sub a:hover{color:#FFFFFF !important;}
 </style>
+<script src="forms.js"></script>
 </head>
 <body>
 <div style="font-family:'Manrope','Segoe UI',system-ui,sans-serif; color:#241518; background:#FAF6F3; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;">
@@ -246,7 +247,7 @@ input::placeholder{color:#9C8A8C;}
 <p style="margin:0; font-size:13px; color:#5A4649;">Preînscrierea nu te obligă la nimic. Te anunțăm doar când apare o ediție nouă.</p>
 </form>
 
-<p id="sent_pv" style="display:none;" role="status" style="margin:0; padding:26px; border-radius:20px; background:#FAF6F3; font-family:'Playfair Display',Georgia,serif; font-size:22px;">Gata, ești pe listă! Îți scriem primul când anunțăm următoarea ediție.</p>
+<p id="sent_pv" role="status" style="display:none; margin:0; padding:26px; border-radius:20px; background:#FAF6F3; font-family:'Playfair Display',Georgia,serif; font-size:22px;">Gata, ești pe listă! Îți scriem primul când anunțăm următoarea ediție.</p>
 
 <script>
 (function(){
@@ -256,8 +257,9 @@ input::placeholder{color:#9C8A8C;}
     f.addEventListener('submit', function(e){
       e.preventDefault();
       if (!f.checkValidity()) { f.reportValidity(); return; }
-      f.style.display = 'none';
-      if (s) s.style.display = '';
+      suspectiTrimite(f, s, function () {
+        return suspectiPreinscriere({ experiente: [SUSPECTI_EXP.povesti], nume: suspectiVal('pvNume'), email: suspectiVal('pvEmail'), telefon: suspectiVal('pvTel'), oras: suspectiVal('pvOras') });
+      });
     });
   }
 })();

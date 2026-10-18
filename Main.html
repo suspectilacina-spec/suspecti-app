@@ -51,6 +51,7 @@ input::placeholder,textarea::placeholder{color:#9C8A8C;}
 .snav-menu:not([open]) .snav-ico-x{display:none;}
 .snav-top a:hover,.snav-sub a:hover{color:#FFFFFF !important;}
 </style>
+<script src="forms.js"></script>
 </head>
 <body>
 <div style="font-family:'Manrope','Segoe UI',system-ui,sans-serif; color:#241518; background:#FAF6F3; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;">
@@ -488,9 +489,9 @@ input::placeholder,textarea::placeholder{color:#9C8A8C;}
 </form>
 
 
-<div id="mainSubmitted" style="display:none;" role="status" style="margin-top:22px; padding:20px; border-radius:16px; background:#F2E9E5;">
-<h4 style="margin:0 0 6px; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px;">Cererea e gata de trimis</h4>
-<p style="margin:0 0 12px; color:#5A4649; font-size:14px;">Alegeți cum vreți să ne-o trimiteți. Se deschide aplicația voastră cu mesajul deja completat.</p>
+<div id="mainSubmitted" role="status" style="display:none; margin-top:22px; padding:20px; border-radius:16px; background:#F2E9E5;">
+<h4 id="mainSentTitle" style="margin:0 0 6px; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px;">Cererea e gata de trimis</h4>
+<p id="mainSentText" style="margin:0 0 12px; color:#5A4649; font-size:14px;">Alegeți cum vreți să ne-o trimiteți. Se deschide aplicația voastră cu mesajul deja completat.</p>
 <p style="margin:0 0 14px; white-space:pre-line; font-size:13px; line-height:1.55; background:#FAF6F3; padding:14px; border-radius:12px;"><span id="mainSummary"></span></p>
 <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:10px;">
 <a href="#" id="mainWaHref" target="_blank" rel="noopener noreferrer" class="btn" style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:15px;">Trimite pe WhatsApp</a>
@@ -714,8 +715,35 @@ function mainSubmitForm(e) {
   document.getElementById('mainWaHref').href = 'https://wa.me/40755639871?text=' + encodeURIComponent(text);
   var subject = 'Cerere de ofertă \u00b7 ' + company + ' (' + people + ' participanți)';
   document.getElementById('mainMailHref').href = 'mailto:contact@suspectilacina.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(text);
-  subEl.style.display = '';
+  mainSendEmail(subject, {
+    'Nume': name, 'Companie': company, 'Email': email, 'Telefon': phone, 'Participanți (aprox.)': people,
+    'Ocazia': showMore ? occasion : '', 'Orașul': showMore ? city : '', 'Format': showMore ? format : '', 'Detalii': showMore ? msg : ''
+  });
   return false;
+}
+
+// Trimite cererea direct pe email; dacă nu merge, rămân butoanele de WhatsApp și email.
+function mainSendEmail(subject, fields) {
+  var subEl = document.getElementById('mainSubmitted');
+  var btn = document.querySelector('#mainContactForm button[type="submit"]');
+  var btnText = btn.textContent;
+  var mailBtn = document.getElementById('mainMailHref');
+  btn.disabled = true;
+  btn.textContent = 'Se trimite…';
+  subEl.style.display = 'none';
+  suspectiEmail(subject, fields).then(function () {
+    document.getElementById('mainSentTitle').textContent = 'Mulțumim, cererea a fost trimisă!';
+    document.getElementById('mainSentText').textContent = 'Am primit-o pe email și vă contactăm în curând cu o propunere. Dacă vreți un răspuns mai rapid, ne puteți scrie și pe WhatsApp.';
+    mailBtn.style.display = 'none';
+  }).catch(function () {
+    document.getElementById('mainSentTitle').textContent = 'Cererea e gata de trimis';
+    document.getElementById('mainSentText').textContent = 'Nu am reușit să o trimitem automat. Alegeți cum vreți să ne-o trimiteți. Se deschide aplicația voastră cu mesajul deja completat.';
+    mailBtn.style.display = '';
+  }).then(function () {
+    btn.disabled = false;
+    btn.textContent = btnText;
+    subEl.style.display = '';
+  });
 }
 
 document.addEventListener('DOMContentLoaded', function () {

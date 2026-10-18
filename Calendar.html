@@ -40,6 +40,7 @@ input::placeholder{color:#9C8A8C;}
 .snav-menu:not([open]) .snav-ico-x{display:none;}
 .snav-top a:hover,.snav-sub a:hover{color:#FFFFFF !important;}
 </style>
+<script src="forms.js"></script>
 </head>
 <body>
 <div style="font-family:'Manrope','Segoe UI',system-ui,sans-serif; color:#241518; background:#FAF6F3; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;">
@@ -179,7 +180,7 @@ input::placeholder{color:#9C8A8C;}
 <button type="submit" class="btn" style="align-self:flex-start; min-height:54px; padding:0 30px; border:0; border-radius:999px; background:#A3172F; color:#FFFFFF; font-size:16px; font-weight:600; cursor:pointer;">Vreau să fiu anunțat</button>
 <p style="margin:0; font-size:13px; color:#5A4649;">Preînscrierea nu te obligă la nimic.</p>
 </form>
-<div id="sent_calpref" style="display:none;" role="status" style="padding:30px 26px; border-radius:20px; background:#FAF6F3; color:#241518;"><p style="margin:0 0 8px; font-family:'Playfair Display',Georgia,serif; font-size:26px;">Mulțumim, ești pe listă.</p><p style="margin:0; color:#5A4649;">Când stabilim o dată pentru experiența aleasă, te anunțăm primii, înainte să punem biletele în vânzare.</p></div>
+<div id="sent_calpref" role="status" style="display:none; padding:30px 26px; border-radius:20px; background:#FAF6F3; color:#241518;"><p style="margin:0 0 8px; font-family:'Playfair Display',Georgia,serif; font-size:26px;">Mulțumim, ești pe listă.</p><p style="margin:0; color:#5A4649;">Când stabilim o dată pentru experiența aleasă, te anunțăm primii, înainte să punem biletele în vânzare.</p></div>
 <script>
 (function(){
   var f = document.getElementById('form_calpref');
@@ -190,8 +191,12 @@ input::placeholder{color:#9C8A8C;}
       var anyPicked = document.querySelectorAll('.cal-pchip-btn[aria-pressed="true"]').length > 0;
       if (!anyPicked) { document.getElementById('calNeedPick').style.display = ''; return; }
       if (!f.checkValidity()) { f.reportValidity(); return; }
-      f.style.display = 'none';
-      if (s) s.style.display = '';
+      var calMap = { 'Prima Vedere': SUSPECTI_EXP.primaVedere, 'Automachiaj': SUSPECTI_EXP.automachiaj, 'Suspecți la Povești': SUSPECTI_EXP.povesti, 'Treasure Hunt Family': SUSPECTI_EXP.thFamily };
+      var calExp = [].map.call(document.querySelectorAll('.cal-pchip-btn[aria-pressed="true"]'), function (b) { return calMap[b.getAttribute('data-label')]; }).filter(Boolean);
+      var calWith = document.querySelector('.cal-pwith-btn[aria-pressed="true"]');
+      suspectiTrimite(f, s, function () {
+        return suspectiPreinscriere({ experiente: calExp, nume: suspectiVal('cpNume'), email: suspectiVal('cpEmail'), telefon: suspectiVal('cpTel'), oras: suspectiVal('cpOras'), cuCine: calWith ? calWith.getAttribute('data-label') : '', zi: suspectiVal('cpZi') });
+      });
     });
   }
 })();
@@ -257,7 +262,7 @@ function calPickPWith(btn) {
 <button type="submit" class="btn" style="align-self:flex-start; min-height:52px; padding:0 28px; border:0; border-radius:999px; background:#A3172F; color:#FFFFFF; font-size:16px; font-weight:600; cursor:pointer;">Mă abonez</button>
 </form>
 
-<p id="sent_calnl" style="display:none;" role="status" style="margin:0; padding:24px; border-radius:20px; background:#FAF6F3; font-family:'Playfair Display',Georgia,serif; font-size:22px;">Mulțumim! Îți scriem când apare următoarea ediție în orașul tău.</p>
+<p id="sent_calnl" role="status" style="display:none; margin:0; padding:24px; border-radius:20px; background:#FAF6F3; font-family:'Playfair Display',Georgia,serif; font-size:22px;">Mulțumim! Îți scriem când apare următoarea ediție în orașul tău.</p>
 
 <script>
 (function(){
@@ -267,8 +272,9 @@ function calPickPWith(btn) {
     f.addEventListener('submit', function(e){
       e.preventDefault();
       if (!f.checkValidity()) { f.reportValidity(); return; }
-      f.style.display = 'none';
-      if (s) s.style.display = '';
+      suspectiTrimite(f, s, function () {
+        return suspectiEmail('Abonare noutăți · ' + suspectiVal('clCity'), { 'Email': suspectiVal('clEmail'), 'Oraș': suspectiVal('clCity'), 'Pagina': 'Calendar' });
+      });
     });
   }
 })();

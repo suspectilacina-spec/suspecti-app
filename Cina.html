@@ -41,6 +41,7 @@ a{color:#A3172F;}a:hover{color:#C42A43;}
 .snav-menu:not([open]) .snav-ico-x{display:none;}
 .snav-top a:hover,.snav-sub a:hover{color:#FFFFFF !important;}
 </style>
+<script src="forms.js"></script>
 </head>
 <body>
 <div style="font-family:'Manrope','Segoe UI',system-ui,sans-serif; color:#241518; background:#FAF6F3; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;">
@@ -447,7 +448,7 @@ a{color:#A3172F;}a:hover{color:#C42A43;}
 <button type="submit" class="btn" style="align-self:flex-start; min-height:54px; padding:0 30px; border:0; border-radius:999px; background:#A3172F; color:#FFFFFF; font-size:16px; font-weight:600; cursor:pointer;">Vreau să fiu anunțat</button>
 <p style="margin:0; font-size:13px; color:#5A4649;">Preînscrierea nu te obligă la nimic.</p>
 </form>
-<div id="sent_cina" style="display:none;" role="status" style="padding:30px 26px; border-radius:20px; background:#FAF6F3; color:#241518;"><p style="margin:0 0 8px; font-family:'Playfair Display',Georgia,serif; font-size:26px;">Mulțumim, ești pe listă.</p><p style="margin:0; color:#5A4649;">Când stabilim o dată pentru tematica aleasă, te anunțăm primii, înainte să punem biletele în vânzare.</p></div>
+<div id="sent_cina" role="status" style="display:none; padding:30px 26px; border-radius:20px; background:#FAF6F3; color:#241518;"><p style="margin:0 0 8px; font-family:'Playfair Display',Georgia,serif; font-size:26px;">Mulțumim, ești pe listă.</p><p style="margin:0; color:#5A4649;">Când stabilim o dată pentru tematica aleasă, te anunțăm primii, înainte să punem biletele în vânzare.</p></div>
 <script>
 function cinaToggleChip(btn) {
   var on = btn.getAttribute('aria-pressed') === 'true';
@@ -481,8 +482,12 @@ function cinaWantTheme(key) {
       var anyPicked = document.querySelectorAll('.cina-theme-chip[aria-pressed="true"]').length > 0;
       if (!anyPicked) { document.getElementById('cinaNeedTheme').style.display = ''; return; }
       if (!f.checkValidity()) { f.reportValidity(); return; }
-      f.style.display = 'none';
-      if (s) s.style.display = '';
+      var cinaMap = { gatsby: SUSPECTI_EXP.cinaGatsby, dance: SUSPECTI_EXP.cinaDance, peaky: SUSPECTI_EXP.cinaPeaky, disco: SUSPECTI_EXP.cinaDisco, mafia: SUSPECTI_EXP.cinaMafia };
+      var cinaExp = [].map.call(document.querySelectorAll('.cina-theme-chip[aria-pressed="true"]'), function (b) { return cinaMap[b.getAttribute('data-key')]; }).filter(Boolean);
+      var cinaWith = document.querySelector('.cina-withwho-chip[aria-pressed="true"]');
+      suspectiTrimite(f, s, function () {
+        return suspectiPreinscriere({ experiente: cinaExp, nume: suspectiVal('prNume'), email: suspectiVal('prEmail'), telefon: suspectiVal('prTel'), oras: suspectiVal('prOras'), cuCine: cinaWith ? cinaWith.getAttribute('data-label') : '', zi: suspectiVal('prZi') });
+      });
     });
   }
 })();

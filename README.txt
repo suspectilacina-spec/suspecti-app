@@ -68,13 +68,13 @@ Acest export e un site 100% static (doar HTML/CSS/JS), fără server și fără
 bază de date în spate. Asta înseamnă:
 - cumpărarea biletelor se face exact ca acum, prin linkurile externe către
   AmBilet, nu printr-un sistem propriu de plată;
-- abonarea la newsletter se face tot prin formularul extern de Google Forms,
-  deja legat corect pe toate paginile relevante;
-- orice ar trebui să scrie ceva "în baza de date" a site-ului (formularele de
-  preînscriere/ofertă, de exemplu) doar afișează un mesaj de confirmare în
-  pagină, nu trimite de fapt datele nicăieri în acest moment — pentru asta ar
-  fi nevoie fie de conectarea formularelor la un serviciu extern (Google
-  Forms, Make/Zapier etc.), fie de un backend real, construit separat.
+- formularele de preînscriere („Anunță-mă”, „Vreau să fiu anunțat”, „Mă
+  preînscriu”) trimit datele în Google Form-ul „Preînscriere SUSPECȚI”;
+  răspunsurile se văd în Google Forms, la tab-ul Răspunsuri;
+- cererile de ofertă (Main.html, Private.html) și abonările la noutăți
+  („Mă abonez”) ajung pe email la contact@suspectilacina.com, prin serviciul
+  gratuit FormSubmit.co (prima trimitere cere o confirmare unică pe email);
+- totul e configurat în fișierul forms.js.
 
 Important — datele "fixe" din calendar
 ------------------------------------------
