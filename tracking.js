@@ -1,7 +1,7 @@
 /* Măsurare SUSPECȚI: Meta Pixel (doar cu acordul vizitatorului) + evenimentele importante pentru campanii.
    Pixelul se activează după ce completezi ID-ul de mai jos (Meta Events Manager → Surse de date → ID-ul setului de date). */
 
-var SUSPECTI_PIXEL_ID = '';
+var SUSPECTI_PIXEL_ID = '2155243451986484'; // Suspecti La Cina Main Pixel
 
 var SUSPECTI_PAGINI = {
   'Cina.html': 'Suspecți la Cină',
@@ -12,6 +12,8 @@ var SUSPECTI_PAGINI = {
   'Automachiaj.html': 'Suspecți la Automachiaj',
   'Povesti.html': 'Suspecți la Povești',
   'Calendar.html': 'Calendar & bilete',
+  'bucuresti': 'Calendar & bilete · București',
+  'timisoara': 'Calendar & bilete · Timișoara',
   'Main.html': 'Pentru companii',
   'Private.html': 'Evenimente private'
 };

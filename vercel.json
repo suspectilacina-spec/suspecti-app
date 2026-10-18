@@ -1,0 +1,9 @@
+{
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/Calendar/bucuresti", "destination": "/Calendar.html" },
+    { "source": "/Calendar/timisoara", "destination": "/Calendar.html" },
+    { "source": "/calendar/bucuresti", "destination": "/Calendar.html" },
+    { "source": "/calendar/timisoara", "destination": "/Calendar.html" }
+  ]
+}

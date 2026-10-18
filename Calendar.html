@@ -26,8 +26,8 @@ a{color:#A3172F;}a:hover{color:#C42A43;}
 input,select,button{font-family:'Manrope','Segoe UI',system-ui,sans-serif;}
 input::placeholder{color:#9C8A8C;}
 .evrow{display:grid;grid-template-columns:120px minmax(0,1fr);gap:0;}
-.evimg{display:none;}
-@media (min-width:860px){.evrow{grid-template-columns:96px 200px minmax(0,1fr) auto;}.evimg{display:block;}}
+.evimg{display:block;grid-column:1 / -1;order:-1;height:170px !important;min-height:0 !important;}
+@media (min-width:860px){.evrow{grid-template-columns:96px 200px minmax(0,1fr) auto;}.evimg{grid-column:auto;order:0;height:100% !important;min-height:150px !important;}}
 .evact{grid-column:1 / -1;}
 @media (min-width:860px){.evact{grid-column:auto;}}
 .snav-top{display:none;}
@@ -41,9 +41,9 @@ input::placeholder{color:#9C8A8C;}
 .snav-menu:not([open]) .snav-ico-x{display:none;}
 .snav-top a:hover,.snav-sub a:hover{color:#FFFFFF !important;}
 </style>
-<script src="forms.js"></script>
-<link rel="stylesheet" href="mobile.css">
-<script src="tracking.js"></script>
+<script src="/forms.js"></script>
+<link rel="stylesheet" href="/mobile.css">
+<script src="/tracking.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
@@ -52,34 +52,34 @@ input::placeholder{color:#9C8A8C;}
 <!-- HEADER -->
 <header style="background:#2B0A12; color:#FBF3F1; position:relative; z-index:30;">
 <div style="max-width:1180px; margin:0 auto; padding:0 20px; height:72px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
-<a href="Acasa.html" style="text-decoration:none; color:#FBF3F1; font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:22px; letter-spacing:0.08em;">SUSPECȚI</a>
+<a href="/Acasa.html" style="text-decoration:none; color:#FBF3F1; font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:22px; letter-spacing:0.08em;">SUSPECȚI</a>
 <nav class="snav-top" aria-label="Navigare principală" style="gap:22px; font-size:14px; align-items:center;">
-<a href="Acasa.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Acasă</a>
-<a href="Calendar.html" aria-current="page" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid #EBC1BE; font-weight:700;">Calendar &amp; bilete</a>
-<a href="Main.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Pentru companii</a>
-<a href="Private.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Evenimente private</a>
-<a href="Despre.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Despre noi</a>
-<a href="Intrebari.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Întrebări frecvente</a>
+<a href="/Acasa.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Acasă</a>
+<a href="/Calendar.html" aria-current="page" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid #EBC1BE; font-weight:700;">Calendar &amp; bilete</a>
+<a href="/Main.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Pentru companii</a>
+<a href="/Private.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Evenimente private</a>
+<a href="/Despre.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Despre noi</a>
+<a href="/Intrebari.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Întrebări frecvente</a>
 </nav>
 <div style="display:flex; align-items:center; gap:10px;">
 <a href="#lista" class="btn snav-cta" style="display:inline-flex; align-items:center; min-height:44px; padding:0 20px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:14px; white-space:nowrap;">Cumpără Bilet</a>
 <details class="snav-menu">
 <summary aria-label="Meniu" style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:999px; border:1px solid rgba(235,193,190,0.35); color:#FBF3F1; cursor:pointer; font-size:20px; line-height:1;"><span class="snav-ico-o" aria-hidden="true">☰</span><span class="snav-ico-x" aria-hidden="true">✕</span></summary>
 <nav aria-label="Meniu mobil" style="position:absolute; left:0; right:0; top:72px; background:#2B0A12; padding:8px 20px 20px; max-height:calc(100vh - 72px); overflow-y:auto; border-bottom:1px solid rgba(235,193,190,0.2); box-shadow:0 24px 40px -20px rgba(0,0,0,0.6); z-index:50;">
-<a href="Acasa.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Acasă</a>
-<a href="Calendar.html" aria-current="page" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px; font-weight:700;">Calendar &amp; bilete</a>
-<a href="Main.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Pentru companii</a>
-<a href="Private.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Evenimente private</a>
-<a href="Despre.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Despre noi</a>
-<a href="Intrebari.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Întrebări frecvente</a>
+<a href="/Acasa.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Acasă</a>
+<a href="/Calendar.html" aria-current="page" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px; font-weight:700;">Calendar &amp; bilete</a>
+<a href="/Main.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Pentru companii</a>
+<a href="/Private.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Evenimente private</a>
+<a href="/Despre.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Despre noi</a>
+<a href="/Intrebari.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Întrebări frecvente</a>
 <span style="display:block; margin:18px 0 4px; font-size:11px; letter-spacing:0.2em; font-weight:700; text-transform:uppercase; color:#9C8A8C;">Experiențe</span>
-<a href="Cina.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Suspecți la Cină</a>
-<a href="Party.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Suspecți la Party</a>
-<a href="TreasureHunt.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Treasure Hunt</a>
-<a href="Brunch.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">The Singing Brunch</a>
-<a href="PrimaVedere.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Prima Vedere</a>
-<a href="Automachiaj.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Automachiaj</a>
-<a href="Povesti.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Povești</a>
+<a href="/Cina.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Suspecți la Cină</a>
+<a href="/Party.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Suspecți la Party</a>
+<a href="/TreasureHunt.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Treasure Hunt</a>
+<a href="/Brunch.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">The Singing Brunch</a>
+<a href="/PrimaVedere.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Prima Vedere</a>
+<a href="/Automachiaj.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Automachiaj</a>
+<a href="/Povesti.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Povești</a>
 </nav>
 </details>
 </div>
@@ -87,13 +87,13 @@ input::placeholder{color:#9C8A8C;}
 <nav aria-label="Experiențe" style="border-top:1px solid rgba(235,193,190,0.14); border-bottom:1px solid rgba(235,193,190,0.16); background:#1F070D;">
 <div class="snav-sub" style="max-width:1180px; margin:0 auto; padding:0 20px; display:flex; align-items:center; gap:24px; font-size:14px; overflow-x:auto; scrollbar-width:none;">
 <span style="font-size:11px; letter-spacing:0.2em; font-weight:700; text-transform:uppercase; color:#9C8A8C; white-space:nowrap;">Experiențe</span>
-<a href="Cina.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Suspecți la Cină</a>
-<a href="Party.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Suspecți la Party</a>
-<a href="TreasureHunt.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Treasure Hunt</a>
-<a href="Brunch.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">The Singing Brunch</a>
-<a href="PrimaVedere.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Prima Vedere</a>
-<a href="Automachiaj.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Automachiaj</a>
-<a href="Povesti.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Povești</a>
+<a href="/Cina.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Suspecți la Cină</a>
+<a href="/Party.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Suspecți la Party</a>
+<a href="/TreasureHunt.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Treasure Hunt</a>
+<a href="/Brunch.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">The Singing Brunch</a>
+<a href="/PrimaVedere.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Prima Vedere</a>
+<a href="/Automachiaj.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Automachiaj</a>
+<a href="/Povesti.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Povești</a>
 </div>
 </nav>
 </header>
@@ -101,7 +101,7 @@ input::placeholder{color:#9C8A8C;}
 <!-- HERO + FILTRE -->
 <section id="top" style="background:radial-gradient(120% 70% at 85% 0%, rgba(163,23,47,0.45) 0%, transparent 60%), radial-gradient(90% 60% at 0% 100%, rgba(92,18,34,0.7) 0%, transparent 60%), #2B0A12; color:#FBF3F1; padding:48px 0 40px;">
 <div style="max-width:1180px; margin:0 auto; padding:0 20px;">
-<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Calendar &amp; bilete</span>
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;"><span id="calEyebrow">Calendar &amp; bilete</span></span>
 <h1 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(40px,8vw,68px); line-height:1.04; margin:14px 0 0;">Unde ne vedem <font color="#ebc1be" face="Great Vibes, cursive"><span style="font-size: 85px">data viitoare&nbsp;</span></font><span style="font-size: clamp(40px, 8vw, 68px)">?</span><span style="font-size: clamp(40px, 8vw, 68px)">&nbsp;</span></h1>
 <p class="fade" style="font-size:18px; color:#D9C8C6; max-width:56ch; margin:16px 0 28px;">Descoperă evenimentele din București și Timișoara și rezervă-ți locul la experiența care îți place.</p>
 
@@ -180,7 +180,7 @@ input::placeholder{color:#9C8A8C;}
 <button type="button" class="cal-pwith-btn" data-label="În cuplu" aria-pressed="false" onclick="calPickPWith(this)" style="min-height:44px; padding:0 18px; border-radius:999px; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer; border:1px solid rgba(36,21,24,0.25); background:transparent; color:#241518;">În cuplu</button>
 <button type="button" class="cal-pwith-btn" data-label="Cu prietenii" aria-pressed="false" onclick="calPickPWith(this)" style="min-height:44px; padding:0 18px; border-radius:999px; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer; border:1px solid rgba(36,21,24,0.25); background:transparent; color:#241518;">Cu prietenii</button></div></div>
 <div style="display:flex; flex-direction:column; gap:4px; max-width:320px;"><label for="cpZi" style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:#5A4649;">Ziua preferată (opțional)</label><select id="cpZi" style="width:100%; font-size:16px; color:#241518; background:transparent; border:0; border-bottom:1px solid rgba(36,21,24,0.3); padding:10px 0; border-radius:0;"><option value="">Oricare</option><option>Vineri</option><option>Sâmbătă</option><option>Duminică</option></select></div>
-<label for="cpAcord" style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#5A4649;"><input id="cpAcord" type="checkbox" required="" style="margin-top:4px; width:18px; height:18px; accent-color:#A3172F;"> <span>Sunt de acord să fiu contactat(ă) despre edițiile următoare. Vezi <a href="Confidentialitate.html">Confidențialitate</a>.</span></label>
+<label for="cpAcord" style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#5A4649;"><input id="cpAcord" type="checkbox" required="" style="margin-top:4px; width:18px; height:18px; accent-color:#A3172F;"> <span>Sunt de acord să fiu contactat(ă) despre edițiile următoare. Vezi <a href="/Confidentialitate.html">Confidențialitate</a>.</span></label>
 <button type="submit" class="btn" style="align-self:flex-start; min-height:54px; padding:0 30px; border:0; border-radius:999px; background:#A3172F; color:#FFFFFF; font-size:16px; font-weight:600; cursor:pointer;">Vreau să fiu anunțat</button>
 <p style="margin:0; font-size:13px; color:#5A4649;">Preînscrierea nu te obligă la nimic.</p>
 </form>
@@ -237,8 +237,8 @@ function calPickPWith(btn) {
 <h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:28px; line-height:1.15; margin:0;">O seară doar pentru voi</h3>
 <p style="margin:0; color:#D9C8C6;">Aniversare, majorat sau petrecerea echipei. Alegeți data, noi venim cu jocul.</p>
 <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;">
-<a href="Private.html" class="btn" style="display:inline-flex; align-items:center; min-height:48px; padding:0 20px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:700;">Evenimente private</a>
-<a href="Main.html" class="btn" style="display:inline-flex; align-items:center; min-height:48px; padding:0 20px; border-radius:999px; border:1px solid rgba(251,243,241,0.4); color:#FBF3F1; text-decoration:none; font-weight:600;">Pentru companii</a>
+<a href="/Private.html" class="btn" style="display:inline-flex; align-items:center; min-height:48px; padding:0 20px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:700;">Evenimente private</a>
+<a href="/Main.html" class="btn" style="display:inline-flex; align-items:center; min-height:48px; padding:0 20px; border-radius:999px; border:1px solid rgba(251,243,241,0.4); color:#FBF3F1; text-decoration:none; font-weight:600;">Pentru companii</a>
 </div>
 </div>
 <div style="border:1px solid rgba(235,193,190,0.3); border-radius:18px; padding:28px; display:flex; flex-direction:column; gap:10px;">
@@ -300,7 +300,7 @@ function calPickPWith(btn) {
 </div>
 
 <script>
-var CAL_EVENTS = [{"m": 0, "key": "Treasure Hunt", "page": "TreasureHunt.html#family", "img": "images/87e64e2d0c36722deb34982705273eef.jpg", "weekday": "SÂM", "day": "24", "month": "OCT", "format": "Suspecți în Treasure Hunt", "city": "Timișoara", "title": "Family Edition", "meta": "10:00 · Parcul Copiilor, intrarea principală", "price": "de la 50 lei", "link": "https://www.ambilet.ro/bilete/suspecti-in-treasure-hunt-family-edition-timisoara-5062"}, {"m": 0, "key": "Treasure Hunt", "page": "TreasureHunt.html", "img": "images/e7b67438fea5bd305e832b6a0a33507a.jpg", "weekday": "SÂM", "day": "24", "month": "OCT", "format": "Suspecți în Treasure Hunt", "city": "Timișoara", "title": "Adults Only", "meta": "15:00 · Piața Unirii, Domul Catolic", "price": "de la 56 lei", "link": "https://www.ambilet.ro/bilete/suspecti-in-treasure-hunt-adults-only-timisoara-5032"}, {"m": 0, "key": "Brunch", "page": "Brunch.html", "img": "images/83fd3f46f32a69883a7bf0c33b476f25.jpg", "weekday": "DUM", "day": "25", "month": "OCT", "format": "Suspecți la Brunch", "city": "București", "title": "The Singing Brunch", "meta": "14:00 · Naive", "price": "de la 56 lei", "link": "https://www.ambilet.ro/bilete/the-singing-brunch-suspecti-la-brunch-5024"}, {"m": 0, "key": "Party", "page": "Party.html", "img": "images/3f9d64dc6ea8553293017bb4038fa7ee.jpg", "weekday": "SÂM", "day": "31", "month": "OCT", "format": "Suspecți la Party", "city": "Timișoara", "title": "Halloween Edition", "meta": "20:00 · DaHUB", "price": "de la 89 lei", "link": "https://www.ambilet.ro/bilete/suspecti-la-party-halloween-edition-5061"}, {"m": 1, "key": "Cină", "page": "Cina.html#disco", "img": "images/1c5728cbe7ccc20295c79ce659021628.jpg", "weekday": "VIN", "day": "6", "month": "NOI", "format": "Suspecți la Cină", "city": "București", "title": "Ultimul Dans · ’80s Disco Party", "meta": "20:00 · Locația: detalii în curând", "price": "de la 60 lei", "link": "https://www.ambilet.ro/bilete/suspecti-la-cina-ultimul-dans-5044"}, {"m": 1, "key": "Treasure Hunt", "page": "TreasureHunt.html", "img": "images/dbf42b63578ebcc8b15eaf7938600673.jpg", "weekday": "DUM", "day": "15", "month": "NOI", "format": "Suspecți în Treasure Hunt", "city": "București", "title": "Adults Edition #2", "meta": "14:00 · Punctul de start: detalii în curând", "price": "de la 120 lei", "link": "https://www.ambilet.ro/bilete/suspecti-in-treasure-hunt-aduls-edition-2-bucuresti-5089"}];
+var CAL_EVENTS = [{"m": 0, "key": "Treasure Hunt", "page": "/TreasureHunt.html#family", "img": "/images/87e64e2d0c36722deb34982705273eef.jpg", "weekday": "SÂM", "day": "24", "month": "OCT", "format": "Suspecți în Treasure Hunt", "city": "Timișoara", "title": "Family Edition", "meta": "10:00 · Parcul Copiilor, intrarea principală", "price": "de la 50 lei", "link": "https://www.ambilet.ro/bilete/suspecti-in-treasure-hunt-family-edition-timisoara-5062"}, {"m": 0, "key": "Treasure Hunt", "page": "/TreasureHunt.html", "img": "/images/e7b67438fea5bd305e832b6a0a33507a.jpg", "weekday": "SÂM", "day": "24", "month": "OCT", "format": "Suspecți în Treasure Hunt", "city": "Timișoara", "title": "Adults Only", "meta": "15:00 · Piața Unirii, Domul Catolic", "price": "de la 56 lei", "link": "https://www.ambilet.ro/bilete/suspecti-in-treasure-hunt-adults-only-timisoara-5032"}, {"m": 0, "key": "Brunch", "page": "/Brunch.html", "img": "/images/83fd3f46f32a69883a7bf0c33b476f25.jpg", "weekday": "DUM", "day": "25", "month": "OCT", "format": "Suspecți la Brunch", "city": "București", "title": "The Singing Brunch", "meta": "14:00 · Naive", "price": "de la 56 lei", "link": "https://www.ambilet.ro/bilete/the-singing-brunch-suspecti-la-brunch-5024"}, {"m": 0, "key": "Party", "page": "/Party.html", "img": "/images/3f9d64dc6ea8553293017bb4038fa7ee.jpg", "weekday": "SÂM", "day": "31", "month": "OCT", "format": "Suspecți la Party", "city": "Timișoara", "title": "Halloween Edition", "meta": "20:00 · DaHUB", "price": "de la 89 lei", "link": "https://www.ambilet.ro/bilete/suspecti-la-party-halloween-edition-5061"}, {"m": 1, "key": "Cină", "page": "/Cina.html#disco", "img": "/images/1c5728cbe7ccc20295c79ce659021628.jpg", "weekday": "VIN", "day": "6", "month": "NOI", "format": "Suspecți la Cină", "city": "București", "title": "Ultimul Dans · ’80s Disco Party", "meta": "20:00 · Locația: detalii în curând", "price": "de la 60 lei", "link": "https://www.ambilet.ro/bilete/suspecti-la-cina-ultimul-dans-5044"}, {"m": 1, "key": "Treasure Hunt", "page": "/TreasureHunt.html", "img": "/images/dbf42b63578ebcc8b15eaf7938600673.jpg", "weekday": "DUM", "day": "15", "month": "NOI", "format": "Suspecți în Treasure Hunt", "city": "București", "title": "Adults Edition #2", "meta": "14:00 · Punctul de start: detalii în curând", "price": "de la 120 lei", "link": "https://www.ambilet.ro/bilete/suspecti-in-treasure-hunt-aduls-edition-2-bucuresti-5089"}];
 var CAL_MONTH_LABELS = ["Octombrie 2026", "Noiembrie 2026"];
 var CAL_STATE = { city: "Toate", format: "Toate" };
 var CAL_ACTIVE = "min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:#A3172F; color:#FFFFFF; border:1px solid #A3172F;";
@@ -386,7 +386,22 @@ function calResetFilters() {
   calSetCity('Toate');
   calSetFormat('Toate');
 }
-document.addEventListener('DOMContentLoaded', calRender);
+// Pagini pe oraș: /Calendar/bucuresti și /Calendar/timisoara arată direct evenimentele din orașul respectiv.
+// Se poate preselecta și experiența: Calendar.html?experienta=Treasure%20Hunt
+function calInit() {
+  var p = location.pathname.toLowerCase();
+  var oras = p.indexOf('/calendar/bucuresti') === 0 ? 'București' : (p.indexOf('/calendar/timisoara') === 0 ? 'Timișoara' : null);
+  var exp = new URLSearchParams(location.search).get('experienta');
+  if (oras) {
+    document.title = 'Calendar & bilete · ' + oras + ' · SUSPECȚI';
+    var eb = document.getElementById('calEyebrow');
+    if (eb) eb.textContent = 'Calendar & bilete · ' + oras;
+    calSetCity(oras);
+  }
+  if (exp && document.querySelector('.cal-format-btn[data-format="' + exp + '"]')) calSetFormat(exp);
+  calRender();
+}
+document.addEventListener('DOMContentLoaded', calInit);
 </script>
 </body>
 </html>
