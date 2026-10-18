@@ -1,3 +1,9 @@
+/* Varianta intermediară pentru telefon: pagina se așază ca pe un ecran de ~520px și se micșorează ușor,
+   ca să rămână aerisită, cu scrisul ceva mai mare decât fără ajustări. Pentru scris mai mare: mărește 0.75 (ex. 0.8). */
+@media (max-width: 519px) {
+  html { zoom: 0.75; }
+}
+
 /* Ajustări pentru telefon (ecrane sub 600px). Pe calculator nu schimbă nimic. */
 @media (max-width: 600px) {
   /* Textele mici (etichete, detalii) devin mai ușor de citit. */
