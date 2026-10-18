@@ -1,0 +1,25 @@
+/* Ajustări pentru telefon (ecrane sub 600px). Pe calculator nu schimbă nimic. */
+@media (max-width: 600px) {
+  /* Textele mici (etichete, detalii) devin mai ușor de citit. */
+  [style*="font-size:11px"] { font-size: 12.5px !important; }
+  [style*="font-size:12px"] { font-size: 13px !important; }
+  [style*="font-size:13px"] { font-size: 14px !important; }
+  [style*="font-size:14px"] { font-size: 15px !important; }
+  p { line-height: 1.6; }
+
+  /* „Cum decurge seara” devine o cronologie verticală, aerisită. */
+  .cina-steps { gap: 0 !important; padding-left: 30px; }
+  .cina-steps > div { position: relative; border-top: 0 !important; padding: 0 0 30px !important; }
+  .cina-steps > div:last-child { padding-bottom: 0 !important; }
+  .cina-steps > div::before {
+    content: ""; position: absolute; left: -30px; top: 3px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: #A3172F; box-shadow: 0 0 0 4px rgba(163, 23, 47, 0.15);
+  }
+  .cina-steps > div::after {
+    content: ""; position: absolute; left: -24.5px; top: 22px; bottom: 4px;
+    width: 1px; background: rgba(163, 23, 47, 0.35);
+  }
+  .cina-steps > div:last-child::after { display: none; }
+  .cina-steps h3 { margin: 8px 0 6px !important; }
+}
