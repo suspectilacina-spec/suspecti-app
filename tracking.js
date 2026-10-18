@@ -4,18 +4,18 @@
 var SUSPECTI_PIXEL_ID = '2155243451986484'; // Suspecti La Cina Main Pixel
 
 var SUSPECTI_PAGINI = {
-  'Cina.html': 'Suspecți la Cină',
-  'Party.html': 'Suspecți la Party',
-  'TreasureHunt.html': 'Suspecți în Treasure Hunt',
-  'Brunch.html': 'The Singing Brunch',
-  'PrimaVedere.html': 'Suspecți la Prima Vedere',
-  'Automachiaj.html': 'Suspecți la Automachiaj',
-  'Povesti.html': 'Suspecți la Povești',
-  'Calendar.html': 'Calendar & bilete',
+  'cina': 'Suspecți la Cină',
+  'party': 'Suspecți la Party',
+  'treasurehunt': 'Suspecți în Treasure Hunt',
+  'brunch': 'The Singing Brunch',
+  'primavedere': 'Suspecți la Prima Vedere',
+  'automachiaj': 'Suspecți la Automachiaj',
+  'povesti': 'Suspecți la Povești',
+  'calendar': 'Calendar & bilete',
   'bucuresti': 'Calendar & bilete · București',
   'timisoara': 'Calendar & bilete · Timișoara',
-  'Main.html': 'Pentru companii',
-  'Private.html': 'Evenimente private'
+  'corporate': 'Pentru companii',
+  'private': 'Evenimente private'
 };
 
 function suspectiAcord() {
@@ -42,7 +42,7 @@ function suspectiPornestePixel() {
   window.fbq('init', SUSPECTI_PIXEL_ID);
   window.suspectiPixelPornit = true;
   window.fbq('track', 'PageView');
-  var pagina = location.pathname.split('/').pop() || 'index.html';
+  var pagina = location.pathname.toLowerCase().replace(/.html$/, '').split('/').pop() || 'acasa';
   if (SUSPECTI_PAGINI[pagina]) suspectiTrack('ViewContent', { content_name: SUSPECTI_PAGINI[pagina], content_category: 'Pagină experiență' });
 }
 
@@ -70,7 +70,7 @@ function suspectiCookieBanner() {
   d.setAttribute('role', 'dialog');
   d.setAttribute('aria-label', 'Acord cookie-uri');
   d.style.cssText = 'position:fixed; left:16px; right:16px; bottom:16px; z-index:100; max-width:560px; margin:0 auto; background:#2B0A12; color:#FBF3F1; border:1px solid rgba(235,193,190,0.3); border-radius:18px; padding:18px 20px; box-shadow:0 24px 50px -20px rgba(0,0,0,0.6); font-family:Manrope,system-ui,sans-serif; font-size:15px; line-height:1.5;';
-  d.innerHTML = '<p style="margin:0 0 14px;">Folosim cookie-uri de marketing (Meta) ca să vedem ce funcționează și să-ți arătăm evenimente potrivite. Le activăm doar dacă ești de acord. <a href="Confidentialitate.html" style="color:#EBC1BE;">Detalii</a></p>' +
+  d.innerHTML = '<p style="margin:0 0 14px;">Folosim cookie-uri de marketing (Meta) ca să vedem ce funcționează și să-ți arătăm evenimente potrivite. Le activăm doar dacă ești de acord. <a href="/confidentialitate" style="color:#EBC1BE;">Detalii</a></p>' +
     '<div style="display:flex; gap:10px; flex-wrap:wrap;">' +
     '<button type="button" data-acord="da" style="min-height:44px; padding:0 22px; border:0; border-radius:999px; background:#A3172F; color:#FFFFFF; font:inherit; font-weight:600; cursor:pointer;">Accept</button>' +
     '<button type="button" data-acord="nu" style="min-height:44px; padding:0 22px; border:1px solid rgba(251,243,241,0.4); border-radius:999px; background:transparent; color:#FBF3F1; font:inherit; font-weight:600; cursor:pointer;">Refuz</button>' +

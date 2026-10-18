@@ -112,10 +112,13 @@ deci ai nevoie de conexiune la internet pentru ca paginile să arate exact ca
 
 Lista completă a paginilor
 ----------------------------
-index.html (= Acasa.html, pagina principală), Acasa.html, Automachiaj.html,
-Brunch.html, Calendar.html, Cina.html, Confidentialitate.html, Despre.html,
-Intrebari.html, Main.html, Party.html, Povesti.html, PrimaVedere.html,
-Private.html, Termeni.html, TreasureHunt.html.
+Adresele de pe site sunt curate, fără .html (setate în vercel.json):
+/ (index.html), /calendar (calendar.html), /calendar/bucuresti și
+/calendar/timisoara (aceeași pagină, filtrată pe oraș), /cina, /party,
+/treasurehunt, /brunch, /primavedere, /automachiaj, /povesti, /corporate
+(corporate.html, pagina pentru companii), /private, /despre, /intrebari,
+/termeni, /confidentialitate. Adresele vechi (ex. /Main.html) redirecționează
+automat spre cele noi.
 
 Recomandare
 -----------

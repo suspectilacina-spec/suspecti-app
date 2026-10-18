@@ -1,9 +1,27 @@
 {
+  "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/Calendar/bucuresti", "destination": "/Calendar.html" },
-    { "source": "/Calendar/timisoara", "destination": "/Calendar.html" },
-    { "source": "/calendar/bucuresti", "destination": "/Calendar.html" },
-    { "source": "/calendar/timisoara", "destination": "/Calendar.html" }
+    { "source": "/:c(calendar|Calendar)/:oras(bucuresti|timisoara|Bucuresti|Timisoara)", "destination": "/calendar.html" }
+  ],
+  "redirects": [
+    { "source": "/Acasa.html", "destination": "/", "permanent": true },
+    { "source": "/acasa", "destination": "/", "permanent": true },
+    { "source": "/main", "destination": "/corporate", "permanent": true },
+    { "source": "/Automachiaj.html", "destination": "/automachiaj", "permanent": true },
+    { "source": "/Brunch.html", "destination": "/brunch", "permanent": true },
+    { "source": "/Calendar.html", "destination": "/calendar", "permanent": true },
+    { "source": "/Cina.html", "destination": "/cina", "permanent": true },
+    { "source": "/Confidentialitate.html", "destination": "/confidentialitate", "permanent": true },
+    { "source": "/Despre.html", "destination": "/despre", "permanent": true },
+    { "source": "/Intrebari.html", "destination": "/intrebari", "permanent": true },
+    { "source": "/Main.html", "destination": "/corporate", "permanent": true },
+    { "source": "/Party.html", "destination": "/party", "permanent": true },
+    { "source": "/Povesti.html", "destination": "/povesti", "permanent": true },
+    { "source": "/PrimaVedere.html", "destination": "/primavedere", "permanent": true },
+    { "source": "/Private.html", "destination": "/private", "permanent": true },
+    { "source": "/Termeni.html", "destination": "/termeni", "permanent": true },
+    { "source": "/TreasureHunt.html", "destination": "/treasurehunt", "permanent": true },
+    { "source": "/Calendar", "destination": "/calendar", "permanent": true }
   ]
 }
