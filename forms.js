@@ -39,7 +39,10 @@ function suspectiPreinscriere(d) {
   p.append('entry.1885758907', d.zi || 'Oricare');
   p.append('entry.1651465826', SUSPECTI_ACORD);
   // Google nu permite citirea răspunsului de pe alt site (no-cors), dar datele ajung.
-  return fetch(SUSPECTI_GFORM, { method: 'POST', mode: 'no-cors', body: p });
+  return fetch(SUSPECTI_GFORM, { method: 'POST', mode: 'no-cors', body: p }).then(function (r) {
+    if (window.suspectiTrack) suspectiTrack('Lead', { content_category: 'Preînscriere', content_name: d.experiente.join(', ') });
+    return r;
+  });
 }
 
 // campuri = { 'Nume': ..., 'Email': ..., ... } — câmpurile goale nu se trimit.
@@ -53,6 +56,10 @@ function suspectiEmail(subiect, campuri) {
     body: JSON.stringify(data)
   }).then(function (r) { return r.json(); }).then(function (j) {
     if (String(j.success) !== 'true') throw new Error(j.message || 'Trimiterea a eșuat');
+    if (window.suspectiTrack) {
+      if (subiect.indexOf('Abonare') === 0) suspectiTrack('CompleteRegistration', { content_name: 'Abonare noutăți' });
+      else suspectiTrack('Lead', { content_category: 'Cerere ofertă', content_name: subiect });
+    }
     return j;
   });
 }
