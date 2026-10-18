@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<title>Suspecți la Povești · with a touch of Tarot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Great+Vibes&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>html{scroll-behavior:smooth;}
+
+body{margin:0;background:#FAF6F3;}
+a{color:#A3172F;}a:hover{color:#C42A43;}
+*{box-sizing:border-box;}
+:focus-visible{outline:2px solid #C42A43;outline-offset:3px;border-radius:6px;}
+.navlinks{display:none;}
+@media (min-width:1080px){.navlinks{display:flex;}}
+@media (min-width:980px){.mbar{display:none !important;}}
+@media (min-width:900px){.rev{flex-direction:row-reverse;}}
+.btn{transition:transform .3s cubic-bezier(.16,1,.3,1),background-color .3s,box-shadow .3s;}
+.btn:hover{transform:translateY(-2px);}
+.lift{transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s;}
+.lift:hover{transform:translateY(-4px);box-shadow:0 20px 40px -26px rgba(92,18,34,.55);}
+.rise{display:inline-block;animation:rise 1s cubic-bezier(.16,1,.3,1) both;}
+.rise2{animation-delay:.18s;}
+.fade{animation:fade 1s cubic-bezier(.16,1,.3,1) .3s both;}
+@keyframes rise{from{transform:translateY(60%);opacity:0;}to{transform:none;opacity:1;}}
+@keyframes fade{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+@media (prefers-reduced-motion:reduce){.rise,.fade{animation:none !important;}.btn,.lift{transition:none;}}
+input,select,button{font-family:'Manrope','Segoe UI',system-ui,sans-serif;}
+input::placeholder{color:#9C8A8C;}
+.snav-top{display:none;}
+.snav-cta{display:none !important;}
+@media (min-width:980px){.snav-cta{display:inline-flex !important;}}
+@media (min-width:1080px){.snav-top{display:flex;}.snav-menu{display:none;}}
+.snav-sub::-webkit-scrollbar{display:none;}
+.snav-menu>summary{list-style:none;}
+.snav-menu>summary::-webkit-details-marker{display:none;}
+.snav-menu[open] .snav-ico-o{display:none;}
+.snav-menu:not([open]) .snav-ico-x{display:none;}
+.snav-top a:hover,.snav-sub a:hover{color:#FFFFFF !important;}
+</style>
+</head>
+<body>
+<div style="font-family:'Manrope','Segoe UI',system-ui,sans-serif; color:#241518; background:#FAF6F3; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;">
+
+<!-- HEADER -->
+<header style="background:#2B0A12; color:#FBF3F1; position:relative; z-index:30;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px; height:72px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+<a href="Acasa.html" style="text-decoration:none; color:#FBF3F1; font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:22px; letter-spacing:0.08em;">SUSPECȚI</a>
+<nav class="snav-top" aria-label="Navigare principală" style="gap:22px; font-size:14px; align-items:center;">
+<a href="Acasa.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Acasă</a>
+<a href="Calendar.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Calendar &amp; bilete</a>
+<a href="Main.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Pentru companii</a>
+<a href="Private.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Evenimente private</a>
+<a href="Despre.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Despre noi</a>
+<a href="Intrebari.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Întrebări frecvente</a>
+</nav>
+<div style="display:flex; align-items:center; gap:10px;">
+<a href="Calendar.html" class="btn snav-cta" style="display:inline-flex; align-items:center; min-height:44px; padding:0 20px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:14px; white-space:nowrap;">Cumpără Bilet</a>
+<details class="snav-menu">
+<summary aria-label="Meniu" style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:999px; border:1px solid rgba(235,193,190,0.35); color:#FBF3F1; cursor:pointer; font-size:20px; line-height:1;"><span class="snav-ico-o" aria-hidden="true">☰</span><span class="snav-ico-x" aria-hidden="true">✕</span></summary>
+<nav aria-label="Meniu mobil" style="position:absolute; left:0; right:0; top:72px; background:#2B0A12; padding:8px 20px 20px; max-height:calc(100vh - 72px); overflow-y:auto; border-bottom:1px solid rgba(235,193,190,0.2); box-shadow:0 24px 40px -20px rgba(0,0,0,0.6); z-index:50;">
+<a href="Acasa.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Acasă</a>
+<a href="Calendar.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Calendar &amp; bilete</a>
+<a href="Main.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Pentru companii</a>
+<a href="Private.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Evenimente private</a>
+<a href="Despre.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Despre noi</a>
+<a href="Intrebari.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Întrebări frecvente</a>
+<span style="display:block; margin:18px 0 4px; font-size:11px; letter-spacing:0.2em; font-weight:700; text-transform:uppercase; color:#9C8A8C;">Experiențe</span>
+<a href="Cina.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Suspecți la Cină</a>
+<a href="Party.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Suspecți la Party</a>
+<a href="TreasureHunt.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Treasure Hunt</a>
+<a href="Brunch.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">The Singing Brunch</a>
+<a href="PrimaVedere.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Prima Vedere</a>
+<a href="Automachiaj.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Automachiaj</a>
+<a href="Povesti.html" aria-current="page" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px; font-weight:700; color:#FFFFFF;">Povești</a>
+</nav>
+</details>
+</div>
+</div>
+<nav aria-label="Experiențe" style="border-top:1px solid rgba(235,193,190,0.14); border-bottom:1px solid rgba(235,193,190,0.16); background:#1F070D;">
+<div class="snav-sub" style="max-width:1180px; margin:0 auto; padding:0 20px; display:flex; align-items:center; gap:24px; font-size:14px; overflow-x:auto; scrollbar-width:none;">
+<span style="font-size:11px; letter-spacing:0.2em; font-weight:700; text-transform:uppercase; color:#9C8A8C; white-space:nowrap;">Experiențe</span>
+<a href="Cina.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Suspecți la Cină</a>
+<a href="Party.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Suspecți la Party</a>
+<a href="TreasureHunt.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Treasure Hunt</a>
+<a href="Brunch.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">The Singing Brunch</a>
+<a href="PrimaVedere.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Prima Vedere</a>
+<a href="Automachiaj.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Automachiaj</a>
+<a href="Povesti.html" aria-current="page" style="color:#FFFFFF; text-decoration:none; font-weight:700; white-space:nowrap; padding:12px 0; border-bottom:2px solid #EBC1BE;">Povești</a>
+</div>
+</nav>
+</header>
+
+<!-- HERO -->
+<section id="top" style="background:radial-gradient(120% 70% at 85% 0%, rgba(163,23,47,0.45) 0%, transparent 60%), radial-gradient(90% 60% at 0% 100%, rgba(92,18,34,0.7) 0%, transparent 60%), #2B0A12; color:#FBF3F1; padding:56px 0 72px;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px; display:flex; flex-wrap:wrap; gap:48px; align-items:center;">
+<div style="flex:1 1 460px; min-width:0;">
+<div class="fade" style="display:flex; flex-wrap:wrap; gap:8px; align-items:center;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Seară de socializare</span>
+<span style="display:inline-flex; align-items:center; min-height:28px; padding:0 12px; border-radius:999px; font-size:12px; font-weight:700; letter-spacing:0.04em; background:transparent; color:#FBF3F1; border:1px dashed rgba(251,243,241,0.6);">Următoarea ediție, în pregătire</span>
+</div>
+<h1 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(44px,8.6vw,76px); line-height:1.04; letter-spacing:-0.01em; margin:18px 0 0;">
+<span class="rise" style="display:block;">Suspecți la Povești</span>
+<span class="rise rise2" style="display:block; font-family:'Great Vibes',cursive; font-weight:400; font-size:0.78em; line-height:1.15; color:#EBC1BE; margin-top:6px;">with a touch of Tarot</span>
+</h1>
+<p class="fade" style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:clamp(20px,3.6vw,25px); line-height:1.4; color:#FBF3F1; max-width:40ch; margin:22px 0 0;">O seară de socializare în care o întrebare bună poate schimba toată conversația.</p>
+<p class="fade" style="font-size:17px; color:#D9C8C6; max-width:56ch; margin:16px 0 30px;">Cunoști oameni noi, schimbi povești și descoperi cât de diferit putem vedea aceeași situație. Pregătim întrebările și câteva jocuri de conversație, iar tarotul adaugă un strop de mister întâlnirii.</p>
+<div class="fade" style="display:flex; flex-wrap:wrap; gap:12px;">
+<a href="#inscriere" class="btn" style="flex:1 1 240px; display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:56px; padding:0 28px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; box-shadow:0 12px 28px -12px rgba(163,23,47,0.8); white-space:nowrap;">Anunță-mă la următoarea ediție <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a href="#conversatia" class="btn" style="flex:0 1 220px; display:inline-flex; align-items:center; justify-content:center; min-height:56px; padding:0 24px; border-radius:999px; border:1px solid rgba(251,243,241,0.35); color:#FBF3F1; text-decoration:none; font-weight:600; white-space:nowrap;">Cum decurge seara</a>
+</div>
+</div>
+<div class="fade" style="flex:1 1 340px; min-width:0; position:relative;">
+<img src="images/871cde31fe74998d036449f633ef9ca5.jpg" alt="Invitată la Suspecți la Povești" style="display:block; width:100%; max-width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:18px;">
+<div style="position:absolute; left:14px; right:14px; bottom:14px; background:rgba(250,246,243,0.95); color:#241518; border-radius:14px; padding:14px 18px; box-shadow:0 18px 40px -18px rgba(0,0,0,0.6);">
+<span style="display:block; font-size:11px; letter-spacing:0.18em; font-weight:700; color:#A3172F;">VII SINGUR(Ă)? E PERFECT.</span>
+<span style="font-weight:600; font-size:15px;">Întrebările fac primul pas în locul tău</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- DESPRE CE POVESTIM -->
+<section style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); padding:88px 0;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px; display:flex; flex-wrap:wrap; gap:48px; align-items:center;">
+<div style="flex:1 1 440px; min-width:0;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">Subiectele serii</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:14px 0 20px; text-wrap:balance;">Despre ce <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">povestim?</span></h2>
+<p style="color:#241518; font-size:18px; margin:0 0 16px; max-width:56ch;">Despre relații, lucrurile care ne atrag la cineva și alegerile pe care le facem. Despre ce considerăm firesc, ce ne pune pe gânduri și ce ne face să spunem „aici avem ceva de discutat”.</p>
+<p style="color:#5A4649; font-size:17px; margin:0; max-width:56ch;">Unele subiecte stârnesc râsete. Altele te fac să asculți mai atent un om pe care abia l-ai cunoscut.</p>
+</div>
+<div style="flex:1 1 400px; min-width:0;">
+<img src="images/6412be7f834e7e687e4e3e64be98724f.jpg" alt="Invitați povestind la mese" style="display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; border-radius:18px;">
+</div>
+</div>
+</section>
+
+<!-- CUM ÎNCEPE CONVERSAȚIA -->
+<section id="conversatia" style="background:linear-gradient(180deg,#2B0A12,#3B0D18); color:#FBF3F1; padding:88px 0;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Jocuri de conversație</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:14px 0 32px; text-wrap:balance;">Cum începe <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#EBC1BE;">conversația?</span></h2>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap:16px;">
+<article class="lift" style="border:1px solid rgba(235,193,190,0.25); border-radius:18px; padding:26px; background:rgba(255,255,255,0.04); display:flex; flex-direction:column; gap:10px;">
+<div style="display:flex; gap:6px;" aria-hidden="true"><span style="width:14px; height:14px; border-radius:50%; background:#6FAF7B;"></span><span style="width:14px; height:14px; border-radius:50%; background:#C42A43;"></span></div>
+<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:26px; margin:0;">Green Flag / Red Flag</h3>
+<p style="margin:0; color:#D9C8C6;">Un gest atent sau un motiv să ridici din sprâncene? Pornim de la situații concrete și vedem cum le interpretează fiecare.</p>
+</article>
+<article class="lift" style="border:1px solid rgba(235,193,190,0.25); border-radius:18px; padding:26px; background:rgba(255,255,255,0.04); display:flex; flex-direction:column; gap:10px;">
+<span aria-hidden="true" style="font-family:'Playfair Display',Georgia,serif; font-size:22px; line-height:14px; color:#EBC1BE;">10</span>
+<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:26px; margin:0;">It’s a 10, but…</h3>
+<p style="margin:0; color:#D9C8C6;">Pare persoana ideală, dar apare un detaliu. Cât de mult contează? Răspunsurile sunt un bun motiv să vă cunoașteți mai bine.</p>
+</article>
+<article class="lift" style="border:1px solid rgba(235,193,190,0.25); border-radius:18px; padding:26px; background:rgba(255,255,255,0.04); display:flex; flex-direction:column; gap:10px;">
+<svg aria-hidden="true" width="22" height="16" viewBox="0 0 24 16" fill="none" stroke="#EBC1BE" stroke-width="1.6" stroke-linejoin="round"><path d="M2 14 L4 3 L9 9 L12 2 L15 9 L20 3 L22 14 Z"></path></svg>
+<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:26px; margin:0;">Princess Treatment</h3>
+<p style="margin:0; color:#D9C8C6;">Ce înseamnă pentru tine să primești atenție într-o relație? Povestim despre gesturi, așteptări și felul în care ne arătăm interesul.</p>
+</article>
+</div>
+<p style="margin:28px 0 0; color:#D9C8C6; font-size:17px; max-width:62ch;">Pe parcursul serii, întrebările pregătite de noi vă dau ocazia să intrați în vorbă și să descoperiți ce aveți în comun.</p>
+</div>
+</section>
+
+<!-- UN STROP DE TAROT -->
+<section style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); padding:88px 0;">
+<div class="rev" style="max-width:1180px; margin:0 auto; padding:0 20px; display:flex; flex-wrap:wrap; gap:48px; align-items:center;">
+<div style="flex:1 1 440px; min-width:0;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">Colțul de tarot</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:14px 0 20px; text-wrap:balance;">Un strop de <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">tarot</span></h2>
+<p style="color:#241518; font-size:18px; margin:0 0 22px; max-width:56ch;">Într-un colț dedicat, poți adresa o întrebare și participa la o scurtă citire de tarot. Poate ai deja ceva în minte sau te interesează să încerci experiența pentru prima dată.</p>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap:12px;">
+<div style="padding:18px 20px; border-radius:16px; background:rgba(255,255,255,0.65); border:1px solid rgba(255,255,255,0.85);"><span style="display:block; font-size:11px; letter-spacing:0.18em; font-weight:700; color:#A3172F; margin-bottom:4px;">INCLUS ÎN BILET</span><span>O întrebare introductivă</span></div>
+<div style="padding:18px 20px; border-radius:16px; background:rgba(255,255,255,0.35); border:1px dashed rgba(36,21,24,0.25);"><span style="display:block; font-size:11px; letter-spacing:0.18em; font-weight:700; color:#5A4649; margin-bottom:4px;">OPȚIONAL</span><span>Citire extinsă, pe care o poți alege separat</span></div>
+</div>
+</div>
+<div style="flex:1 1 360px; min-width:0;">
+<img src="images/1c56a440749b85a7acd9fcd4a91ed269.jpg" alt="Citire de tarot în colțul dedicat" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:18px;">
+</div>
+</div>
+</section>
+
+<!-- DRESS CODE -->
+<section style="background:radial-gradient(90% 80% at 80% 10%, rgba(201,164,92,0.18) 0%, transparent 55%), linear-gradient(160deg,#0E1631 0%,#18234A 60%,#0B1128 100%); color:#F3F0E8; padding:80px 0;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px; display:flex; flex-wrap:wrap; gap:40px; align-items:center;">
+<div style="flex:1 1 440px; min-width:0;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#C9A45C;">Dress code</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:14px 0 18px;">Midnight Blue <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#C9A45C;">Vibes</span></h2>
+<p style="margin:0; font-size:17px; color:#D5D8E4; max-width:56ch;">Albastrul închis dă tonul serii. Poți alege o ținută în această nuanță sau un accesoriu care o completează. Accentele aurii se potrivesc atmosferei.</p>
+</div>
+<div style="flex:0 1 360px; min-width:0; display:flex; gap:14px;" aria-hidden="true">
+<div style="flex:1;"><div style="aspect-ratio:1 / 1; border-radius:50%; background:#141E44; border:1px solid rgba(243,240,232,0.25);"></div><span style="display:block; text-align:center; margin-top:8px; font-size:13px; color:#D5D8E4;">Midnight blue</span></div>
+<div style="flex:1;"><div style="aspect-ratio:1 / 1; border-radius:50%; background:#22346E; border:1px solid rgba(243,240,232,0.25);"></div><span style="display:block; text-align:center; margin-top:8px; font-size:13px; color:#D5D8E4;">Albastru închis</span></div>
+<div style="flex:1;"><div style="aspect-ratio:1 / 1; border-radius:50%; background:linear-gradient(135deg,#E6C98A,#B08A3E);"></div><span style="display:block; text-align:center; margin-top:8px; font-size:13px; color:#D5D8E4;">Accente aurii</span></div>
+</div>
+</div>
+</section>
+
+<!-- CU CINE VII -->
+<section style="background:#FAF6F3; padding:88px 0;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px;">
+<div style="max-width:720px;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">Pentru cine e</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:14px 0 18px;">Cu cine <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">vii?</span></h2>
+<p style="color:#241518; font-size:18px; margin:0 0 14px;">Poți veni singur(ă) sau cu un prieten. Întâlnirea este deschisă femeilor și bărbaților care au chef să iasă, să povestească și să cunoască oameni noi.</p>
+<p style="color:#5A4649; font-size:17px; margin:0 0 32px;">Întrebările sunt un punct de pornire. Tu alegi cât vrei să împărtășești.</p>
+</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap:12px;">
+<img src="images/0a032fb2ad3d2e46f77c3048e7cc2fe5.jpg" alt="Conversație la masă" style="display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; border-radius:14px;">
+<img src="images/c8914bfa7708e7f59629c30493860137.webp" alt="Grup de invitați la finalul serii" style="display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; border-radius:14px;">
+<img src="images/1dae8616c98f928f7c9e86eec850860a.jpg" alt="Discuție în doi la bar" style="display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; border-radius:14px;">
+</div>
+<p style="margin:12px 0 0; font-size:13px; color:#5A4649;">Fotografii de la edițiile anterioare.</p>
+</div>
+</section>
+
+<!-- CE SPUN PARTICIPANȚII -->
+<section style="background:#5C1222; color:#FBF3F1; padding:80px 0;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Ce spun participanții</span>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap:16px; margin-top:24px;">
+<figure style="margin:0; padding:26px 24px; border-radius:18px; background:rgba(255,255,255,0.05); border:1px solid rgba(235,193,190,0.2); display:flex; flex-direction:column; gap:14px;"><blockquote style="margin:0; font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:20px; line-height:1.4;">Mi-a plăcut că nu a fost doar despre tarot. A fost mai degrabă o seară de conversații, socializare și atmosferă bună.</blockquote><figcaption style="font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:#D9C8C6;">Bianca T.</figcaption></figure>
+<figure style="margin:0; padding:26px 24px; border-radius:18px; background:rgba(255,255,255,0.05); border:1px solid rgba(235,193,190,0.2); display:flex; flex-direction:column; gap:14px;"><blockquote style="margin:0; font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:20px; line-height:1.4;">Colțul de tarot a fost partea mea preferată, dar sincer mi-au plăcut cel mai mult oamenii și discuțiile.</blockquote><figcaption style="font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:#D9C8C6;">Ioana R.</figcaption></figure>
+<figure style="margin:0; padding:26px 24px; border-radius:18px; background:rgba(255,255,255,0.05); border:1px solid rgba(235,193,190,0.2); display:flex; flex-direction:column; gap:14px;"><blockquote style="margin:0; font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:20px; line-height:1.4;">Am venit singură și nu m-am simțit deloc ciudat. Atmosfera a fost foarte relaxată și naturală.</blockquote><figcaption style="font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:#D9C8C6;">Ana M.</figcaption></figure>
+</div>
+</div>
+</section>
+
+<!-- PREÎNSCRIERE / EDIȚIA URMĂTOARE -->
+<section id="inscriere" style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); padding:88px 0;">
+<div style="max-width:760px; margin:0 auto; padding:0 20px; text-align:center;">
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(34px,6.8vw,56px); line-height:1.06; margin:0 0 14px; text-wrap:balance;">Ne vedem <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">la povești?</span></h2>
+
+
+<p style="color:#5A4649; font-size:17px; margin:0 auto 28px; max-width:52ch;">Pregătim următoarea ediție. Lasă-ne datele și îți scriem primul când o anunțăm, înainte să punem biletele în vânzare.</p>
+
+<form id="form_pv" style="display:flex; flex-direction:column; gap:16px; text-align:left; background:#FAF6F3; border-radius:20px; padding:26px; box-shadow:0 30px 60px -40px rgba(92,18,34,0.6);">
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap:16px;">
+<div style="display:flex; flex-direction:column; gap:4px;"><label for="pvNume" style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:#5A4649;">Prenume *</label><input id="pvNume" type="text" required="" autocomplete="given-name" placeholder="Prenumele tău" style="width:100%; font-size:16px; color:#241518; background:transparent; border:0; border-bottom:1px solid rgba(36,21,24,0.3); padding:10px 0; border-radius:0;"></div>
+<div style="display:flex; flex-direction:column; gap:4px;"><label for="pvEmail" style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:#5A4649;">Email *</label><input id="pvEmail" type="email" required="" autocomplete="email" placeholder="nume@exemplu.ro" style="width:100%; font-size:16px; color:#241518; background:transparent; border:0; border-bottom:1px solid rgba(36,21,24,0.3); padding:10px 0; border-radius:0;"></div>
+<div style="display:flex; flex-direction:column; gap:4px;"><label for="pvOras" style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:#5A4649;">Oraș *</label><select id="pvOras" required="" style="width:100%; font-size:16px; color:#241518; background:transparent; border:0; border-bottom:1px solid rgba(36,21,24,0.3); padding:10px 0; border-radius:0;"><option value="">Alege</option><option>București</option><option>Timișoara</option></select></div>
+<div style="display:flex; flex-direction:column; gap:4px;"><label for="pvTel" style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:#5A4649;">Telefon (opțional)</label><input id="pvTel" type="tel" autocomplete="tel" placeholder="Pentru un mesaj pe WhatsApp" style="width:100%; font-size:16px; color:#241518; background:transparent; border:0; border-bottom:1px solid rgba(36,21,24,0.3); padding:10px 0; border-radius:0;"></div>
+</div>
+<label for="pvAcord" style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#5A4649;"><input id="pvAcord" type="checkbox" required="" style="margin-top:4px; width:18px; height:18px; accent-color:#A3172F;"> <span>Sunt de acord să fiu contactat(ă) despre edițiile Suspecți la Povești. Vezi <a href="#inscriere">Confidențialitate</a>.</span></label>
+<button type="submit" class="btn" style="align-self:flex-start; min-height:54px; padding:0 30px; border:0; border-radius:999px; background:#A3172F; color:#FFFFFF; font-size:16px; font-weight:600; cursor:pointer;">Anunță-mă la următoarea ediție</button>
+<p style="margin:0; font-size:13px; color:#5A4649;">Preînscrierea nu te obligă la nimic. Te anunțăm doar când apare o ediție nouă.</p>
+</form>
+
+<p id="sent_pv" style="display:none;" role="status" style="margin:0; padding:26px; border-radius:20px; background:#FAF6F3; font-family:'Playfair Display',Georgia,serif; font-size:22px;">Gata, ești pe listă! Îți scriem primul când anunțăm următoarea ediție.</p>
+
+<script>
+(function(){
+  var f = document.getElementById('form_pv');
+  var s = document.getElementById('sent_pv');
+  if (f) {
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!f.checkValidity()) { f.reportValidity(); return; }
+      f.style.display = 'none';
+      if (s) s.style.display = '';
+    });
+  }
+})();
+</script>
+
+
+
+
+</div>
+</section>
+
+<footer style="background:#1A060B; color:#D9C8C6; padding:36px 0 40px; font-size:14px; text-align:center;">
+<span style="font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:20px; letter-spacing:0.08em; color:#FBF3F1;">SUSPECȚI</span>
+<div style="margin-top:6px;">WhatsApp 0755 639 871 · contact@suspectilacina.com · @suspectilacina</div>
+</footer>
+
+<div class="mbar" style="position:sticky; bottom:0; z-index:40; display:flex; gap:10px; padding:10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); background:rgba(43,10,18,0.96); border-top:1px solid rgba(235,193,190,0.2);">
+<a href="https://wa.me/40755639871" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 18px; border-radius:999px; border:1px solid rgba(251,243,241,0.35); color:#FBF3F1; text-decoration:none; font-weight:600; font-size:14px;">WhatsApp</a>
+<a href="#inscriere" style="flex:1; display:inline-flex; align-items:center; justify-content:center; min-height:48px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Anunță-mă</a>
+</div>
+
+</div>
+</body>
+</html>

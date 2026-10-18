@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<title>The Singing Brunch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Great+Vibes&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>html{scroll-behavior:smooth;}
+
+body{margin:0;background:#FAF6F3;}
+a{color:#A3172F;}a:hover{color:#C42A43;}
+*{box-sizing:border-box;}
+:focus-visible{outline:2px solid #C42A43;outline-offset:3px;border-radius:6px;}
+.navlinks{display:none;}
+@media (min-width:1080px){.navlinks{display:flex;}}
+@media (min-width:980px){.mbar{display:none !important;}}
+@media (min-width:900px){.rev{flex-direction:row-reverse;}}
+.btn{transition:transform .3s cubic-bezier(.16,1,.3,1),background-color .3s,box-shadow .3s;}
+.btn:hover{transform:translateY(-2px);}
+.lift{transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s;}
+.lift:hover{transform:translateY(-4px);box-shadow:0 20px 40px -26px rgba(92,18,34,.55);}
+.rise{display:inline-block;animation:rise 1s cubic-bezier(.16,1,.3,1) both;}
+.rise2{animation-delay:.18s;}
+.fade{animation:fade 1s cubic-bezier(.16,1,.3,1) .3s both;}
+@keyframes rise{from{transform:translateY(60%);opacity:0;}to{transform:none;opacity:1;}}
+@keyframes fade{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+@media (prefers-reduced-motion:reduce){.rise,.fade{animation:none !important;}.btn,.lift{transition:none;}}
+input,select,button{font-family:'Manrope','Segoe UI',system-ui,sans-serif;}
+input::placeholder{color:#9C8A8C;}
+.snav-top{display:none;}
+.snav-cta{display:none !important;}
+@media (min-width:980px){.snav-cta{display:inline-flex !important;}}
+@media (min-width:1080px){.snav-top{display:flex;}.snav-menu{display:none;}}
+.snav-sub::-webkit-scrollbar{display:none;}
+.snav-menu>summary{list-style:none;}
+.snav-menu>summary::-webkit-details-marker{display:none;}
+.snav-menu[open] .snav-ico-o{display:none;}
+.snav-menu:not([open]) .snav-ico-x{display:none;}
+.snav-top a:hover,.snav-sub a:hover{color:#FFFFFF !important;}
+</style>
+</head>
+<body>
+<div style="font-family:'Manrope','Segoe UI',system-ui,sans-serif; color:#241518; background:#FAF6F3; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;">
+
+<!-- HEADER -->
+<header style="background:#2B0A12; color:#FBF3F1; position:relative; z-index:30;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px; height:72px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+<a href="Acasa.html" style="text-decoration:none; color:#FBF3F1; font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:22px; letter-spacing:0.08em;">SUSPECȚI</a>
+<nav class="snav-top" aria-label="Navigare principală" style="gap:22px; font-size:14px; align-items:center;">
+<a href="Acasa.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Acasă</a>
+<a href="Calendar.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Calendar &amp; bilete</a>
+<a href="Main.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Pentru companii</a>
+<a href="Private.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Evenimente private</a>
+<a href="Despre.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Despre noi</a>
+<a href="Intrebari.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Întrebări frecvente</a>
+</nav>
+<div style="display:flex; align-items:center; gap:10px;">
+<a href="Calendar.html" class="btn snav-cta" style="display:inline-flex; align-items:center; min-height:44px; padding:0 20px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:14px; white-space:nowrap;">Cumpără Bilet</a>
+<details class="snav-menu">
+<summary aria-label="Meniu" style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:999px; border:1px solid rgba(235,193,190,0.35); color:#FBF3F1; cursor:pointer; font-size:20px; line-height:1;"><span class="snav-ico-o" aria-hidden="true">☰</span><span class="snav-ico-x" aria-hidden="true">✕</span></summary>
+<nav aria-label="Meniu mobil" style="position:absolute; left:0; right:0; top:72px; background:#2B0A12; padding:8px 20px 20px; max-height:calc(100vh - 72px); overflow-y:auto; border-bottom:1px solid rgba(235,193,190,0.2); box-shadow:0 24px 40px -20px rgba(0,0,0,0.6); z-index:50;">
+<a href="Acasa.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Acasă</a>
+<a href="Calendar.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Calendar &amp; bilete</a>
+<a href="Main.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Pentru companii</a>
+<a href="Private.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Evenimente private</a>
+<a href="Despre.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Despre noi</a>
+<a href="Intrebari.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Întrebări frecvente</a>
+<span style="display:block; margin:18px 0 4px; font-size:11px; letter-spacing:0.2em; font-weight:700; text-transform:uppercase; color:#9C8A8C;">Experiențe</span>
+<a href="Cina.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Suspecți la Cină</a>
+<a href="Party.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Suspecți la Party</a>
+<a href="TreasureHunt.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Treasure Hunt</a>
+<a href="Brunch.html" aria-current="page" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px; font-weight:700; color:#FFFFFF;">The Singing Brunch</a>
+<a href="PrimaVedere.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Prima Vedere</a>
+<a href="Automachiaj.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Automachiaj</a>
+<a href="Povesti.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Povești</a>
+</nav>
+</details>
+</div>
+</div>
+<nav aria-label="Experiențe" style="border-top:1px solid rgba(235,193,190,0.14); border-bottom:1px solid rgba(235,193,190,0.16); background:#1F070D;">
+<div class="snav-sub" style="max-width:1180px; margin:0 auto; padding:0 20px; display:flex; align-items:center; gap:24px; font-size:14px; overflow-x:auto; scrollbar-width:none;">
+<span style="font-size:11px; letter-spacing:0.2em; font-weight:700; text-transform:uppercase; color:#9C8A8C; white-space:nowrap;">Experiențe</span>
+<a href="Cina.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Suspecți la Cină</a>
+<a href="Party.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Suspecți la Party</a>
+<a href="TreasureHunt.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Treasure Hunt</a>
+<a href="Brunch.html" aria-current="page" style="color:#FFFFFF; text-decoration:none; font-weight:700; white-space:nowrap; padding:12px 0; border-bottom:2px solid #EBC1BE;">The Singing Brunch</a>
+<a href="PrimaVedere.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Prima Vedere</a>
+<a href="Automachiaj.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Automachiaj</a>
+<a href="Povesti.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Povești</a>
+</div>
+</nav>
+</header>
+<!-- HERO -->
+<section id="top" style="background:radial-gradient(120% 70% at 85% 0%, rgba(163,23,47,0.45) 0%, transparent 60%), radial-gradient(90% 60% at 0% 100%, rgba(92,18,34,0.7) 0%, transparent 60%), #2B0A12; color:#FBF3F1; padding:56px 0 72px;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px; display:flex; flex-wrap:wrap; gap:48px; align-items:center;">
+<div style="flex:1 1 460px; min-width:0;">
+<div class="fade" style="display:flex; flex-wrap:wrap; gap:8px; align-items:center;"><span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">The Singing Brunch</span><span style="display:inline-flex; align-items:center; min-height:28px; padding:0 12px; border-radius:999px; font-size:12px; font-weight:700; letter-spacing:0.04em; background:#C42A43; color:#FFFFFF; border:1px solid #C42A43;">Bilete disponibile</span></div>
+<h1 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(44px,8.6vw,76px); line-height:1.04; letter-spacing:-0.01em; margin:18px 0 0;"><span class="rise" style="display:block;">The Singing</span><span class="rise rise2" style="display:block; font-family:'Great Vibes',cursive; font-weight:400; font-size:1.2em; line-height:1.05; color:#EBC1BE; margin-top:4px;">Brunch</span></h1>
+<p class="fade" style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:clamp(20px,3.6vw,24px); line-height:1.4; color:#FBF3F1; max-width:42ch; margin:22px 0 0;">Pentru cei cărora le e dor de o petrecere în care să danseze, să râdă, să cânte și să plece acasă cu senzația că au trăit ceva ce o să țină minte.</p>
+<p class="fade" style="font-size:17px; color:#D9C8C6; max-width:56ch; margin:16px 0 30px;">Brunch, muzică bună, jocuri, socializare și un altfel de karaoke, într-o atmosferă în care ajungi foarte repede să vorbești cu oameni noi. Nu trebuie să știi să cânți.</p>
+<div class="fade" style="display:flex; flex-wrap:wrap; gap:12px;"><a href="#inscriere" class="btn" style="flex:1 1 220px; display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:56px; padding:0 26px; border-radius:999px; background:#A3172F; color:#FFFFFF; box-shadow:0 12px 28px -12px rgba(163,23,47,0.8); text-decoration:none; font-weight:600; white-space:nowrap;">Vezi următoarea ediție <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a href="#desfasurare" class="btn" style="flex:1 1 220px; display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:56px; padding:0 26px; border-radius:999px; border:1px solid rgba(251,243,241,0.35); color:#FBF3F1; text-decoration:none; font-weight:600; white-space:nowrap;">Cum se desfășoară</a></div>
+</div>
+<div class="fade" style="flex:1 1 340px; min-width:0; position:relative;">
+<img src="images/86c720aee85f7cfd29db989c9b971de8.webp" alt="The Singing Brunch" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; object-position:center 22%; border-radius:18px;">
+<div style="position:absolute; left:14px; right:14px; bottom:14px; background:rgba(250,246,243,0.95); color:#241518; border-radius:14px; padding:14px 18px; box-shadow:0 18px 40px -18px rgba(0,0,0,0.6);"><span style="display:block; font-size:11px; letter-spacing:0.18em; font-weight:700; color:#A3172F;">NU E KARAOKE CLASIC</span><span style="font-weight:600; font-size:15px;">Cântăm toți împreună. Nimeni nu cântă singur.</span></div>
+</div>
+</div>
+</section>
+<section style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); padding:88px 0;">
+<div class="" style="max-width:1180px; margin:0 auto; padding:0 20px; display:flex; flex-wrap:wrap; gap:48px; align-items:center;">
+<div style="flex:1 1 440px; min-width:0;"><span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">Nu e karaoke clasic</span><h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:14px 0 20px; text-wrap:balance;">Aici cântă <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">toată lumea</span></h2><p style="color:#241518; font-size:18px; margin:0 0 14px; max-width:58ch;">Nu e karaoke clasic, în care cântă cineva singur și restul stau la masă și se uită. La The Singing Brunch toată lumea participă.</p><p style="color:#5A4649; font-size:17px; margin:0 0 14px; max-width:58ch;">Avem versurile pe ecrane, microfoane gonflabile, melodii pe care le știe toată lumea și un vibe care te face să intri în joc fără să îți dai seama.</p></div>
+<div style="flex:1 1 380px; min-width:0;"><img src="images/be8e4bb3a280e93ff30bffc79609ef9a.webp" alt="Karaoke de grup la The Singing Brunch" style="display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; object-position:center 22%; border-radius:18px;"></div>
+</div>
+</section>
+<section id="desfasurare" style="background:linear-gradient(180deg,#2B0A12,#3B0D18); color:#FBF3F1; padding:88px 0;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Pas cu pas</span><h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:14px 0 32px; text-wrap:balance;">Cum se <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#EBC1BE;">desfășoară?</span></h2><div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap:16px;"><article class="lift" style="border:1px solid rgba(235,193,190,0.25); border-radius:18px; padding:26px; background:rgba(255,255,255,0.04); display:flex; flex-direction:column; gap:10px;"><h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:24px; margin:0;">01 · Jocurile</h3><p style="margin:0; color:#D9C8C6;">Începem cu jocuri și provocări la mese, care sparg gheața și creează contexte naturale de conversație.</p></article><article class="lift" style="border:1px solid rgba(235,193,190,0.25); border-radius:18px; padding:26px; background:rgba(255,255,255,0.04); display:flex; flex-direction:column; gap:10px;"><h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:24px; margin:0;">02 · Atmosfera</h3><p style="margin:0; color:#D9C8C6;">Pe măsură ce atmosfera se încălzește, brunch-ul se transformă într-un party de zi în care toată lumea participă.</p></article><article class="lift" style="border:1px solid rgba(235,193,190,0.25); border-radius:18px; padding:26px; background:rgba(255,255,255,0.04); display:flex; flex-direction:column; gap:10px;"><h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:24px; margin:0;">03 · Petrecerea</h3><p style="margin:0; color:#D9C8C6;">Versurile apar pe ecrane, microfoanele gonflabile ies la suprafață și începe partea în care toată lumea cântă și dansează.</p></article></div>
+</div>
+</section>
+<section style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); padding:88px 0;">
+<div class="rev" style="max-width:1180px; margin:0 auto; padding:0 20px; display:flex; flex-wrap:wrap; gap:48px; align-items:center;">
+<div style="flex:1 1 440px; min-width:0;"><span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">Biletul include</span><h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:14px 0 20px; text-wrap:balance;">Tot ce <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">îți trebuie</span></h2><ul style="margin:8px 0 0; padding-left:18px; color:#241518; font-size:17px;"><li style="margin:6px 0;">Acces la experiență</li><li style="margin:6px 0;">Welcome drink</li><li style="margin:6px 0;">Jocuri și activități interactive</li><li style="margin:6px 0;">DJ &amp; MC</li><li style="margin:6px 0;">Versuri pe ecrane și karaoke de grup</li></ul><p style="color:#5A4649; font-size:15px; margin:16px 0 0; max-width:58ch;">Mâncarea se comandă separat, din meniul locației.</p></div>
+<div style="flex:1 1 380px; min-width:0;"><img src="images/fbcf8f57ee276be98e7be309297641a3.webp" alt="Solistul serii la The Singing Brunch" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; object-position:center 22%; border-radius:18px;"></div>
+</div>
+</section>
+<section style="background:#FAF6F3; padding:88px 0;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px;">
+<div style="max-width:720px;"><span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">Pentru cine e</span><h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:14px 0 20px; text-wrap:balance;">Vii singur sau <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">cu prietenii?</span></h2><p style="color:#241518; font-size:18px; margin:0 0 14px; max-width:58ch;">Pentru cei care s-au săturat de ieșirile în care fiecare stă doar la masa lui și vor ceva mai interactiv, mai energic și mai memorabil.</p><p style="color:#5A4649; font-size:17px; margin:0 0 14px; max-width:58ch;">E potrivit dacă vii cu prietenii, dar și dacă vii singur. După primele 30 de minute, atmosfera e deja formată și ai senzația că îi cunoști pe toți.</p></div>
+</div>
+</section>
+<section id="galerie" style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); padding:80px 0;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">Din edițiile trecute</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(30px,5.6vw,46px); line-height:1.1; margin:14px 0 28px;">Așa arată <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">un brunch Suspecți</span></h2>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(min(240px, 100%), 1fr)); gap:12px; align-items:start;">
+<img src="images/f0c19d7592705101776ea87540fdd69c.webp" alt="The Singing Brunch, fotografia 1" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; object-position:center 22%; border-radius:14px;">
+<img src="images/b07d7cc9d3bd8ca8a20351868ea27ab3.webp" alt="The Singing Brunch, fotografia 2" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; object-position:center 22%; border-radius:14px;">
+<img src="images/aeca7acfc13f86c64f83ff52742cfb83.webp" alt="The Singing Brunch, fotografia 3" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; object-position:center 22%; border-radius:14px;">
+<img src="images/f0cbb2a45714df2d34963cc1466de74f.webp" alt="The Singing Brunch, fotografia 4" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; object-position:center 22%; border-radius:14px;">
+<img src="images/b9b18186dfbc85cde9e6c11c58fc25c2.webp" alt="The Singing Brunch, fotografia 5" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 28.5549% 50%; border-radius: 14px">
+<img src="images/ab55df5ed84129cb5ac707b88f734189.webp" alt="The Singing Brunch, fotografia 6" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 63.0611% 50%; border-radius: 14px">
+<img src="images/0608e2d9e9275dae7ba9672597acb0e2.webp" alt="The Singing Brunch, fotografia 7" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 66.5118% 50%; border-radius: 14px">
+<img src="images/79257ba2e7475b38b2e8d22a2eb3e998.webp" alt="The Singing Brunch, fotografia 8" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; object-position:center 22%; border-radius:14px;">
+</div>
+</div>
+</section>
+<section style="background:#5C1222; color:#FBF3F1; padding:80px 0;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Ce spun participanții</span><div style="margin-top:24px;"><div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap:16px;"><figure style="margin:0; padding:26px 24px; border-radius:18px; background:rgba(255,255,255,0.05); border:1px solid rgba(235,193,190,0.2); display:flex; flex-direction:column; gap:14px;"><blockquote style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-weight:400; font-style:italic; font-size:20px; line-height:1.4;">Versurile pe ecrane și microfoanele gonflabile au fost partea mea preferată. Toată lumea a intrat în joc foarte repede.</blockquote><figcaption style="font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:#D9C8C6;">Diana P.</figcaption></figure><figure style="margin:0; padding:26px 24px; border-radius:18px; background:rgba(255,255,255,0.05); border:1px solid rgba(235,193,190,0.2); display:flex; flex-direction:column; gap:14px;"><blockquote style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-weight:400; font-style:italic; font-size:20px; line-height:1.4;">Nu trebuie să știi să cânți. Atmosfera este atât de bună încât ajungi să cânți și să dansezi fără să îți dai seama.</blockquote><figcaption style="font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:#D9C8C6;">Bianca T.</figcaption></figure><figure style="margin:0; padding:26px 24px; border-radius:18px; background:rgba(255,255,255,0.05); border:1px solid rgba(235,193,190,0.2); display:flex; flex-direction:column; gap:14px;"><blockquote style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-weight:400; font-style:italic; font-size:20px; line-height:1.4;">Mi-a plăcut că nu a fost doar un party. Jocurile și interacțiunea dintre oameni chiar au făcut diferența.</blockquote><figcaption style="font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:#D9C8C6;">Andrei M.</figcaption></figure></div></div>
+</div>
+</section>
+<section id="inscriere" style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); padding:88px 0;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px;">
+<div style="max-width:760px; margin:0 auto; text-align:center;">
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(34px,6.8vw,56px); line-height:1.06; margin:0 0 14px; text-wrap:balance;">Ne vedem <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">la brunch?</span></h2>
+
+<div style="background:#FAF6F3; border-radius:20px; padding:26px; box-shadow:0 30px 60px -40px rgba(92,18,34,0.6);">
+<span style="display:block; font-size:11px; letter-spacing:0.18em; font-weight:700; color:#A3172F;">URMĂTOAREA EDIȚIE</span>
+<p style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:26px; margin:6px 0 4px;">Duminică, 25 octombrie 2026 · 14:00</p>
+<p style="margin:0 0 20px; color:#5A4649;">Naive, București · 56 lei</p>
+<div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;"><a href="Calendar.html" class="btn" style="display:inline-flex; align-items:center; min-height:54px; padding:0 28px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Cumpără Bilet</a><a href="Calendar.html" style="display:inline-flex; align-items:center; min-height:54px; padding:0 24px; border-radius:999px; border:1px solid rgba(36,21,24,0.25); color:#241518; text-decoration:none; font-weight:600;">Vezi tot calendarul</a></div>
+</div>
+</div>
+</div>
+</section>
+<footer style="background:#1A060B; color:#D9C8C6; padding:40px 0 44px; font-size:14px; text-align:center;">
+<span style="font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:20px; letter-spacing:0.08em; color:#FBF3F1;">SUSPECȚI</span>
+<div style="margin-top:8px;">WhatsApp 0755 639 871 · contact@suspectilacina.com · @suspectilacina</div>
+<div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:6px 18px; justify-content:center;"><a href="Intrebari.html" style="color:#D9C8C6;">Întrebări frecvente</a><a href="Termeni.html" style="color:#D9C8C6;">Termeni de participare</a><a href="Confidentialitate.html" style="color:#D9C8C6;">Confidențialitate</a></div>
+</footer>
+<div class="mbar" style="position:sticky; bottom:0; z-index:40; display:flex; gap:10px; padding:10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); background:rgba(43,10,18,0.96); border-top:1px solid rgba(235,193,190,0.2);"><a href="https://wa.me/40755639871" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 18px; border-radius:999px; border:1px solid rgba(251,243,241,0.35); color:#FBF3F1; text-decoration:none; font-weight:600; font-size:14px;">WhatsApp</a><a href="#inscriere" style="flex:1; display:inline-flex; align-items:center; justify-content:center; min-height:48px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Cumpără Bilet</a></div>
+
+</div>
+</body>
+</html>

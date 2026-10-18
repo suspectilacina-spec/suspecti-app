@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<title>Suspecți la Cină</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Great+Vibes&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>html{scroll-behavior:smooth;}
+
+body{margin:0;background:#FAF6F3;}
+a{color:#A3172F;}a:hover{color:#C42A43;}
+*{box-sizing:border-box;}
+:focus-visible{outline:2px solid #C42A43;outline-offset:3px;border-radius:6px;}
+.navlinks{display:none;}
+@media (min-width:980px){.navlinks{display:flex;}.mbar{display:none !important;}}
+@media (min-width:900px){.tm.alt{flex-direction:row-reverse;}}
+.btn{transition:transform .3s cubic-bezier(.16,1,.3,1),background-color .3s,box-shadow .3s;}
+.btn:hover{transform:translateY(-2px);}
+.lift{transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s;}
+.lift:hover{transform:translateY(-4px);box-shadow:0 20px 40px -26px rgba(92,18,34,.55);}
+.rise{display:inline-block;animation:rise 1s cubic-bezier(.16,1,.3,1) both;}
+.rise2{animation-delay:.18s;}
+.fade{animation:fade 1s cubic-bezier(.16,1,.3,1) .35s both;}
+@keyframes rise{from{transform:translateY(60%);opacity:0;}to{transform:none;opacity:1;}}
+@keyframes fade{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+.hs{opacity:0;will-change:opacity,transform;animation:heroIn 12.5s ease-in-out infinite both;}
+.hsl{animation-name:heroLast;}
+.hs1{animation-delay:2.5s;}.hs2{animation-delay:5s;}.hs3{animation-delay:7.5s;}.hs4{animation-delay:10s;}
+@keyframes heroIn{0%{opacity:0;transform:scale(1.07);}8%{opacity:1;}28%{opacity:1;transform:scale(1.01);}28.1%{opacity:0;transform:scale(1.01);}100%{opacity:0;transform:scale(1.07);}}
+@keyframes heroLast{0%{opacity:0;transform:scale(1.07);}8%{opacity:1;}20%{opacity:1;}28%{opacity:0;transform:scale(1.01);}100%{opacity:0;transform:scale(1.07);}}
+@media (prefers-reduced-motion:reduce){.rise,.fade,.hs{animation:none !important;}.hs{opacity:0;}.btn,.lift{transition:none;}}
+.snav-top{display:none;}
+.snav-cta{display:none !important;}
+@media (min-width:980px){.snav-cta{display:inline-flex !important;}}
+@media (min-width:1080px){.snav-top{display:flex;}.snav-menu{display:none;}}
+.snav-sub::-webkit-scrollbar{display:none;}
+.snav-menu>summary{list-style:none;}
+.snav-menu>summary::-webkit-details-marker{display:none;}
+.snav-menu[open] .snav-ico-o{display:none;}
+.snav-menu:not([open]) .snav-ico-x{display:none;}
+.snav-top a:hover,.snav-sub a:hover{color:#FFFFFF !important;}
+</style>
+</head>
+<body>
+<div style="font-family:'Manrope','Segoe UI',system-ui,sans-serif; color:#241518; background:#FAF6F3; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;">
+
+<!-- HEADER -->
+<header style="background:#2B0A12; color:#FBF3F1; position:relative; z-index:30;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px; height:72px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+<a href="Acasa.html" style="text-decoration:none; color:#FBF3F1; font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:22px; letter-spacing:0.08em;">SUSPECȚI</a>
+<nav class="snav-top" aria-label="Navigare principală" style="gap:22px; font-size:14px; align-items:center;">
+<a href="Acasa.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Acasă</a>
+<a href="Calendar.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Calendar &amp; bilete</a>
+<a href="Main.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Pentru companii</a>
+<a href="Private.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Evenimente private</a>
+<a href="Despre.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Despre noi</a>
+<a href="Intrebari.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Întrebări frecvente</a>
+</nav>
+<div style="display:flex; align-items:center; gap:10px;">
+<a href="Calendar.html" class="btn snav-cta" style="display:inline-flex; align-items:center; min-height:44px; padding:0 20px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:14px; white-space:nowrap;">Cumpără Bilet</a>
+<details class="snav-menu">
+<summary aria-label="Meniu" style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:999px; border:1px solid rgba(235,193,190,0.35); color:#FBF3F1; cursor:pointer; font-size:20px; line-height:1;"><span class="snav-ico-o" aria-hidden="true">☰</span><span class="snav-ico-x" aria-hidden="true">✕</span></summary>
+<nav aria-label="Meniu mobil" style="position:absolute; left:0; right:0; top:72px; background:#2B0A12; padding:8px 20px 20px; max-height:calc(100vh - 72px); overflow-y:auto; border-bottom:1px solid rgba(235,193,190,0.2); box-shadow:0 24px 40px -20px rgba(0,0,0,0.6); z-index:50;">
+<a href="Acasa.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Acasă</a>
+<a href="Calendar.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Calendar &amp; bilete</a>
+<a href="Main.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Pentru companii</a>
+<a href="Private.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Evenimente private</a>
+<a href="Despre.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Despre noi</a>
+<a href="Intrebari.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Întrebări frecvente</a>
+<span style="display:block; margin:18px 0 4px; font-size:11px; letter-spacing:0.2em; font-weight:700; text-transform:uppercase; color:#9C8A8C;">Experiențe</span>
+<a href="Cina.html" aria-current="page" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px; font-weight:700; color:#FFFFFF;">Suspecți la Cină</a>
+<a href="Party.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Suspecți la Party</a>
+<a href="TreasureHunt.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Treasure Hunt</a>
+<a href="Brunch.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">The Singing Brunch</a>
+<a href="PrimaVedere.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Prima Vedere</a>
+<a href="Automachiaj.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Automachiaj</a>
+<a href="Povesti.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Povești</a>
+</nav>
+</details>
+</div>
+</div>
+<nav aria-label="Experiențe" style="border-top:1px solid rgba(235,193,190,0.14); border-bottom:1px solid rgba(235,193,190,0.16); background:#1F070D;">
+<div class="snav-sub" style="max-width:1180px; margin:0 auto; padding:0 20px; display:flex; align-items:center; gap:24px; font-size:14px; overflow-x:auto; scrollbar-width:none;">
+<span style="font-size:11px; letter-spacing:0.2em; font-weight:700; text-transform:uppercase; color:#9C8A8C; white-space:nowrap;">Experiențe</span>
+<a href="Cina.html" aria-current="page" style="color:#FFFFFF; text-decoration:none; font-weight:700; white-space:nowrap; padding:12px 0; border-bottom:2px solid #EBC1BE;">Suspecți la Cină</a>
+<a href="Party.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Suspecți la Party</a>
+<a href="TreasureHunt.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Treasure Hunt</a>
+<a href="Brunch.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">The Singing Brunch</a>
+<a href="PrimaVedere.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Prima Vedere</a>
+<a href="Automachiaj.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Automachiaj</a>
+<a href="Povesti.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Povești</a>
+</div>
+</nav>
+</header>
+
+<!-- HERO -->
+<section id="top" style="background:radial-gradient(120% 70% at 85% 0%, rgba(163,23,47,0.45) 0%, transparent 60%), radial-gradient(90% 60% at 0% 100%, rgba(92,18,34,0.7) 0%, transparent 60%), #2B0A12; color:#FBF3F1; padding:56px 0 72px;">
+<div style="max-width:1120px; margin:0 auto; padding:0 20px; display:flex; flex-wrap:wrap; gap:48px; align-items:center;">
+<div style="flex:1 1 440px; min-width:0;">
+<span class="fade" style="display:inline-block; font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Suspecți la Cină</span>
+<h1 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(44px,9vw,80px); line-height:1.02; letter-spacing:-0.01em; margin:18px 0 0;">
+<span class="rise" style="display:block;">O cină la care fiecare are un rol</span>
+<span class="rise rise2" style="display:block; margin-top:4px;">și <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.2em; line-height:1.05; color:#EBC1BE;">ceva de ascuns.</span></span>
+</h1>
+<p class="fade" style="font-size:18px; color:#D9C8C6; max-width:56ch; margin:22px 0 12px;">Primești un personaj și intri într-o poveste care se desfășoară printre invitați. Ai propriile obiective, iar ca să le îndeplinești va trebui să vorbești cu ceilalți și să descoperi în cine poți avea încredere. Ai la dispoziție aproximativ patru ore, în care cunoști oameni și vezi unde te duce rolul tău.</p>
+<p class="fade" style="font-size:16px; color:#D9C8C6; max-width:56ch; margin:0 0 30px;">Poți veni singur, în cuplu sau cu prietenii. Nu ai nevoie de experiență, îți explicăm tot ce trebuie să știi.</p>
+<div class="fade" style="display:flex; flex-wrap:wrap; gap:12px;">
+<a href="#companii" class="btn" style="flex:1 1 200px; display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:54px; padding:0 28px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; box-shadow:0 12px 28px -12px rgba(163,23,47,0.8);">Pentru companii</a>
+<a href="Private.html" class="btn" style="flex:1 1 200px; display:inline-flex; align-items:center; justify-content:center; min-height:54px; padding:0 28px; border-radius:999px; border:1px solid rgba(251,243,241,0.35); color:#FBF3F1; text-decoration:none; font-weight:600;">Eveniment privat</a>
+</div>
+<div class="fade" style="display:flex; flex-wrap:wrap; gap:10px 28px; margin-top:26px; padding-top:18px; border-top:1px solid rgba(235,193,190,0.18); font-size:15px; color:#D9C8C6;">
+<span><strong style="color:#FBF3F1;">25–60</strong> de invitați</span>
+<span><strong style="color:#FBF3F1;">5</strong> tematici</span>
+<span>București · Timișoara · la locația voastră</span>
+</div>
+</div>
+<div class="fade" style="flex:1 1 320px; min-width:0; position:relative;">
+<div style="position:relative; width:100%; max-width:100%; aspect-ratio:4 / 5; border-radius:18px; overflow:hidden;">
+<img src="images/ee5d8795c05d54b56dfbcfb8f5e4d27c.jpg" alt="Invitate în ținute anii '20 la Balul lui Gatsby" style="display:block; width:100%; height:100%; object-fit:cover;">
+<img class="hs hs1" src="images/23e89225616de4f3571f5a3ac06a2af1.jpg" alt="Invitată cu banii jocului Suspecți" style="position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:cover;">
+<img class="hs hs2" src="images/7ff629c625c6684db23eab028cb8f741.jpg" alt="Victima serii" style="position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:cover;">
+<img class="hs hs3" src="images/a019def1c58433595774a3cb33a22863.webp" alt="Invitate la Balul lui Gatsby" style="position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:cover;">
+<img class="hs hsl hs4" src="images/779057d2d84743beab678d468174a4af.jpg" alt="Suspecta numărul 2" style="position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:cover;">
+</div>
+<div style="position:absolute; left:14px; right:14px; bottom:14px; background:rgba(250,246,243,0.95); color:#241518; border-radius:14px; padding:14px 18px; box-shadow:0 18px 40px -18px rgba(0,0,0,0.6);">
+<span style="display:block; font-size:11px; letter-spacing:0.18em; font-weight:700; color:#A3172F;">PERSONAJE · SECRETE · INDICII</span>
+<span style="font-weight:600; font-size:15px;">Toată lumea e suspectă până la desert</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TEMATICI: INTRO -->
+<section id="tematici" style="background:#FAF6F3; padding:72px 0 8px;">
+<div style="max-width:1120px; margin:0 auto; padding:0 20px;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">5 tematici</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(34px,6.8vw,56px); line-height:1.06; margin:14px 0 14px; text-wrap:balance;">În ce poveste <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">intri?</span></h2>
+<p style="color:#5A4649; font-size:17px; margin:0 0 22px; max-width:56ch;">Fiecare tematică are altă epocă, alte personaje și alt fel de intrigă. Alege una și vezi cum arată.</p>
+<nav aria-label="Tematici" style="display:flex; flex-wrap:wrap; gap:8px;"><a href="#gatsby" style="display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:999px; border:1px solid rgba(163,23,47,0.3); background:rgba(255,255,255,0.6); color:#241518; text-decoration:none; font-weight:600; font-size:14px;">Balul lui Gatsby</a><a href="#dance-floor" style="display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:999px; border:1px solid rgba(163,23,47,0.3); background:rgba(255,255,255,0.6); color:#241518; text-decoration:none; font-weight:600; font-size:14px;">Murder on the Dance Floor</a><a href="#peaky" style="display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:999px; border:1px solid rgba(163,23,47,0.3); background:rgba(255,255,255,0.6); color:#241518; text-decoration:none; font-weight:600; font-size:14px;">Peaky Blinders</a><a href="#disco" style="display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:999px; border:1px solid rgba(163,23,47,0.3); background:rgba(255,255,255,0.6); color:#241518; text-decoration:none; font-weight:600; font-size:14px;">’80s Disco · Ultimul Dans</a><a href="#mafia" style="display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:999px; border:1px solid rgba(163,23,47,0.3); background:rgba(255,255,255,0.6); color:#241518; text-decoration:none; font-weight:600; font-size:14px;">Crimă la Clubul Secret Tracy</a></nav>
+</div>
+</section>
+<!-- TEMATICA 01: Balul lui Gatsby -->
+<section id="gatsby" style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); color:#241518; padding:88px 0;">
+<div style="max-width:1120px; margin:0 auto; padding:0 20px;">
+<div class="tm" style="display:flex; flex-wrap:wrap; gap:48px; align-items:flex-start;">
+<div style="flex:1 1 380px; min-width:0; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px;">
+<img src="images/9758c336ac71a77e0f04e392fe11088a.jpg" alt="Invitații Balului lui Gatsby" style="grid-column: 1 / -1; display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 18px; object-position: 50% 9.8354%">
+<img src="images/a019def1c58433595774a3cb33a22863.webp" alt="Invitați la Balul lui Gatsby" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 14px; object-position: 42.3778% 50%">
+<img src="images/95b56891887d0e6ebbef458fae29a58e.jpg" alt="Râsete între suspecți la Balul lui Gatsby" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:14px;">
+</div>
+<div style="flex:1 1 440px; min-width:0;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">Tematica 01 · Anii ’20</span>
+<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(36px,7vw,58px); line-height:1.04; margin:12px 0 0; text-wrap:balance;">Balul lui <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">Gatsby</span></h3>
+<p style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:clamp(20px,3.6vw,24px); line-height:1.4; margin:18px 0 0;">West Egg, 1925. Ești pe lista invitaților la balul lui Gatsby, unde toată lumea pare să cunoască pe cineva și nimeni nu spune chiar tot.</p>
+<p style="color:#5A4649; font-size:17px; margin:14px 0 0; max-width:58ch;">Printre conversații și pahare de șampanie, un deces schimbă cursul serii. Ce știe fiecare și cât e dispus să dezvăluie?</p>
+<div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:6px; margin-top:18px;"><img src="images/595c34d954b34436730b2265967b4e73.jpg" alt="Invitați în ținute anii ’20, la apus" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"><img src="images/8d22f77644716d448494e752577a366c.jpg" alt="Suspect cu pălărie și costum în dungi" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"><img src="images/dd8c894ee0995c142251f573eec9f030.jpg" alt="Invitate în ținute flapper" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"></div>
+<div style="display:flex; flex-wrap:wrap; gap:8px; margin:22px 0;"><span style="border:1px solid rgba(163,23,47,0.3); background:rgba(255,255,255,0.5); border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; color:#A3172F;">West Egg, 1925</span><span style="border:1px solid rgba(163,23,47,0.3); background:rgba(255,255,255,0.5); border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; color:#A3172F;">2 runde de joc</span><span style="border:1px solid rgba(163,23,47,0.3); background:rgba(255,255,255,0.5); border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; color:#A3172F;">Aproximativ 4 ore</span></div>
+<div style="border-top:1px solid rgba(36,21,24,0.16);"><div style="display:flex; gap:16px; padding:14px 0; border-bottom:1px solid rgba(36,21,24,0.16);"><span style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:20px; color:#A3172F; min-width:28px;">01</span><span><strong>Un personaj doar al tău.</strong> <span style="color:#5A4649;">Cu trecut, secrete și obiective pentru fiecare rundă, ales după chestionarul de dinainte.</span></span></div><div style="display:flex; gap:16px; padding:14px 0; border-bottom:1px solid rgba(36,21,24,0.16);"><span style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:20px; color:#A3172F; min-width:28px;">02</span><span><strong>Indicii pe care le poți ține în mână.</strong> <span style="color:#5A4649;">Ediția specială a ziarului Harbor Herald, dosare confidențiale, bilete și fișe de investigație.</span></span></div><div style="display:flex; gap:16px; padding:14px 0; border-bottom:1px solid rgba(36,21,24,0.16);"><span style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:20px; color:#A3172F; min-width:28px;">03</span><span><strong>Bani de joc.</strong> <span style="color:#5A4649;">Pentru pariuri, mită și înțelegeri făcute la bar.</span></span></div></div>
+<div style="margin-top:22px; padding:16px 20px; border-radius:16px; background:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.75);"><span style="display:block; font-size:11px; letter-spacing:0.2em; font-weight:700; color:#A3172F; margin-bottom:4px;">DRESS CODE SUGERAT</span><span>Rochii cu franjuri, perle, bentițe cu pene. Costume, bretele, papioane și pălării. Ține de atmosfera serii, așa că te rugăm să intri în tematică.</span></div>
+
+<a href="#preinscriere" onclick="cinaWantTheme('gatsby')" class="btn" style="margin-top:26px; display:inline-flex; align-items:center; gap:10px; min-height:54px; padding:0 28px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Vreau să particip <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><p style="margin:10px 0 0; font-size:14px; opacity:0.75;">Nu avem încă o dată. Lasă-ne datele și te anunțăm primii.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- TEMATICA 02: Murder on the Dance Floor -->
+
+<!-- TEMATICA 03: Peaky Blinders -->
+<section id="dance-floor" style="background:linear-gradient(180deg,#2B0A12,#3B0D18); color:#FBF3F1; padding:88px 0;">
+<div style="max-width:1120px; margin:0 auto; padding:0 20px;">
+<div class="tm alt" style="display:flex; flex-wrap:wrap; gap:48px; align-items:flex-start;">
+<div style="flex:1 1 380px; min-width:0; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px;">
+<img src="images/bd3729200bc6d192abddc3c99630d178.jpg" alt="Invitații serii Murder on the Dance Floor" style="grid-column:1 / -1; display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; border-radius:18px;">
+<img src="images/f577e4cc861be901d0672fd9306de797.jpg" alt="Două suspecte, cu pistol și cătușe" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; object-position:center 30%; border-radius:14px;">
+<img src="images/0f08b49843983eb53aa57c7893e2b01b.jpg" alt="Gazda serii arată spre un suspect" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; object-position:center 30%; border-radius:14px;">
+</div>
+<div style="flex:1 1 440px; min-width:0;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Tematica 02 · Hollywood, 1940</span>
+<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(36px,7vw,58px); line-height:1.04; margin:12px 0 0; text-wrap:balance;">Murder on the <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#EBC1BE;">Dance Floor</span></h3>
+<p style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:clamp(20px,3.6vw,24px); line-height:1.4; margin:18px 0 0;">Hollywood, 1940. În spatele zâmbetelor pentru fotografi sunt rivalități și înțelegeri despre care presa ar vrea să afle.</p>
+<p style="color:#D9C8C6; font-size:17px; margin:14px 0 0; max-width:58ch;">Ești printre invitații unei seri de dans, iar informația potrivită îți poate aduce un avantaj. Ai grijă cui îi încredințezi secretele tale.</p>
+<div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:6px; margin-top:18px;"><img src="images/4cb9724fd225df374b7a1f08c4768e28.jpg" alt="Victima serii, la bar" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"><img src="images/383b7df62e9304d2166b07fcfa2cc06c.jpg" alt="Suspecte la un pahar de șampanie" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"><img src="images/9f1dcbdb7eb6c8b7d94b5f852350c24c.jpg" alt="Invitate în ținute de seară" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"></div>
+<div style="display:flex; flex-wrap:wrap; gap:8px; margin:22px 0;"><span style="border:1px solid rgba(235,193,190,0.35); background:rgba(255,255,255,0.05); border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; color:#EBC1BE;">Hollywood, 1940</span><span style="border:1px solid rgba(235,193,190,0.35); background:rgba(255,255,255,0.05); border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; color:#EBC1BE;">Seară de dans</span><span style="border:1px solid rgba(235,193,190,0.35); background:rgba(255,255,255,0.05); border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; color:#EBC1BE;">Aproximativ 4 ore</span></div>
+<div style="border-top:1px solid rgba(235,193,190,0.2);"><div style="display:flex; gap:16px; padding:14px 0; border-bottom:1px solid rgba(235,193,190,0.2);"><span style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:20px; color:#EBC1BE; min-width:28px;">01</span><span><strong>Un personaj doar al tău.</strong> <span style="color:#D9C8C6;">Actori, producători, starlete și oameni din culisele studiourilor, fiecare cu propriile obiective.</span></span></div><div style="display:flex; gap:16px; padding:14px 0; border-bottom:1px solid rgba(235,193,190,0.2);"><span style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:20px; color:#EBC1BE; min-width:28px;">02</span><span><strong>Rivalități și contracte.</strong> <span style="color:#D9C8C6;">Rolurile râvnite și înțelegerile făcute pe ascuns schimbă alianțele pe parcursul serii.</span></span></div></div>
+<div style="margin-top:22px; padding:16px 20px; border-radius:16px; background:rgba(255,255,255,0.05); border:1px solid rgba(235,193,190,0.25);"><span style="display:block; font-size:11px; letter-spacing:0.2em; font-weight:700; color:#EBC1BE; margin-bottom:4px;">DRESS CODE SUGERAT</span><span>Old Hollywood Glamour: rochii lungi, mănuși, perle, costume elegante și pălării fedora. Ține de atmosfera serii, așa că te rugăm să intri în tematică.</span></div>
+
+<a href="#preinscriere" onclick="cinaWantTheme('dance')" class="btn" style="margin-top:26px; display:inline-flex; align-items:center; gap:10px; min-height:54px; padding:0 28px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Vreau să particip <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><p style="margin:10px 0 0; font-size:14px; opacity:0.75;">Nu avem încă o dată. Lasă-ne datele și te anunțăm primii.</p>
+</div>
+</div>
+</div>
+</section><section id="peaky" style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); color:#241518; padding:88px 0;">
+<div style="max-width:1120px; margin:0 auto; padding:0 20px;">
+<div class="tm" style="display:flex; flex-wrap:wrap; gap:48px; align-items:flex-start;">
+<div style="flex:1 1 380px; min-width:0; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px;">
+<img src="images/e90df4591111406e288d283991007f93.jpg" alt="Invitații ediției Peaky Blinders" style="grid-column:1 / -1; display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; border-radius:18px;">
+<img src="images/fd82f8e97f940ab35d3bbbccaec7a2e5.jpg" alt="Invitat cu șapcă și vestă la Peaky Blinders" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:14px;">
+<img src="images/d4cbd282701ab33b38c65fab31ef79d6.jpg" alt="Indicii și bani de joc schimbați între suspecți" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:14px;">
+</div>
+<div style="flex:1 1 440px; min-width:0;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">Tematica 03 · Birmingham, anii ’20</span>
+<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(36px,7vw,58px); line-height:1.04; margin:12px 0 0; text-wrap:balance;">Peaky <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">Blinders</span></h3>
+<p style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:clamp(20px,3.6vw,24px); line-height:1.4; margin:18px 0 0;">Birmingham, anii ’20. La Black Swan se întâlnesc familia Shelby, polițiști și contrabandiști.</p>
+<p style="color:#5A4649; font-size:17px; margin:14px 0 0; max-width:58ch;">Un transport de arme a dispărut, iar mai mulți invitați au motive să-l găsească. Ai și tu un interes în această poveste. Cu cine alegi să negociezi?</p>
+<div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:6px; margin-top:18px;"><img src="images/3a49be23427ad034b3c1f7622a58c9e0.jpg" alt="Suspecți la un pahar de vorbă" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"><img src="images/ac0a368ecd043c8675e0bc99bbb83b87.jpg" alt="Un duel în glumă între suspecți" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"><img src="images/779057d2d84743beab678d468174a4af.jpg" alt="Suspecta numărul 2" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; object-position:center 30%; border-radius:10px;"></div>
+<div style="display:flex; flex-wrap:wrap; gap:8px; margin:22px 0;"><span style="border:1px solid rgba(163,23,47,0.3); background:rgba(255,255,255,0.5); border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; color:#A3172F;">Birmingham, anii ’20</span><span style="border:1px solid rgba(163,23,47,0.3); background:rgba(255,255,255,0.5); border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; color:#A3172F;">Mese pe tabere</span><span style="border:1px solid rgba(163,23,47,0.3); background:rgba(255,255,255,0.5); border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; color:#A3172F;">Aproximativ 4 ore</span></div>
+<div style="border-top:1px solid rgba(36,21,24,0.16);"><div style="display:flex; gap:16px; padding:14px 0; border-bottom:1px solid rgba(36,21,24,0.16);"><span style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:20px; color:#A3172F; min-width:28px;">01</span><span><strong>Fiecare masă e o tabără.</strong> <span style="color:#5A4649;">Familia Shelby, clubul Black Swan, politicieni și polițiști, investitori din lumea bună și contrabandiști.</span></span></div><div style="display:flex; gap:16px; padding:14px 0; border-bottom:1px solid rgba(36,21,24,0.16);"><span style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:20px; color:#A3172F; min-width:28px;">02</span><span><strong>1.000 $ în bani de joc.</strong> <span style="color:#5A4649;">Îi folosești ca să cumperi informații, să mituiești sau să faci înțelegeri.</span></span></div><div style="display:flex; gap:16px; padding:14px 0; border-bottom:1px solid rgba(36,21,24,0.16);"><span style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:20px; color:#A3172F; min-width:28px;">03</span><span><strong>Momente artistice și licitații.</strong> <span style="color:#5A4649;">Pe scena clubului se întâmplă lucruri, iar unele se plătesc cu bani de joc.</span></span></div></div>
+<div style="margin-top:22px; padding:16px 20px; border-radius:16px; background:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.75);"><span style="display:block; font-size:11px; letter-spacing:0.2em; font-weight:700; color:#A3172F; margin-bottom:4px;">DRESS CODE SUGERAT</span><span>Șapcă, vestă, palton lung sau bretele. Rochii drepte, perle și mănuși. Ține de atmosfera serii, așa că te rugăm să intri în tematică.</span></div>
+
+<a href="#preinscriere" onclick="cinaWantTheme('peaky')" class="btn" style="margin-top:26px; display:inline-flex; align-items:center; gap:10px; min-height:54px; padding:0 28px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Vreau să particip <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><p style="margin:10px 0 0; font-size:14px; opacity:0.75;">Nu avem încă o dată. Lasă-ne datele și te anunțăm primii.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- TEMATICA 04: ’80s Disco · Ultimul Dans -->
+<section id="disco" style="background:linear-gradient(180deg,#2B0A12,#3B0D18); color:#FBF3F1; padding:88px 0;">
+<div style="max-width:1120px; margin:0 auto; padding:0 20px;">
+<div class="tm alt" style="display:flex; flex-wrap:wrap; gap:48px; align-items:flex-start;">
+<div style="flex:1 1 380px; min-width:0; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px;">
+<img src="images/1c5728cbe7ccc20295c79ce659021628.jpg" alt="Ringul de dans la ’80s Disco" style="grid-column:1 / -1; display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; border-radius:18px;">
+<img src="images/c57c8920460d6c8217f1f5d8adca05b6.jpg" alt="Invitată cu banii jocului" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:14px;">
+<img src="images/5485e878ea2ef4a979c936374ed5b9ab.jpg" alt="Invitați cântând și dansând" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:14px;">
+</div>
+<div style="flex:1 1 440px; min-width:0;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Tematica 04 · Anii ’80</span>
+<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(36px,7vw,58px); line-height:1.04; margin:12px 0 0; text-wrap:balance;">’80s Disco · <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#EBC1BE;">Ultimul Dans</span></h3>
+<p style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:clamp(20px,3.6vw,24px); line-height:1.4; margin:18px 0 0;">Club Studio 88. Roxy Star își lansează noul album, iar tu ești printre cei veniți la petrecere.</p>
+<p style="color:#D9C8C6; font-size:17px; margin:14px 0 0; max-width:58ch;">În timp ce ringul se umple, în culise apar conflicte care amenință să compromită seara. Ce rol ai în toate astea? Vei afla înainte să înceapă muzica.</p>
+<div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:6px; margin-top:18px;"><img src="images/6d40e529f9a11a85c1781f5e69266619.jpg" alt="Invitate în ținute cu paiete" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"><img src="images/3a070c42cd342522c67516f52e5f03d9.jpg" alt="Două invitate cu bani de joc" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"><img src="images/a09ee22971e2338de939ac48ec6966fc.jpg" alt="Râsete la ’80s Disco" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"></div>
+<div style="display:flex; flex-wrap:wrap; gap:8px; margin:22px 0;"><span style="border:1px solid rgba(235,193,190,0.35); background:rgba(255,255,255,0.05); border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; color:#EBC1BE;">Club Studio 88</span><span style="border:1px solid rgba(235,193,190,0.35); background:rgba(255,255,255,0.05); border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; color:#EBC1BE;">Lansare de album</span><span style="border:1px solid rgba(235,193,190,0.35); background:rgba(255,255,255,0.05); border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; color:#EBC1BE;">Aproximativ 4 ore</span></div>
+<div style="border-top:1px solid rgba(235,193,190,0.2);"><div style="display:flex; gap:16px; padding:14px 0; border-bottom:1px solid rgba(235,193,190,0.2);"><span style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:20px; color:#EBC1BE; min-width:28px;">01</span><span><strong>Un personaj doar al tău.</strong> <span style="color:#D9C8C6;">Vedete, impresari, fani și oameni din culisele clubului, fiecare cu propriile obiective.</span></span></div><div style="display:flex; gap:16px; padding:14px 0; border-bottom:1px solid rgba(235,193,190,0.2);"><span style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:20px; color:#EBC1BE; min-width:28px;">02</span><span><strong>Dansatori care joacă alături de voi.</strong> <span style="color:#D9C8C6;">O trupă de dansatori are propriile personaje și secrete.</span></span></div><div style="display:flex; gap:16px; padding:14px 0; border-bottom:1px solid rgba(235,193,190,0.2);"><span style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:20px; color:#EBC1BE; min-width:28px;">03</span><span><strong>Știri în timp real.</strong> <span style="color:#D9C8C6;">Jurnaliștii serii transmit noutățile pe un canal de WhatsApp.</span></span></div></div>
+<div style="margin-top:22px; padding:16px 20px; border-radius:16px; background:rgba(255,255,255,0.05); border:1px solid rgba(235,193,190,0.25);"><span style="display:block; font-size:11px; letter-spacing:0.2em; font-weight:700; color:#EBC1BE; margin-bottom:4px;">DRESS CODE SUGERAT</span><span>Paiete, culori neon, umeri buretați, colanți și ochelari mari. Ține de atmosfera serii, așa că te rugăm să intri în tematică.</span></div>
+<a href="Calendar.html" class="btn" style="margin-top:26px; display:inline-flex; align-items:center; gap:10px; min-height:54px; padding:0 28px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Cumpără Bilet <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+
+</div>
+</div>
+</div>
+</section>
+<!-- TEMATICA 05: Mafia Night -->
+<section id="mafia" style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); color:#241518; padding:88px 0;">
+<div style="max-width:1120px; margin:0 auto; padding:0 20px;">
+<div class="tm" style="display:flex; flex-wrap:wrap; gap:48px; align-items:flex-start;">
+<div style="flex:1 1 380px; min-width:0; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px;">
+<img src="images/0105d4c75911e9f3ada92d61edcd4278.webp" alt="Crimă la Clubul Secret Tracy, fotografia principală" style="grid-column: 1 / -1; display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 18px">
+<img src="images/08099f1a4c937a6181bd3f66e154d23e.webp" alt="Crimă la Clubul Secret Tracy, detaliu" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:14px;">
+<img src="images/7e6fe39b7744817cdf9afea7c0d2cafe.webp" alt="Crimă la Clubul Secret Tracy, invitați" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:14px;">
+</div>
+<div style="flex:1 1 440px; min-width:0;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">Tematica 05 · Anii ’20, Prohibiția</span>
+<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(36px,7vw,58px); line-height:1.04; margin:12px 0 0; text-wrap:balance;">Mafia Night · Crimă la <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">Clubul Secret Tracy</span></h3>
+<p style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:clamp(20px,3.6vw,24px); line-height:1.4; margin:18px 0 0;">Anii ’20, în plină Prohibiție. La Tracy Speakeasy, jazzul și alcoolul interzis adună la aceeași masă gangsteri și polițiști corupți.</p>
+<p style="color:#5A4649; font-size:17px; margin:14px 0 0; max-width:58ch;">Un milion de dolari provenit dintr-o escrocherie reapare în club, iar o crimă îi transformă pe invitați în suspecți. Printre ei ești și tu, cu propriile secrete de păstrat.</p>
+<div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:6px; margin-top:18px;"><img src="images/829ec912dfe8999b03288f3748417809.webp" alt="Crimă la Clubul Secret Tracy, fotografia 1" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"><img src="images/c0cd4e9929cf7a04896a5be3cd1abd59.webp" alt="Crimă la Clubul Secret Tracy, fotografia 2" style="display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 10px; object-position: 100% 50%"><img src="images/002d58c1605e2ce633a1ad563037280b.webp" alt="Crimă la Clubul Secret Tracy, fotografia 3" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"></div>
+<div style="display:flex; flex-wrap:wrap; gap:8px; margin:22px 0;"><span style="border:1px solid rgba(163,23,47,0.3); background:rgba(255,255,255,0.5); border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; color:#A3172F;">Tracy Speakeasy</span><span style="border:1px solid rgba(163,23,47,0.3); background:rgba(255,255,255,0.5); border-radius:999px; padding:7px 14px; font-size:14px; font-weight:600; color:#A3172F;">Aproximativ 4 ore</span></div>
+<div style="border-top:1px solid rgba(36,21,24,0.16);"><div style="display:flex; gap:16px; padding:14px 0; border-bottom:1px solid rgba(36,21,24,0.16);"><span style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:20px; color:#A3172F; min-width:28px;">01</span><span><strong>Un personaj doar al tău.</strong> <span style="color:#5A4649;">Cu trecut, obiective pentru fiecare rundă și propriile secrete de păstrat.</span></span></div><div style="display:flex; gap:16px; padding:14px 0; border-bottom:1px solid rgba(36,21,24,0.16);"><span style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:20px; color:#A3172F; min-width:28px;">02</span><span><strong>Gangsteri și polițiști corupți.</strong> <span style="color:#5A4649;">La aceeași masă stau oameni care, în mod normal, n-ar trebui să-și vorbească.</span></span></div><div style="display:flex; gap:16px; padding:14px 0; border-bottom:1px solid rgba(36,21,24,0.16);"><span style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:20px; color:#A3172F; min-width:28px;">03</span><span><strong>Un milion de dolari dispăruți.</strong> <span style="color:#5A4649;">Banii din escrocherie au reapărut în club, iar fiecare are un motiv să-i vrea.</span></span></div></div>
+<div style="margin-top:22px; padding:16px 20px; border-radius:16px; background:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.75);"><span style="display:block; font-size:11px; letter-spacing:0.2em; font-weight:700; color:#A3172F; margin-bottom:4px;">DRESS CODE SUGERAT</span><span>Pălării fedora, bretele și costume cu dungi. Rochii cu franjuri, perle și mănuși lungi. Ține de atmosfera serii, așa că te rugăm să intri în tematică.</span></div>
+
+<a href="#preinscriere" onclick="cinaWantTheme('mafia')" class="btn" style="margin-top:26px; display:inline-flex; align-items:center; gap:10px; min-height:54px; padding:0 28px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Vreau să particip <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><p style="margin:10px 0 0; font-size:14px; opacity:0.75;">Nu avem încă o dată. Lasă-ne datele și te anunțăm primii.</p>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- CUM DECURGE -->
+<section id="cum-decurge" style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); padding:88px 0;">
+<div style="max-width:1120px; margin:0 auto; padding:0 20px;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">Cum decurge seara</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:16px 0 40px; text-wrap:balance;">De la primul pahar <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">până la vinovat</span></h2>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(190px, 100%), 1fr)); gap:24px;">
+<div style="border-top:1px solid #A3172F; padding-top:16px;"><span style="font-size:11px; letter-spacing:0.2em; font-weight:700; color:#A3172F;">ÎNAINTE</span><h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:24px; margin:6px 0;">Chestionarul</h3><p style="margin:0; color:#5A4649;">Fiecare invitat răspunde la câteva întrebări, iar noi îi alegem personajul potrivit.</p></div>
+<div style="border-top:1px solid #A3172F; padding-top:16px;"><span style="font-size:11px; letter-spacing:0.2em; font-weight:700; color:#A3172F;">LA SOSIRE</span><h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:24px; margin:6px 0;">Intrați în rol</h3><p style="margin:0; color:#5A4649;">Primirea invitaților, personajele și primele secrete.</p></div>
+<div style="border-top:1px solid #A3172F; padding-top:16px;"><span style="font-size:11px; letter-spacing:0.2em; font-weight:700; color:#A3172F;">RUNDA 1</span><h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:24px; margin:6px 0;">Crima</h3><p style="margin:0; color:#5A4649;">Victima cade, încep interogatoriile, indiciile și primele alianțe.</p></div>
+<div style="border-top:1px solid #A3172F; padding-top:16px;"><span style="font-size:11px; letter-spacing:0.2em; font-weight:700; color:#A3172F;">RUNDA 2</span><h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:24px; margin:6px 0;">Negocierile</h3><p style="margin:0; color:#5A4649;">Obiective noi, informații schimbate pe bani de joc și trădări.</p></div>
+<div style="border-top:1px solid #A3172F; padding-top:16px;"><span style="font-size:11px; letter-spacing:0.2em; font-weight:700; color:#A3172F;">FINALUL</span><h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:24px; margin:6px 0;">Dezvăluirea</h3><p style="margin:0; color:#5A4649;">Votul final, vinovatul iese la iveală și premiem cei mai buni detectivi.</p></div>
+</div>
+</div>
+</section>
+
+<!-- INCLUS / SEPARAT / DRESS CODE / PRACTIC -->
+<section id="bine-de-stiut" style="background:#2B0A12; color:#FBF3F1; padding:80px 0;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Bine de știut</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(30px,5.6vw,46px); line-height:1.1; margin:14px 0 32px; text-wrap:balance;">Tot ce trebuie să știi <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#EBC1BE;">înainte</span></h2>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap:16px;">
+<div style="border:1px solid rgba(235,193,190,0.25); border-radius:18px; padding:24px; background:rgba(255,255,255,0.04);">
+<span style="font-size:11px; letter-spacing:0.2em; font-weight:700; color:#EBC1BE;">BILETUL INCLUDE</span>
+<ul style="margin:12px 0 0; padding-left:18px; color:#D9C8C6;"><li>Accesul la joc</li><li>Personajul tău și materialele de joc</li></ul>
+</div>
+<div style="border:1px solid rgba(235,193,190,0.25); border-radius:18px; padding:24px; background:rgba(255,255,255,0.04);">
+<span style="font-size:11px; letter-spacing:0.2em; font-weight:700; color:#EBC1BE;">SE PLĂTEȘTE SEPARAT</span>
+<ul style="margin:12px 0 0; padding-left:18px; color:#D9C8C6;"><li>Mâncarea</li><li>Băuturile</li></ul>
+<p style="margin:10px 0 0; font-size:14px; color:#D9C8C6;">Le comanzi direct la restaurant, din meniul lor.</p>
+</div>
+<div style="border:1px solid rgba(235,193,190,0.25); border-radius:18px; padding:24px; background:rgba(255,255,255,0.04);">
+<span style="font-size:11px; letter-spacing:0.2em; font-weight:700; color:#EBC1BE;">DRESS CODE</span>
+<p style="margin:12px 0 0; color:#FBF3F1;">Fiecare tematică are propriul dress code. Îl găsești mai sus, la descrierea ei.</p>
+<p style="margin:8px 0 0; color:#D9C8C6; font-size:15px;">Dacă nu ai timp de pregătiri, un outfit all black e mereu o alegere sigură. Nu acceptăm ținute casual.</p>
+</div>
+<div style="border:1px solid rgba(235,193,190,0.25); border-radius:18px; padding:24px; background:rgba(255,255,255,0.04);">
+<span style="font-size:11px; letter-spacing:0.2em; font-weight:700; color:#EBC1BE;">PRACTIC</span>
+<ul style="margin:12px 0 0; padding-left:18px; color:#D9C8C6;"><li>Durata: aproximativ 4 ore, cu pauza de cină</li><li>Vârsta minimă: 16 ani</li><li>Nu ai nevoie de talent la actorie</li></ul>
+</div>
+</div>
+<p style="margin:24px 0 0; color:#D9C8C6; font-size:15px;">Mai ai întrebări? <a href="Intrebari.html" style="color:#EBC1BE; font-weight:600;">Vezi întrebările frecvente</a> sau scrie-ne pe <a href="https://wa.me/40755639871" target="_blank" rel="noopener noreferrer" style="color:#EBC1BE; font-weight:600;">WhatsApp</a>.</p>
+</div>
+</section>
+
+<!-- GALERIE -->
+<section id="galerie" style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); padding:80px 0;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">Din edițiile trecute</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(30px,5.6vw,46px); line-height:1.1; margin:14px 0 28px;">Așa arată <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">o seară Suspecți</span></h2>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap:12px;">
+<img src="images/9758c336ac71a77e0f04e392fe11088a.jpg" alt="Invitați la Balul lui Gatsby" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:14px;">
+<img src="images/bd3729200bc6d192abddc3c99630d178.jpg" alt="Invitați la Murder on the Dance Floor" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:14px;">
+<img src="images/43763275a57cac042fc62ed65f11c979.jpg" alt="Suspecți la un pahar de vorbă" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:14px;">
+<img src="images/d1cb30b0c45d71bf6f5249351b0a5fb3.jpg" alt="Un duel în glumă între suspecți" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:14px;">
+</div>
+<p style="margin:12px 0 0; font-size:13px; color:#5A4649;">Fotografii de la Balul lui Gatsby, Murder on the Dance Floor și Peaky Blinders.</p>
+</div>
+</section>
+
+<!-- PENTRU CINE -->
+<section id="pentru-cine" style="background:linear-gradient(180deg, #2B0A12 0%, #3B0D18 100%); color:#FBF3F1; padding:88px 0;">
+<div style="max-width:1120px; margin:0 auto; padding:0 20px;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Pentru cine e</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:16px 0 36px; text-wrap:balance;">Colegi sau prieteni, <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#EBC1BE;">aceeași poveste</span></h2>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap:16px;">
+<div id="companii" style="border:1px solid rgba(235,193,190,0.25); border-radius:20px; padding:28px 24px; background:rgba(255,255,255,0.04); display:flex; flex-direction:column; gap:12px;">
+<span style="font-size:11px; letter-spacing:0.2em; font-weight:700; color:#EBC1BE;">PENTRU COMPANII</span>
+<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:30px; margin:0;">Team building și petreceri de firmă</h3>
+<p style="margin:0; color:#D9C8C6;">Petrecerea de Crăciun, aniversarea firmei sau o seară pentru echipă. Colegii din departamente diferite ajung să lucreze împreună ca să prindă vinovatul.</p>
+<ul style="margin:4px 0 0; padding-left:18px; color:#D9C8C6;">
+<li>Un singur om de contact pentru tot evenimentul</li>
+<li>Contract și factură</li>
+<li>Putem adapta povestea pentru echipa voastră</li>
+</ul>
+<a href="Main.html" class="btn" style="margin-top:8px; align-self:flex-start; display:inline-flex; align-items:center; min-height:50px; padding:0 24px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Vezi oferta pentru companii</a>
+</div>
+<div id="privat" style="border:1px solid rgba(235,193,190,0.25); border-radius:20px; padding:28px 24px; background:rgba(255,255,255,0.04); display:flex; flex-direction:column; gap:12px;">
+<span style="font-size:11px; letter-spacing:0.2em; font-weight:700; color:#EBC1BE;">EVENIMENTE PRIVATE</span>
+<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:30px; margin:0;">Aniversări și petreceri private</h3>
+<p style="margin:0; color:#D9C8C6;">O zi de naștere, o petrecere între prieteni sau o seară de familie. Voi aduceți invitații, noi aducem povestea, personajele și misterul.</p>
+<ul style="margin:4px 0 0; padding-left:18px; color:#D9C8C6;">
+<li>De la 25 de persoane</li>
+<li>La locația voastră sau vă găsim noi una</li>
+<li>Sărbătoritul poate primi un rol special</li>
+</ul>
+<a href="https://wa.me/40755639871?text=Bun%C4%83!%20A%C8%99%20vrea%20detalii%20despre%20Suspec%C8%9Bi%20la%20Cin%C4%83%20pentru%20un%20eveniment%20privat." target="_blank" rel="noopener noreferrer" class="btn" style="margin-top:8px; align-self:flex-start; display:inline-flex; align-items:center; min-height:50px; padding:0 24px; border-radius:999px; border:1px solid rgba(251,243,241,0.35); color:#FBF3F1; text-decoration:none; font-weight:600;">Scrie-ne pe WhatsApp</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CE ESTE INCLUS -->
+<section style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); padding:88px 0;">
+<div style="max-width:1120px; margin:0 auto; padding:0 20px; display:flex; flex-wrap:wrap; gap:48px;">
+<div style="flex:1 1 320px; min-width:0;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">Ce primiți</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,48px); line-height:1.08; margin:16px 0 20px; text-wrap:balance;">Noi ne ocupăm <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">de tot jocul</span></h2>
+<div style="border-top:1px solid rgba(36,21,24,0.16);">
+<p style="margin:0; padding:14px 0; border-bottom:1px solid rgba(36,21,24,0.16);">Scenariul complet și personajele personalizate</p>
+<p style="margin:0; padding:14px 0; border-bottom:1px solid rgba(36,21,24,0.16);">Chestionarul pentru alocarea rolurilor</p>
+<p style="margin:0; padding:14px 0; border-bottom:1px solid rgba(36,21,24,0.16);">Toate materialele de joc: fișe, ziare, dosare, bani de joc</p>
+<p style="margin:0; padding:14px 0; border-bottom:1px solid rgba(36,21,24,0.16);">Facilitarea serii de la primul minut până la final</p>
+</div>
+</div>
+<div style="flex:1 1 320px; min-width:0;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">La cerere</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,48px); line-height:1.08; margin:16px 0 20px; text-wrap:balance;">Și restul serii, <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">dacă vreți</span></h2>
+<div style="display:flex; flex-wrap:wrap; gap:8px;">
+<span style="border:1px solid rgba(36,21,24,0.18); background:rgba(255,255,255,0.55); border-radius:999px; padding:9px 16px; font-weight:600; font-size:14px;">Locația</span>
+<span style="border:1px solid rgba(36,21,24,0.18); background:rgba(255,255,255,0.55); border-radius:999px; padding:9px 16px; font-weight:600; font-size:14px;">Cina</span>
+<span style="border:1px solid rgba(36,21,24,0.18); background:rgba(255,255,255,0.55); border-radius:999px; padding:9px 16px; font-weight:600; font-size:14px;">Foto și video</span>
+<span style="border:1px solid rgba(36,21,24,0.18); background:rgba(255,255,255,0.55); border-radius:999px; padding:9px 16px; font-weight:600; font-size:14px;">DJ și MC</span>
+<span style="border:1px solid rgba(36,21,24,0.18); background:rgba(255,255,255,0.55); border-radius:999px; padding:9px 16px; font-weight:600; font-size:14px;">Photobooth</span>
+<span style="border:1px solid rgba(36,21,24,0.18); background:rgba(255,255,255,0.55); border-radius:999px; padding:9px 16px; font-weight:600; font-size:14px;">Decor tematic</span>
+<span style="border:1px solid rgba(36,21,24,0.18); background:rgba(255,255,255,0.55); border-radius:999px; padding:9px 16px; font-weight:600; font-size:14px;">Premii</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- RECENZIE -->
+<section style="background:#5C1222; color:#FBF3F1; padding:80px 0;">
+<div style="max-width:860px; margin:0 auto; padding:0 20px; text-align:center;">
+<span aria-hidden="true" style="display:block; font-family:'Playfair Display',Georgia,serif; font-size:96px; line-height:0.6; color:#EBC1BE; height:44px;">“</span>
+<blockquote style="margin:0; font-family:'Playfair Display',Georgia,serif; font-style:italic; font-weight:400; font-size:clamp(24px,4.6vw,34px); line-height:1.35; text-wrap:balance;">Am venit cu doi prieteni și la final ajunseserăm să vorbim cu jumătate din sală. Atmosfera a fost foarte naturală.</blockquote>
+<div style="margin-top:26px; display:flex; flex-direction:column; align-items:center; gap:2px;">
+<span style="font-family:'Great Vibes',cursive; font-size:32px; line-height:1.1; color:#EBC1BE;">Mihai S.</span>
+<span style="font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#D9C8C6;">Suspecți la Cină</span>
+</div>
+</div>
+</section>
+
+<!-- ÎNTREBĂRI -->
+<section id="intrebari" style="background:#2B0A12; color:#FBF3F1; padding:88px 0;">
+<div style="max-width:860px; margin:0 auto; padding:0 20px;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Întrebări frecvente</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:16px 0 32px; text-wrap:balance;">Înainte <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#EBC1BE;">de prima crimă</span></h2>
+<div style="border-top:1px solid rgba(235,193,190,0.2);">
+<div style="border-bottom:1px solid rgba(235,193,190,0.2);">
+<button type="button" onclick="cinaToggleFaq(0)" aria-expanded="true" id="cinaFaqBtn0" style="width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 0; min-height:56px; background:transparent; border:0; color:#FBF3F1; text-align:left; cursor:pointer; font-family:'Playfair Display',Georgia,serif; font-size:clamp(19px,4vw,23px); line-height:1.3;"><span>Trebuie să respectăm dress code-ul?</span><span aria-hidden="true" id="cinaFaqIcon0" style="flex-shrink:0; font-family:Manrope, sans-serif; font-size:26px; font-weight:400; color:#EBC1BE; line-height:1; transition:transform .3s; transform:rotate(45deg);">+</span></button>
+<p id="cinaFaqAns0" style="" style="margin:0 0 22px; color:#D9C8C6; max-width:62ch;">Da, și contează mult. Ținuta face parte din poveste: te ajută să intri în personaj și schimbă atmosfera întregii seri. Înainte de eveniment primești idei potrivite tematicii, inclusiv variante simple. Dacă nu ai timp de pregătiri, un outfit all black e mereu o alegere sigură și se accesorizează ușor cu câteva detalii de epocă. Nu acceptăm ținute casual.</p>
+</div>
+<div style="border-bottom:1px solid rgba(235,193,190,0.2);">
+<button type="button" onclick="cinaToggleFaq(1)" aria-expanded="false" id="cinaFaqBtn1" style="width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 0; min-height:56px; background:transparent; border:0; color:#FBF3F1; text-align:left; cursor:pointer; font-family:'Playfair Display',Georgia,serif; font-size:clamp(19px,4vw,23px); line-height:1.3;"><span>Cât durează o seară?</span><span aria-hidden="true" id="cinaFaqIcon1" style="flex-shrink:0; font-family:Manrope, sans-serif; font-size:26px; font-weight:400; color:#EBC1BE; line-height:1; transition:transform .3s; transform:rotate(0deg);">+</span></button>
+<p id="cinaFaqAns1" style="display:none;" style="margin:0 0 22px; color:#D9C8C6; max-width:62ch;">Aproximativ 4 ore, cu tot cu cina. Între runde avem o pauză de cină relaxată, care se mai prelungește, pentru că e momentul în care stai de vorbă cu ceilalți invitați, legi alianțe și afli lucruri noi. Seara trece repede.</p>
+</div>
+<div style="border-bottom:1px solid rgba(235,193,190,0.2);">
+<button type="button" onclick="cinaToggleFaq(2)" aria-expanded="false" id="cinaFaqBtn2" style="width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 0; min-height:56px; background:transparent; border:0; color:#FBF3F1; text-align:left; cursor:pointer; font-family:'Playfair Display',Georgia,serif; font-size:clamp(19px,4vw,23px); line-height:1.3;"><span>Ce se întâmplă dacă unii invitați sunt timizi?</span><span aria-hidden="true" id="cinaFaqIcon2" style="flex-shrink:0; font-family:Manrope, sans-serif; font-size:26px; font-weight:400; color:#EBC1BE; line-height:1; transition:transform .3s; transform:rotate(0deg);">+</span></button>
+<p id="cinaFaqAns2" style="display:none;" style="margin:0 0 22px; color:#D9C8C6; max-width:62ch;">Nimeni nu e pus pe scenă. Rolurile se aleg după chestionar, așa că cei mai rezervați primesc personaje în care se simt bine. Masca personajului face totul mai ușor.</p>
+</div>
+<div style="border-bottom:1px solid rgba(235,193,190,0.2);">
+<button type="button" onclick="cinaToggleFaq(3)" aria-expanded="false" id="cinaFaqBtn3" style="width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 0; min-height:56px; background:transparent; border:0; color:#FBF3F1; text-align:left; cursor:pointer; font-family:'Playfair Display',Georgia,serif; font-size:clamp(19px,4vw,23px); line-height:1.3;"><span>Câți invitați ne trebuie?</span><span aria-hidden="true" id="cinaFaqIcon3" style="flex-shrink:0; font-family:Manrope, sans-serif; font-size:26px; font-weight:400; color:#EBC1BE; line-height:1; transition:transform .3s; transform:rotate(0deg);">+</span></button>
+<p id="cinaFaqAns3" style="display:none;" style="margin:0 0 22px; color:#D9C8C6; max-width:62ch;">Pentru companii lucrăm de obicei cu 25–60 de invitați. Pentru grupuri mai mari, discutăm. Pentru evenimente private, de la 25 de persoane.</p>
+</div>
+<div style="border-bottom:1px solid rgba(235,193,190,0.2);">
+<button type="button" onclick="cinaToggleFaq(4)" aria-expanded="false" id="cinaFaqBtn4" style="width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 0; min-height:56px; background:transparent; border:0; color:#FBF3F1; text-align:left; cursor:pointer; font-family:'Playfair Display',Georgia,serif; font-size:clamp(19px,4vw,23px); line-height:1.3;"><span>Unde are loc?</span><span aria-hidden="true" id="cinaFaqIcon4" style="flex-shrink:0; font-family:Manrope, sans-serif; font-size:26px; font-weight:400; color:#EBC1BE; line-height:1; transition:transform .3s; transform:rotate(0deg);">+</span></button>
+<p id="cinaFaqAns4" style="display:none;" style="margin:0 0 22px; color:#D9C8C6; max-width:62ch;">În București sau Timișoara, la un restaurant ales de voi sau la o locație propusă de noi, potrivită pentru tematică și numărul de invitați.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- REZERVĂ -->
+<section id="preinscriere" style="background:#2B0A12; color:#FBF3F1; padding:88px 0;">
+<div style="max-width:760px; margin:0 auto; padding:0 20px; text-align:center;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Preînscriere</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:16px 0 16px; text-wrap:balance;">Află primul când <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#EBC1BE;">revine tematica ta</span></h2>
+<p style="color:#D9C8C6; font-size:17px; margin:0 auto 28px; max-width:56ch;">Alege tematicile care te atrag. Când stabilim o dată, te anunțăm înainte să punem biletele în vânzare.</p>
+
+<form id="form_cina" style="display:flex; flex-direction:column; gap:20px; text-align:left; background:#FAF6F3; color:#241518; border-radius:20px; padding:26px; box-shadow:0 30px 60px -40px rgba(0,0,0,0.6);">
+<div style="display:flex; flex-direction:column; gap:10px;"><span style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:#5A4649;">Tematicile care te interesează *</span><div style="display:flex; flex-wrap:wrap; gap:8px;"><button type="button" class="cina-theme-chip" data-key="gatsby" aria-pressed="false" onclick="cinaToggleChip(this)" style="min-height:44px; padding:0 18px; border-radius:999px; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer; border:1px solid rgba(36,21,24,0.25); background:transparent; color:#241518;">Balul lui Gatsby</button>
+<button type="button" class="cina-theme-chip" data-key="dance" aria-pressed="false" onclick="cinaToggleChip(this)" style="min-height:44px; padding:0 18px; border-radius:999px; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer; border:1px solid rgba(36,21,24,0.25); background:transparent; color:#241518;">Murder on the Dance Floor</button>
+<button type="button" class="cina-theme-chip" data-key="peaky" aria-pressed="false" onclick="cinaToggleChip(this)" style="min-height:44px; padding:0 18px; border-radius:999px; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer; border:1px solid rgba(36,21,24,0.25); background:transparent; color:#241518;">Peaky Blinders</button>
+<button type="button" class="cina-theme-chip" data-key="disco" aria-pressed="false" onclick="cinaToggleChip(this)" style="min-height:44px; padding:0 18px; border-radius:999px; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer; border:1px solid rgba(36,21,24,0.25); background:transparent; color:#241518;">’80s Disco</button>
+<button type="button" class="cina-theme-chip" data-key="mafia" aria-pressed="false" onclick="cinaToggleChip(this)" style="min-height:44px; padding:0 18px; border-radius:999px; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer; border:1px solid rgba(36,21,24,0.25); background:transparent; color:#241518;">Mafia Night</button></div>
+<span id="cinaNeedTheme" role="alert" style="display:none; font-size:14px; color:#A3172F;">Alege cel puțin o tematică.</span></div>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap:16px;"><div style="display:flex; flex-direction:column; gap:4px;"><label for="prNume" style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:#5A4649;">Prenume *</label><input id="prNume" type="text" required="" autocomplete="given-name" placeholder="Prenumele tău" style="width:100%; font-size:16px; color:#241518; background:transparent; border:0; border-bottom:1px solid rgba(36,21,24,0.3); padding:10px 0; border-radius:0;"></div><div style="display:flex; flex-direction:column; gap:4px;"><label for="prEmail" style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:#5A4649;">Email *</label><input id="prEmail" type="email" required="" autocomplete="email" placeholder="nume@exemplu.ro" style="width:100%; font-size:16px; color:#241518; background:transparent; border:0; border-bottom:1px solid rgba(36,21,24,0.3); padding:10px 0; border-radius:0;"></div><div style="display:flex; flex-direction:column; gap:4px;"><label for="prTel" style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:#5A4649;">Telefon (opțional)</label><input id="prTel" type="tel" autocomplete="tel" placeholder="Pentru un mesaj pe WhatsApp" style="width:100%; font-size:16px; color:#241518; background:transparent; border:0; border-bottom:1px solid rgba(36,21,24,0.3); padding:10px 0; border-radius:0;"></div><div style="display:flex; flex-direction:column; gap:4px;"><label for="prOras" style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:#5A4649;">Oraș *</label><select id="prOras" required="" style="width:100%; font-size:16px; color:#241518; background:transparent; border:0; border-bottom:1px solid rgba(36,21,24,0.3); padding:10px 0; border-radius:0;"><option value="">Alege</option><option>București</option><option>Timișoara</option></select></div></div>
+<div style="display:flex; flex-direction:column; gap:10px;"><span style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:#5A4649;">Cu cine ai veni?</span><div style="display:flex; flex-wrap:wrap; gap:8px;"><button type="button" class="cina-withwho-chip" data-label="Singur(ă)" aria-pressed="false" onclick="cinaPickWithWho(this)" style="min-height:44px; padding:0 18px; border-radius:999px; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer; border:1px solid rgba(36,21,24,0.25); background:transparent; color:#241518;">Singur(ă)</button>
+<button type="button" class="cina-withwho-chip" data-label="În cuplu" aria-pressed="false" onclick="cinaPickWithWho(this)" style="min-height:44px; padding:0 18px; border-radius:999px; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer; border:1px solid rgba(36,21,24,0.25); background:transparent; color:#241518;">În cuplu</button>
+<button type="button" class="cina-withwho-chip" data-label="Cu prietenii" aria-pressed="false" onclick="cinaPickWithWho(this)" style="min-height:44px; padding:0 18px; border-radius:999px; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer; border:1px solid rgba(36,21,24,0.25); background:transparent; color:#241518;">Cu prietenii</button></div></div>
+<div style="display:flex; flex-direction:column; gap:4px; max-width:320px;"><label for="prZi" style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:#5A4649;">Ziua preferată (opțional)</label><select id="prZi" style="width:100%; font-size:16px; color:#241518; background:transparent; border:0; border-bottom:1px solid rgba(36,21,24,0.3); padding:10px 0; border-radius:0;"><option value="">Oricare</option><option>Vineri</option><option>Sâmbătă</option><option>Duminică</option></select></div>
+<label for="prAcord" style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#5A4649;"><input id="prAcord" type="checkbox" required="" style="margin-top:4px; width:18px; height:18px; accent-color:#A3172F;"> <span>Sunt de acord să fiu contactat(ă) despre edițiile următoare. Vezi <a href="Confidentialitate.html">Confidențialitate</a>.</span></label>
+<button type="submit" class="btn" style="align-self:flex-start; min-height:54px; padding:0 30px; border:0; border-radius:999px; background:#A3172F; color:#FFFFFF; font-size:16px; font-weight:600; cursor:pointer;">Vreau să fiu anunțat</button>
+<p style="margin:0; font-size:13px; color:#5A4649;">Preînscrierea nu te obligă la nimic.</p>
+</form>
+<div id="sent_cina" style="display:none;" role="status" style="padding:30px 26px; border-radius:20px; background:#FAF6F3; color:#241518;"><p style="margin:0 0 8px; font-family:'Playfair Display',Georgia,serif; font-size:26px;">Mulțumim, ești pe listă.</p><p style="margin:0; color:#5A4649;">Când stabilim o dată pentru tematica aleasă, te anunțăm primii, înainte să punem biletele în vânzare.</p></div>
+<script>
+function cinaToggleChip(btn) {
+  var on = btn.getAttribute('aria-pressed') === 'true';
+  btn.setAttribute('aria-pressed', on ? 'false' : 'true');
+  btn.style.cssText = (!on) ? "min-height:44px; padding:0 18px; border-radius:999px; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer; border:1px solid #A3172F; background:#A3172F; color:#FFFFFF;" : "min-height:44px; padding:0 18px; border-radius:999px; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer; border:1px solid rgba(36,21,24,0.25); background:transparent; color:#241518;";
+  if (!on) { var el = document.getElementById('cinaNeedTheme'); if (el) el.style.display = 'none'; }
+}
+function cinaPickWithWho(btn) {
+  var already = btn.getAttribute('aria-pressed') === 'true';
+  document.querySelectorAll('.cina-withwho-chip').forEach(function (b) {
+    b.setAttribute('aria-pressed', 'false');
+    b.style.cssText = "min-height:44px; padding:0 18px; border-radius:999px; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer; border:1px solid rgba(36,21,24,0.25); background:transparent; color:#241518;";
+  });
+  if (!already) {
+    btn.setAttribute('aria-pressed', 'true');
+    btn.style.cssText = "min-height:44px; padding:0 18px; border-radius:999px; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer; border:1px solid #A3172F; background:#A3172F; color:#FFFFFF;";
+  }
+}
+function cinaWantTheme(key) {
+  var btn = document.querySelector('.cina-theme-chip[data-key="' + key + '"]');
+  if (btn && btn.getAttribute('aria-pressed') !== 'true') { cinaToggleChip(btn); }
+  var el = document.getElementById('preinscriere');
+  if (el) { try { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (err) { el.scrollIntoView(); } }
+}
+(function(){
+  var f = document.getElementById('form_cina');
+  var s = document.getElementById('sent_cina');
+  if (f) {
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var anyPicked = document.querySelectorAll('.cina-theme-chip[aria-pressed="true"]').length > 0;
+      if (!anyPicked) { document.getElementById('cinaNeedTheme').style.display = ''; return; }
+      if (!f.checkValidity()) { f.reportValidity(); return; }
+      f.style.display = 'none';
+      if (s) s.style.display = '';
+    });
+  }
+})();
+</script>
+
+</div>
+</section>
+
+<section id="rezerva" style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); padding:88px 0;">
+<div style="max-width:860px; margin:0 auto; padding:0 20px; text-align:center;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">Rezervă o seară</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:16px 0 16px; text-wrap:balance;">Cine va fi <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">vinovatul la masa voastră?</span></h2>
+<p style="color:#5A4649; font-size:17px; margin:0 auto 28px; max-width:56ch;">Spuneți-ne ocazia, numărul de invitați și orașul, iar noi vă propunem tematica și o ofertă.</p>
+<div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+<a href="Main.html" class="btn" style="flex:0 1 260px; display:inline-flex; align-items:center; justify-content:center; min-height:54px; padding:0 28px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Cerere pentru companii</a>
+<a href="https://wa.me/40755639871?text=Bun%C4%83!%20A%C8%99%20vrea%20detalii%20despre%20Suspec%C8%9Bi%20la%20Cin%C4%83%20pentru%20un%20eveniment%20privat." target="_blank" rel="noopener noreferrer" class="btn" style="flex:0 1 260px; display:inline-flex; align-items:center; justify-content:center; min-height:54px; padding:0 28px; border-radius:999px; background:#241518; color:#FFFFFF; text-decoration:none; font-weight:600;">Eveniment privat pe WhatsApp</a>
+</div>
+<p style="margin:22px 0 0; color:#5A4649; font-size:15px;"><span style="user-select:all; font-weight:600;">contact@suspectilacina.com</span> · <span style="user-select:all; font-weight:600;">+40 755 639 871</span></p>
+</div>
+</section>
+
+<footer style="background:#1A060B; color:#D9C8C6; padding:44px 0 48px; font-size:14px;">
+<div style="max-width:1120px; margin:0 auto; padding:0 20px; display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center;">
+<span style="font-family:'Great Vibes',cursive; font-size:34px; line-height:1; color:#EBC1BE;">Ne vedem la cină.</span>
+<span style="font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:20px; letter-spacing:0.08em; color:#FBF3F1;">SUSPECȚI</span>
+<span>suspectilacina.com · @suspectilacina · contact@suspectilacina.com · +40 755 639 871</span>
+</div>
+</footer>
+
+<div class="mbar" style="position:sticky; bottom:0; z-index:40; display:flex; gap:10px; padding:10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); background:rgba(43,10,18,0.96); border-top:1px solid rgba(235,193,190,0.2);">
+<a href="#privat" style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 18px; border-radius:999px; border:1px solid rgba(251,243,241,0.35); color:#FBF3F1; text-decoration:none; font-weight:600; font-size:14px;">Privat</a>
+<a href="#companii" style="flex:1; display:inline-flex; align-items:center; justify-content:center; min-height:48px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Rezervă o seară</a>
+</div>
+
+</div>
+
+<script>
+function cinaToggleFaq(i) {
+  var btn = document.getElementById('cinaFaqBtn' + i);
+  var icon = document.getElementById('cinaFaqIcon' + i);
+  var ans = document.getElementById('cinaFaqAns' + i);
+  var open = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+  icon.style.transform = open ? 'rotate(0deg)' : 'rotate(45deg)';
+  if (ans) ans.style.display = open ? 'none' : '';
+}
+</script>
+</body>
+</html>

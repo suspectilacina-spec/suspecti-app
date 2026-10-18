@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<title>Suspecți în Treasure Hunt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Great+Vibes&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>html{scroll-behavior:smooth;}
+
+body{margin:0;background:#FAF6F3;}
+a{color:#A3172F;}a:hover{color:#C42A43;}
+*{box-sizing:border-box;}
+:focus-visible{outline:2px solid #C42A43;outline-offset:3px;border-radius:6px;}
+.navlinks{display:none;}
+@media (min-width:1080px){.navlinks{display:flex;}}
+@media (min-width:980px){.mbar{display:none !important;}}
+@media (min-width:900px){.rev{flex-direction:row-reverse;}}
+.btn{transition:transform .3s cubic-bezier(.16,1,.3,1),background-color .3s,box-shadow .3s;}
+.btn:hover{transform:translateY(-2px);}
+.lift{transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s;}
+.lift:hover{transform:translateY(-4px);box-shadow:0 20px 40px -26px rgba(92,18,34,.55);}
+.rise{display:inline-block;animation:rise 1s cubic-bezier(.16,1,.3,1) both;}
+.rise2{animation-delay:.18s;}
+.fade{animation:fade 1s cubic-bezier(.16,1,.3,1) .3s both;}
+@keyframes rise{from{transform:translateY(60%);opacity:0;}to{transform:none;opacity:1;}}
+@keyframes fade{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+@media (prefers-reduced-motion:reduce){.rise,.fade{animation:none !important;}.btn,.lift{transition:none;}}
+input,select,button{font-family:'Manrope','Segoe UI',system-ui,sans-serif;}
+input::placeholder{color:#9C8A8C;}
+.snav-top{display:none;}
+.snav-cta{display:none !important;}
+@media (min-width:980px){.snav-cta{display:inline-flex !important;}}
+@media (min-width:1080px){.snav-top{display:flex;}.snav-menu{display:none;}}
+.snav-sub::-webkit-scrollbar{display:none;}
+.snav-menu>summary{list-style:none;}
+.snav-menu>summary::-webkit-details-marker{display:none;}
+.snav-menu[open] .snav-ico-o{display:none;}
+.snav-menu:not([open]) .snav-ico-x{display:none;}
+.snav-top a:hover,.snav-sub a:hover{color:#FFFFFF !important;}
+</style>
+</head>
+<body>
+<div style="font-family:'Manrope','Segoe UI',system-ui,sans-serif; color:#241518; background:#FAF6F3; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;">
+
+<!-- HEADER -->
+<header style="background:#2B0A12; color:#FBF3F1; position:relative; z-index:30;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px; height:72px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+<a href="Acasa.html" style="text-decoration:none; color:#FBF3F1; font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:22px; letter-spacing:0.08em;">SUSPECȚI</a>
+<nav class="snav-top" aria-label="Navigare principală" style="gap:22px; font-size:14px; align-items:center;">
+<a href="Acasa.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Acasă</a>
+<a href="Calendar.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Calendar &amp; bilete</a>
+<a href="Main.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Pentru companii</a>
+<a href="Private.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Evenimente private</a>
+<a href="Despre.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Despre noi</a>
+<a href="Intrebari.html" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Întrebări frecvente</a>
+</nav>
+<div style="display:flex; align-items:center; gap:10px;">
+<a href="Calendar.html" class="btn snav-cta" style="display:inline-flex; align-items:center; min-height:44px; padding:0 20px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:14px; white-space:nowrap;">Cumpără Bilet</a>
+<details class="snav-menu">
+<summary aria-label="Meniu" style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:999px; border:1px solid rgba(235,193,190,0.35); color:#FBF3F1; cursor:pointer; font-size:20px; line-height:1;"><span class="snav-ico-o" aria-hidden="true">☰</span><span class="snav-ico-x" aria-hidden="true">✕</span></summary>
+<nav aria-label="Meniu mobil" style="position:absolute; left:0; right:0; top:72px; background:#2B0A12; padding:8px 20px 20px; max-height:calc(100vh - 72px); overflow-y:auto; border-bottom:1px solid rgba(235,193,190,0.2); box-shadow:0 24px 40px -20px rgba(0,0,0,0.6); z-index:50;">
+<a href="Acasa.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Acasă</a>
+<a href="Calendar.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Calendar &amp; bilete</a>
+<a href="Main.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Pentru companii</a>
+<a href="Private.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Evenimente private</a>
+<a href="Despre.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Despre noi</a>
+<a href="Intrebari.html" style="color:#FBF3F1; text-decoration:none; display:flex; align-items:center; min-height:48px; border-bottom:1px solid rgba(235,193,190,0.14); font-size:17px;">Întrebări frecvente</a>
+<span style="display:block; margin:18px 0 4px; font-size:11px; letter-spacing:0.2em; font-weight:700; text-transform:uppercase; color:#9C8A8C;">Experiențe</span>
+<a href="Cina.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Suspecți la Cină</a>
+<a href="Party.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Suspecți la Party</a>
+<a href="TreasureHunt.html" aria-current="page" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px; font-weight:700; color:#FFFFFF;">Treasure Hunt</a>
+<a href="Brunch.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">The Singing Brunch</a>
+<a href="PrimaVedere.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Prima Vedere</a>
+<a href="Automachiaj.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Automachiaj</a>
+<a href="Povesti.html" style="color:#EBC1BE; text-decoration:none; display:flex; align-items:center; min-height:44px; border-bottom:1px solid rgba(235,193,190,0.1); font-size:16px;">Povești</a>
+</nav>
+</details>
+</div>
+</div>
+<nav aria-label="Experiențe" style="border-top:1px solid rgba(235,193,190,0.14); border-bottom:1px solid rgba(235,193,190,0.16); background:#1F070D;">
+<div class="snav-sub" style="max-width:1180px; margin:0 auto; padding:0 20px; display:flex; align-items:center; gap:24px; font-size:14px; overflow-x:auto; scrollbar-width:none;">
+<span style="font-size:11px; letter-spacing:0.2em; font-weight:700; text-transform:uppercase; color:#9C8A8C; white-space:nowrap;">Experiențe</span>
+<a href="Cina.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Suspecți la Cină</a>
+<a href="Party.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Suspecți la Party</a>
+<a href="TreasureHunt.html" aria-current="page" style="color:#FFFFFF; text-decoration:none; font-weight:700; white-space:nowrap; padding:12px 0; border-bottom:2px solid #EBC1BE;">Treasure Hunt</a>
+<a href="Brunch.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">The Singing Brunch</a>
+<a href="PrimaVedere.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Prima Vedere</a>
+<a href="Automachiaj.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Automachiaj</a>
+<a href="Povesti.html" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Povești</a>
+</div>
+</nav>
+</header>
+
+<!-- HERO -->
+<section id="top" style="background:radial-gradient(120% 70% at 85% 0%, rgba(163,23,47,0.45) 0%, transparent 60%), radial-gradient(90% 60% at 0% 100%, rgba(92,18,34,0.7) 0%, transparent 60%), #2B0A12; color:#FBF3F1; padding:56px 0 72px;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px; display:flex; flex-wrap:wrap; gap:48px; align-items:center;">
+<div style="flex:1 1 440px; min-width:0;">
+<div class="fade" style="display:flex; flex-wrap:wrap; gap:8px; align-items:center;"><span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Suspecți în Treasure Hunt</span><span style="display:inline-flex; align-items:center; min-height:28px; padding:0 12px; border-radius:999px; font-size:12px; font-weight:700; letter-spacing:0.04em; background:transparent; color:#FBF3F1; border:1px dashed rgba(251,243,241,0.6);">Următoarele trasee, în pregătire</span></div>
+<h1 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(42px,8.2vw,72px); line-height:1.05; letter-spacing:-0.01em; margin:18px 0 0;">
+<span class="rise" style="display:block;">Un fel de Asia Express,</span>
+<span class="rise rise2" style="display:block; font-family:'Great Vibes',cursive; font-weight:400; font-size:1.2em; line-height:1.05; color:#EBC1BE; margin-top:4px;">mai aproape de casă.</span>
+</h1>
+<p class="fade" style="font-size:18px; color:#D9C8C6; max-width:54ch; margin:22px 0 12px;">Pornești în echipă, descifrezi indicii și îndeplinești misiuni contra cronometru. Pe traseu, ai nevoie de atenție, puțină imaginație și de coechipieri pe care să te poți baza.</p>
+<p class="fade" style="font-size:16px; color:#FBF3F1; max-width:54ch; margin:0 0 26px;">Alege aventura prin oraș sau o ieșire în familie, în care copiii și părinții fac echipă.</p>
+<div class="fade" style="display:flex; flex-wrap:wrap; gap:12px;">
+<a href="#adults" class="btn" style="flex:1 1 200px; display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:56px; padding:0 26px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; box-shadow:0 12px 28px -12px rgba(163,23,47,0.8); white-space:nowrap;">Adults Edition <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a href="#family" class="btn" style="flex:1 1 200px; display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:56px; padding:0 26px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:700; white-space:nowrap;">Family Edition <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+<div class="fade" style="flex:1 1 340px; min-width:0; position:relative;">
+<img src="images/962e780ef1ac3086ebe7d855c333379f.webp" alt="Echipă în misiune la Treasure Hunt" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:18px;">
+<div style="position:absolute; left:14px; right:14px; bottom:14px; background:rgba(250,246,243,0.95); color:#241518; border-radius:14px; padding:14px 18px; box-shadow:0 18px 40px -18px rgba(0,0,0,0.6);">
+<span style="display:block; font-size:11px; letter-spacing:0.18em; font-weight:700; color:#A3172F;">INDICII · MISIUNI · CRONOMETRU</span>
+<span style="font-weight:600; font-size:15px;">Vii singur(ă)? Îți găsim noi echipa.</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CUM SE DESFĂȘOARĂ -->
+<section style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); padding:88px 0;">
+<div class="rev" style="max-width:1180px; margin:0 auto; padding:0 20px; display:flex; flex-wrap:wrap; gap:48px; align-items:center;">
+<div style="flex:1 1 440px; min-width:0;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">Pas cu pas</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:14px 0 20px; text-wrap:balance;">Cum se <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">desfășoară?</span></h2>
+<div style="border-top:1px solid rgba(36,21,24,0.16);">
+<div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid rgba(36,21,24,0.16);"><span style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-style:italic; font-size:22px; color:#A3172F; min-width:30px;">01</span><span><strong>Startul.</strong> <span style="color:#5A4649;">Ne întâlnim la punctul de start, formăm echipele și explicăm regulile. Primești materialele de joc, îți cunoști coechipierii și porniți la prima misiune.</span></span></div>
+<div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid rgba(36,21,24,0.16);"><span style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-style:italic; font-size:22px; color:#A3172F; min-width:30px;">02</span><span><strong>Traseul.</strong> <span style="color:#5A4649;">Aveți indicii de descifrat, provocări amuzante și misiuni foto-video. Unele cer atenție la ce se află în jur, altele vă pun în situații în care trebuie să găsiți împreună o soluție.</span></span></div>
+<div style="display:flex; gap:18px; padding:16px 0; border-bottom:1px solid rgba(36,21,24,0.16);"><span style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-style:italic; font-size:22px; color:#A3172F; min-width:30px;">03</span><span><strong>Contra cronometru.</strong> <span style="color:#5A4649;">Timpul trece, iar fiecare misiune rezolvată vă duce mai departe. Echipa noastră urmărește desfășurarea jocului și vă oferă îndrumare pe traseu.</span></span></div>
+</div>
+</div>
+<div style="flex:1 1 380px; min-width:0;">
+<img src="images/34ecfa4f6f3f385dc4f6721f8ba0c727.webp" alt="Echipă la startul traseului" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:18px;">
+</div>
+</div>
+</section>
+
+<!-- Orașul devine terenul vostru de joc. -->
+<section id="adults" style="background:linear-gradient(180deg,#2B0A12,#3B0D18); color:#FBF3F1; padding:88px 0;">
+<div class="rev" style="max-width:1180px; margin:0 auto; padding:0 20px; display:flex; flex-wrap:wrap; gap:48px; align-items:flex-start;">
+<div style="flex:1 1 380px; min-width:0; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px;"><img src="images/c3d8d42c019ba7dd61d87e2593ad252d.webp" alt="Echipe alergând pe strada cu umbrele" style="grid-column:1 / -1; display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; border-radius:18px;"><img src="images/7dcb35d0bad9a99e3d4b3075022facbd.webp" alt="Echipă descifrând un indiciu" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:14px;"><img src="images/4227bd8240770ed7a95e2b79c5d7a15d.webp" alt="Misiune amuzantă în parc" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:14px;"></div>
+<div style="flex:1 1 440px; min-width:0;"><span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Adults Edition · prin oraș</span><h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(36px,7vw,58px); line-height:1.04; margin:12px 0 0;">Orașul devine <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#EBC1BE;">terenul vostru de joc.</span></h2><p style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-style:italic; font-weight:400; font-size:clamp(20px,3.6vw,24px); line-height:1.4; margin:18px 0 0;">Străzi pe care poate ai trecut de zeci de ori capătă un alt sens când ai o misiune de îndeplinit.</p><p style="color:#D9C8C6; font-size:17px; margin:14px 0 0; max-width:58ch;">Urmăriți indiciile, descoperiți locurile de pe traseu și vă împărțiți sarcinile ca să ajungeți la final în timpul disponibil.</p><p style="color:#D9C8C6; font-size:17px; margin:14px 0 0; max-width:58ch;">Misiunile vă dau destule ocazii să vă cunoașteți din mers.</p><div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:6px; margin-top:20px;"><img src="images/56978fb068bece72070a9ed8aa194464.jpg" alt="Puzzle rezolvat în echipă" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"><img src="images/e91d487b2d2f91df2146b41c78062875.jpg" alt="Misiune foto: săritura echipei" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"><img src="images/edd0cabd1f27ae7e13059c5774f4a085.webp" alt="Misiune foto în fața unei vitrine" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"></div><a href="#inscriere" onclick="document.querySelector('.th-edition-btn[data-edition=\'Adults Edition\']').click()" class="btn" style="margin-top:26px; display:inline-flex; align-items:center; gap:10px; min-height:54px; padding:0 28px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Vezi edițiile pentru adulți <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+</div>
+</section>
+
+<!-- Când a fost ultima dată când ați plecat împreună într-o aventură? -->
+<section id="family" style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); padding:88px 0;">
+<div class="" style="max-width:1180px; margin:0 auto; padding:0 20px; display:flex; flex-wrap:wrap; gap:48px; align-items:flex-start;">
+<div style="flex:1 1 380px; min-width:0; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:12px;"><img src="images/87e64e2d0c36722deb34982705273eef.jpg" alt="Copii și părinți la o probă în parc" style="grid-column:1 / -1; display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; border-radius:18px;"><img src="images/d26a85600d1ca81ed0db2e204a1c1b26.jpg" alt="Copii la proba de cățărare" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:14px;"><img src="images/fff5d85df2fce2701d12d2af926270ce.jpg" alt="Familie citind harta jocului" style="display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; border-radius:14px;"></div>
+<div style="flex:1 1 440px; min-width:0;"><span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">Family Edition · în parc</span><h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(36px,7vw,58px); line-height:1.04; margin:12px 0 0;">Când a fost ultima dată când ați plecat împreună <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">într-o aventură?</span></h2><p style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-style:italic; font-weight:400; font-size:clamp(20px,3.6vw,24px); line-height:1.4; margin:18px 0 0;">La Family Edition, copiii și părinții fac echipă. Aveți indicii de descifrat, provocări amuzante, misiuni foto și timp de petrecut împreună, în aer liber.</p><p style="color:#5A4649; font-size:17px; margin:14px 0 0; max-width:58ch;">Fiecare poate contribui: cineva observă un detaliu, altcineva vine cu o idee, iar o probă aparent simplă ajunge să vă facă pe toți să râdeți.</p><p style="color:#5A4649; font-size:17px; margin:14px 0 0; max-width:58ch;">Jocul se desfășoară în parc, cu misiuni adaptate experienței în familie. Family Edition e pentru copii de la 5 ani, împreună cu părinții lor.</p><div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:6px; margin-top:20px;"><img src="images/9dedfca303708724d8a04d1b1557996e.jpg" alt="Părinți și copil rezolvând un indiciu la masă" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"><img src="images/bd4754247c7f7df3d38db8b0534e9530.jpg" alt="Echipă de familie cu harta" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"><img src="images/a52240b88ef68363775dc2a31dfdb0e7.jpg" alt="Proba de cățărare în parc" style="display:block; width:100%; aspect-ratio:1 / 1; object-fit:cover; border-radius:10px;"></div><a href="#inscriere" onclick="document.querySelector('.th-edition-btn[data-edition=\'Family Edition\']').click()" class="btn" style="margin-top:26px; display:inline-flex; align-items:center; gap:10px; min-height:54px; padding:0 28px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Vezi edițiile pentru familii <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+</div>
+</section>
+
+<!-- MISIUNI -->
+<section style="background:linear-gradient(180deg,#2B0A12,#3B0D18); color:#FBF3F1; padding:88px 0;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Pe traseu</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:14px 0 32px; text-wrap:balance;">Ce fel de misiuni <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#EBC1BE;">vă așteaptă?</span></h2>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap:16px;">
+<article class="lift" style="border:1px solid rgba(235,193,190,0.25); border-radius:18px; padding:26px; background:rgba(255,255,255,0.04); display:flex; flex-direction:column; gap:10px;"><h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:24px; margin:0;">Indicii de descifrat</h3><p style="margin:0; color:#D9C8C6;">Citiți cu atenție, puneți informațiile cap la cap și descoperiți următorul pas.</p></article>
+<article class="lift" style="border:1px solid rgba(235,193,190,0.25); border-radius:18px; padding:26px; background:rgba(255,255,255,0.04); display:flex; flex-direction:column; gap:10px;"><h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:24px; margin:0;">Provocări de echipă</h3><p style="margin:0; color:#D9C8C6;">Vă împărțiți sarcinile și găsiți soluții împreună. Uneori, ideea unui coechipier schimbă tot planul.</p></article>
+<article class="lift" style="border:1px solid rgba(235,193,190,0.25); border-radius:18px; padding:26px; background:rgba(255,255,255,0.04); display:flex; flex-direction:column; gap:10px;"><h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:24px; margin:0;">Misiuni foto-video</h3><p style="margin:0; color:#D9C8C6;">Puneți-vă imaginația la lucru și surprindeți rezultatul. Veți avea și câteva amintiri de păstrat după joc.</p></article>
+</div>
+<p style="margin:28px 0 0; color:#D9C8C6; font-size:16px; max-width:62ch;">Probele și regulile de câștig diferă de la o ediție la alta. Premiile pregătite sunt anunțate pe pagina evenimentului.</p>
+</div>
+</section>
+
+<!-- ÎNTREBĂRI -->
+<section style="background:#FAF6F3; padding:88px 0;">
+<div style="max-width:820px; margin:0 auto; padding:0 20px;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">Bine de știut</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:14px 0 18px; text-wrap:balance;">Ce trebuie să știi <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">înainte să vii?</span></h2>
+<div style="border-top:1px solid rgba(36,21,24,0.16);">
+<div style="padding:20px 0; border-bottom:1px solid rgba(36,21,24,0.16);"><h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:21px; margin:0 0 6px;">Pot participa dacă nu am mai fost la un Treasure Hunt?</h3><p style="margin:0; color:#5A4649;">Da. Explicăm regulile înainte de start și primești toate informațiile necesare pentru a intra în joc.</p></div>
+<div style="padding:20px 0; border-bottom:1px solid rgba(36,21,24,0.16);"><h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:21px; margin:0 0 6px;">Trebuie să vin cu o echipă?</h3><p style="margin:0; color:#5A4649;">La Adults Edition, poți veni și singur(ă). Pentru Family Edition, verifică regulile de înscriere pentru adulți și copii de pe pagina evenimentului.</p></div>
+<div style="padding:20px 0; border-bottom:1px solid rgba(36,21,24,0.16);"><h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:21px; margin:0 0 6px;">Cum mă îmbrac?</h3><p style="margin:0; color:#5A4649;">Alege haine potrivite vremii și încălțăminte comodă, cu care să te poți deplasa ușor pe traseu.</p></div>
+<div style="padding:20px 0; border-bottom:1px solid rgba(36,21,24,0.16);"><h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:21px; margin:0 0 6px;">Cât durează?</h3><p style="margin:0; color:#5A4649;">Durata și traseul sunt anunțate pentru fiecare ediție.</p></div>
+</div>
+<p style="margin:20px 0 0; color:#5A4649;">Mai ai o întrebare? <a href="https://wa.me/40755639871" target="_blank" rel="noopener noreferrer" style="font-weight:600;">Scrie-ne pe WhatsApp</a>.</p>
+</div>
+</section>
+
+<!-- ÎNSCRIERE -->
+<section id="inscriere" style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); padding:88px 0;">
+<div style="max-width:760px; margin:0 auto; padding:0 20px; text-align:center;">
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(34px,6.8vw,56px); line-height:1.06; margin:0 0 14px; text-wrap:balance;">Cu cine faci <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">echipă?</span></h2>
+
+<p style="color:#5A4649; font-size:17px; margin:0 auto 28px; max-width:52ch;">Pregătim următoarele trasee în București și Timișoara. Lasă-ne datele și îți scriem primul când anunțăm o aventură nouă.</p>
+
+<form id="form_th" style="display:flex; flex-direction:column; gap:16px; text-align:left; background:#FAF6F3; border-radius:20px; padding:26px; box-shadow:0 30px 60px -40px rgba(92,18,34,0.6);">
+<div role="group" aria-label="Alege varianta" style="display:flex; flex-wrap:wrap; gap:8px;">
+<button type="button" class="th-edition-btn" data-edition="Adults Edition" aria-pressed="true" onclick="suspectiPickEdition(this)" style="min-height:44px; padding:0 18px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:#A3172F; color:#FFFFFF; border:1px solid #A3172F;">Adults Edition</button><button type="button" class="th-edition-btn" data-edition="Family Edition" aria-pressed="false" onclick="suspectiPickEdition(this)" style="min-height:44px; padding:0 18px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:transparent; color:#241518; border:1px solid rgba(36,21,24,0.25);">Family Edition</button>
+</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap:16px;">
+<div style="display:flex; flex-direction:column; gap:4px;"><label for="thNume" style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:#5A4649;">Prenume *</label><input id="thNume" type="text" required="" autocomplete="given-name" placeholder="Prenumele tău" style="width:100%; font-size:16px; color:#241518; background:transparent; border:0; border-bottom:1px solid rgba(36,21,24,0.3); padding:10px 0; border-radius:0;"></div>
+<div style="display:flex; flex-direction:column; gap:4px;"><label for="thEmail" style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:#5A4649;">Email *</label><input id="thEmail" type="email" required="" autocomplete="email" placeholder="nume@exemplu.ro" style="width:100%; font-size:16px; color:#241518; background:transparent; border:0; border-bottom:1px solid rgba(36,21,24,0.3); padding:10px 0; border-radius:0;"></div>
+<div style="display:flex; flex-direction:column; gap:4px;"><label for="thOras" style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:#5A4649;">Oraș *</label><select id="thOras" required="" style="width:100%; font-size:16px; color:#241518; background:transparent; border:0; border-bottom:1px solid rgba(36,21,24,0.3); padding:10px 0; border-radius:0;"><option value="">Alege</option><option>București</option><option>Timișoara</option></select></div>
+<div style="display:flex; flex-direction:column; gap:4px;"><label for="thTel" style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:700; color:#5A4649;">Telefon (opțional)</label><input id="thTel" type="tel" autocomplete="tel" placeholder="Pentru un mesaj pe WhatsApp" style="width:100%; font-size:16px; color:#241518; background:transparent; border:0; border-bottom:1px solid rgba(36,21,24,0.3); padding:10px 0; border-radius:0;"></div>
+</div>
+<label for="thAcord" style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#5A4649;"><input id="thAcord" type="checkbox" required="" style="margin-top:4px; width:18px; height:18px; accent-color:#A3172F;"> <span>Sunt de acord să fiu contactat(ă) despre edițiile Treasure Hunt. Vezi <a href="#inscriere">Confidențialitate</a>.</span></label>
+<button type="submit" class="btn" style="align-self:flex-start; min-height:54px; padding:0 30px; border:0; border-radius:999px; background:#A3172F; color:#FFFFFF; font-size:16px; font-weight:600; cursor:pointer;">Anunță-mă la următoarea aventură</button>
+<p style="margin:0; font-size:13px; color:#5A4649;">Preînscrierea nu te obligă la nimic. Te anunțăm doar când apare o ediție nouă.</p>
+</form>
+
+<p id="sent_th" style="display:none;" role="status" style="margin:0; padding:26px; border-radius:20px; background:#FAF6F3; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-weight:400; font-size:22px;">Gata, ești pe listă! Îți scriem primul când anunțăm următorul traseu.</p>
+
+<script>
+(function(){
+  var f = document.getElementById('form_th');
+  var s = document.getElementById('sent_th');
+  if (f) {
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!f.checkValidity()) { f.reportValidity(); return; }
+      f.style.display = 'none';
+      if (s) s.style.display = '';
+    });
+  }
+})();
+</script>
+
+</sc-if>
+
+</div>
+</section>
+
+<footer style="background:#1A060B; color:#D9C8C6; padding:36px 0 40px; font-size:14px; text-align:center;">
+<span style="font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:20px; letter-spacing:0.08em; color:#FBF3F1;">SUSPECȚI</span>
+<div style="margin-top:6px;">WhatsApp 0755 639 871 · contact@suspectilacina.com · @suspectilacina</div>
+</footer>
+
+<div class="mbar" style="position:sticky; bottom:0; z-index:40; display:flex; gap:10px; padding:10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); background:rgba(43,10,18,0.96); border-top:1px solid rgba(235,193,190,0.2);">
+<a href="https://wa.me/40755639871" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 18px; border-radius:999px; border:1px solid rgba(251,243,241,0.35); color:#FBF3F1; text-decoration:none; font-weight:600; font-size:14px;">WhatsApp</a>
+<a href="#inscriere" style="flex:1; display:inline-flex; align-items:center; justify-content:center; min-height:48px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Anunță-mă</a>
+</div>
+
+</div>
+
+<script>
+var TH_EDITION_ACTIVE = "min-height:44px; padding:0 18px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:#A3172F; color:#FFFFFF; border:1px solid #A3172F;";
+var TH_EDITION_INACTIVE = "min-height:44px; padding:0 18px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:transparent; color:#241518; border:1px solid rgba(36,21,24,0.25);";
+function suspectiPickEdition(btn) {
+  document.querySelectorAll('.th-edition-btn').forEach(function (b) {
+    var on = (b === btn);
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    b.style.cssText = on ? TH_EDITION_ACTIVE : TH_EDITION_INACTIVE;
+  });
+}
+</script>
+</body>
+</html>
