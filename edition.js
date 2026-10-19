@@ -61,6 +61,14 @@
         '<strong style="font-size:16px;">' + esc(ev.price) + '</strong></div>' +
         '<a href="' + esc(ev.link) + '" target="_blank" rel="noopener noreferrer" data-editie="' + esc(ev.title) + '" style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 22px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Cumpără bilet</a>';
       bara.style.alignItems = 'center';
+      // Bara rămâne fixă jos (în design era „sticky”, dar nu se lipea de ecran); pagina primește spațiu ca să nu acopere conținutul.
+      bara.style.position = 'fixed';
+      bara.style.left = '0';
+      bara.style.right = '0';
+      bara.style.bottom = '0';
+      var spatiu = function () { document.body.style.paddingBottom = (window.matchMedia('(min-width:980px)').matches ? 0 : bara.offsetHeight) + 'px'; };
+      spatiu();
+      window.addEventListener('resize', spatiu);
     }
 
     // Desktop: buton discret în colț, după ce blocul ediției iese din ecran.
