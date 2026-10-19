@@ -61,7 +61,7 @@
       buton = linkBilet(ev, BTN);
     } else if (concept && edConcept.length) {
       titlu = concept.nume;
-      detaliu = 'Următoarele: ' + edConcept.slice(0, 3).map(function (e) { return esc(e.day + ' ' + e.month.toLowerCase() + ' · ' + e.city); }).join(', ');
+      detaliu = 'Următoarele: ' + edConcept.slice(0, 3).map(function (e) { return esc((concept.key === 'Treasure Hunt' ? (varianta(e) === 'family' ? 'Family ' : 'Adults ') : '') + e.day + ' ' + e.month.toLowerCase() + ' · ' + e.city); }).join(', ');
       buton = '<button type="button" data-alege="" style="' + BTN + '">Cumpără bilet</button>';
     } else if (concept) {
       titlu = concept.nume;
