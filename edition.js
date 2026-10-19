@@ -44,7 +44,10 @@
       '<span style="font-size:12px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#A3172F;">Ediția aleasă · ' + esc(ev.format) + '</span>' +
       '<h3 style="font-family:\'Playfair Display\',Georgia,serif; font-weight:500; font-size:clamp(26px,4.6vw,34px); line-height:1.15; margin:0; color:#241518;">' + esc(ev.title) + '</h3>' +
       '<div style="color:#241518; font-size:16px; line-height:1.5;"><strong>' + esc(ev.date) + ' · ' + esc(ev.time) + '</strong><br>' + esc(ev.venue) + ', ' + esc(ev.city) + '</div>' +
-      '<div style="font-size:16px; color:#241518;"><strong style="font-size:19px;">' + esc(ev.price) + '</strong>' + (ev.extra ? '<span style="display:block; color:#5A4649; font-size:14px; margin-top:2px;">' + esc(ev.extra) + '</span>' : '') + '</div>' +
+      '<div style="font-size:16px; color:#241518;"><strong style="font-size:19px;">' + esc(ev.price) + '</strong>' +
+      (ev.priceNote ? '<span style="display:inline-block; margin:4px 0 0 10px; padding:4px 10px; border-radius:999px; background:#A3172F; color:#FFFFFF; font-size:13px; font-weight:700; vertical-align:middle;">' + esc(ev.priceNote) + '</span>' : '') +
+      (ev.extra ? '<span style="display:block; color:#5A4649; font-size:14px; margin-top:4px;">' + esc(ev.extra) + '</span>' : '') +
+      (ev.prize ? '<span style="display:block; color:#241518; font-size:14px; margin-top:6px;">🏆 ' + esc(ev.prize) + '</span>' : '') + '</div>' +
       '<div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; margin-top:4px;">' + linkBilet + '<span style="font-size:13px; color:#5A4649;">Biletele se cumpără prin AmBilet</span></div>' +
       '<div class="ed-links" style="margin-top:6px; padding-top:12px; border-top:1px solid rgba(36,21,24,0.1);">' + linkuri.join('') + '</div>' +
       '</div>' +
