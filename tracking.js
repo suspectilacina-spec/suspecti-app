@@ -42,8 +42,30 @@ function suspectiPornestePixel() {
   window.fbq('init', SUSPECTI_PIXEL_ID);
   window.suspectiPixelPornit = true;
   window.fbq('track', 'PageView');
-  var pagina = location.pathname.toLowerCase().replace(/.html$/, '').split('/').pop() || 'acasa';
+  // Pe paginile de ediție (/cina/ultimul-dans-6-noiembrie) contează conceptul: primul segment al adresei.
+  var segmente = location.pathname.toLowerCase().replace(/.html$/, '').split('/').filter(Boolean);
+  var pagina = segmente[segmente.length - 1] || 'acasa';
+  if (!SUSPECTI_PAGINI[pagina] && segmente.length > 1) pagina = segmente[0];
   if (SUSPECTI_PAGINI[pagina]) suspectiTrack('ViewContent', { content_name: SUSPECTI_PAGINI[pagina], content_category: 'Pagină experiență' });
+}
+
+// Atribuire: parametrii din reclamă (UTM, fbclid) sunt păstrați cât timp omul navighează pe site
+// și adăugați la linkul AmBilet în momentul clicului. Nu trimite nimic către Meta.
+var SUSPECTI_PARAM_ATRIBUIRE = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid'];
+(function () {
+  try {
+    var q = new URLSearchParams(location.search), salvat = JSON.parse(sessionStorage.getItem('suspecti_atribuire') || '{}');
+    SUSPECTI_PARAM_ATRIBUIRE.forEach(function (k) { if (q.get(k)) salvat[k] = q.get(k); });
+    sessionStorage.setItem('suspecti_atribuire', JSON.stringify(salvat));
+  } catch (e) {}
+})();
+function suspectiAtribuire(a) {
+  try {
+    var salvat = JSON.parse(sessionStorage.getItem('suspecti_atribuire') || '{}');
+    var u = new URL(a.href);
+    SUSPECTI_PARAM_ATRIBUIRE.forEach(function (k) { if (salvat[k] && !u.searchParams.get(k)) u.searchParams.set(k, salvat[k]); });
+    a.href = u.toString();
+  } catch (e) {}
 }
 
 // Clicuri importante: bilete (AmBilet), WhatsApp, email.
@@ -52,8 +74,9 @@ document.addEventListener('click', function (e) {
   if (!a) return;
   var href = a.getAttribute('href');
   if (href.indexOf('ambilet.ro') !== -1) {
+    suspectiAtribuire(a);
     var card = a.closest('article, .event-card');
-    var titlu = card && card.querySelector('h3') ? card.querySelector('h3').textContent.trim() : a.textContent.trim();
+    var titlu = a.getAttribute('data-editie') || (card && card.querySelector('h3') ? card.querySelector('h3').textContent.trim() : a.textContent.trim());
     suspectiTrack('InitiateCheckout', { content_name: titlu, currency: 'RON' });
   } else if (href.indexOf('wa.me') !== -1) {
     suspectiTrack('Contact', { content_category: 'WhatsApp' });

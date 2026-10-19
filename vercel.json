@@ -2,6 +2,10 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
+    { "source": "/cina/:editie", "destination": "/cina" },
+    { "source": "/brunch/:editie", "destination": "/brunch" },
+    { "source": "/party/:editie", "destination": "/party" },
+    { "source": "/treasurehunt/:editie", "destination": "/treasurehunt" },
     { "source": "/calendar/bucuresti", "destination": "/calendar" },
     { "source": "/calendar/timisoara", "destination": "/calendar" },
     { "source": "/Calendar/bucuresti", "destination": "/calendar" },
