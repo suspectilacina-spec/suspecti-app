@@ -24,6 +24,7 @@
   var SIMPLU = {
     acasa: ['Experiențe în București și Timișoara', 'Calendar & bilete', '/calendar'],
     despre: ['SUSPECȚI', 'Calendar & bilete', '/calendar'],
+    colaboratori: ['Colaboratori', 'Calendar & bilete', '/calendar'],
     intrebari: ['SUSPECȚI', 'Calendar & bilete', '/calendar'],
     termeni: ['SUSPECȚI', 'Calendar & bilete', '/calendar'],
     confidentialitate: ['SUSPECȚI', 'Calendar & bilete', '/calendar'],
