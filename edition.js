@@ -1,6 +1,6 @@
 /* Pagina unei ediții: /cina/ultimul-dans-6-noiembrie, /brunch/25-octombrie etc.
    Pe aceeași pagină a conceptului, arată sus ediția aleasă (dată, loc, preț, „Cumpără bilet”),
-   pe mobil o bară fixă cu prețul și butonul, iar pe desktop un buton discret în colț.
+   iar bara fixă de sus (actionbar.js) păstrează „Cumpără bilet” vizibil la derulare.
    Pe adresa simplă a conceptului (/cina, /brunch...) nu schimbă nimic. Datele vin din /events.js. */
 
 (function () {
@@ -52,49 +52,6 @@
       '</article></div>';
     header.parentNode.insertBefore(sec, header.nextSibling);
 
-    // Mobil: bara de jos existentă arată prețul ediției și „Cumpără bilet”.
-    var bara = document.querySelector('.mbar');
-    if (bara) {
-      bara.innerHTML =
-        '<div style="flex:1; min-width:0; color:#FBF3F1; line-height:1.25;">' +
-        '<span style="display:block; font-size:12px; color:#EBC1BE; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + esc(ev.day + ' ' + ev.month.toLowerCase() + ' · ' + numeScurt + ' · ' + ev.city) + '</span>' +
-        '<strong style="font-size:16px;">' + esc(ev.price) + '</strong></div>' +
-        '<a href="' + esc(ev.link) + '" target="_blank" rel="noopener noreferrer" data-editie="' + esc(ev.title) + '" style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 22px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Cumpără bilet</a>';
-      bara.style.alignItems = 'center';
-      // Bara rămâne fixă jos (în design era „sticky”, dar nu se lipea de ecran); pagina primește spațiu ca să nu acopere conținutul.
-      bara.style.position = 'fixed';
-      bara.style.left = '0';
-      bara.style.right = '0';
-      bara.style.bottom = '0';
-      var spatiu = function () { document.body.style.paddingBottom = (window.matchMedia('(min-width:980px)').matches ? 0 : bara.offsetHeight) + 'px'; };
-      spatiu();
-      window.addEventListener('resize', spatiu);
-    }
-
-    // Desktop: buton discret în colț, după ce blocul ediției iese din ecran.
-    var pastila = document.createElement('div');
-    pastila.id = 'editie-pastila';
-    pastila.style.cssText = 'position:fixed; right:20px; bottom:20px; z-index:60; display:none; align-items:center; gap:12px; padding:8px 8px 8px 18px; border-radius:999px; background:rgba(43,10,18,0.95); color:#FBF3F1; box-shadow:0 18px 40px -16px rgba(0,0,0,0.6); font-size:14px;';
-    pastila.innerHTML = '<span>' + esc(ev.day + ' ' + ev.month.toLowerCase() + ' · ' + numeScurt) + '</span>' +
-      '<a href="' + esc(ev.link) + '" target="_blank" rel="noopener noreferrer" data-editie="' + esc(ev.title) + '" style="display:inline-flex; align-items:center; min-height:40px; padding:0 18px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Cumpără bilet</a>';
-    document.body.appendChild(pastila);
-
-    var blocVizibil = true, inFormular = false;
-    function actualizeaza() {
-      var cookie = !!document.getElementById('suspecti-cookie');
-      var desktop = window.matchMedia('(min-width:980px)').matches;
-      pastila.style.display = (desktop && !blocVizibil && !cookie) ? 'flex' : 'none';
-      if (bara) bara.style.visibility = (cookie || inFormular) ? 'hidden' : '';
-    }
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (x) { blocVizibil = x[0].isIntersecting; actualizeaza(); }).observe(sec);
-    }
-    // Bara nu stă peste tastatură cât timp se completează un formular.
-    document.addEventListener('focusin', function (e) { if (e.target.matches && e.target.matches('input, select, textarea')) { inFormular = true; actualizeaza(); } });
-    document.addEventListener('focusout', function () { inFormular = false; actualizeaza(); });
-    window.addEventListener('resize', actualizeaza);
-    new MutationObserver(actualizeaza).observe(document.body, { childList: true });
-    actualizeaza();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', construieste);

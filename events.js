@@ -9,7 +9,7 @@ var SUSPECTI_EVENTS = [
     weekday: 'SÂM', day: '24', month: 'OCT', date: 'Sâmbătă, 24 octombrie 2026',
     format: 'Suspecți în Treasure Hunt', city: 'Timișoara', title: 'Family Edition',
     time: '10:00', venue: 'Parcul Copiilor, intrarea principală', meta: '10:00 · Parcul Copiilor, intrarea principală',
-    price: 'de la 50 lei', extra: '',
+    price: '60 lei', extra: 'Pentru fiecare participant, adult sau copil.',
     link: 'https://www.ambilet.ro/bilete/suspecti-in-treasure-hunt-family-edition-timisoara-5062'
   },
   {
@@ -18,7 +18,7 @@ var SUSPECTI_EVENTS = [
     weekday: 'SÂM', day: '24', month: 'OCT', date: 'Sâmbătă, 24 octombrie 2026',
     format: 'Suspecți în Treasure Hunt', city: 'Timișoara', title: 'Adults Edition',
     time: '15:00', venue: 'Piața Unirii, Domul Catolic', meta: '15:00 · Piața Unirii, Domul Catolic',
-    price: 'de la 56 lei', extra: '',
+    price: '70 lei', extra: 'Ofertă de grup 4 + 1 gratis: 56 lei de persoană.',
     link: 'https://www.ambilet.ro/bilete/suspecti-in-treasure-hunt-adults-only-timisoara-5032'
   },
   {
@@ -27,7 +27,7 @@ var SUSPECTI_EVENTS = [
     weekday: 'DUM', day: '25', month: 'OCT', date: 'Duminică, 25 octombrie 2026',
     format: 'Suspecți la Brunch', city: 'București', title: 'The Singing Brunch',
     time: '14:00', venue: 'Naive', meta: '14:00 · Naive',
-    price: 'de la 56 lei', extra: 'Mâncarea și băuturile se plătesc la restaurant.',
+    price: '89 lei', extra: 'Include un pahar de Prosecco. Obligatoriu, separat: pachetul de brunch, 100 lei de persoană, achitat la restaurant. Ofertă de grup 4 + 1 gratis: 71,20 lei de persoană.',
     link: 'https://www.ambilet.ro/bilete/the-singing-brunch-suspecti-la-brunch-5024'
   },
   {
@@ -36,7 +36,7 @@ var SUSPECTI_EVENTS = [
     weekday: 'SÂM', day: '31', month: 'OCT', date: 'Sâmbătă, 31 octombrie 2026',
     format: 'Suspecți la Party', city: 'Timișoara', title: 'Addams Family',
     time: '20:00', venue: 'DaHUB', meta: '20:00 · DaHUB',
-    price: 'de la 89 lei', extra: '',
+    price: 'de la 119 lei', extra: '119 lei până pe 23 octombrie, apoi 139 lei.',
     link: 'https://www.ambilet.ro/bilete/suspecti-la-party-halloween-edition-5061'
   },
   {
@@ -45,7 +45,7 @@ var SUSPECTI_EVENTS = [
     weekday: 'VIN', day: '6', month: 'NOI', date: 'Vineri, 6 noiembrie 2026',
     format: 'Suspecți la Cină', city: 'București', title: 'Ultimul Dans · ’80s Disco Party',
     time: '20:00', venue: 'Mirador Rooftop', meta: '20:00 · Mirador Rooftop',
-    price: 'de la 60 lei', extra: 'Mâncarea și băuturile se plătesc la restaurant.',
+    price: 'de la 149 lei', extra: 'Early Bird 149 lei până pe 23 octombrie, apoi 179 lei. Mâncarea și băuturile se plătesc la restaurant; este necesară comanda unui preparat din meniu. Doar After Party: 60 lei.',
     link: 'https://www.ambilet.ro/bilete/suspecti-la-cina-ultimul-dans-5044'
   },
   {
@@ -54,7 +54,7 @@ var SUSPECTI_EVENTS = [
     weekday: 'DUM', day: '15', month: 'NOI', date: 'Duminică, 15 noiembrie 2026',
     format: 'Suspecți în Treasure Hunt', city: 'București', title: 'Adults Edition #2',
     time: '14:00', venue: 'Piața Victoriei', meta: '14:00 · Piața Victoriei',
-    price: 'de la 120 lei', extra: '',
+    price: '120 lei', extra: '',
     link: 'https://www.ambilet.ro/bilete/suspecti-in-treasure-hunt-aduls-edition-2-bucuresti-5089'
   }
 ];
