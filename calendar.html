@@ -4,6 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SUSPECȚI · Calendar și bilete</title>
+<meta name="description" content="Calendarul edițiilor SUSPECȚI din București și Timișoara. Alege seara potrivită și cumpără bilet.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SUSPECȚI">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:title" content="SUSPECȚI · Calendar și bilete">
+<meta property="og:description" content="Calendarul edițiilor SUSPECȚI din București și Timișoara. Alege seara potrivită și cumpără bilet.">
+<meta property="og:url" content="https://www.suspectilacina.com/calendar">
+<meta property="og:image" content="https://www.suspectilacina.com/images/share-suspecti.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Invitați în ținute de epocă la Suspecți la Cină">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Great+Vibes&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -26,8 +38,8 @@ a{color:#A3172F;}a:hover{color:#C42A43;}
 input,select,button{font-family:'Manrope','Segoe UI',system-ui,sans-serif;}
 input::placeholder{color:#9C8A8C;}
 .evrow{display:grid;grid-template-columns:120px minmax(0,1fr);gap:0;}
-.evimg{display:block;grid-column:1 / -1;order:-1;height:auto !important;min-height:0 !important;aspect-ratio:4 / 3;object-position:center 40% !important;}
-@media (min-width:860px){.evrow{grid-template-columns:96px 200px minmax(0,1fr) auto;}.evimg{grid-column:auto;order:0;height:100% !important;min-height:150px !important;aspect-ratio:auto;object-position:center 22% !important;}}
+.evimg{display:block;grid-column:1 / -1;order:-1;height:auto !important;min-height:0 !important;aspect-ratio:4 / 3;}
+@media (min-width:860px){.evrow{grid-template-columns:96px 200px minmax(0,1fr) auto;}.evimg{grid-column:auto;order:0;height:100% !important;min-height:150px !important;aspect-ratio:auto;}}
 .evact{grid-column:1 / -1;}
 @media (min-width:860px){.evact{grid-column:auto;}}
 .snav-top{display:none;}
@@ -300,7 +312,7 @@ function calPickPWith(btn) {
 </div>
 
 <script>
-var CAL_EVENTS = [{"m": 0, "key": "Treasure Hunt", "page": "/treasurehunt#family", "img": "/images/87e64e2d0c36722deb34982705273eef.jpg", "weekday": "SÂM", "day": "24", "month": "OCT", "format": "Suspecți în Treasure Hunt", "city": "Timișoara", "title": "Family Edition", "meta": "10:00 · Parcul Copiilor, intrarea principală", "price": "de la 50 lei", "link": "https://www.ambilet.ro/bilete/suspecti-in-treasure-hunt-family-edition-timisoara-5062"}, {"m": 0, "key": "Treasure Hunt", "page": "/treasurehunt", "img": "/images/e7b67438fea5bd305e832b6a0a33507a.jpg", "weekday": "SÂM", "day": "24", "month": "OCT", "format": "Suspecți în Treasure Hunt", "city": "Timișoara", "title": "Adults Only", "meta": "15:00 · Piața Unirii, Domul Catolic", "price": "de la 56 lei", "link": "https://www.ambilet.ro/bilete/suspecti-in-treasure-hunt-adults-only-timisoara-5032"}, {"m": 0, "key": "Brunch", "page": "/brunch", "img": "/images/83fd3f46f32a69883a7bf0c33b476f25.jpg", "weekday": "DUM", "day": "25", "month": "OCT", "format": "Suspecți la Brunch", "city": "București", "title": "The Singing Brunch", "meta": "14:00 · Naive", "price": "de la 56 lei", "link": "https://www.ambilet.ro/bilete/the-singing-brunch-suspecti-la-brunch-5024"}, {"m": 0, "key": "Party", "page": "/party", "img": "/images/3f9d64dc6ea8553293017bb4038fa7ee.jpg", "weekday": "SÂM", "day": "31", "month": "OCT", "format": "Suspecți la Party", "city": "Timișoara", "title": "Halloween Edition", "meta": "20:00 · DaHUB", "price": "de la 89 lei", "link": "https://www.ambilet.ro/bilete/suspecti-la-party-halloween-edition-5061"}, {"m": 1, "key": "Cină", "page": "/cina#disco", "img": "/images/1c5728cbe7ccc20295c79ce659021628.jpg", "weekday": "VIN", "day": "6", "month": "NOI", "format": "Suspecți la Cină", "city": "București", "title": "Ultimul Dans · ’80s Disco Party", "meta": "20:00 · Locația: detalii în curând", "price": "de la 60 lei", "link": "https://www.ambilet.ro/bilete/suspecti-la-cina-ultimul-dans-5044"}, {"m": 1, "key": "Treasure Hunt", "page": "/treasurehunt", "img": "/images/dbf42b63578ebcc8b15eaf7938600673.jpg", "weekday": "DUM", "day": "15", "month": "NOI", "format": "Suspecți în Treasure Hunt", "city": "București", "title": "Adults Edition #2", "meta": "14:00 · Punctul de start: detalii în curând", "price": "de la 120 lei", "link": "https://www.ambilet.ro/bilete/suspecti-in-treasure-hunt-aduls-edition-2-bucuresti-5089"}];
+var CAL_EVENTS = [{"m": 0, "key": "Treasure Hunt", "page": "/treasurehunt#family", "img": "/images/cal-treasurehunt-family.jpg", "pos": "center 55%", "weekday": "SÂM", "day": "24", "month": "OCT", "format": "Suspecți în Treasure Hunt", "city": "Timișoara", "title": "Family Edition", "meta": "10:00 · Parcul Copiilor, intrarea principală", "price": "de la 50 lei", "link": "https://www.ambilet.ro/bilete/suspecti-in-treasure-hunt-family-edition-timisoara-5062"}, {"m": 0, "key": "Treasure Hunt", "page": "/treasurehunt", "img": "/images/cal-treasurehunt-adulti.jpg", "pos": "center 30%", "weekday": "SÂM", "day": "24", "month": "OCT", "format": "Suspecți în Treasure Hunt", "city": "Timișoara", "title": "Adults Only", "meta": "15:00 · Piața Unirii, Domul Catolic", "price": "de la 56 lei", "link": "https://www.ambilet.ro/bilete/suspecti-in-treasure-hunt-adults-only-timisoara-5032"}, {"m": 0, "key": "Brunch", "page": "/brunch", "img": "/images/cal-singing-brunch.jpg", "pos": "center 20%", "weekday": "DUM", "day": "25", "month": "OCT", "format": "Suspecți la Brunch", "city": "București", "title": "The Singing Brunch", "meta": "14:00 · Naive", "price": "de la 56 lei", "link": "https://www.ambilet.ro/bilete/the-singing-brunch-suspecti-la-brunch-5024"}, {"m": 0, "key": "Party", "page": "/party", "img": "/images/3f9d64dc6ea8553293017bb4038fa7ee.jpg", "weekday": "SÂM", "day": "31", "month": "OCT", "format": "Suspecți la Party", "city": "Timișoara", "title": "Halloween Edition", "meta": "20:00 · DaHUB", "price": "de la 89 lei", "link": "https://www.ambilet.ro/bilete/suspecti-la-party-halloween-edition-5061"}, {"m": 1, "key": "Cină", "page": "/cina#disco", "img": "/images/1c5728cbe7ccc20295c79ce659021628.jpg", "weekday": "VIN", "day": "6", "month": "NOI", "format": "Suspecți la Cină", "city": "București", "title": "Ultimul Dans · ’80s Disco Party", "meta": "20:00 · Locația: detalii în curând", "price": "de la 60 lei", "link": "https://www.ambilet.ro/bilete/suspecti-la-cina-ultimul-dans-5044"}, {"m": 1, "key": "Treasure Hunt", "page": "/treasurehunt", "img": "/images/cal-treasurehunt-adulti.jpg", "pos": "center 30%", "weekday": "DUM", "day": "15", "month": "NOI", "format": "Suspecți în Treasure Hunt", "city": "București", "title": "Adults Edition #2", "meta": "14:00 · Punctul de start: detalii în curând", "price": "de la 120 lei", "link": "https://www.ambilet.ro/bilete/suspecti-in-treasure-hunt-aduls-edition-2-bucuresti-5089"}];
 var CAL_MONTH_LABELS = ["Octombrie 2026", "Noiembrie 2026"];
 var CAL_STATE = { city: "Toate", format: "Toate" };
 var CAL_ACTIVE = "min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:#A3172F; color:#FFFFFF; border:1px solid #A3172F;";
@@ -347,7 +359,7 @@ function calRender() {
       html += '<span style="font-size:12px; font-weight:700; letter-spacing:0.12em;">' + calEsc(ev.month) + '</span>';
       html += '<span style="margin-top:10px; padding:4px 8px; border-radius:999px; background:#A3172F; color:#FFFFFF; font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; white-space:nowrap;">' + calEsc(ev.city) + '</span>';
       html += '</div>';
-      html += '<img class="evimg" src="' + calEsc(ev.img) + '" alt="' + calEsc(ev.title) + '" style="width:100%; height:100%; min-height:150px; object-fit:cover; object-position:center 22%;">';
+      html += '<img class="evimg" src="' + calEsc(ev.img) + '" alt="' + calEsc(ev.title) + '" style="width:100%; height:100%; min-height:150px; object-fit:cover; object-position:' + calEsc(ev.pos || 'center 35%') + ';">';
       html += '<div style="padding:16px 20px; display:flex; flex-direction:column; gap:4px; min-width:0;">';
       html += '<div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px;"><span style="font-size:11px; letter-spacing:0.16em; font-weight:700; color:#A3172F; text-transform:uppercase;">' + calEsc(ev.format) + ' · ' + calEsc(ev.city) + '</span></div>';
       html += '<h3 style="font-family:\'Playfair Display\',Georgia,serif; font-weight:500; font-size:24px; line-height:1.2; margin:2px 0 0;"><a href="' + calEsc(ev.link) + '" target="_blank" rel="noopener noreferrer" style="color:#241518; text-decoration:none;">' + calEsc(ev.title) + '</a></h3>';
