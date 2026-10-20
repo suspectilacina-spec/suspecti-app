@@ -141,6 +141,42 @@ REGULA pentru butoanele „Cumpără bilet” (aplicată automat de bilete.js):
   https://www.ambilet.ro/bilete/<slug>-<ID>   (ID = identificatorul unic AmBilet)
 - bilete.js îl transformă în https://bilete.suspectilacina.com/<slug>-<ID>
   (același slug, același ID → aceeași ediție, dată și oraș)
-- pentru o ediție nouă e suficient să copiezi linkul ei de pe AmBilet în events.js
-  (sau în pagină); regula se aplică singură.
+- edițiile noi apar automat din sincronizare (vezi mai jos); un link copiat manual
+  de pe AmBilet (în pagină sau în lista de rezervă din events.js) e transformat la fel.
 - comutatorul este SUSPECTI_BILETE.activ în bilete.js (false = linkurile rămân pe ambilet.ro).
+
+Sincronizarea automată a evenimentelor din AmBilet
+--------------------------------------------------
+Ce face: la fiecare 15 minute, un cron pe Megahost citește evenimentele publicate ale
+organizatorului (SOLEX SUPPLY SRL) din API-ul folosit de white label (aceeași cheie, care
+rămâne doar pe server) și publică rezultatul la
+  https://bilete.suspectilacina.com/sync/events.js     (citit de calendar și pagini)
+  https://bilete.suspectilacina.com/sync/status.json   (ultima rulare, ciorne, erori)
+Site-ul nu trebuie republicat pentru evenimente noi sau modificate.
+
+Unde e pe server (Megahost, contul cPanel „suspecti”):
+- script:  /home/suspecti/ambilet-sync/sync.php   (copie locală: „Suspecti app/ambilet-sync”)
+- stare:   /home/suspecti/ambilet-sync/state.json (ID AmBilet → adresa paginii, fixată la prima apariție)
+- jurnal:  /home/suspecti/ambilet-sync/logs/sync-AAAA-LL.log (o linie „OK | ...” sau „EROARE | ...” pe rulare)
+- cron:    */15 * * * * /usr/local/bin/php -q /home/suspecti/ambilet-sync/sync.php
+De ce 15 minute: limita API este 60 de cereri/minut; o rulare face ~1 + câte o cerere
+pe eveniment, deci rămâne cu mult sub limită.
+
+Reguli:
+- ID-ul unic este numărul de la finalul slug-ului AmBilet (ex. ...-5044) → fără duplicate;
+  adresa paginii nu se schimbă nici dacă titlul se modifică în AmBilet.
+- Conceptul se recunoaște din titlu (Cină, Brunch, Party, Treasure Hunt); altfel pagina
+  generică /eveniment/<slug> (cu descrierea din AmBilet).
+- Stări: activ, reprogramat (se vând bilete), epuizat, anulat (pagina rămâne, fără
+  „Cumpără bilet”, cu mesaj). Retrase din AmBilet / încheiate → dispar de pe site.
+- Incomplete (lipsă titlu, dată, oră, oraș, locație, imagine, link sau preț) → NU se publică;
+  apar ca ciorne în status.json, la „drafts”, cu lista „missing”. Nu se completează nimic inventat.
+- Ajustările editoriale (titlu scurt, poză, tematică, preț cu termen, mențiuni, ascundere)
+  se fac în evenimente-editorial.js, după ID; sincronizarea nu le suprascrie niciodată.
+- Dacă API-ul nu răspunde, rămâne ultima variantă bună publicată, iar status.json are ok:false.
+  Dacă sync/events.js nu se încarcă deloc, site-ul folosește lista de rezervă din events.js.
+
+Re-rulare manuală (cPanel → Terminal, sau o comandă cron temporară):
+  /usr/local/bin/php /home/suspecti/ambilet-sync/sync.php
+Test fără efect pe site (scrie în ambilet-sync/test-output/, cu evenimente fictive):
+  /usr/local/bin/php /home/suspecti/ambilet-sync/sync.php --test

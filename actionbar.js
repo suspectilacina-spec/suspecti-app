@@ -46,7 +46,7 @@
     return '<a href="' + esc(ev.link) + '" target="_blank" rel="noopener noreferrer" data-editie="' + esc(ev.title) + '" style="' + stil + '">Cumpără bilet</a>';
   }
   function liniaEditiei(ev) {
-    return esc(zi(ev) + ' · ' + ev.time + ' · ' + ev.city) + ' · <strong>' + esc(ev.price) + '</strong>';
+    return esc(zi(ev) + ' · ' + ev.time + ' · ' + ev.city) + (ev.bookable === false ? '' : ' · <strong>' + esc(ev.price) + '</strong>');
   }
 
   function construieste() {
