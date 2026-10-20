@@ -73,7 +73,7 @@ document.addEventListener('click', function (e) {
   var a = e.target.closest ? e.target.closest('a[href]') : null;
   if (!a) return;
   var href = a.getAttribute('href');
-  if (href.indexOf('ambilet.ro') !== -1) {
+  if (href.indexOf('ambilet.ro') !== -1 || href.indexOf('bilete.suspectilacina.com') !== -1) {
     suspectiAtribuire(a);
     var card = a.closest('article, .event-card');
     var titlu = a.getAttribute('data-editie') || (card && card.querySelector('h3') ? card.querySelector('h3').textContent.trim() : a.textContent.trim());

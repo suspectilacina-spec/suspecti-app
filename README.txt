@@ -127,3 +127,20 @@ Dacă vrei ca site-ul să rămână ușor de editat chiar și de tine, fără co
 cealaltă e să duci acest folder în Lovable și să ceri reconstruirea lui ca
 proiect editabil acolo, conectat la o bază de date reală — nu e obligatoriu,
 dar e o variantă de luat în calcul pe termen lung.
+
+Bilete — white label AmBilet (bilete.suspectilacina.com)
+--------------------------------------------------------
+Biletele se cumpără prin white label-ul AmBilet, găzduit pe Megahost (Apache + PHP,
+subdomeniul bilete.suspectilacina.com). Plata propriu-zisă are loc pe ambilet.ro
+(ambilet.ro/plata/...), după care clientul revine pe bilete.suspectilacina.com/multumim.
+Fișierele white label NU sunt în acest proiect (conțin cheia API); copia de lucru
+este în „Suspecti app/bilete-wl”.
+
+REGULA pentru butoanele „Cumpără bilet” (aplicată automat de bilete.js):
+- fiecare ediție are în events.js linkul ei AmBilet, de forma
+  https://www.ambilet.ro/bilete/<slug>-<ID>   (ID = identificatorul unic AmBilet)
+- bilete.js îl transformă în https://bilete.suspectilacina.com/<slug>-<ID>
+  (același slug, același ID → aceeași ediție, dată și oraș)
+- pentru o ediție nouă e suficient să copiezi linkul ei de pe AmBilet în events.js
+  (sau în pagină); regula se aplică singură.
+- comutatorul este SUSPECTI_BILETE.activ în bilete.js (false = linkurile rămân pe ambilet.ro).
