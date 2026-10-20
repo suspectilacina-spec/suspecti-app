@@ -9,7 +9,7 @@
 
    SUSPECTI_BILETE.activ = false → butoanele duc la ambilet.ro (cum era înainte). */
 
-var SUSPECTI_BILETE = { activ: false, baza: 'https://bilete.suspectilacina.com/' };
+var SUSPECTI_BILETE = { activ: true, baza: 'https://bilete.suspectilacina.com/' };
 
 function suspectiLinkBilet(link) {
   if (!SUSPECTI_BILETE.activ || !link) return link;
