@@ -145,6 +145,13 @@ REGULA pentru butoanele „Cumpără bilet” (aplicată automat de bilete.js):
   de pe AmBilet (în pagină sau în lista de rezervă din events.js) e transformat la fel.
 - comutatorul este SUSPECTI_BILETE.activ în bilete.js (false = linkurile rămân pe ambilet.ro).
 
+Aspectul paginilor de bilete (bilete.suspectilacina.com) copiază site-ul: antetul și subsolul sunt
+în includes/site-header.php și includes/footer.php, culorile în assets/css/suspecti.css.
+Video-ul și pozele „Din edițiile anterioare” de pe pagina fiecărui eveniment se aleg după concept
+(din numele evenimentului) în includes/media.php și se încarcă direct de pe www.suspectilacina.com
+(/images, /videos) — dacă schimbi o poză aici, păstreaz-o și acolo.
+Copie a fișierelor dinainte de schimbarea aspectului: /home/suspecti/bilete.suspectilacina.com/_backup-2026-10-20/.
+
 Sincronizarea automată a evenimentelor din AmBilet
 --------------------------------------------------
 Ce face: la fiecare 15 minute, un cron pe Megahost citește evenimentele publicate ale
