@@ -48,12 +48,21 @@
       (ev.priceNote ? '<span style="display:inline-block; margin:4px 0 0 10px; padding:4px 10px; border-radius:999px; background:#A3172F; color:#FFFFFF; font-size:13px; font-weight:700; vertical-align:middle;">' + esc(ev.priceNote) + '</span>' : '') +
       (ev.extra ? '<span style="display:block; color:#5A4649; font-size:14px; margin-top:4px;">' + esc(ev.extra) + '</span>' : '') +
       (ev.prize ? '<span style="display:block; color:#241518; font-size:14px; margin-top:6px;">🏆 ' + esc(ev.prize) + '</span>' : '') + '</div>' +
-      '<div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; margin-top:4px;">' + linkBilet + '<span style="font-size:13px; color:#5A4649;">Biletele se cumpără prin AmBilet</span></div>' +
+      (ev.statusNote ? '<div style="padding:10px 14px; border-radius:12px; background:#F3DCD8; color:#A3172F; font-weight:700; font-size:15px;">' + esc(ev.statusNote) + '</div>' : '') +
+      (ev.bookable === false ? '' : '<div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; margin-top:4px;">' + linkBilet + '<span style="font-size:13px; color:#5A4649;">Biletele se cumpără prin AmBilet</span></div>') +
       '<div class="ed-links" style="margin-top:6px; padding-top:12px; border-top:1px solid rgba(36,21,24,0.1);">' + linkuri.join('') + '</div>' +
       '</div>' +
       '<img class="ed-img" src="' + esc(ev.img) + '" alt="' + esc(ev.title) + '" style="object-position:' + esc(ev.pos || 'center 35%') + ';">' +
       '</article></div>';
     header.parentNode.insertBefore(sec, header.nextSibling);
+
+    // Evenimentele fără concept cunoscut (pagina /eveniment/...) primesc și descrierea din AmBilet, sub blocul ediției.
+    if (ev.description && ev.page.indexOf('/eveniment/') === 0) {
+      var desc = document.createElement('section');
+      desc.style.cssText = 'background:#FAF6F3; padding:8px 0 56px;';
+      desc.innerHTML = '<div style="max-width:760px; margin:0 auto; padding:0 20px; color:#3E2A2D; font-size:17px; line-height:1.65;">' + ev.description + '</div>';
+      sec.parentNode.insertBefore(desc, sec.nextSibling);
+    }
 
   }
 

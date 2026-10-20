@@ -2,6 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
+    { "source": "/eveniment/:slug", "destination": "/eveniment" },
     { "source": "/cina/:editie", "destination": "/cina" },
     { "source": "/brunch/:editie", "destination": "/brunch" },
     { "source": "/party/:editie", "destination": "/party" },

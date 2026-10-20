@@ -58,6 +58,8 @@ input::placeholder{color:#9C8A8C;}
 <script src="/bilete.js"></script>
 <script src="/tracking.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
+<script src="https://bilete.suspectilacina.com/sync/events.js"></script>
+<script src="/evenimente-editorial.js"></script>
 <script src="/events.js"></script>
 </head>
 <body>
@@ -319,7 +321,7 @@ function calPickPWith(btn) {
 <script>
 // Edițiile vin din /events.js (un singur loc pentru toate paginile).
 var CAL_EVENTS = SUSPECTI_EVENTS;
-var CAL_MONTH_LABELS = ["Octombrie 2026", "Noiembrie 2026"];
+var CAL_MONTH_LABELS = SUSPECTI_MONTH_LABELS;
 var CAL_STATE = { city: "Toate", format: "Toate" };
 var CAL_ACTIVE = "min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:#A3172F; color:#FFFFFF; border:1px solid #A3172F;";
 var CAL_INACTIVE = "min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:transparent; color:#FBF3F1; border:1px solid rgba(251,243,241,0.3);";
@@ -372,9 +374,10 @@ function calRender() {
       html += '<span style="color:#5A4649; font-size:15px;">' + calEsc(ev.meta) + ', <strong style="color:#241518;">' + calEsc(ev.city) + '</strong></span>';
       html += '</div>';
       html += '<div class="evact" style="padding:16px 20px; display:flex; flex-wrap:wrap; align-items:center; justify-content:flex-end; gap:10px; border-top:1px solid rgba(36,21,24,0.08);">';
-      html += '<span style="font-weight:700; font-size:17px; margin-right:auto;">' + calEsc(ev.price) + '' + (ev.priceNote ? '<span style="display:block; margin-top:4px; padding:3px 9px; border-radius:999px; background:#A3172F; color:#FFFFFF; font-size:12px; font-weight:700; width:max-content; max-width:100%;">' + calEsc(ev.priceNote) + '</span>' : '') + '</span>';
+      html += '<span style="font-weight:700; font-size:17px; margin-right:auto;">' + (ev.bookable ? calEsc(ev.price) : '') + (ev.statusNote ? '<span style="display:block; margin-top:4px; font-size:13px; font-weight:700; color:#A3172F;">' + calEsc(ev.statusNote) + '</span>' : '') + (ev.priceNote ? '<span style="display:block; margin-top:4px; padding:3px 9px; border-radius:999px; background:#A3172F; color:#FFFFFF; font-size:12px; font-weight:700; width:max-content; max-width:100%;">' + calEsc(ev.priceNote) + '</span>' : '') + '</span>';
       html += '<a href="' + calEsc(ev.page) + '" style="display:inline-flex; align-items:center; min-height:46px; padding:0 16px; border-radius:999px; border:1px solid rgba(36,21,24,0.25); color:#241518; text-decoration:none; font-weight:600; font-size:14px;">Detalii</a>';
-      html += '<a href="' + calEsc(ev.link) + '" target="_blank" rel="noopener noreferrer" class="btn" style="display:inline-flex; align-items:center; min-height:46px; padding:0 18px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:14px; white-space:nowrap;">Cumpără Bilet</a>';
+      if (ev.bookable) html += '<a href="' + calEsc(ev.link) + '" target="_blank" rel="noopener noreferrer" class="btn" style="display:inline-flex; align-items:center; min-height:46px; padding:0 18px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:14px; white-space:nowrap;">Cumpără Bilet</a>';
+      else html += '<span style="display:inline-flex; align-items:center; min-height:46px; padding:0 18px; border-radius:999px; border:1px solid rgba(36,21,24,0.25); color:#5A4649; font-weight:600; font-size:14px;">' + (ev.status === 'anulat' ? 'Anulat' : 'Bilete epuizate') + '</span>';
       html += '</div></article>';
     });
     html += '</div></div>';

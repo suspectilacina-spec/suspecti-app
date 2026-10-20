@@ -32,11 +32,12 @@
     automachiaj: ['Suspecți la Automachiaj', 'Anunță-mă', '#inscriere'],
     povesti: ['Suspecți la Povești', 'Anunță-mă', '#inscriere'],
     corporate: ['Pentru companii', 'Cere o ofertă', '#contact'],
-    private: ['Evenimente private', 'Cere o ofertă', '#oferta']
+    private: ['Evenimente private', 'Cere o ofertă', '#oferta'],
+    eveniment: ['SUSPECȚI', 'Calendar & bilete', '/calendar']
   };
   var concept = CONCEPT[pagina];
   if (!concept && !SIMPLU[pagina]) return;
-  var edConcept = concept ? EVENTS.filter(function (e) { return e.key === concept.key; }) : [];
+  var edConcept = concept ? EVENTS.filter(function (e) { return e.key === concept.key && e.bookable !== false; }) : [];
 
   var BTN = 'display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:52px; padding:0 26px; border-radius:999px; border:0; background:#A3172F; color:#FFFFFF; text-decoration:none; font:inherit; font-size:17px; font-weight:700; white-space:nowrap; cursor:pointer; box-shadow:0 10px 24px -12px rgba(163,23,47,0.8);';
   var BTN_MIC = BTN.replace('min-height:52px; padding:0 26px', 'min-height:46px; padding:0 20px').replace('font-size:17px', 'font-size:15px');
@@ -54,12 +55,14 @@
 
     var titlu, detaliu, buton;
     // O singură ediție posibilă: pagina unei ediții sau un concept cu o singură ediție (la Treasure Hunt varianta se alege mereu).
-    var oSinguraEditie = concept && (editie || (edConcept.length === 1 && concept.key !== 'Treasure Hunt'));
+    var oSinguraEditie = (pagina === 'eveniment' && editie) || concept && (editie || (edConcept.length === 1 && concept.key !== 'Treasure Hunt'));
     if (oSinguraEditie) {
       var ev = editie || edConcept[0];
       titlu = ev.title.split(' · ')[0];
       detaliu = liniaEditiei(ev);
-      buton = linkBilet(ev, BTN);
+      buton = ev.bookable === false
+        ? '<span style="' + BTN.replace('background:#A3172F', 'background:#5A4649') + ' cursor:default;">' + (ev.status === 'anulat' ? 'Anulat' : 'Bilete epuizate') + '</span>'
+        : linkBilet(ev, BTN);
     } else if (concept && edConcept.length) {
       titlu = concept.nume;
       detaliu = 'Următoarele: ' + edConcept.slice(0, 3).map(function (e) { return esc((concept.key === 'Treasure Hunt' ? (varianta(e) === 'family' ? 'Family ' : 'Adults ') : '') + e.day + ' ' + e.month.toLowerCase() + ' · ' + e.city); }).join(', ');
