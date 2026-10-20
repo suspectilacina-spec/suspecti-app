@@ -15,7 +15,7 @@ window.SUSPECTI_EDITORIAL = {
   '5062': {
     page: '/treasurehunt/family-timisoara-24-octombrie', title: 'Family Edition', theme: '#family',
     img: '/images/cal-treasurehunt-family.jpg', pos: 'center 55%', venue: 'Parcul Copiilor, intrarea principală',
-    extra: 'Pentru fiecare participant, adult sau copil.',
+    extra: 'Pentru fiecare participant, adult sau copil. Jocul durează 2 ore.',
     prize: 'Premiul ediției: vouchere la Beat Se7en, game room-ul cu podea LED din centrul Timișoarei.'
   },
   '5032': {
