@@ -91,6 +91,30 @@
     header.parentNode.insertBefore(loc, header.nextSibling);
     header.parentNode.insertBefore(bara, loc);
 
+    // Pe pagina ediției, primul ecran are deja data, prețul și „Cumpără bilet”: bara apare doar după ce butonul iese din ecran.
+    if (document.getElementById('editie')) {
+      bara.style.display = 'none';
+      var ascunsa = true;
+      var verifica = function () {
+        var cta = document.getElementById('ed-cta');
+        var arata = cta ? cta.getBoundingClientRect().bottom < 0 : header.getBoundingClientRect().bottom <= 0;
+        if (arata === !ascunsa) return;
+        ascunsa = !arata;
+        bara.style.display = arata ? '' : 'none';
+        bara.style.position = 'fixed'; bara.style.top = '0'; bara.style.left = '0'; bara.style.right = '0'; bara.style.zIndex = '45';
+      };
+      window.addEventListener('scroll', verifica, { passive: true });
+      window.addEventListener('resize', verifica);
+      document.documentElement.style.scrollPaddingTop = '84px';
+      document.addEventListener('click', function (e) {
+        var b = e.target.closest ? e.target.closest('[data-alege]') : null;
+        if (!b) return;
+        e.preventDefault();
+        deschideAlegerea(b.getAttribute('data-alege') || null);
+      });
+      return;
+    }
+
     // Rămâne fixă sus după ce antetul iese din ecran (în design, „sticky” nu funcționează din cauza containerului).
     function fixeaza() {
       var jos = header.getBoundingClientRect().bottom;

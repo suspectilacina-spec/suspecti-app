@@ -1,0 +1,133 @@
+/* Componente comune: lista de evenimente (prima pagină, calendar, alte ediții), pagina ediției,
+   blocurile pentru companii și evenimente private, fereastra video. Culori: grena #A3172F, text #241518. */
+
+/* ---------- Lista de evenimente ---------- */
+.ev-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(36,21,24,0.12); }
+.ev-row { display: grid; grid-template-columns: 128px minmax(0,1fr); gap: 4px 16px; padding: 18px 0; border-bottom: 1px solid rgba(36,21,24,0.12); align-items: start; }
+.ev-thumb { grid-row: span 2; display: block; border-radius: 10px; overflow: hidden; background: #EFE5E1; }
+.ev-thumb img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.ev-info { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.ev-kick { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #A3172F; }
+.ev-title { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 23px; line-height: 1.2; }
+.ev-title a { color: #241518; text-decoration: none; }
+.ev-title a:hover { color: #A3172F; }
+.ev-tip { color: #5A4649; font-size: 15px; }
+.ev-meta { color: #241518; font-size: 15px; font-weight: 600; margin-top: 4px; }
+.ev-loc { color: #5A4649; font-size: 15px; }
+.ev-side { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; }
+.ev-pret { font-weight: 700; font-size: 17px; color: #241518; white-space: nowrap; }
+.ev-pret small { display: block; font-weight: 600; font-size: 13px; color: #A3172F; white-space: normal; }
+.ev-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 0 20px; border-radius: 999px; background: #A3172F; color: #FFFFFF !important; text-decoration: none; font-weight: 600; font-size: 15px; white-space: nowrap; }
+.ev-btn:hover { background: #8A1328; }
+.ev-stare { font-size: 14px; font-weight: 700; color: #5A4649; }
+@media (min-width: 760px) {
+  .ev-row { grid-template-columns: 200px minmax(0,1fr) auto; gap: 0 28px; padding: 22px 0; align-items: center; }
+  .ev-thumb { grid-row: auto; }
+  .ev-side { flex-direction: column; align-items: flex-end; justify-content: center; margin: 0; text-align: right; }
+  .ev-pret small { text-align: right; }
+}
+@media (max-width: 759px) { .ev-side { grid-column: 1 / -1; } }
+.ev-luna { margin: 34px 0 6px; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 22px; color: #241518; }
+.ev-luna:first-child { margin-top: 0; }
+
+/* ---------- Butoane și linkuri comune ---------- */
+.s-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 28px; border-radius: 999px; background: #A3172F; color: #FFFFFF !important; text-decoration: none; font-weight: 700; font-size: 17px; border: 0; cursor: pointer; font-family: inherit; white-space: nowrap; box-shadow: 0 12px 26px -14px rgba(163,23,47,0.9); }
+.s-btn:hover { background: #8A1328; }
+.s-btn-2 { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 54px; padding: 0 24px; border-radius: 999px; border: 1px solid rgba(36,21,24,0.28); background: #FFFFFF; color: #241518 !important; text-decoration: none; font-weight: 600; font-size: 16px; cursor: pointer; font-family: inherit; white-space: nowrap; }
+.s-btn-2:hover { border-color: #A3172F; color: #A3172F !important; }
+.s-link { color: #A3172F; font-weight: 700; text-decoration: none; }
+.s-link:hover { text-decoration: underline; }
+.s-kick { display: block; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #A3172F; }
+.s-h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: clamp(30px, 5vw, 42px); line-height: 1.12; margin: 8px 0 18px; color: #241518; text-wrap: balance; }
+.s-wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+.s-sec { padding: 56px 0; }
+.s-sec + .s-sec { border-top: 1px solid rgba(36,21,24,0.1); }
+.s-lead { font-size: 18px; color: #3E2A2D; max-width: 62ch; margin: 0 0 14px; }
+
+/* ---------- Video: miniatură + fereastră ---------- */
+.v-thumb { position: relative; display: block; width: 100%; padding: 0; border: 0; border-radius: 14px; overflow: hidden; cursor: pointer; background: #2B0A12; }
+.v-thumb img { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; }
+.v-thumb .v-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 58px; height: 58px; border-radius: 50%; background: rgba(250,246,243,0.95); color: #A3172F; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px -8px rgba(0,0,0,0.6); }
+.v-thumb .v-lbl { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 10px 10px; background: linear-gradient(transparent, rgba(26,6,11,0.85)); color: #FBF3F1; font-size: 13px; font-weight: 700; text-align: center; }
+.v-modal { position: fixed; inset: 0; z-index: 100; background: rgba(15,3,6,0.92); display: flex; align-items: center; justify-content: center; padding: 16px; }
+.v-modal video { max-width: 100%; max-height: 86vh; border-radius: 12px; background: #000; }
+.v-modal button { position: absolute; top: 14px; right: 14px; width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(251,243,241,0.5); background: rgba(43,10,18,0.7); color: #FBF3F1; font-size: 22px; cursor: pointer; }
+
+/* ---------- Galerie și testimoniale ---------- */
+.s-galerie { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+.s-galerie img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; }
+@media (min-width: 760px) { .s-galerie { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; } }
+.s-testim { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px,100%),1fr)); gap: 14px; margin-top: 22px; }
+.s-testim figure { margin: 0; padding: 20px 22px; border-left: 3px solid #A3172F; background: #FFFFFF; border-radius: 0 12px 12px 0; }
+.s-testim blockquote { margin: 0 0 10px; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 19px; line-height: 1.45; color: #241518; }
+.s-testim figcaption { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #5A4649; }
+.s-social { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+
+/* ---------- Liste cu bife, pași, FAQ ---------- */
+.s-lista { list-style: none; margin: 0; padding: 0; }
+.s-lista li { position: relative; padding: 9px 0 9px 28px; border-bottom: 1px solid rgba(36,21,24,0.08); font-size: 17px; color: #241518; }
+.s-lista li::before { content: ""; position: absolute; left: 4px; top: 18px; width: 9px; height: 9px; border-radius: 50%; background: #A3172F; }
+.s-pasi { list-style: none; margin: 0; padding: 0; counter-reset: pas; }
+.s-pasi li { position: relative; padding: 0 0 22px 46px; counter-increment: pas; }
+.s-pasi li::before { content: counter(pas); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%; background: #F3DCD8; color: #A3172F; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 15px; }
+.s-pasi li::after { content: ""; position: absolute; left: 14.5px; top: 34px; bottom: 4px; width: 1px; background: rgba(163,23,47,0.3); }
+.s-pasi li:last-child::after { display: none; }
+.s-pasi strong { display: block; font-size: 17px; color: #241518; }
+.s-pasi span { color: #5A4649; font-size: 16px; }
+.s-faq details { border-bottom: 1px solid rgba(36,21,24,0.12); }
+.s-faq summary { list-style: none; cursor: pointer; padding: 16px 36px 16px 0; position: relative; font-weight: 700; font-size: 17px; color: #241518; }
+.s-faq summary::-webkit-details-marker { display: none; }
+.s-faq summary::after { content: "+"; position: absolute; right: 4px; top: 12px; font-size: 24px; font-weight: 400; color: #A3172F; }
+.s-faq details[open] summary::after { content: "–"; }
+.s-faq details p { margin: 0 0 16px; color: #3E2A2D; font-size: 16px; }
+
+/* ---------- Bloc companii / private ---------- */
+.s-oferte { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 760px) { .s-oferte { grid-template-columns: 1fr 1fr; gap: 22px; } }
+.s-oferta { display: flex; flex-direction: column; background: #FFFFFF; border-radius: 16px; overflow: hidden; border: 1px solid rgba(36,21,24,0.08); text-decoration: none; color: #241518; }
+.s-oferta img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.s-oferta > div { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.s-oferta h3 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px; line-height: 1.2; }
+.s-oferta p { margin: 0; color: #3E2A2D; font-size: 16px; }
+.s-oferta .s-link { margin-top: auto; padding-top: 8px; }
+
+/* ---------- Footer: rețele sociale ---------- */
+.s-retele { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 12px; }
+.s-retele a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(235,193,190,0.35); color: #FBF3F1 !important; text-decoration: none; font-weight: 600; font-size: 14px; }
+.s-retele a:hover { border-color: #EBC1BE; }
+.s-retele svg { width: 18px; height: 18px; }
+
+/* ---------- Pagina ediției ---------- */
+.ed-hero { background: #FAF6F3; padding: 26px 0 30px; border-bottom: 1px solid rgba(36,21,24,0.1); }
+.ed-grid { display: grid; grid-template-columns: minmax(0,1fr); gap: 28px; align-items: start; }
+@media (min-width: 900px) { .ed-grid { grid-template-columns: minmax(0,1fr) 300px; gap: 48px; } }
+.ed-h1 { margin: 6px 0 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; line-height: 1.08; color: #241518; }
+.ed-h1 .ed-c { display: block; font-family: 'Manrope', system-ui, sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #A3172F; margin-bottom: 6px; }
+.ed-h1 .ed-t { display: block; font-size: clamp(36px, 6vw, 54px); }
+.ed-h1 .ed-s { display: block; font-size: clamp(21px, 3vw, 26px); color: #5A4649; margin-top: 6px; }
+.ed-scurt { font-size: 18px; color: #3E2A2D; margin: 14px 0 18px; max-width: 60ch; }
+.ed-facts-wrap { display: grid; grid-template-columns: minmax(0,1fr) 116px; gap: 16px; align-items: start; }
+@media (min-width: 900px) { .ed-facts-wrap { grid-template-columns: minmax(0,1fr); } .ed-vid-mob { display: none; } }
+.ed-facts { margin: 0; display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1px solid rgba(36,21,24,0.12); }
+@media (min-width: 600px) { .ed-facts { grid-template-columns: 1fr 1fr; column-gap: 24px; } }
+.ed-facts > div { padding: 10px 0; border-bottom: 1px solid rgba(36,21,24,0.12); }
+.ed-facts dt { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #A3172F; }
+.ed-facts dd { margin: 2px 0 0; font-size: 17px; font-weight: 600; color: #241518; }
+.ed-facts dd small { display: block; font-weight: 500; font-size: 14px; color: #5A4649; }
+.ed-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-top: 20px; }
+.ed-nota { margin: 10px 0 0; font-size: 14px; color: #5A4649; }
+.ed-vid-desk { display: none; }
+@media (min-width: 900px) { .ed-vid-desk { display: block; position: relative; } }
+.ed-vid-desk video { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 16px; background: #2B0A12; }
+.ed-sunet { position: absolute; top: 12px; right: 12px; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(251,243,241,0.5); background: rgba(43,10,18,0.65); color: #FBF3F1; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
+.ed-2col { display: grid; grid-template-columns: minmax(0,1fr); gap: 32px; }
+@media (min-width: 860px) { .ed-2col { grid-template-columns: 1fr 1fr; gap: 48px; } }
+.ed-h3 { margin: 0 0 12px; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px; color: #241518; }
+.ed-p { font-size: 17px; color: #3E2A2D; margin: 0 0 14px; max-width: 64ch; }
+.ed-box { background: #FFFFFF; border-radius: 16px; padding: 22px 24px; border: 1px solid rgba(36,21,24,0.08); }
+.ed-final { background: #2B0A12; color: #FBF3F1; border-radius: 18px; padding: 26px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; margin-top: 30px; }
+.ed-final strong { display: block; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 24px; }
+.ed-final span { color: #D9C8C6; }
+.ed-org { background: #F3E7E3; }
+.ed-org .ed-org-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; }
+.ed-org p { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 24px; line-height: 1.3; color: #241518; max-width: 32ch; }
