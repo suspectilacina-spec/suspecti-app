@@ -31,7 +31,7 @@
     primavedere: ['Suspecți la Prima Vedere', 'Anunță-mă', '#inscriere'],
     automachiaj: ['Suspecți la Automachiaj', 'Anunță-mă', '#inscriere'],
     povesti: ['Suspecți la Povești', 'Anunță-mă', '#inscriere'],
-    corporate: ['Pentru companii', 'Cere o ofertă', '#contact'],
+    corporate: ['Pentru companii', 'Cere o ofertă', '#oferta'],
     private: ['Evenimente private', 'Cere o ofertă', '#oferta'],
     eveniment: ['SUSPECȚI', 'Calendar & bilete', '/calendar']
   };
@@ -84,12 +84,36 @@
     bara.style.cssText = 'position:relative; z-index:29; background:#FAF6F3; border-bottom:1px solid rgba(36,21,24,0.12); box-shadow:0 10px 26px -18px rgba(36,21,24,0.65);';
     bara.innerHTML = '<div style="max-width:1180px; margin:0 auto; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; gap:14px;">' +
       '<div style="min-width:0; line-height:1.3; color:#241518;">' +
-      '<span style="display:block; font-family:\'Playfair Display\',Georgia,serif; font-size:19px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + esc(titlu) + '</span>' +
-      (detaliu ? '<span style="display:block; font-size:14px; color:#5A4649; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + detaliu + '</span>' : '') +
+      '<span style="display:block; font-family:\'Playfair Display\',Georgia,serif; font-weight:700; font-size:20px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + esc(titlu) + '</span>' +
+      (detaliu ? '<span style="display:block; font-size:15px; font-weight:700; color:#241518; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + detaliu + '</span>' : '') +
       '</div>' + buton + '</div>';
     var loc = document.createElement('div');
     header.parentNode.insertBefore(loc, header.nextSibling);
     header.parentNode.insertBefore(bara, loc);
+
+    // Pe pagina ediției, primul ecran are deja data, prețul și „Cumpără bilet”: bara apare doar după ce butonul iese din ecran.
+    if (document.getElementById('editie') || ((pagina === 'corporate' || pagina === 'private') && document.getElementById('ed-cta'))) {
+      bara.style.display = 'none';
+      var ascunsa = true;
+      var verifica = function () {
+        var cta = document.getElementById('ed-cta');
+        var arata = cta ? cta.getBoundingClientRect().bottom < 0 : header.getBoundingClientRect().bottom <= 0;
+        if (arata === !ascunsa) return;
+        ascunsa = !arata;
+        bara.style.display = arata ? '' : 'none';
+        bara.style.position = 'fixed'; bara.style.top = '0'; bara.style.left = '0'; bara.style.right = '0'; bara.style.zIndex = '45';
+      };
+      window.addEventListener('scroll', verifica, { passive: true });
+      window.addEventListener('resize', verifica);
+      document.documentElement.style.scrollPaddingTop = '84px';
+      document.addEventListener('click', function (e) {
+        var b = e.target.closest ? e.target.closest('[data-alege]') : null;
+        if (!b) return;
+        e.preventDefault();
+        deschideAlegerea(b.getAttribute('data-alege') || null);
+      });
+      return;
+    }
 
     // Rămâne fixă sus după ce antetul iese din ecran (în design, „sticky” nu funcționează din cauza containerului).
     function fixeaza() {

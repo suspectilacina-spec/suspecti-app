@@ -43,6 +43,7 @@ var SUSPECTI_MONTH_LABELS = [];
 
     var d = new Date(e.iso + 'T12:00:00');
     e.weekday = ZILE[d.getDay()]; e.day = String(d.getDate()); e.month = LUNI_SCURT[d.getMonth()];
+    e.dataScurta = e.weekday.charAt(0) + e.weekday.slice(1).toLowerCase() + ', ' + e.day + ' ' + LUNI[d.getMonth()].slice(0, 3);
     e.date = ZILE_LUNGI[d.getDay()] + ', ' + d.getDate() + ' ' + LUNI[d.getMonth()] + ' ' + d.getFullYear();
     e.meta = [e.time, e.venue].filter(Boolean).join(' · ');
     e.status = e.status || 'activ';
@@ -50,6 +51,14 @@ var SUSPECTI_MONTH_LABELS = [];
     e.page = e.page || '/calendar';
     e.title = e.title || '';
     e.theme = e.theme || '';
+
+    // Câmpuri comune pentru calendar, prima pagină și pagina ediției.
+    e.varianta = e.key === 'Treasure Hunt' ? (e.theme === '#family' || /family/i.test(e.title + ' ' + (e.slug || '')) ? 'family' : 'adults') : '';
+    e.concept = { 'Cină': 'Suspecți la Cină', 'Party': 'Suspecți la Party', 'Brunch': 'The Singing Brunch', 'Treasure Hunt': 'Suspecți în Treasure Hunt' }[e.key] || e.format || 'SUSPECȚI';
+    e.filtru = e.key === 'Treasure Hunt' ? (e.varianta === 'family' ? 'Treasure Hunt Family' : 'Treasure Hunt Adults') : e.key;
+    e.tip = e.tip || { 'Cină': 'Mystery Dinner', 'Party': 'Petrecere tematică', 'Brunch': 'Brunch cu DJ, MC și karaoke de grup' }[e.key] ||
+      (e.key === 'Treasure Hunt' ? (e.varianta === 'family' ? 'Treasure Hunt pentru părinți și copii' : 'Treasure Hunt pentru adulți') : '');
+    e.durata = e.durata || (e.key === 'Treasure Hunt' ? (e.varianta === 'family' ? '2 ore' : '3 ore') : '');
 
     // Prețuri cu termen: până la data „until” (inclusiv) se afișează prețul redus, evidențiat; apoi automat prețul obișnuit.
     e.priceNote = '';

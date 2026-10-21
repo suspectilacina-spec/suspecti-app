@@ -12,3 +12,10 @@ function suspectiSunet(btn) {
   btn.textContent = (on ? '🔊 ' : '🔈 ') + text;
   btn.setAttribute('aria-label', text);
 }
+
+// Cine a cerut „mișcare redusă” în setările dispozitivului: videourile nu pornesc singure, dar pot fi pornite cu butonul de redare.
+if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('video[autoplay]').forEach(function (v) { v.pause(); v.removeAttribute('autoplay'); v.controls = true; });
+  });
+}
