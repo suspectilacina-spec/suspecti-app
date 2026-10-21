@@ -27,12 +27,14 @@ window.SUSPECTI_EDITORIAL = {
   '5024': {
     page: '/brunch/25-octombrie', title: 'The Singing Brunch',
     img: '/images/cal-singing-brunch.jpg', pos: 'center 20%',
-    extra: 'Include un pahar de Prosecco. Mâncarea și băuturile se plătesc la restaurant. Ofertă de grup 4 + 1 gratis: 71,20 lei de persoană.'
+    price: 'de la 70 lei',
+    extra: 'Early Bird: 70 lei (grup 4 + 1 gratis: 56 lei de persoană), apoi 89 lei (grup: 71,20 lei de persoană). Include un pahar de Prosecco. Mâncarea și băuturile se plătesc la restaurant.'
   },
   '5061': {
     page: '/party/addams-family-31-octombrie', title: 'Addams Family', theme: '#wednesday',
     img: '/images/3f9d64dc6ea8553293017bb4038fa7ee.jpg', pos: 'center 35%', venue: 'DaHUB',
-    price: '139 lei', tiers: [{ until: '2026-10-23', price: '119 lei', label: 'Second Wave' }]
+    price: 'de la 89 lei',
+    extra: 'First Wave: 89 lei · Second Wave: 119 lei · Last Call: 139 lei.'
   },
   '5044': {
     page: '/cina/ultimul-dans-6-noiembrie', title: 'Ultimul Dans · ’80s Disco Party', theme: '#disco',
