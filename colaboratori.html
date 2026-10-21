@@ -52,9 +52,57 @@ input::placeholder{color:#9C8A8C;}
 .snav-menu[open] .snav-ico-o{display:none;}
 .snav-menu:not([open]) .snav-ico-x{display:none;}
 .snav-top a:hover,.snav-sub a:hover{color:#FFFFFF !important;}
-.col-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap:16px;}
-.col-card{display:flex; flex-direction:column; background:#FFFFFF; border:1px solid rgba(36,21,24,0.08); border-radius:18px; overflow:hidden; box-shadow:0 24px 50px -40px rgba(92,18,34,0.6);}
-.col-logo{height:140px; display:flex; align-items:center; justify-content:center; border-bottom:1px solid rgba(36,21,24,0.06);}
+.c-intro{font-size:16px; color:#D9C8C6; max-width:68ch; margin:12px 0 0;}
+.cf-bar{display:flex; flex-direction:column; gap:12px; margin:0 0 22px; padding:16px 18px; background:#FFFFFF; border:1px solid rgba(36,21,24,0.08); border-radius:16px;}
+.cf-bar[hidden]{display:none;}
+.cf-row{display:flex; align-items:center; gap:12px;}
+.cf-label{flex:0 0 40px; font-size:12px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#8A7779;}
+.cf-chips{display:flex; flex-wrap:wrap; gap:8px; min-width:0;}
+.cf-btn{display:inline-flex; align-items:center; gap:6px; min-height:42px; padding:0 16px; border-radius:999px; border:1px solid rgba(36,21,24,0.16); background:#FAF6F3; color:#241518; font-size:15px; font-weight:600; cursor:pointer; white-space:nowrap; transition:background-color .2s,color .2s,border-color .2s;}
+.cf-btn:hover:not(:disabled){border-color:#A3172F; color:#A3172F;}
+.cf-btn[aria-pressed="true"]{background:#A3172F; border-color:#A3172F; color:#FFFFFF;}
+.cf-btn:disabled{opacity:.4; cursor:default;}
+.cf-n{font-size:12px; font-weight:700; min-width:20px; height:20px; padding:0 6px; border-radius:999px; background:rgba(36,21,24,0.08); display:inline-flex; align-items:center; justify-content:center;}
+.cf-btn[aria-pressed="true"] .cf-n{background:rgba(255,255,255,0.25);}
+.cf-stare{display:flex; align-items:center; gap:14px; padding-top:10px; border-top:1px solid rgba(36,21,24,0.08); font-size:14px; color:#5A4649;}
+.cf-reset{border:0; background:none; padding:0; color:#A3172F; font-weight:700; font-size:14px; cursor:pointer; text-decoration:underline;}
+.cf-reset[hidden]{display:none;}
+.cg{display:grid; grid-template-columns:repeat(auto-fill, minmax(min(420px, 100%), 1fr)); gap:16px;}
+.cc{display:flex; gap:18px; align-items:flex-start; padding:18px; background:#FFFFFF; border:1px solid rgba(36,21,24,0.08); border-radius:16px; box-shadow:0 20px 40px -36px rgba(92,18,34,0.6);}
+.cc[hidden]{display:none;}
+.cc-logo{flex:0 0 104px; width:104px; height:104px; border-radius:14px; display:flex; align-items:center; justify-content:center; overflow:hidden; border:1px solid rgba(36,21,24,0.06);}
+.cc-logo img{max-width:86%; max-height:86%; width:auto; height:auto; object-fit:contain; display:block;}
+.cc-logo img.cc-foto{width:100%; height:100%; max-width:none; max-height:none; object-fit:cover; object-position:center 22%;}
+.cc-nume span{font-family:'Playfair Display',Georgia,serif; font-size:17px; line-height:1.2; color:#241518; text-align:center; padding:0 8px;}
+.cc-txt{min-width:0; flex:1; display:flex; flex-direction:column; gap:8px;}
+.cc-txt h3{margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:21px; line-height:1.2;}
+.cc-meta{display:flex; flex-wrap:wrap; gap:6px; align-items:center;}
+.cc-oras{display:inline-flex; align-items:center; gap:4px; font-size:13px; font-weight:600; color:#5A4649; margin-right:4px;}
+.cc-oras::before{content:""; width:12px; height:12px; background:currentColor; -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z'/%3E%3C/svg%3E") center/contain no-repeat; mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z'/%3E%3C/svg%3E") center/contain no-repeat;}
+.cc-tag{font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#A3172F; background:#F7E9E6; padding:3px 9px; border-radius:999px;}
+.cc-txt p{margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;}
+.cc-link{align-self:flex-start; display:inline-flex; align-items:center; gap:6px; min-height:36px; padding:0 14px; margin-top:2px; border-radius:999px; border:1px solid rgba(163,23,47,0.35); color:#A3172F; font-weight:700; font-size:14px; text-decoration:none;}
+.cc-link:hover{background:#A3172F; color:#FFFFFF; border-color:#A3172F;}
+.cf-gol{margin:12px 0 0; color:#5A4649;}
+.c-final{margin:40px 0 0; text-align:center; font-size:17px; color:#3E2A2D;}
+.c-final a{font-weight:700;}
+@media (max-width:719px){
+  .cf-row{flex-direction:column; align-items:flex-start; gap:6px;}
+  .cf-label{flex:none;}
+}
+@media (max-width:519px){
+  .c-intro{font-size:19px;}
+  .cf-btn{font-size:18px; min-height:52px;}
+  .cf-label,.cf-stare,.cf-reset{font-size:16px;}
+  .cc{gap:16px; padding:18px;}
+  .cc-logo{flex-basis:96px; width:96px; height:96px;}
+  .cc-txt h3{font-size:24px;}
+  .cc-oras{font-size:16px;}
+  .cc-tag{font-size:13px;}
+  .cc-txt p{font-size:18px;}
+  .cc-link{font-size:17px; min-height:46px;}
+  .c-final{font-size:19px;}
+}
 </style>
 <link rel="stylesheet" href="/componente.css">
 <link rel="stylesheet" href="mobile.css">
@@ -115,245 +163,262 @@ input::placeholder{color:#9C8A8C;}
 <a href="/povesti" style="color:#EBC1BE; text-decoration:none; font-weight:600; white-space:nowrap; padding:12px 0; border-bottom:2px solid transparent;">Povești</a>
 </div>
 </nav>
-<section id="top" style="background:radial-gradient(120% 70% at 85% 0%, rgba(163,23,47,0.45) 0%, transparent 60%), radial-gradient(90% 60% at 0% 100%, rgba(92,18,34,0.7) 0%, transparent 60%), #2B0A12; color:#FBF3F1; padding:56px 0 52px;">
-<div style="max-width:900px; margin:0 auto; padding:0 20px;">
+<section id="top" style="background:radial-gradient(120% 70% at 85% 0%, rgba(163,23,47,0.45) 0%, transparent 60%), #2B0A12; color:#FBF3F1; padding:36px 0 34px;">
+<div style="max-width:1120px; margin:0 auto; padding:0 20px;">
 <span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Colaboratori</span>
-<h1 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(38px,7.6vw,62px); line-height:1.06; margin:14px 0 0;">Oamenii și brandurile <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#EBC1BE;">alături de Suspecți</span></h1>
-<p style="font-size:17px; color:#D9C8C6; max-width:62ch; margin:18px 0 0;">Serile noastre prind viață și datorită celor cu care lucrăm. Aici îi găsești pe oamenii, locațiile și brandurile care ne-au fost alături prin servicii, spații, premii sau promovare, ca să-i poți descoperi și tu.</p>
+<h1 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,5.6vw,48px); line-height:1.08; margin:10px 0 0;">Oamenii și brandurile <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.25em; line-height:0.9; color:#EBC1BE;">alături de Suspecți</span></h1>
+<p class="c-intro">La evenimentele Suspecți lucrăm cu oameni și branduri pe care vrem să îi cunoști și tu. Aici găsești colaboratorii noștri din București și Timișoara și câteva cuvinte despre ce facem împreună.</p>
 </div>
 </section>
-<section class="col-sec" style="background:#FAF6F3; padding:56px 0; color:#241518;">
+
+<section style="background:#FAF6F3; padding:28px 0 56px; color:#241518;">
 <div style="max-width:1120px; margin:0 auto; padding:0 20px;">
-<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(28px,5.4vw,40px); line-height:1.1; margin:0 0 8px;">Content &amp; video</h2>
-<p style="margin:0 0 26px; color:#5A4649; font-size:17px;">Oamenii care surprind poveștile serilor noastre.</p>
-<div class="col-grid">
-<article class="col-card">
-<div class="col-logo" style="background:#F3DCD8; overflow:hidden;"><img src="/images/colaboratori/oriana-trica.jpg" alt="Oriana Trica, Meraki MarketLab" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:center 22%;"></div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-<h3 style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; line-height:1.2;">Meraki MarketLab</h3>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#A3172F;">Oriana Trica · creatoare de conținut</span>
-<p style="margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;">Creație de conținut și video, realizată de Oriana Trica.</p>
-<p style="margin:0; color:#241518; font-size:15px; font-weight:600;">Content și video pentru Suspecți.</p>
-<a href="https://www.instagram.com/orianagelsey/" target="_blank" rel="noopener noreferrer" style="margin-top:auto; padding-top:6px; color:#A3172F; font-weight:700; text-decoration:none;">Instagram →</a>
+
+<div class="cf-bar" hidden>
+<div class="cf-row">
+<span class="cf-label" id="cf-oras">Oraș</span>
+<div class="cf-chips" role="group" aria-labelledby="cf-oras">
+<button type="button" class="cf-btn" data-filtru="oras" data-val="" aria-pressed="true">Toți</button>
+<button type="button" class="cf-btn" data-filtru="oras" data-val="bucuresti" aria-pressed="false">București</button>
+<button type="button" class="cf-btn" data-filtru="oras" data-val="timisoara" aria-pressed="false">Timișoara</button>
+</div>
+</div>
+<div class="cf-row">
+<span class="cf-label" id="cf-tip">Tip</span>
+<div class="cf-chips" role="group" aria-labelledby="cf-tip">
+<button type="button" class="cf-btn" data-filtru="tip" data-val="" aria-pressed="true">Toate</button>
+<button type="button" class="cf-btn" data-filtru="tip" data-val="content" aria-pressed="false">Content &amp; video</button>
+<button type="button" class="cf-btn" data-filtru="tip" data-val="foto" aria-pressed="false">Fotografie</button>
+<button type="button" class="cf-btn" data-filtru="tip" data-val="muzica" aria-pressed="false">Muzică</button>
+<button type="button" class="cf-btn" data-filtru="tip" data-val="locatii" aria-pressed="false">Locații</button>
+<button type="button" class="cf-btn" data-filtru="tip" data-val="comunitati" aria-pressed="false">Comunități</button>
+<button type="button" class="cf-btn" data-filtru="tip" data-val="premii" aria-pressed="false">Premii</button>
+</div>
+</div>
+<div class="cf-stare"><span class="cf-count" aria-live="polite"></span><button type="button" class="cf-reset" hidden>Șterge filtrele</button></div>
+</div>
+
+<div class="cg">
+
+<article class="cc" data-oras="bucuresti" data-tip="content">
+<div class="cc-logo" style="background:#F3DCD8;"><img src="/images/colaboratori/oriana-trica.jpg" alt="Oriana Trica, Meraki MarketLab" loading="lazy" class="cc-foto"></div>
+<div class="cc-txt">
+<h3>Meraki MarketLab</h3>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Content &amp; video</span></div>
+<p>Meraki MarketLab este proiectul Orianei Trica, creatoare de conținut. Pentru Suspecți, realizează conținut și video de la evenimente.</p>
+<a class="cc-link" href="https://www.instagram.com/orianagelsey/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
 </div>
 </article>
-<article class="col-card">
-<div class="col-logo" style="background:#2B0A12;"><img src="/images/colaboratori/creative-creature.png" alt="Creative Creature Production" loading="lazy" style="max-width:80%; max-height:112px; width:auto; height:auto; object-fit:contain;"></div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-<h3 style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; line-height:1.2;">Creative Creature Production</h3>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#A3172F;">Studio de producție</span>
-<p style="margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;">Studio de producție video și podcast, care realizează și ședințe foto.</p>
-<p style="margin:0; color:#241518; font-size:15px; font-weight:600;">Content și video pentru Suspecți.</p>
-<a href="https://creativecreature.ro/" target="_blank" rel="noopener noreferrer" style="margin-top:auto; padding-top:6px; color:#A3172F; font-weight:700; text-decoration:none;">creativecreature.ro →</a>
+
+<article class="cc" data-oras="bucuresti" data-tip="content">
+<div class="cc-logo" style="background:#2B0A12;"><img src="/images/colaboratori/creative-creature.png" alt="Creative Creature Production" loading="lazy"></div>
+<div class="cc-txt">
+<h3>Creative Creature Production</h3>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Content &amp; video</span></div>
+<p>Studio de producție video și podcast, care realizează și ședințe foto. Pentru Suspecți, se ocupă de producția video.</p>
+<a class="cc-link" href="https://creativecreature.ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
 </div>
 </article>
+
+<article class="cc" data-oras="bucuresti" data-tip="foto">
+<div class="cc-logo" style="background:#2B0A12;"><img src="/images/colaboratori/tower-media.webp" alt="Tower Media Production &amp; Events" loading="lazy"></div>
+<div class="cc-txt">
+<h3>Marian Vasilescu / Tower Media</h3>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Fotografie</span></div>
+<p>Echipa lui Marian Vasilescu face producție foto-video și organizează evenimente corporate. La Suspecți, fotografiază evenimentele noastre.</p>
+<a class="cc-link" href="https://towermedia.ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
 </div>
+</article>
+
+<article class="cc" data-oras="bucuresti" data-tip="muzica">
+<div class="cc-logo" style="background:#FFFFFF;"><img src="/images/colaboratori/dj-sweetcase.jpg" alt="DJ SweetCase" loading="lazy"></div>
+<div class="cc-txt">
+<h3>DJ SweetCase</h3>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Muzică</span></div>
+<p>DJ cu care lucrăm la evenimentele Suspecți din București, unde se ocupă de muzică și de atmosferă.</p>
+<a class="cc-link" href="https://www.instagram.com/djsweetcase/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+</div>
+</article>
+
+<article class="cc" data-oras="bucuresti" data-tip="locatii">
+<div class="cc-logo" style="background:#2B0A12;"><img src="/images/colaboratori/naive.png" alt="Naïve" loading="lazy"></div>
+<div class="cc-txt">
+<h3>Naïve</h3>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Locații</span></div>
+<p>Restaurant și rooftop în centrul Bucureștiului. Aici organizăm The Singing Brunch.</p>
+<a class="cc-link" href="https://naive.ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
+</div>
+</article>
+
+<article class="cc" data-oras="bucuresti" data-tip="locatii">
+<div class="cc-logo" style="background:#FFFFFF;"><img src="/images/colaboratori/grand-hotel-bucuresti.png" alt="Grand Hotel București" loading="lazy"></div>
+<div class="cc-txt">
+<h3>Grand Hotel București</h3>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Locații</span></div>
+<p>Hotel în centrul Bucureștiului, partener de locație pentru evenimentele Suspecți.</p>
+<a class="cc-link" href="https://www.grandhotelbucharest.ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
+</div>
+</article>
+
+<article class="cc" data-oras="bucuresti" data-tip="locatii">
+<div class="cc-logo cc-nume" style="background:#F3DCD8;"><span>Mirador Rooftop</span></div>
+<div class="cc-txt">
+<h3>Mirador Rooftop</h3>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Locații</span></div>
+<p>Restaurant și bar pe acoperiș, în București. Aici organizăm Suspecți la Cină.</p>
+<a class="cc-link" href="https://www.instagram.com/mirador.rooftop/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+</div>
+</article>
+
+<article class="cc" data-oras="timisoara" data-tip="locatii">
+<div class="cc-logo" style="background:#FFFFFF;"><img src="/images/colaboratori/restaurant-merlot.jpg" alt="Restaurant Merlot" loading="lazy"></div>
+<div class="cc-txt">
+<h3>Restaurant Merlot</h3>
+<div class="cc-meta"><span class="cc-oras">Timișoara</span><span class="cc-tag">Locații</span></div>
+<p>Restaurant din Timișoara, partener de locație pentru evenimentele Suspecți.</p>
+<a class="cc-link" href="https://www.restaurant-merlot.ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
+</div>
+</article>
+
+<article class="cc" data-oras="timisoara" data-tip="locatii">
+<div class="cc-logo" style="background:#000000;"><img src="/images/colaboratori/dahub.jpg" alt="DăHub" loading="lazy"></div>
+<div class="cc-txt">
+<h3>DăHub</h3>
+<div class="cc-meta"><span class="cc-oras">Timișoara</span><span class="cc-tag">Locații</span></div>
+<p>Hub cultural din Timișoara, cu stand-up comedy, karaoke și muzică live. Aici organizăm Suspecți la Party.</p>
+<a class="cc-link" href="https://www.instagram.com/dahub.timisoara/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+</div>
+</article>
+
+<article class="cc" data-oras="bucuresti" data-tip="comunitati">
+<div class="cc-logo" style="background:#000002;"><img src="/images/colaboratori/prinde-curaj.jpg" alt="Prinde Curaj, Alex Andrei" loading="lazy"></div>
+<div class="cc-txt">
+<h3>Prinde Curaj · Vii singur, pleci cu Grupul</h3>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Comunități</span></div>
+<p>Comunitatea lui Alex Andrei. Prin „Vii singur, pleci cu grupul”, organizează lunar evenimente pentru adulții care vor să cunoască oameni noi.</p>
+<a class="cc-link" href="https://alexandrei.org/evenimente" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
+</div>
+</article>
+
+<article class="cc" data-oras="" data-tip="comunitati">
+<div class="cc-logo" style="background:#0D3D3D;"><img src="/images/colaboratori/bucurestiul-povestit.jpg" alt="Bucureștiul Povestit" loading="lazy"></div>
+<div class="cc-txt">
+<h3>Bucureștiul Povestit</h3>
+<div class="cc-meta"><span class="cc-tag">Comunități</span></div>
+<p>Proiectul lui Ovidiu Neacșu despre poveștile Bucureștiului.</p>
+<a class="cc-link" href="https://www.facebook.com/bucurestiul.povestit/" target="_blank" rel="noopener noreferrer">Facebook <span aria-hidden="true">↗</span></a>
+</div>
+</article>
+
+<article class="cc" data-oras="bucuresti" data-tip="comunitati premii">
+<div class="cc-logo" style="background:#FFFFFF;"><img src="/images/colaboratori/hai-sa-socializam.jpg" alt="Hai să Socializăm" loading="lazy"></div>
+<div class="cc-txt">
+<h3>Hai să Socializăm</h3>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Comunități</span><span class="cc-tag">Premii</span></div>
+<p>Împreună organizăm „Hai să socializăm la Cină” și „Suspecți în Treasure Hunt”. Au oferit și vouchere pentru excursii și drumeții de o zi.</p>
+<a class="cc-link" href="https://haisasocializam.ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
+</div>
+</article>
+
+<article class="cc" data-oras="bucuresti" data-tip="premii">
+<div class="cc-logo" style="background:#FFFFFF;"><img src="/images/colaboratori/tonic-studio.png" alt="Tonic Studio" loading="lazy"></div>
+<div class="cc-txt">
+<h3>Tonic Studio</h3>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Premii</span></div>
+<p>Salon de înfrumusețare și head spa din București. Au oferit vouchere pentru sesiuni de head spa.</p>
+<a class="cc-link" href="https://tonicstudio.ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
+</div>
+</article>
+
+<article class="cc" data-oras="bucuresti" data-tip="premii">
+<div class="cc-logo" style="background:#2B0A12;"><img src="/images/colaboratori/museum-of-senses.svg" alt="Museum of Senses" loading="lazy"></div>
+<div class="cc-txt">
+<h3>Museum of Senses</h3>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Premii</span></div>
+<p>Muzeu interactiv din București, despre percepție și simțuri. Au oferit vouchere pentru vizite în familie.</p>
+<a class="cc-link" href="https://museumofsenses.ro/ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
+</div>
+</article>
+
+<article class="cc" data-oras="bucuresti" data-tip="premii">
+<div class="cc-logo" style="background:#404042;"><img src="/images/colaboratori/the-fool.jpg" alt="The Fool" loading="lazy"></div>
+<div class="cc-txt">
+<h3>The Fool</h3>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Premii</span></div>
+<p>Club de stand-up comedy și spectacole live din București. Au oferit vouchere pentru spectacole de stand-up comedy.</p>
+<a class="cc-link" href="https://www.thefool.ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
+</div>
+</article>
+
+<article class="cc" data-oras="timisoara" data-tip="premii">
+<div class="cc-logo" style="background:#000000;"><img src="/images/colaboratori/zen-expert-logo.jpg" alt="Zen Expert" loading="lazy"></div>
+<div class="cc-txt">
+<h3>Zen Expert</h3>
+<div class="cc-meta"><span class="cc-oras">Timișoara</span><span class="cc-tag">Premii</span></div>
+<p>Salon de masaj și spa din Timișoara. Au oferit vouchere pentru masaj, ca premiu la Suspecți în Treasure Hunt.</p>
+<a class="cc-link" href="https://www.instagram.com/zenexpertmasaj/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+</div>
+</article>
+
+<article class="cc" data-oras="timisoara" data-tip="premii">
+<div class="cc-logo" style="background:#2B0A12;"><img src="/images/colaboratori/beat-se7en.svg" alt="Beat Se7en" loading="lazy"></div>
+<div class="cc-txt">
+<h3>Beat Se7en</h3>
+<div class="cc-meta"><span class="cc-oras">Timișoara</span><span class="cc-tag">Premii</span></div>
+<p>Game room în centrul Timișoarei. Au oferit vouchere pentru jocuri pe podea LED interactivă, ca premiu la Treasure Hunt Family.</p>
+<a class="cc-link" href="https://beatse7en.ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
+</div>
+</article>
+
+</div>
+<p class="cf-gol" hidden>Nu avem încă colaboratori pentru această combinație.</p>
+
+<p class="c-final">Ai o idee de colaborare? <a href="mailto:contact@suspectilacina.com">Scrie-ne.</a></p>
 </div>
 </section>
-<section class="col-sec" style="background:#F3E6E2; padding:56px 0; color:#241518;">
-<div style="max-width:1120px; margin:0 auto; padding:0 20px;">
-<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(28px,5.4vw,40px); line-height:1.1; margin:0 0 8px;">Fotografie</h2>
-<p style="margin:0 0 26px; color:#5A4649; font-size:17px;">Cei care păstrează amintirile fiecărei ediții.</p>
-<div class="col-grid">
-<article class="col-card">
-<div class="col-logo" style="background:#2B0A12;"><img src="/images/colaboratori/tower-media.webp" alt="Marian Vasilescu / Tower Media" loading="lazy" style="max-width:80%; max-height:112px; width:auto; height:auto; object-fit:contain;"></div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-<h3 style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; line-height:1.2;">Marian Vasilescu / Tower Media</h3>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#A3172F;">Foto-video · București</span>
-<p style="margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;">Echipă din București pentru evenimente corporate, foto-video și identitate de brand, cu 20 de ani de experiență în foto-video.</p>
-<p style="margin:0; color:#241518; font-size:15px; font-weight:600;">Fotografie la evenimente Suspecți.</p>
-<a href="https://towermedia.ro/" target="_blank" rel="noopener noreferrer" style="margin-top:auto; padding-top:6px; color:#A3172F; font-weight:700; text-decoration:none;">towermedia.ro →</a>
-</div>
-</article>
-</div>
-</div>
-</section>
-<section class="col-sec" style="background:#FAF6F3; padding:56px 0; color:#241518;">
-<div style="max-width:1120px; margin:0 auto; padding:0 20px;">
-<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(28px,5.4vw,40px); line-height:1.1; margin:0 0 8px;">Muzică și atmosferă</h2>
-<p style="margin:0 0 26px; color:#5A4649; font-size:17px;">Ritmul de după joc.</p>
-<div class="col-grid">
-<article class="col-card">
-<div class="col-logo" style="background:#FFFFFF;"><img src="/images/colaboratori/dj-sweetcase.jpg" alt="DJ SweetCase" loading="lazy" style="max-width:80%; max-height:112px; width:auto; height:auto; object-fit:contain;"></div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-<h3 style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; line-height:1.2;">DJ SweetCase</h3>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#A3172F;">DJ</span>
-<p style="margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;">DJ.</p>
-<p style="margin:0; color:#241518; font-size:15px; font-weight:600;">Muzică și atmosferă la evenimente Suspecți.</p>
-<a href="https://www.instagram.com/djsweetcase/" target="_blank" rel="noopener noreferrer" style="margin-top:auto; padding-top:6px; color:#A3172F; font-weight:700; text-decoration:none;">Instagram →</a>
-</div>
-</article>
-</div>
-</div>
-</section>
-<section class="col-sec" style="background:#F3E6E2; padding:56px 0; color:#241518;">
-<div style="max-width:1120px; margin:0 auto; padding:0 20px;">
-<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(28px,5.4vw,40px); line-height:1.1; margin:0 0 8px;">Locații</h2>
-<p style="margin:0 0 26px; color:#5A4649; font-size:17px;">Locurile care ne-au primit, în București și Timișoara.</p>
-<div class="col-grid">
-<article class="col-card">
-<div class="col-logo" style="background:#2B0A12;"><img src="/images/colaboratori/naive.png" alt="Naïve" loading="lazy" style="max-width:80%; max-height:112px; width:auto; height:auto; object-fit:contain;"></div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-<h3 style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; line-height:1.2;">Naïve</h3>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#A3172F;">București</span>
-<p style="margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;">Bar, restaurant, club și rooftop la ultimul etaj al clădirii Magazinul București, pe Bd. I.C. Brătianu.</p>
-<p style="margin:0; color:#241518; font-size:15px; font-weight:600;">Aici are loc The Singing Brunch.</p>
-<a href="https://naive.ro/" target="_blank" rel="noopener noreferrer" style="margin-top:auto; padding-top:6px; color:#A3172F; font-weight:700; text-decoration:none;">naive.ro →</a>
-</div>
-</article>
-<article class="col-card">
-<div class="col-logo" style="background:#FFFFFF;"><img src="/images/colaboratori/grand-hotel-bucuresti.png" alt="Grand Hotel București" loading="lazy" style="max-width:80%; max-height:112px; width:auto; height:auto; object-fit:contain;"></div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-<h3 style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; line-height:1.2;">Grand Hotel București</h3>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#A3172F;">București</span>
-<p style="margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;">Hotel de cinci stele din centrul Bucureștiului, deschis în 1971, cu piscină pe acoperiș, Sky Lounge la etajul 21 și spații pentru evenimente.</p>
-<a href="https://www.grandhotelbucharest.ro/" target="_blank" rel="noopener noreferrer" style="margin-top:auto; padding-top:6px; color:#A3172F; font-weight:700; text-decoration:none;">grandhotelbucharest.ro →</a>
-</div>
-</article>
-<article class="col-card">
-<div class="col-logo" style="background:#FFFFFF;"><img src="/images/colaboratori/restaurant-merlot.jpg" alt="Restaurant Merlot" loading="lazy" style="max-width:80%; max-height:112px; width:auto; height:auto; object-fit:contain;"></div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-<h3 style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; line-height:1.2;">Restaurant Merlot</h3>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#A3172F;">Timișoara</span>
-<p style="margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;">Restaurant din Timișoara, cu bucătărie rafinată.</p>
-<a href="https://www.restaurant-merlot.ro/" target="_blank" rel="noopener noreferrer" style="margin-top:auto; padding-top:6px; color:#A3172F; font-weight:700; text-decoration:none;">restaurant-merlot.ro →</a>
-</div>
-</article>
-<article class="col-card">
-<div class="col-logo" style="background:#F3DCD8;"><span style="font-family:'Playfair Display',Georgia,serif; font-size:24px; line-height:1.2; color:#241518; text-align:center; padding:0 14px;">Mirador Rooftop</span></div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-<h3 style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; line-height:1.2;">Mirador Rooftop</h3>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#A3172F;">București</span>
-<p style="margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;">Restaurant și bar pe acoperiș, pe strada Constantin Mille 18.</p>
-<p style="margin:0; color:#241518; font-size:15px; font-weight:600;">Aici are loc Suspecți la Cină · Ultimul Dans.</p>
-<a href="https://www.instagram.com/mirador.rooftop/" target="_blank" rel="noopener noreferrer" style="margin-top:auto; padding-top:6px; color:#A3172F; font-weight:700; text-decoration:none;">Instagram →</a>
-</div>
-</article>
-<article class="col-card">
-<div class="col-logo" style="background:#000000;"><img src="/images/colaboratori/dahub.jpg" alt="DăHub" loading="lazy" style="max-width:80%; max-height:112px; width:auto; height:auto; object-fit:contain;"></div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-<h3 style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; line-height:1.2;">DăHub</h3>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#A3172F;">Timișoara</span>
-<p style="margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;">Hub cultural în Complexul Studențesc din Timișoara, cu stand-up comedy, karaoke și muzică live.</p>
-<p style="margin:0; color:#241518; font-size:15px; font-weight:600;">Aici are loc Suspecți la Party · Addams Family.</p>
-<a href="https://www.instagram.com/dahub.timisoara/" target="_blank" rel="noopener noreferrer" style="margin-top:auto; padding-top:6px; color:#A3172F; font-weight:700; text-decoration:none;">Instagram →</a>
-</div>
-</article>
-</div>
-</div>
-</section>
-<section class="col-sec" style="background:#FAF6F3; padding:56px 0; color:#241518;">
-<div style="max-width:1120px; margin:0 auto; padding:0 20px;">
-<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(28px,5.4vw,40px); line-height:1.1; margin:0 0 8px;">Comunități și proiecte împreună</h2>
-<p style="margin:0 0 26px; color:#5A4649; font-size:17px;">Oameni cu care aducem și mai mulți oameni la aceeași masă.</p>
-<div class="col-grid">
-<article class="col-card">
-<div class="col-logo" style="background:#000002;"><img src="/images/colaboratori/prinde-curaj.jpg" alt="Vii singur, pleci cu Grupul" loading="lazy" style="max-width:80%; max-height:112px; width:auto; height:auto; object-fit:contain;"></div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-<h3 style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; line-height:1.2;">Vii singur, pleci cu Grupul</h3>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#A3172F;">Alex Andrei · Prinde Curaj</span>
-<p style="margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;">Eveniment de socializare creat de Alex Andrei, care organizează evenimente sociale și face coaching de carismă în București.</p>
-<a href="https://www.alexandrei.org/" target="_blank" rel="noopener noreferrer" style="margin-top:auto; padding-top:6px; color:#A3172F; font-weight:700; text-decoration:none;">alexandrei.org →</a>
-</div>
-</article>
-<article class="col-card">
-<div class="col-logo" style="background:#0D3D3D;"><img src="/images/colaboratori/bucurestiul-povestit.jpg" alt="Bucureștiul Povestit" loading="lazy" style="max-width:80%; max-height:112px; width:auto; height:auto; object-fit:contain;"></div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-<h3 style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; line-height:1.2;">Bucureștiul Povestit</h3>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#A3172F;">Ovidiu Neacșu</span>
-<p style="margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;">Proiect de Ovidiu Neacșu despre poveștile Bucureștiului.</p>
-<a href="https://www.facebook.com/bucurestiul.povestit/" target="_blank" rel="noopener noreferrer" style="margin-top:auto; padding-top:6px; color:#A3172F; font-weight:700; text-decoration:none;">Facebook →</a>
-</div>
-</article>
-<article class="col-card">
-<div class="col-logo" style="background:#FFFFFF;"><img src="/images/colaboratori/hai-sa-socializam.jpg" alt="Hai să Socializăm" loading="lazy" style="max-width:80%; max-height:112px; width:auto; height:auto; object-fit:contain;"></div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-<h3 style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; line-height:1.2;">Hai să Socializăm</h3>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#A3172F;">Comunitate</span>
-<p style="margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;">Comunitate care organizează evenimente de socializare, excursii montane și drumeții.</p>
-<p style="margin:0; color:#241518; font-size:15px; font-weight:600;">Împreună am organizat „Hai să socializăm la Cină” și Suspecți în Treasure Hunt.</p>
-<a href="https://haisasocializam.ro/" target="_blank" rel="noopener noreferrer" style="margin-top:auto; padding-top:6px; color:#A3172F; font-weight:700; text-decoration:none;">haisasocializam.ro →</a>
-</div>
-</article>
-</div>
-</div>
-</section>
-<section class="col-sec" style="background:#F3E6E2; padding:56px 0; color:#241518;">
-<div style="max-width:1120px; margin:0 auto; padding:0 20px;">
-<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(28px,5.4vw,40px); line-height:1.1; margin:0 0 8px;">Premii și experiențe pentru participanți</h2>
-<p style="margin:0 0 26px; color:#5A4649; font-size:17px;">Surprizele pe care le-au primit câștigătorii unor ediții.</p>
-<div class="col-grid">
-<article class="col-card">
-<div class="col-logo" style="background:#FFFFFF;"><img src="/images/colaboratori/hai-sa-socializam.jpg" alt="Hai să Socializăm" loading="lazy" style="max-width:80%; max-height:112px; width:auto; height:auto; object-fit:contain;"></div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-<h3 style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; line-height:1.2;">Hai să Socializăm</h3>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#A3172F;">Comunitate</span>
-<p style="margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;">Comunitate care organizează evenimente de socializare, excursii montane și drumeții.</p>
-<p style="margin:0; color:#241518; font-size:15px; font-weight:600;">Premiu: vouchere pentru excursii și drumeții de o zi.</p>
-<a href="https://haisasocializam.ro/" target="_blank" rel="noopener noreferrer" style="margin-top:auto; padding-top:6px; color:#A3172F; font-weight:700; text-decoration:none;">haisasocializam.ro →</a>
-</div>
-</article>
-<article class="col-card">
-<div class="col-logo" style="background:#FFFFFF;"><img src="/images/colaboratori/tonic-studio.png" alt="Tonic Studio" loading="lazy" style="max-width:80%; max-height:112px; width:auto; height:auto; object-fit:contain;"></div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-<h3 style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; line-height:1.2;">Tonic Studio</h3>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#A3172F;">București</span>
-<p style="margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;">Salon de înfrumusețare și Head SPA din București.</p>
-<p style="margin:0; color:#241518; font-size:15px; font-weight:600;">Premiu: vouchere pentru head spa.</p>
-<a href="https://tonicstudio.ro/" target="_blank" rel="noopener noreferrer" style="margin-top:auto; padding-top:6px; color:#A3172F; font-weight:700; text-decoration:none;">tonicstudio.ro →</a>
-</div>
-</article>
-<article class="col-card">
-<div class="col-logo" style="background:#2B0A12;"><img src="/images/colaboratori/museum-of-senses.svg" alt="Museum of Senses" loading="lazy" style="max-width:80%; max-height:112px; width:auto; height:auto; object-fit:contain;"></div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-<h3 style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; line-height:1.2;">Museum of Senses</h3>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#A3172F;">București</span>
-<p style="margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;">Muzeu interactiv din București, despre percepție și simțuri.</p>
-<p style="margin:0; color:#241518; font-size:15px; font-weight:600;">Premiu: vouchere pentru familii.</p>
-<a href="https://museumofsenses.ro/ro/" target="_blank" rel="noopener noreferrer" style="margin-top:auto; padding-top:6px; color:#A3172F; font-weight:700; text-decoration:none;">museumofsenses.ro →</a>
-</div>
-</article>
-<article class="col-card">
-<div class="col-logo" style="background:#404042;"><img src="/images/colaboratori/the-fool.jpg" alt="The Fool" loading="lazy" style="max-width:80%; max-height:112px; width:auto; height:auto; object-fit:contain;"></div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-<h3 style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; line-height:1.2;">The Fool</h3>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#A3172F;">București</span>
-<p style="margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;">Club de stand-up comedy și spectacole live, pe Calea Victoriei 118.</p>
-<p style="margin:0; color:#241518; font-size:15px; font-weight:600;">Premiu: vouchere pentru spectacole de stand-up.</p>
-<a href="https://www.thefool.ro/" target="_blank" rel="noopener noreferrer" style="margin-top:auto; padding-top:6px; color:#A3172F; font-weight:700; text-decoration:none;">thefool.ro →</a>
-</div>
-</article>
-<article class="col-card">
-<div class="col-logo" style="background:#000000;"><img src="/images/colaboratori/zen-expert-logo.jpg" alt="Zen Expert" loading="lazy" style="max-width:80%; max-height:112px; width:auto; height:auto; object-fit:contain;"></div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-<h3 style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; line-height:1.2;">Zen Expert</h3>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#A3172F;">Timișoara</span>
-<p style="margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;">Salon de masaj și spa din Timișoara.</p>
-<p style="margin:0; color:#241518; font-size:15px; font-weight:600;">Premiu: vouchere pentru masaj.</p>
-<a href="https://www.instagram.com/zenexpertmasaj/" target="_blank" rel="noopener noreferrer" style="margin-top:auto; padding-top:6px; color:#A3172F; font-weight:700; text-decoration:none;">Instagram →</a>
-</div>
-</article>
-<article class="col-card">
-<div class="col-logo" style="background:#2B0A12;"><img src="/images/colaboratori/beat-se7en.svg" alt="Beat Se7en" loading="lazy" style="max-width:80%; max-height:112px; width:auto; height:auto; object-fit:contain;"></div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1;">
-<h3 style="margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; line-height:1.2;">Beat Se7en</h3>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#A3172F;">Timișoara</span>
-<p style="margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;">Game room în centrul Timișoarei, cu un joc pe podea LED pentru echipe de 2–6 jucători.</p>
-<p style="margin:0; color:#241518; font-size:15px; font-weight:600;">Premiu: vouchere pentru o sesiune de joc.</p>
-<a href="https://beatse7en.ro/" target="_blank" rel="noopener noreferrer" style="margin-top:auto; padding-top:6px; color:#A3172F; font-weight:700; text-decoration:none;">beatse7en.ro →</a>
-</div>
-</article>
-</div>
-</div>
-</section>
-<section style="background:#2B0A12; color:#FBF3F1; padding:56px 0;">
-<div style="max-width:760px; margin:0 auto; padding:0 20px; text-align:center;">
-<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(26px,5vw,36px); margin:0 0 10px;">Ai o idee de colaborare? <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; color:#EBC1BE;">Scrie-ne.</span></h2>
-<p style="margin:0 0 22px; color:#D9C8C6;">Ne găsești la <a href="mailto:contact@suspectilacina.com" style="color:#EBC1BE; font-weight:600;">contact@suspectilacina.com</a> sau pe <a href="https://wa.me/40755639871" target="_blank" rel="noopener noreferrer" style="color:#EBC1BE; font-weight:600;">WhatsApp</a>.</p>
-</div>
-</section>
-</div>
-</section>
+<script>
+(function () {
+  var bara = document.querySelector('.cf-bar');
+  var carduri = [].slice.call(document.querySelectorAll('.cc'));
+  var gol = document.querySelector('.cf-gol');
+  var numar = document.querySelector('.cf-count');
+  var reset = document.querySelector('.cf-reset');
+  var butoane = [].slice.call(bara.querySelectorAll('.cf-btn'));
+  var ales = { oras: '', tip: '' };
+  butoane.forEach(function (b) { b.setAttribute('data-text', b.textContent); });
+  function are(c, filtru, val) { return !val || (' ' + c.getAttribute('data-' + filtru) + ' ').indexOf(' ' + val + ' ') >= 0; }
+  function cate(oras, tip) { return carduri.filter(function (c) { return are(c, 'oras', oras) && are(c, 'tip', tip); }).length; }
+  function aplica() {
+    var vizibile = 0;
+    carduri.forEach(function (c) {
+      var ok = are(c, 'oras', ales.oras) && are(c, 'tip', ales.tip);
+      c.hidden = !ok;
+      if (ok) vizibile++;
+    });
+    gol.hidden = vizibile > 0;
+    numar.textContent = vizibile === 1 ? '1 colaborator' : vizibile + ' colaboratori';
+    reset.hidden = !ales.oras && !ales.tip;
+    butoane.forEach(function (b) {
+      var f = b.getAttribute('data-filtru'), v = b.getAttribute('data-val');
+      var n = f === 'oras' ? cate(v, ales.tip) : cate(ales.oras, v);
+      b.setAttribute('aria-pressed', String(ales[f] === v));
+      b.innerHTML = '';
+      b.appendChild(document.createTextNode(b.getAttribute('data-text') + ' '));
+      var s = document.createElement('span'); s.className = 'cf-n'; s.textContent = n; b.appendChild(s);
+      b.disabled = n === 0 && ales[f] !== v;
+    });
+  }
+  bara.addEventListener('click', function (e) {
+    var b = e.target.closest('.cf-btn');
+    if (!b || b.disabled) return;
+    ales[b.getAttribute('data-filtru')] = b.getAttribute('data-val');
+    aplica();
+  });
+  reset.addEventListener('click', function () { ales = { oras: '', tip: '' }; aplica(); });
+  bara.hidden = false;
+  aplica();
+})();
+</script>
 <footer style="background:#1A060B; color:#D9C8C6; padding:48px 0 40px; font-size:15px;">
 <div style="max-width:1180px; margin:0 auto; padding:0 20px; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap:28px;">
 <div style="display:flex; flex-direction:column; gap:8px;">
