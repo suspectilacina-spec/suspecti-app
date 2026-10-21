@@ -346,94 +346,29 @@ function calPickPWith(btn) {
 </div>
 
 <script>
-// Edițiile vin din /events.js (un singur loc pentru toate paginile).
+// Edițiile vin din /events.js; rândurile sunt desenate de componentele comune (componente.js).
 var CAL_EVENTS = SUSPECTI_EVENTS;
-var CAL_MONTH_LABELS = SUSPECTI_MONTH_LABELS;
 var CAL_STATE = { city: "Toate", format: "Toate" };
-
-function calEsc(s) {
-  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-}
 
 function calRender() {
   var list = CAL_EVENTS.filter(function (e) {
     return (CAL_STATE.city === "Toate" || e.city === CAL_STATE.city) &&
-           (CAL_STATE.format === "Toate" || e.key === CAL_STATE.format);
+           (CAL_STATE.format === "Toate" || e.filtru === CAL_STATE.format || e.key === CAL_STATE.format);
   });
-  var months = CAL_MONTH_LABELS.map(function (label, i) {
-    return { label: label, events: list.filter(function (e) { return e.m === i; }) };
-  }).filter(function (m) { return m.events.length > 0; });
-
   var n = list.length;
   var countEl = document.getElementById("calCountText");
-  if (countEl) {
-    countEl.textContent = n === 0 ? "Nicio ediție pentru filtrele alese." : (n === 1 ? "O ediție programată." : n + " ediții programate.");
-  }
-
-  var listEl = document.getElementById("calEventsList");
-  var emptyEl = document.getElementById("calNoEvents");
-  if (n === 0) {
-    listEl.innerHTML = "";
-    emptyEl.style.display = "";
-    return;
-  }
-  emptyEl.style.display = "none";
-
-  var html = "";
-  months.forEach(function (m) {
-    html += '<div style="margin-bottom:40px;">';
-    html += '<h2 style="font-family:\'Playfair Display\',Georgia,serif; font-weight:500; font-size:clamp(26px,4.6vw,36px); line-height:1.1; margin:0 0 16px; padding-bottom:10px; border-bottom:1px solid rgba(36,21,24,0.16);">' + calEsc(m.label) + '</h2>';
-    html += '<div style="display:flex; flex-direction:column; gap:12px;">';
-    m.events.forEach(function (ev) {
-      html += '<article class="lift evrow" style="background:rgba(255,255,255,0.65); border:1px solid rgba(255,255,255,0.85); border-radius:18px; overflow:hidden; align-items:stretch;">';
-      html += '<div style="background:#2B0A12; color:#FBF3F1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:16px 8px; text-align:center; line-height:1.1;">';
-      html += '<span style="font-size:11px; font-weight:700; letter-spacing:0.14em; color:#EBC1BE;">' + calEsc(ev.weekday) + '</span>';
-      html += '<span style="font-family:\'Playfair Display\',Georgia,serif; font-size:36px; margin:4px 0;">' + calEsc(ev.day) + '</span>';
-      html += '<span style="font-size:12px; font-weight:700; letter-spacing:0.12em;">' + calEsc(ev.month) + '</span>';
-      html += '<span style="margin-top:10px; padding:4px 8px; border-radius:999px; background:#A3172F; color:#FFFFFF; font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; white-space:nowrap;">' + calEsc(ev.city) + '</span>';
-      html += '</div>';
-      html += '<a href="' + calEsc(ev.page) + '" class="evimg" style="display:block; overflow:hidden;"><img src="' + calEsc(ev.img) + '" alt="' + calEsc(ev.title) + '" style="width:100%; height:100%; min-height:150px; object-fit:cover; object-position:' + calEsc(ev.pos || 'center 35%') + ';"></a>';
-      html += '<div style="padding:16px 20px; display:flex; flex-direction:column; gap:4px; min-width:0;">';
-      html += '<div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px;"><span style="font-size:11px; letter-spacing:0.16em; font-weight:700; color:#A3172F; text-transform:uppercase;">' + calEsc(ev.format) + ' · ' + calEsc(ev.city) + '</span></div>';
-      html += '<h3 style="font-family:\'Playfair Display\',Georgia,serif; font-weight:500; font-size:24px; line-height:1.2; margin:2px 0 0;"><a href="' + calEsc(ev.page) + '" style="color:#241518; text-decoration:none;">' + calEsc(ev.title) + '</a></h3>';
-      html += '<span style="color:#5A4649; font-size:15px;">' + calEsc(ev.meta) + ', <strong style="color:#241518;">' + calEsc(ev.city) + '</strong></span>';
-      html += '</div>';
-      html += '<div class="evact" style="padding:16px 20px; display:flex; flex-wrap:wrap; align-items:center; justify-content:flex-end; gap:10px; border-top:1px solid rgba(36,21,24,0.08);">';
-      html += '<span style="font-weight:700; font-size:17px; margin-right:auto;">' + (ev.bookable ? calEsc(ev.price) : '') + (ev.statusNote ? '<span style="display:block; margin-top:4px; font-size:13px; font-weight:700; color:#A3172F;">' + calEsc(ev.statusNote) + '</span>' : '') + (ev.priceNote ? '<span style="display:block; margin-top:4px; padding:3px 9px; border-radius:999px; background:#A3172F; color:#FFFFFF; font-size:12px; font-weight:700; width:max-content; max-width:100%;">' + calEsc(ev.priceNote) + '</span>' : '') + '</span>';
-      html += '<a href="' + calEsc(ev.page) + '" style="display:inline-flex; align-items:center; min-height:46px; padding:0 16px; border-radius:999px; border:1px solid rgba(36,21,24,0.25); color:#241518; text-decoration:none; font-weight:600; font-size:14px;">Detalii</a>';
-      if (ev.bookable) html += '<a href="' + calEsc(ev.link) + '" target="_blank" rel="noopener noreferrer" class="btn" style="display:inline-flex; align-items:center; min-height:46px; padding:0 18px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:14px; white-space:nowrap;">Cumpără Bilet</a>';
-      else html += '<span style="display:inline-flex; align-items:center; min-height:46px; padding:0 18px; border-radius:999px; border:1px solid rgba(36,21,24,0.25); color:#5A4649; font-weight:600; font-size:14px;">' + (ev.status === 'anulat' ? 'Anulat' : 'Bilete epuizate') + '</span>';
-      html += '</div></article>';
-    });
-    html += '</div></div>';
-  });
-  listEl.innerHTML = html;
+  if (countEl) countEl.textContent = n === 0 ? "Nicio ediție pentru filtrele alese." : (n === 1 ? "O ediție programată." : n + " ediții programate.");
+  document.getElementById("calNoEvents").style.display = n === 0 ? "" : "none";
+  document.getElementById("calEventsList").innerHTML = n === 0 ? "" : SuspectiUI.lista(list, true);
 }
-
-function calSetCity(city) {
-  CAL_STATE.city = city;
-  document.querySelectorAll('.cal-city-btn').forEach(function (b) {
-    var on = b.getAttribute('data-city') === city;
-    b.setAttribute('aria-pressed', on ? 'true' : 'false');
-    b.style.cssText = on ? CAL_ACTIVE : CAL_INACTIVE;
-  });
-  calRender();
+function calApasa(sel, attr, val) {
+  document.querySelectorAll(sel).forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute(attr) === val ? 'true' : 'false'); });
 }
-function calSetFormat(fmt) {
-  CAL_STATE.format = fmt;
-  document.querySelectorAll('.cal-format-btn').forEach(function (b) {
-    var on = b.getAttribute('data-format') === fmt;
-    b.setAttribute('aria-pressed', on ? 'true' : 'false');
-    b.style.cssText = on ? CAL_ACTIVE : CAL_INACTIVE;
-  });
-  calRender();
-}
-function calResetFilters() {
-  calSetCity('Toate');
-  calSetFormat('Toate');
-}
-// Pagini pe oraș: /Calendar/bucuresti și /Calendar/timisoara arată direct evenimentele din orașul respectiv.
-// Se poate preselecta și experiența: /calendar?experienta=Treasure%20Hunt
+function calSetCity(city) { CAL_STATE.city = city; calApasa('.cal-city-btn', 'data-city', city); calRender(); }
+function calSetFormat(fmt) { CAL_STATE.format = fmt; calApasa('.cal-format-btn', 'data-format', fmt); calRender(); }
+function calResetFilters() { CAL_STATE.city = 'Toate'; calApasa('.cal-city-btn', 'data-city', 'Toate'); calSetFormat('Toate'); }
+// Pagini pe oraș: /calendar/bucuresti și /calendar/timisoara. Experiența se poate preselecta:
+// /calendar?experienta=Treasure%20Hunt%20Family (sau Treasure Hunt Adults, Cină, Party, Brunch).
 function calInit() {
   var p = location.pathname.toLowerCase();
   var oras = p.indexOf('/calendar/bucuresti') === 0 ? 'București' : (p.indexOf('/calendar/timisoara') === 0 ? 'Timișoara' : null);
@@ -442,9 +377,10 @@ function calInit() {
     document.title = 'Calendar & bilete · ' + oras + ' · SUSPECȚI';
     var eb = document.getElementById('calEyebrow');
     if (eb) eb.textContent = 'Calendar & bilete · ' + oras;
-    calSetCity(oras);
+    CAL_STATE.city = oras; calApasa('.cal-city-btn', 'data-city', oras);
   }
-  if (exp === "Treasure Hunt") { CAL_STATE.format = exp; } else if (exp && document.querySelector('.cal-format-btn[data-format="' + exp + '"]')) calSetFormat(exp);
+  if (exp === 'Treasure Hunt') { CAL_STATE.format = exp; calApasa('.cal-format-btn', 'data-format', ''); }
+  else if (exp && document.querySelector('.cal-format-btn[data-format="' + exp + '"]')) { CAL_STATE.format = exp; calApasa('.cal-format-btn', 'data-format', exp); }
   calRender();
 }
 document.addEventListener('DOMContentLoaded', calInit);
