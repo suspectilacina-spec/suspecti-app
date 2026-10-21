@@ -309,3 +309,18 @@
   .cf-spec dd { font-size: 18px; }
   .cf-teme { font-size: 17px; }
 }
+
+/* Despre noi: misiune, viziune și valori — text aliniat la stânga, fără casete */
+.dn-sec { background: #FFFFFF; padding: 80px 0; }
+.dn-wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+.dn-kick { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #A3172F; margin-bottom: 12px; }
+.dn-mv { display: grid; grid-template-columns: minmax(0,1fr); gap: 36px; margin-bottom: 64px; }
+@media (min-width: 900px) { .dn-mv { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 56px; } }
+.dn-mv p { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(20px, 2.4vw, 23px); line-height: 1.5; color: #241518; max-width: 52ch; }
+.dn-h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: clamp(30px, 5.6vw, 44px); line-height: 1.1; margin: 0 0 28px; color: #241518; }
+.dn-valori { display: grid; grid-template-columns: minmax(0,1fr); gap: 28px 48px; }
+@media (min-width: 760px) { .dn-valori { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (min-width: 1100px) { .dn-valori { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+.dn-valori h3 { margin: 0 0 8px; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 24px; color: #A3172F; }
+.dn-valori p { margin: 0; font-size: 17px; line-height: 1.6; color: #3E2A2D; max-width: 46ch; }
+@media (max-width: 699px) { .dn-mv p { font-size: 21px; } .dn-valori p { font-size: 19px; } .dn-valori h3 { font-size: 26px; } }
