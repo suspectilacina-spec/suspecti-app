@@ -193,3 +193,11 @@
 .pv-ocazii > div { padding: 16px 0; border-bottom: 1px solid rgba(36,21,24,0.12); display: flex; flex-direction: column; gap: 4px; }
 .pv-ocazii strong { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 22px; color: #241518; }
 .pv-ocazii span { color: #3E2A2D; font-size: 16px; }
+
+/* Formatele de pe /corporate: o poză mare și două mici */
+.cf-foto { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; background: #FFFFFF; }
+.cf-foto img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.cf-foto img:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+
+/* Focus vizibil la navigarea cu tastatura, pe fundal deschis și închis */
+:focus-visible { outline: 3px solid #A3172F !important; outline-offset: 3px; box-shadow: 0 0 0 6px #FBF3F1; border-radius: 6px; }
