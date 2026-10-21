@@ -16,13 +16,15 @@ window.SuspectiUI = (function () {
     return '<span class="ev-pret">' + esc(ev.price) + (ev.priceNote ? '<small>' + esc(ev.priceNote) + '</small>' : '') + '</span>';
   }
 
+  var SCURT = { 'Cină': 'Suspecți la Cină', 'Party': 'Suspecți la Party', 'Brunch': 'Singing Brunch', 'Treasure Hunt': 'Treasure Hunt' };
+
   // Un rând din lista de evenimente: poză, tipul experienței, nume, dată, oră, durată, locație, preț, link spre ediție.
   function rand(ev) {
     var meta = [ev.dataScurta, ev.time, ev.durata].filter(Boolean).join(' · ');
     return '<li class="ev-row" data-city="' + esc(ev.city) + '" data-filtru="' + esc(ev.filtru) + '">' +
       '<a class="ev-thumb" href="' + esc(ev.page) + '" tabindex="-1" aria-hidden="true"><img src="' + esc(img(ev.img, 't')) + '" alt="" loading="lazy" width="480" height="360" style="object-position:' + esc(ev.pos || 'center 30%') + ';"></a>' +
       '<div class="ev-info">' +
-      '<span class="ev-kick">' + esc(ev.concept) + ' · ' + esc(ev.city) + '</span>' +
+      '<span class="ev-kick">' + esc(SCURT[ev.key] || ev.concept) + ' · ' + esc(ev.city) + '</span>' +
       '<h3 class="ev-title"><a href="' + esc(ev.page) + '">' + esc(ev.title) + '</a></h3>' +
       (ev.tip ? '<span class="ev-tip">' + esc(ev.tip) + '</span>' : '') +
       '<span class="ev-meta">' + esc(meta) + '</span>' +
