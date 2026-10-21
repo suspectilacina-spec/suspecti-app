@@ -189,6 +189,7 @@ window.SUSPECTI_EDITII = {
     conditii: [
       'Prețul crește pe măsură ce se vând biletele: 89 lei, apoi 119 lei (până pe 23 octombrie, inclusiv), apoi 139 lei. Pe pagina de bilete vezi prețul disponibil acum.',
       'Dacă intervine ceva, îți rambursăm biletul dacă ne anunți cu cel puțin 3 zile înainte de eveniment.',
+      'Vârsta minimă: 18 ani.',
       'Poți veni singur sau cu prietenii.'
     ],
     dress: {
