@@ -92,7 +92,7 @@
     header.parentNode.insertBefore(bara, loc);
 
     // Pe pagina ediției, primul ecran are deja data, prețul și „Cumpără bilet”: bara apare doar după ce butonul iese din ecran.
-    if (document.getElementById('editie')) {
+    if (document.getElementById('editie') || ((pagina === 'corporate' || pagina === 'private') && document.getElementById('ed-cta'))) {
       bara.style.display = 'none';
       var ascunsa = true;
       var verifica = function () {
