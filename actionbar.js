@@ -84,8 +84,8 @@
     bara.style.cssText = 'position:relative; z-index:29; background:#FAF6F3; border-bottom:1px solid rgba(36,21,24,0.12); box-shadow:0 10px 26px -18px rgba(36,21,24,0.65);';
     bara.innerHTML = '<div style="max-width:1180px; margin:0 auto; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; gap:14px;">' +
       '<div style="min-width:0; line-height:1.3; color:#241518;">' +
-      '<span style="display:block; font-family:\'Playfair Display\',Georgia,serif; font-size:19px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + esc(titlu) + '</span>' +
-      (detaliu ? '<span style="display:block; font-size:14px; color:#5A4649; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + detaliu + '</span>' : '') +
+      '<span style="display:block; font-family:\'Playfair Display\',Georgia,serif; font-weight:700; font-size:20px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + esc(titlu) + '</span>' +
+      (detaliu ? '<span style="display:block; font-size:15px; font-weight:700; color:#241518; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + detaliu + '</span>' : '') +
       '</div>' + buton + '</div>';
     var loc = document.createElement('div');
     header.parentNode.insertBefore(loc, header.nextSibling);

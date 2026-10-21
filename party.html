@@ -63,6 +63,10 @@ input::placeholder{color:#9C8A8C;}
 <script src="/evenimente-editorial.js"></script>
 <script src="/events.js"></script>
 <script src="/edition.js"></script>
+<script src="/componente.js"></script>
+<script src="/forms.js"></script>
+<script src="/oferta.js"></script>
+<script src="/teme.js"></script>
 <script src="/actionbar.js"></script>
 </head>
 <body>
@@ -244,6 +248,29 @@ input::placeholder{color:#9C8A8C;}
 
 <p style="color:#5A4649; font-size:17px; margin:0 auto 24px;">Alege tematica, pregătește-ți ținuta și ne vedem la petrecere.</p>
 <a href="/calendar" class="btn" style="display:inline-flex; align-items:center; min-height:56px; padding:0 32px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Vezi evenimentele viitoare</a>
+<form id="ptForm" class="of-form" novalidate style="max-width:640px; margin:28px auto 0; text-align:left;">
+<p style="margin:0; font-family:'Playfair Display',Georgia,serif; font-size:24px; color:#241518;">Anunță-mă când revine o tematică</p>
+<div class="of-grid">
+<div class="of-f of-full"><label for="ptTema">Tematica</label><select id="ptTema"><option value="oricare">Oricare tematică</option><option value="wednesday">Addams Family Edition</option><option value="tropical">Diamonds, Cartels &amp; Tropical Secrets</option><option value="mafia">Diamonds &amp; Double Agents</option></select></div>
+<div class="of-f"><label for="ptNume">Prenume *</label><input id="ptNume" type="text" autocomplete="given-name" required></div>
+<div class="of-f"><label for="ptEmail">Email *</label><input id="ptEmail" type="email" autocomplete="email" required></div>
+<div class="of-f of-full"><label for="ptOras">Oraș *</label><select id="ptOras" required><option value="">Alege</option><option>București</option><option>Timișoara</option></select></div>
+</div>
+<label class="of-acord" for="ptAcord"><input id="ptAcord" type="checkbox" required> <span>Sunt de acord să fiu contactat(ă) despre edițiile următoare. Vezi <a href="/confidentialitate">Confidențialitate</a>.</span></label>
+<p id="ptEroare" class="of-eroare" role="alert" hidden></p>
+<button type="submit" class="s-btn" style="align-self:flex-start;">Anunță-mă</button>
+</form>
+<div id="ptTrimis" class="of-trimis" role="status" hidden style="max-width:640px; margin:28px auto 0; text-align:left;"><h3 id="ptTrimisTitlu">Gata, ești pe listă!</h3><p id="ptTrimisText">Îți scriem primii când programăm tematica aleasă.</p><a id="ptWa" hidden href="https://wa.me/40755639871"></a><a id="ptMail" hidden href="mailto:contact@suspectilacina.com"></a></div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  suspectiOferta({
+    form: 'ptForm', eroare: 'ptEroare', trimis: 'ptTrimis', trimisTitlu: 'ptTrimisTitlu', trimisText: 'ptTrimisText', wa: 'ptWa', mail: 'ptMail',
+    obligatorii: [['ptNume', 'Scrie prenumele tău.'], ['ptEmail', 'Scrie adresa de email.'], ['ptOras', 'Alege orașul.'], ['ptAcord', '']],
+    date: function () { var s = document.getElementById('ptTema'); return { 'Tematica': s.options[s.selectedIndex].text, 'Prenume': suspectiVal('ptNume'), 'Email': suspectiVal('ptEmail'), 'Oraș': suspectiVal('ptOras'), 'Pagina': 'Suspecți la Party' }; },
+    subiect: function (d) { return 'Abonare noutăți · Party · ' + d['Tematica']; }
+  });
+});
+</script>
 
 </div>
 </section>

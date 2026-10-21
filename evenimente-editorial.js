@@ -20,7 +20,7 @@ window.SUSPECTI_EDITORIAL = {
     page: '/treasurehunt/family-timisoara-24-octombrie', title: 'Family Edition', theme: '#family',
     tip: 'Treasure Hunt pentru părinți și copii', durata: '2 ore',
     img: '/images/7e2c1325ff3ce5e3efda7490acef4600.webp', pos: 'center 22%', venue: 'Parcul Copiilor, intrarea principală',
-    video: '/videos/v2/ed-family.mp4', poster: '/images/v2/ed-family-poster.jpg',
+    video: '/videos/v2/ed-family2.mp4', poster: '/images/v2/ed-family2-poster.jpg',
     extra: 'Pentru fiecare participant, adult sau copil. Recomandat copiilor între 5 și 14 ani.',
     prize: 'Premiul ediției: vouchere la Beat Se7en, game room-ul cu podea LED din centrul Timișoarei.'
   },
@@ -44,7 +44,7 @@ window.SUSPECTI_EDITORIAL = {
     page: '/party/addams-family-31-octombrie', title: 'Addams Family', theme: '#wednesday',
     tip: 'Petrecere tematică de Halloween', durata: 'Joc 90–120 min, apoi petrecere',
     img: '/images/180881b877a3c92af6721923aab715f6.jpg', pos: 'center 22%', venue: 'DaHUB',
-    video: '/videos/v2/ed-party-addams.mp4', poster: '/images/v2/ed-party-addams-poster.jpg',
+    video: '/videos/v2/ed-party-addams2.mp4', poster: '/images/v2/ed-party-addams2-poster.jpg',
     price: 'de la 89 lei',
     extra: '89 lei, apoi 119 lei (până pe 23 octombrie), apoi 139 lei.'
   },
@@ -52,7 +52,7 @@ window.SUSPECTI_EDITORIAL = {
     page: '/cina/ultimul-dans-6-noiembrie', title: 'Ultimul Dans', theme: '#disco',
     tip: 'Mystery Dinner & ’80s Disco Party', durata: 'Aprox. 4 ore, apoi petrecere',
     img: '/images/4effe9715b4a5bae50ea64d83bdb1fe5.jpg', pos: 'center 33%',
-    video: '/videos/v2/ed-cina-disco.mp4', poster: '/images/v2/ed-cina-disco-poster.jpg',
+    video: '/videos/v2/ed-cina-disco2.mp4', poster: '/images/v2/ed-cina-disco2-poster.jpg',
     price: '179 lei', tiers: [{ until: '2026-10-23', price: '149 lei', label: 'Early Bird' }],
     extra: 'Consumația nu este inclusă în bilet; participarea presupune comanda unui preparat din meniu. Bilet „Doar After Party”: 60 lei.'
   },
