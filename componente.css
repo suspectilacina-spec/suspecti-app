@@ -203,7 +203,7 @@
 :focus-visible { outline: 3px solid #A3172F !important; outline-offset: 3px; box-shadow: 0 0 0 6px #FBF3F1; border-radius: 6px; }
 
 /* Paginile de concept: ediția în curs și „Anunță-mă când revine” */
-.tema-editie { margin-top: 26px; padding: 18px 20px; border-radius: 16px; background: rgba(255,255,255,0.6); border: 1px solid rgba(163,23,47,0.25); display: flex; flex-direction: column; gap: 4px; color: #241518; }
+.tema-editie { margin-top: 26px; padding: 18px 20px; border-radius: 16px; background: #FAF6F3; border: 1px solid rgba(163,23,47,0.25); display: flex; flex-direction: column; gap: 4px; color: #241518; }
 .tema-editie-et { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #A3172F; }
 .tema-editie strong { font-size: 19px; }
 .tema-editie small { color: #5A4649; }
