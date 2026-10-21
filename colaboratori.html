@@ -51,32 +51,59 @@ input::placeholder{color:#9C8A8C;}
 .snav-menu[open] .snav-ico-o{display:none;}
 .snav-menu:not([open]) .snav-ico-x{display:none;}
 .snav-top a:hover,.snav-sub a:hover{color:#FFFFFF !important;}
-.cf-bar{display:flex; flex-direction:column; gap:10px; margin:0 0 24px;}
+.c-intro{font-size:16px; color:#D9C8C6; max-width:68ch; margin:12px 0 0;}
+.cf-bar{display:flex; flex-direction:column; gap:12px; margin:0 0 22px; padding:16px 18px; background:#FFFFFF; border:1px solid rgba(36,21,24,0.08); border-radius:16px;}
 .cf-bar[hidden]{display:none;}
-.cf-row{display:flex; flex-wrap:wrap; align-items:center; gap:8px;}
-.cf-label{min-width:44px; font-size:12px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#8A7779;}
-.cf-btn{min-height:40px; padding:0 16px; border-radius:999px; border:1px solid rgba(36,21,24,0.18); background:#FFFFFF; color:#241518; font-size:14px; font-weight:600; cursor:pointer; transition:background-color .2s,color .2s,border-color .2s;}
-.cf-btn:hover{border-color:#A3172F; color:#A3172F;}
+.cf-row{display:flex; align-items:center; gap:12px;}
+.cf-label{flex:0 0 40px; font-size:12px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:#8A7779;}
+.cf-chips{display:flex; flex-wrap:wrap; gap:8px; min-width:0;}
+.cf-btn{display:inline-flex; align-items:center; gap:6px; min-height:42px; padding:0 16px; border-radius:999px; border:1px solid rgba(36,21,24,0.16); background:#FAF6F3; color:#241518; font-size:15px; font-weight:600; cursor:pointer; white-space:nowrap; transition:background-color .2s,color .2s,border-color .2s;}
+.cf-btn:hover:not(:disabled){border-color:#A3172F; color:#A3172F;}
 .cf-btn[aria-pressed="true"]{background:#A3172F; border-color:#A3172F; color:#FFFFFF;}
-.cf-count{margin:2px 0 0; font-size:13px; color:#8A7779;}
-.cg{display:grid; grid-template-columns:repeat(auto-fill, minmax(min(330px, 100%), 1fr)); gap:14px;}
-.cc{display:flex; gap:16px; align-items:flex-start; padding:16px; background:#FFFFFF; border:1px solid rgba(36,21,24,0.08); border-radius:16px; box-shadow:0 20px 40px -36px rgba(92,18,34,0.6);}
+.cf-btn:disabled{opacity:.4; cursor:default;}
+.cf-n{font-size:12px; font-weight:700; min-width:20px; height:20px; padding:0 6px; border-radius:999px; background:rgba(36,21,24,0.08); display:inline-flex; align-items:center; justify-content:center;}
+.cf-btn[aria-pressed="true"] .cf-n{background:rgba(255,255,255,0.25);}
+.cf-stare{display:flex; align-items:center; gap:14px; padding-top:10px; border-top:1px solid rgba(36,21,24,0.08); font-size:14px; color:#5A4649;}
+.cf-reset{border:0; background:none; padding:0; color:#A3172F; font-weight:700; font-size:14px; cursor:pointer; text-decoration:underline;}
+.cf-reset[hidden]{display:none;}
+.cg{display:grid; grid-template-columns:repeat(auto-fill, minmax(min(330px, 100%), 1fr)); gap:16px;}
+.cc{display:flex; gap:18px; align-items:flex-start; padding:18px; background:#FFFFFF; border:1px solid rgba(36,21,24,0.08); border-radius:16px; box-shadow:0 20px 40px -36px rgba(92,18,34,0.6);}
 .cc[hidden]{display:none;}
-.cc-logo{flex:0 0 88px; width:88px; height:88px; border-radius:12px; display:flex; align-items:center; justify-content:center; overflow:hidden; border:1px solid rgba(36,21,24,0.06);}
-.cc-logo img{max-width:78%; max-height:78%; width:auto; height:auto; object-fit:contain; display:block;}
+.cc-logo{flex:0 0 104px; width:104px; height:104px; border-radius:14px; display:flex; align-items:center; justify-content:center; overflow:hidden; border:1px solid rgba(36,21,24,0.06);}
+.cc-logo img{max-width:86%; max-height:86%; width:auto; height:auto; object-fit:contain; display:block;}
 .cc-logo img.cc-foto{width:100%; height:100%; max-width:none; max-height:none; object-fit:cover; object-position:center 22%;}
-.cc-nume span{font-family:'Playfair Display',Georgia,serif; font-size:15px; line-height:1.2; color:#241518; text-align:center; padding:0 8px;}
-.cc-txt{min-width:0; display:flex; flex-direction:column; gap:6px;}
-.cc-txt h3{margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:20px; line-height:1.2;}
+.cc-nume span{font-family:'Playfair Display',Georgia,serif; font-size:17px; line-height:1.2; color:#241518; text-align:center; padding:0 8px;}
+.cc-txt{min-width:0; flex:1; display:flex; flex-direction:column; gap:8px;}
+.cc-txt h3{margin:0; font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:21px; line-height:1.2;}
 .cc-meta{display:flex; flex-wrap:wrap; gap:6px; align-items:center;}
-.cc-oras{font-size:13px; font-weight:600; color:#5A4649;}
-.cc-oras::after{content:"·"; margin-left:6px; color:#B9A8AA;}
-.cc-tag{font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#A3172F; background:#F7E9E6; padding:3px 9px; border-radius:999px;}
-.cc-txt p{margin:0; color:#3E2A2D; font-size:15px; line-height:1.5;}
-.cc-txt a{color:#A3172F; font-weight:700; text-decoration:none; font-size:15px; overflow-wrap:anywhere;}
-.cc-txt a:hover{text-decoration:underline;}
+.cc-oras{display:inline-flex; align-items:center; gap:4px; font-size:13px; font-weight:600; color:#5A4649; margin-right:4px;}
+.cc-oras::before{content:""; width:12px; height:12px; background:currentColor; -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z'/%3E%3C/svg%3E") center/contain no-repeat; mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z'/%3E%3C/svg%3E") center/contain no-repeat;}
+.cc-tag{font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#A3172F; background:#F7E9E6; padding:3px 9px; border-radius:999px;}
+.cc-txt p{margin:0; color:#3E2A2D; font-size:15px; line-height:1.55;}
+.cc-link{align-self:flex-start; display:inline-flex; align-items:center; gap:6px; min-height:36px; padding:0 14px; margin-top:2px; border-radius:999px; border:1px solid rgba(163,23,47,0.35); color:#A3172F; font-weight:700; font-size:14px; text-decoration:none;}
+.cc-link:hover{background:#A3172F; color:#FFFFFF; border-color:#A3172F;}
 .cf-gol{margin:12px 0 0; color:#5A4649;}
-.cf-reset{border:0; background:none; padding:0; color:#A3172F; font-weight:700; font-size:16px; cursor:pointer; text-decoration:underline;}
+.c-final{margin:40px 0 0; text-align:center; font-size:17px; color:#3E2A2D;}
+.c-final a{font-weight:700;}
+@media (max-width:719px){
+  .cf-row{flex-direction:column; align-items:flex-start; gap:6px;}
+  .cf-label{flex:none;}
+  .cf-chips{flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; width:100%; padding-bottom:2px;}
+  .cf-chips::-webkit-scrollbar{display:none;}
+}
+@media (max-width:519px){
+  .c-intro{font-size:19px;}
+  .cf-btn{font-size:18px; min-height:52px;}
+  .cf-label,.cf-stare,.cf-reset{font-size:16px;}
+  .cc{gap:16px; padding:18px;}
+  .cc-logo{flex-basis:96px; width:96px; height:96px;}
+  .cc-txt h3{font-size:24px;}
+  .cc-oras{font-size:16px;}
+  .cc-tag{font-size:13px;}
+  .cc-txt p{font-size:18px;}
+  .cc-link{font-size:17px; min-height:46px;}
+  .c-final{font-size:19px;}
+}
 </style>
 <link rel="stylesheet" href="mobile.css">
 <script src="/bilete.js"></script>
@@ -140,7 +167,7 @@ input::placeholder{color:#9C8A8C;}
 <div style="max-width:1120px; margin:0 auto; padding:0 20px;">
 <span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Colaboratori</span>
 <h1 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,5.6vw,48px); line-height:1.08; margin:10px 0 0;">Oamenii și brandurile <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.25em; line-height:0.9; color:#EBC1BE;">alături de Suspecți</span></h1>
-<p style="font-size:16px; color:#D9C8C6; max-width:68ch; margin:12px 0 0;">La evenimentele Suspecți lucrăm cu oameni și branduri pe care vrem să îi cunoști și tu. Aici găsești colaboratorii noștri din București și Timișoara și câteva cuvinte despre ce facem împreună.</p>
+<p class="c-intro">La evenimentele Suspecți lucrăm cu oameni și branduri pe care vrem să îi cunoști și tu. Aici găsești colaboratorii noștri din București și Timișoara și câteva cuvinte despre ce facem împreună.</p>
 </div>
 </section>
 
@@ -148,14 +175,17 @@ input::placeholder{color:#9C8A8C;}
 <div style="max-width:1120px; margin:0 auto; padding:0 20px;">
 
 <div class="cf-bar" hidden>
-<div class="cf-row" role="group" aria-label="Filtrează după oraș">
-<span class="cf-label">Oraș</span>
+<div class="cf-row">
+<span class="cf-label" id="cf-oras">Oraș</span>
+<div class="cf-chips" role="group" aria-labelledby="cf-oras">
 <button type="button" class="cf-btn" data-filtru="oras" data-val="" aria-pressed="true">Toți</button>
 <button type="button" class="cf-btn" data-filtru="oras" data-val="bucuresti" aria-pressed="false">București</button>
 <button type="button" class="cf-btn" data-filtru="oras" data-val="timisoara" aria-pressed="false">Timișoara</button>
 </div>
-<div class="cf-row" role="group" aria-label="Filtrează după tipul colaborării">
-<span class="cf-label">Tip</span>
+</div>
+<div class="cf-row">
+<span class="cf-label" id="cf-tip">Tip</span>
+<div class="cf-chips" role="group" aria-labelledby="cf-tip">
 <button type="button" class="cf-btn" data-filtru="tip" data-val="" aria-pressed="true">Toate</button>
 <button type="button" class="cf-btn" data-filtru="tip" data-val="content" aria-pressed="false">Content &amp; video</button>
 <button type="button" class="cf-btn" data-filtru="tip" data-val="foto" aria-pressed="false">Fotografie</button>
@@ -164,48 +194,49 @@ input::placeholder{color:#9C8A8C;}
 <button type="button" class="cf-btn" data-filtru="tip" data-val="comunitati" aria-pressed="false">Comunități</button>
 <button type="button" class="cf-btn" data-filtru="tip" data-val="premii" aria-pressed="false">Premii</button>
 </div>
-<p class="cf-count" aria-live="polite"></p>
+</div>
+<div class="cf-stare"><span class="cf-count" aria-live="polite"></span><button type="button" class="cf-reset" hidden>Șterge filtrele</button></div>
 </div>
 
 <div class="cg">
 
-<article class="cc" data-oras="" data-tip="content">
+<article class="cc" data-oras="bucuresti" data-tip="content">
 <div class="cc-logo" style="background:#F3DCD8;"><img src="/images/colaboratori/oriana-trica.jpg" alt="Oriana Trica, Meraki MarketLab" loading="lazy" class="cc-foto"></div>
 <div class="cc-txt">
 <h3>Meraki MarketLab</h3>
-<div class="cc-meta"><span class="cc-tag">Content &amp; video</span></div>
-<p>Conținut și video de la evenimentele Suspecți.</p>
-<a href="https://www.instagram.com/orianagelsey/" target="_blank" rel="noopener noreferrer">Instagram →</a>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Content &amp; video</span></div>
+<p>Meraki MarketLab este proiectul Orianei Trica, creatoare de conținut. Pentru Suspecți, realizează conținut și video de la evenimente.</p>
+<a class="cc-link" href="https://www.instagram.com/orianagelsey/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
 </div>
 </article>
 
-<article class="cc" data-oras="" data-tip="content">
+<article class="cc" data-oras="bucuresti" data-tip="content">
 <div class="cc-logo" style="background:#2B0A12;"><img src="/images/colaboratori/creative-creature.png" alt="Creative Creature Production" loading="lazy"></div>
 <div class="cc-txt">
 <h3>Creative Creature Production</h3>
-<div class="cc-meta"><span class="cc-tag">Content &amp; video</span></div>
-<p>Producție video pentru Suspecți.</p>
-<a href="https://creativecreature.ro/" target="_blank" rel="noopener noreferrer">creativecreature.ro →</a>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Content &amp; video</span></div>
+<p>Studio de producție video și podcast, care realizează și ședințe foto. Pentru Suspecți, se ocupă de producția video.</p>
+<a class="cc-link" href="https://creativecreature.ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
 </div>
 </article>
 
-<article class="cc" data-oras="" data-tip="foto">
-<div class="cc-logo" style="background:#2B0A12;"><img src="/images/colaboratori/tower-media.webp" alt="Tower Media" loading="lazy"></div>
+<article class="cc" data-oras="bucuresti" data-tip="foto">
+<div class="cc-logo" style="background:#2B0A12;"><img src="/images/colaboratori/tower-media.webp" alt="Tower Media Production &amp; Events" loading="lazy"></div>
 <div class="cc-txt">
 <h3>Marian Vasilescu / Tower Media</h3>
-<div class="cc-meta"><span class="cc-tag">Fotografie</span></div>
-<p>Fotografie de la evenimentele Suspecți.</p>
-<a href="https://towermedia.ro/" target="_blank" rel="noopener noreferrer">towermedia.ro →</a>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Fotografie</span></div>
+<p>Echipa lui Marian Vasilescu face producție foto-video și organizează evenimente corporate. La Suspecți, fotografiază evenimentele noastre.</p>
+<a class="cc-link" href="https://towermedia.ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
 </div>
 </article>
 
-<article class="cc" data-oras="" data-tip="muzica">
+<article class="cc" data-oras="bucuresti" data-tip="muzica">
 <div class="cc-logo" style="background:#FFFFFF;"><img src="/images/colaboratori/dj-sweetcase.jpg" alt="DJ SweetCase" loading="lazy"></div>
 <div class="cc-txt">
 <h3>DJ SweetCase</h3>
-<div class="cc-meta"><span class="cc-tag">Muzică</span></div>
-<p>Muzică și atmosferă la evenimentele Suspecți.</p>
-<a href="https://www.instagram.com/djsweetcase/" target="_blank" rel="noopener noreferrer">Instagram →</a>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Muzică</span></div>
+<p>DJ cu care lucrăm la evenimentele Suspecți din București, unde se ocupă de muzică și de atmosferă.</p>
+<a class="cc-link" href="https://www.instagram.com/djsweetcase/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
 </div>
 </article>
 
@@ -214,7 +245,8 @@ input::placeholder{color:#9C8A8C;}
 <div class="cc-txt">
 <h3>Naïve</h3>
 <div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Locații</span></div>
-<a href="https://naive.ro/" target="_blank" rel="noopener noreferrer">naive.ro →</a>
+<p>Restaurant și rooftop în centrul Bucureștiului. Aici organizăm The Singing Brunch.</p>
+<a class="cc-link" href="https://naive.ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
 </div>
 </article>
 
@@ -223,7 +255,8 @@ input::placeholder{color:#9C8A8C;}
 <div class="cc-txt">
 <h3>Grand Hotel București</h3>
 <div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Locații</span></div>
-<a href="https://www.grandhotelbucharest.ro/" target="_blank" rel="noopener noreferrer">grandhotelbucharest.ro →</a>
+<p>Hotel în centrul Bucureștiului, partener de locație pentru evenimentele Suspecți.</p>
+<a class="cc-link" href="https://www.grandhotelbucharest.ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
 </div>
 </article>
 
@@ -232,7 +265,8 @@ input::placeholder{color:#9C8A8C;}
 <div class="cc-txt">
 <h3>Mirador Rooftop</h3>
 <div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Locații</span></div>
-<a href="https://www.instagram.com/mirador.rooftop/" target="_blank" rel="noopener noreferrer">Instagram →</a>
+<p>Restaurant și bar pe acoperiș, în București. Aici organizăm Suspecți la Cină.</p>
+<a class="cc-link" href="https://www.instagram.com/mirador.rooftop/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
 </div>
 </article>
 
@@ -241,7 +275,8 @@ input::placeholder{color:#9C8A8C;}
 <div class="cc-txt">
 <h3>Restaurant Merlot</h3>
 <div class="cc-meta"><span class="cc-oras">Timișoara</span><span class="cc-tag">Locații</span></div>
-<a href="https://www.restaurant-merlot.ro/" target="_blank" rel="noopener noreferrer">restaurant-merlot.ro →</a>
+<p>Restaurant din Timișoara, partener de locație pentru evenimentele Suspecți.</p>
+<a class="cc-link" href="https://www.restaurant-merlot.ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
 </div>
 </article>
 
@@ -250,17 +285,18 @@ input::placeholder{color:#9C8A8C;}
 <div class="cc-txt">
 <h3>DăHub</h3>
 <div class="cc-meta"><span class="cc-oras">Timișoara</span><span class="cc-tag">Locații</span></div>
-<a href="https://www.instagram.com/dahub.timisoara/" target="_blank" rel="noopener noreferrer">Instagram →</a>
+<p>Hub cultural din Timișoara, cu stand-up comedy, karaoke și muzică live. Aici organizăm Suspecți la Party.</p>
+<a class="cc-link" href="https://www.instagram.com/dahub.timisoara/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
 </div>
 </article>
 
-<article class="cc" data-oras="" data-tip="comunitati">
+<article class="cc" data-oras="bucuresti" data-tip="comunitati">
 <div class="cc-logo" style="background:#000002;"><img src="/images/colaboratori/prinde-curaj.jpg" alt="Prinde Curaj, Alex Andrei" loading="lazy"></div>
 <div class="cc-txt">
-<h3>Vii singur, pleci cu Grupul</h3>
-<div class="cc-meta"><span class="cc-tag">Comunități</span></div>
-<p>Proiect inițiat de Alex Andrei.</p>
-<a href="https://www.alexandrei.org/" target="_blank" rel="noopener noreferrer">alexandrei.org →</a>
+<h3>Prinde Curaj · Vii singur, pleci cu Grupul</h3>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Comunități</span></div>
+<p>Comunitatea lui Alex Andrei. Prin „Vii singur, pleci cu grupul”, organizează lunar evenimente pentru adulții care vor să cunoască oameni noi.</p>
+<a class="cc-link" href="https://alexandrei.org/evenimente" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
 </div>
 </article>
 
@@ -269,48 +305,48 @@ input::placeholder{color:#9C8A8C;}
 <div class="cc-txt">
 <h3>Bucureștiul Povestit</h3>
 <div class="cc-meta"><span class="cc-tag">Comunități</span></div>
-<p>Proiect inițiat de Ovidiu Neacșu.</p>
-<a href="https://www.facebook.com/bucurestiul.povestit/" target="_blank" rel="noopener noreferrer">Facebook →</a>
+<p>Proiectul lui Ovidiu Neacșu despre poveștile Bucureștiului.</p>
+<a class="cc-link" href="https://www.facebook.com/bucurestiul.povestit/" target="_blank" rel="noopener noreferrer">Facebook <span aria-hidden="true">↗</span></a>
 </div>
 </article>
 
-<article class="cc" data-oras="" data-tip="comunitati premii">
+<article class="cc" data-oras="bucuresti" data-tip="comunitati premii">
 <div class="cc-logo" style="background:#FFFFFF;"><img src="/images/colaboratori/hai-sa-socializam.jpg" alt="Hai să Socializăm" loading="lazy"></div>
 <div class="cc-txt">
 <h3>Hai să Socializăm</h3>
-<div class="cc-meta"><span class="cc-tag">Comunități</span><span class="cc-tag">Premii</span></div>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Comunități</span><span class="cc-tag">Premii</span></div>
 <p>Împreună organizăm „Hai să socializăm la Cină” și „Suspecți în Treasure Hunt”. Au oferit și vouchere pentru excursii și drumeții de o zi.</p>
-<a href="https://haisasocializam.ro/" target="_blank" rel="noopener noreferrer">haisasocializam.ro →</a>
+<a class="cc-link" href="https://haisasocializam.ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
 </div>
 </article>
 
-<article class="cc" data-oras="" data-tip="premii">
+<article class="cc" data-oras="bucuresti" data-tip="premii">
 <div class="cc-logo" style="background:#FFFFFF;"><img src="/images/colaboratori/tonic-studio.png" alt="Tonic Studio" loading="lazy"></div>
 <div class="cc-txt">
 <h3>Tonic Studio</h3>
-<div class="cc-meta"><span class="cc-tag">Premii</span></div>
-<p>Vouchere pentru sesiuni de head spa.</p>
-<a href="https://tonicstudio.ro/" target="_blank" rel="noopener noreferrer">tonicstudio.ro →</a>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Premii</span></div>
+<p>Salon de înfrumusețare și head spa din București. Au oferit vouchere pentru sesiuni de head spa.</p>
+<a class="cc-link" href="https://tonicstudio.ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
 </div>
 </article>
 
-<article class="cc" data-oras="" data-tip="premii">
+<article class="cc" data-oras="bucuresti" data-tip="premii">
 <div class="cc-logo" style="background:#2B0A12;"><img src="/images/colaboratori/museum-of-senses.svg" alt="Museum of Senses" loading="lazy"></div>
 <div class="cc-txt">
 <h3>Museum of Senses</h3>
-<div class="cc-meta"><span class="cc-tag">Premii</span></div>
-<p>Vouchere pentru vizite în familie.</p>
-<a href="https://museumofsenses.ro/ro/" target="_blank" rel="noopener noreferrer">museumofsenses.ro →</a>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Premii</span></div>
+<p>Muzeu interactiv din București, despre percepție și simțuri. Au oferit vouchere pentru vizite în familie.</p>
+<a class="cc-link" href="https://museumofsenses.ro/ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
 </div>
 </article>
 
-<article class="cc" data-oras="" data-tip="premii">
+<article class="cc" data-oras="bucuresti" data-tip="premii">
 <div class="cc-logo" style="background:#404042;"><img src="/images/colaboratori/the-fool.jpg" alt="The Fool" loading="lazy"></div>
 <div class="cc-txt">
 <h3>The Fool</h3>
-<div class="cc-meta"><span class="cc-tag">Premii</span></div>
-<p>Vouchere pentru spectacole de stand-up comedy.</p>
-<a href="https://www.thefool.ro/" target="_blank" rel="noopener noreferrer">thefool.ro →</a>
+<div class="cc-meta"><span class="cc-oras">București</span><span class="cc-tag">Premii</span></div>
+<p>Club de stand-up comedy și spectacole live din București. Au oferit vouchere pentru spectacole de stand-up comedy.</p>
+<a class="cc-link" href="https://www.thefool.ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
 </div>
 </article>
 
@@ -319,8 +355,8 @@ input::placeholder{color:#9C8A8C;}
 <div class="cc-txt">
 <h3>Zen Expert</h3>
 <div class="cc-meta"><span class="cc-oras">Timișoara</span><span class="cc-tag">Premii</span></div>
-<p>Vouchere pentru masaj.</p>
-<a href="https://www.instagram.com/zenexpertmasaj/" target="_blank" rel="noopener noreferrer">Instagram →</a>
+<p>Salon de masaj și spa din Timișoara. Au oferit vouchere pentru masaj, ca premiu la Suspecți în Treasure Hunt.</p>
+<a class="cc-link" href="https://www.instagram.com/zenexpertmasaj/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
 </div>
 </article>
 
@@ -329,15 +365,15 @@ input::placeholder{color:#9C8A8C;}
 <div class="cc-txt">
 <h3>Beat Se7en</h3>
 <div class="cc-meta"><span class="cc-oras">Timișoara</span><span class="cc-tag">Premii</span></div>
-<p>Vouchere pentru jocuri pe podea LED interactivă.</p>
-<a href="https://beatse7en.ro/" target="_blank" rel="noopener noreferrer">beatse7en.ro →</a>
+<p>Game room în centrul Timișoarei. Au oferit vouchere pentru jocuri pe podea LED interactivă, ca premiu la Treasure Hunt Family.</p>
+<a class="cc-link" href="https://beatse7en.ro/" target="_blank" rel="noopener noreferrer">Site oficial <span aria-hidden="true">↗</span></a>
 </div>
 </article>
 
 </div>
-<p class="cf-gol" hidden>Nu avem încă colaboratori pentru această combinație. <button type="button" class="cf-reset">Vezi toți colaboratorii</button></p>
+<p class="cf-gol" hidden>Nu avem încă colaboratori pentru această combinație.</p>
 
-<p style="margin:40px 0 0; text-align:center; font-size:17px; color:#3E2A2D;">Ai o idee de colaborare? <a href="mailto:contact@suspectilacina.com" style="font-weight:700;">Scrie-ne.</a></p>
+<p class="c-final">Ai o idee de colaborare? <a href="mailto:contact@suspectilacina.com">Scrie-ne.</a></p>
 </div>
 </section>
 <script>
@@ -346,28 +382,39 @@ input::placeholder{color:#9C8A8C;}
   var carduri = [].slice.call(document.querySelectorAll('.cc'));
   var gol = document.querySelector('.cf-gol');
   var numar = document.querySelector('.cf-count');
+  var reset = document.querySelector('.cf-reset');
+  var butoane = [].slice.call(bara.querySelectorAll('.cf-btn'));
   var ales = { oras: '', tip: '' };
+  butoane.forEach(function (b) { b.setAttribute('data-text', b.textContent); });
+  function are(c, filtru, val) { return !val || (' ' + c.getAttribute('data-' + filtru) + ' ').indexOf(' ' + val + ' ') >= 0; }
+  function cate(oras, tip) { return carduri.filter(function (c) { return are(c, 'oras', oras) && are(c, 'tip', tip); }).length; }
   function aplica() {
     var vizibile = 0;
     carduri.forEach(function (c) {
-      var ok = (!ales.oras || (' ' + c.getAttribute('data-oras') + ' ').indexOf(' ' + ales.oras + ' ') >= 0) &&
-               (!ales.tip || (' ' + c.getAttribute('data-tip') + ' ').indexOf(' ' + ales.tip + ' ') >= 0);
+      var ok = are(c, 'oras', ales.oras) && are(c, 'tip', ales.tip);
       c.hidden = !ok;
       if (ok) vizibile++;
     });
     gol.hidden = vizibile > 0;
     numar.textContent = vizibile === 1 ? '1 colaborator' : vizibile + ' colaboratori';
-    [].forEach.call(bara.querySelectorAll('.cf-btn'), function (b) {
-      b.setAttribute('aria-pressed', String(ales[b.getAttribute('data-filtru')] === b.getAttribute('data-val')));
+    reset.hidden = !ales.oras && !ales.tip;
+    butoane.forEach(function (b) {
+      var f = b.getAttribute('data-filtru'), v = b.getAttribute('data-val');
+      var n = f === 'oras' ? cate(v, ales.tip) : cate(ales.oras, v);
+      b.setAttribute('aria-pressed', String(ales[f] === v));
+      b.innerHTML = '';
+      b.appendChild(document.createTextNode(b.getAttribute('data-text') + ' '));
+      var s = document.createElement('span'); s.className = 'cf-n'; s.textContent = n; b.appendChild(s);
+      b.disabled = n === 0 && ales[f] !== v;
     });
   }
   bara.addEventListener('click', function (e) {
     var b = e.target.closest('.cf-btn');
-    if (!b) return;
+    if (!b || b.disabled) return;
     ales[b.getAttribute('data-filtru')] = b.getAttribute('data-val');
     aplica();
   });
-  document.querySelector('.cf-reset').addEventListener('click', function () { ales = { oras: '', tip: '' }; aplica(); });
+  reset.addEventListener('click', function () { ales = { oras: '', tip: '' }; aplica(); });
   bara.hidden = false;
   aplica();
 })();
