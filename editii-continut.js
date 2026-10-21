@@ -87,7 +87,8 @@ window.SUSPECTI_CONCEPTE = {
       ['Ce vârstă trebuie să aibă copiii?', 'Jocul e recomandat copiilor între 5 și 14 ani. Misiunile sunt gândite pentru părinți și copii împreună.'],
       ['Plătesc și părinții bilet?', 'Da. Biletul e pentru fiecare participant, adult sau copil.'],
       ['Vin doar eu cu copilul. Avem echipă?', 'Da. Fiecare familie formează o echipă, iar dacă vii singur cu copilul, vă alăturăm altei familii.'],
-      ['Cât durează?', 'Jocul durează 2 ore.']
+      ['Cât durează?', 'Jocul durează 2 ore.'],
+      ['Ce se întâmplă dacă plouă?', 'Jocul se ține și pe ploaie. Vino cu haine potrivite vremii.']
     ]
   },
   adults: {
@@ -104,6 +105,7 @@ window.SUSPECTI_CONCEPTE = {
       ['Trebuie să vin cu o echipă?', 'Nu. Poți veni singur, în doi sau cu prietenii. Formăm echipele la start.'],
       ['Am nevoie de experiență?', 'Nu. Explicăm regulile înainte de start, iar echipa noastră e pe traseu dacă aveți nevoie de îndrumare.'],
       ['Cât durează?', 'Jocul durează 3 ore.'],
+      ['Ce se întâmplă dacă plouă?', 'Jocul se ține și pe ploaie. Vino cu haine potrivite vremii și încălțăminte comodă.'],
       ['Ce iau cu mine?', 'Încălțăminte comodă, haine potrivite vremii și telefonul încărcat, pentru probele foto și video.']
     ]
   }
@@ -176,7 +178,7 @@ window.SUSPECTI_EDITII = {
     ],
     pasi: [
       { t: 'La sosire', d: 'Primești numele, rolul și primele informații despre „familia” ta.' },
-      { t: 'Jocul, 90–120 de minute', d: 'Îți cauți rudele și duceți la capăt misiunile de echipă, printre ceilalți invitați.' },
+      { t: 'Jocul, aproximativ 2 ore', d: 'Îți cauți rudele și duceți la capăt misiunile de echipă, printre ceilalți invitați.' },
       { t: 'Premiile', d: 'Premiem cele mai creative ținute și implicarea în joc. Avem și premii de la sponsori, pe care le anunțăm în perioada următoare.' },
       { t: 'Petrecerea', d: 'Continuăm cu muzică și dans, cu oameni pe care deja i-ai cunoscut.' }
     ],
@@ -188,7 +190,6 @@ window.SUSPECTI_EDITII = {
     ],
     conditii: [
       'Prețul crește pe măsură ce se vând biletele: 89 lei, apoi 119 lei (până pe 23 octombrie, inclusiv), apoi 139 lei. Pe pagina de bilete vezi prețul disponibil acum.',
-      'Dacă intervine ceva, îți rambursăm biletul dacă ne anunți cu cel puțin 3 zile înainte de eveniment.',
       'Vârsta minimă: 18 ani.',
       'Poți veni singur sau cu prietenii.'
     ],
@@ -207,8 +208,7 @@ window.SUSPECTI_EDITII = {
       ['/images/9cf71833af55703fff4d61faeeff7af8.jpg', 'Addams Family Edition, fotografia 1'],
       ['/images/0d3f7f09bb54f3a7cbf0553af023eba3.jpg', 'Addams Family Edition, fotografia 2'],
       ['/images/0288f53585bd7ed0f9911955a0b1cdd3.webp', 'Addams Family Edition, fotografia 3']
-    ],
-    faqFaraComun: ['Pot anula și primi banii înapoi?']
+    ]
   },
 
   /* The Singing Brunch · Naïve, București */
@@ -221,7 +221,8 @@ window.SUSPECTI_EDITII = {
     pasi: [
       { t: 'La sosire', d: 'Primești welcome drink-ul și te așezi la masă.' },
       { t: 'Provocările muzicale', d: 'Începem cu provocări la mese, care pornesc discuțiile.' },
-      { t: 'Cântăm împreună', d: 'Versurile apar pe ecrane, microfoanele gonflabile ies la iveală și cântă toată sala.' }
+      { t: 'Cântăm împreună', d: 'Versurile apar pe ecrane, microfoanele gonflabile ies la iveală și cântă toată sala.' },
+      { t: 'Dansul', d: 'Brunch-ul durează aproximativ 4 ore, iar la final rămânem la dans.' }
     ],
     include: [
       'Acces la eveniment',
@@ -248,6 +249,7 @@ window.SUSPECTI_EDITII = {
     ],
     practic: [
       'Începem la 14:00, la Naïve, București.',
+      'Durează aproximativ 4 ore, apoi rămânem la dans.',
       'Preparatele se finalizează la stația de live cooking, de unde le ridici și te întorci la masă.'
     ],
     faq: [

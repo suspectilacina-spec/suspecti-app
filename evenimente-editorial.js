@@ -34,7 +34,7 @@ window.SUSPECTI_EDITORIAL = {
   },
   '5024': {
     page: '/brunch/25-octombrie', title: 'The Singing Brunch',
-    tip: 'Brunch cu DJ, MC și karaoke de grup',
+    tip: 'Brunch cu DJ, MC și karaoke de grup', durata: 'Aprox. 4 ore, apoi dans',
     img: '/images/c7b375750bd73a01060470a4f618e5f1.webp', pos: 'center 22%', venue: 'Naïve',
     video: '/videos/v2/ed-brunch.mp4', poster: '/images/v2/ed-brunch-poster.jpg',
     price: 'de la 70 lei',
@@ -42,7 +42,7 @@ window.SUSPECTI_EDITORIAL = {
   },
   '5061': {
     page: '/party/addams-family-31-octombrie', title: 'Addams Family', theme: '#wednesday',
-    tip: 'Petrecere tematică de Halloween', durata: 'Joc 90–120 min, apoi petrecere',
+    tip: 'Petrecere tematică de Halloween', durata: 'Joc aprox. 2 ore, apoi petrecere',
     img: '/images/180881b877a3c92af6721923aab715f6.jpg', pos: 'center 22%', venue: 'DaHUB',
     video: '/videos/v2/ed-party-addams2.mp4', poster: '/images/v2/ed-party-addams2-poster.jpg',
     price: 'de la 89 lei',
