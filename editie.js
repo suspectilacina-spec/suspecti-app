@@ -141,7 +141,7 @@
 
     // 8: fotografii + testimoniale + rețele
     var foto = v('foto') || [], testim = v('testimoniale') || [];
-    var s8 = sectiune('fotografii', 'Din edițiile anterioare', 'Cum arată', (foto.length ? '<div class="s-galerie">' + foto.map(function (f) {
+    var s8 = sectiune('fotografii', 'Din edițiile anterioare', 'Cum arată', (foto.length ? '<div class="s-galerie ed-gal">' + foto.map(function (f) {
         return '<img src="' + esc(UI.img(f[0], 'g')) + '" alt="' + esc(f[1]) + '" loading="lazy" width="960" height="720">'; }).join('') + '</div>' : '') +
       (testim.length ? '<div class="s-testim">' + testim.map(function (t) { return '<figure><blockquote>' + esc(t[0]) + '</blockquote><figcaption>' + esc(t[1]) + '</figcaption></figure>'; }).join('') + '</div>' : '') +
       '<p class="ed-p" style="margin-top:22px;">Mai multe fotografii și video de la edițiile noastre găsești pe:</p>' +

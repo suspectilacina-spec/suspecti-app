@@ -223,3 +223,89 @@
 .v-strip .v-thumb .v-lbl small { display: block; font-weight: 500; color: #5A4649; font-size: 14px; }
 .v-inline { flex: 0 1 300px; max-width: 300px; }
 .v-inline .v-lbl small { display: block; font-weight: 500; font-size: 12px; opacity: 0.85; }
+
+/* Header pe mobil: „Pentru companii” vizibil lângă logo, separat de butonul de meniu */
+.snav-corp { display: none; }
+@media (max-width: 1079px) {
+  .snav-corp { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(235,193,190,0.55); color: #FBF3F1 !important; text-decoration: none; font-weight: 700; font-size: 15px; white-space: nowrap; }
+}
+@media (max-width: 359px) { .snav-corp { padding: 0 12px; font-size: 14px; } }
+
+/* Pagina ediției pe telefon: fotografii mari, text mai mare */
+@media (max-width: 759px) {
+  .ed-gal { grid-template-columns: 1fr; gap: 14px; }
+  .ed-gal img { aspect-ratio: 4 / 3; border-radius: 12px; }
+  .ed-scurt { font-size: 21px; }
+  .ed-p, .s-lista li, .s-faq summary { font-size: 20px; }
+  .s-pasi strong { font-size: 21px; }
+  .s-pasi span, .s-faq details p { font-size: 19px; }
+  .ed-facts dd { font-size: 19px; }
+  .s-testim blockquote { font-size: 21px; }
+}
+
+/* Video mare, vertical, redat în pagină */
+.v-mare { position: relative; width: 100%; max-width: 420px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #2B0A12; }
+.v-mare video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.v-mare .v-ctrl { position: absolute; left: 10px; right: 10px; bottom: 10px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; }
+.v-mare .v-ctrl button { min-height: 44px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(251,243,241,0.55); background: rgba(43,10,18,0.72); color: #FBF3F1; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
+.v-mare .v-start { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 76px; height: 76px; border-radius: 50%; border: 0; background: rgba(250,246,243,0.95); color: #A3172F; font-size: 30px; cursor: pointer; box-shadow: 0 10px 30px -8px rgba(0,0,0,0.6); }
+.v-mare.v-ruleaza .v-start { display: none; }
+
+/* Evenimente private: Mystery Dinner evidențiat, momente din seară, video mare */
+.pv-md { margin-top: 18px; padding: 18px 20px; border-radius: 14px; background: #FFFFFF; border: 1px solid rgba(163,23,47,0.25); border-left: 5px solid #A3172F; }
+.pv-md p { margin: 6px 0 8px; font-size: 17px; color: #3E2A2D; }
+.pv-momente { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; align-content: start; }
+.pv-momente img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; }
+.pv-momente img:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+.pv-vezi { grid-column: 1 / -1; display: inline-flex; align-items: center; justify-content: center; min-height: 50px; border-radius: 999px; background: #2B0A12; color: #FBF3F1 !important; text-decoration: none; font-weight: 700; }
+@media (min-width: 900px) { .pv-grid { grid-template-columns: minmax(0,1fr) 420px; } }
+.pv-video { display: grid; grid-template-columns: minmax(0,1fr); gap: 32px; align-items: center; justify-items: center; }
+@media (min-width: 860px) { .pv-video { grid-template-columns: 420px minmax(0,1fr); justify-items: start; gap: 56px; } }
+@media (min-width: 760px) { .s-galerie.g4 { grid-template-columns: repeat(4, minmax(0,1fr)); } }
+
+/* Logourile clienților: aceeași zonă pentru fiecare, cu înălțimi alese ca logourile să pară egale vizual */
+.logo-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 14px; }
+.logo-cel { flex: 0 0 calc(33.333% - 10px); height: 82px; display: flex; align-items: center; justify-content: center; }
+@media (min-width: 700px) { .logo-cel { flex-basis: 160px; height: 88px; } }
+.logo-cel img, .cf-caz img { display: block; width: auto; max-width: 100%; object-fit: contain; height: var(--lh); }
+.lg-raif { --lh: 34px; } .lg-ursus { --lh: 40px; } .lg-dd { --lh: 54px; } .lg-edp { --lh: 66px; } .lg-rbc { --lh: 68px; }
+@media (min-width: 700px) { .lg-raif { --lh: 36px; } .lg-ursus { --lh: 44px; } .lg-dd { --lh: 60px; } .lg-edp { --lh: 76px; } .lg-rbc { --lh: 72px; } }
+.cf-caz img { max-width: 70%; object-position: left; margin-bottom: 8px; height: calc(var(--lh, 36px) * 0.8); }
+
+/* Formatele pentru companii: nume, explicație, video vertical vizibil direct, apoi detaliile */
+.cf-grid { grid-template-columns: minmax(0,1fr) !important; gap: 22px; }
+.cf-cap { padding: 20px 18px 0; }
+.cf-cap h3 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 28px; line-height: 1.2; color: #241518; }
+.cf-cap p { margin: 8px 0 0; font-size: 17px; line-height: 1.55; color: #3E2A2D; }
+.cf-vid { margin: 16px auto 0; width: calc(100% - 36px); }
+.cf-in { gap: 12px; }
+.cf-in .s-pasi { margin-top: 4px; }
+.cf-in .cf-foto { border-radius: 10px; overflow: hidden; gap: 4px; }
+@media (min-width: 900px) {
+  .cf-card { display: grid; grid-template-columns: 340px minmax(0,1fr); grid-template-areas: "vid cap" "vid in"; grid-template-rows: auto 1fr; column-gap: 30px; padding: 24px; }
+  .cf-cap { grid-area: cap; padding: 0; }
+  .cf-vid { grid-area: vid; margin: 0; width: 100%; align-self: start; }
+  .cf-in { grid-area: in; padding: 14px 0 0; }
+  .cf-in .cf-foto { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .cf-in .cf-foto img:first-child { grid-column: auto; aspect-ratio: 4 / 3; }
+  .cf-in .cfm-btn { align-self: flex-start; }
+}
+.cf-hero-vid .v-mare { margin: 0 auto; }
+@media (min-width: 900px) { .cf-hero-vid .v-mare { max-width: 300px; } }
+
+/* Galeria de pe /povesti: 2 coloane pe telefon, 4 pe ecrane late, fără goluri */
+.pv-galerie { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+@media (min-width: 900px) { .pv-galerie { grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; } }
+
+/* /treasurehunt: pe telefon, fotografiile Adults și Family pe toată lățimea, una sub alta */
+@media (max-width: 699px) {
+  .th-foto { grid-template-columns: minmax(0,1fr) !important; }
+  .th-foto img { grid-column: auto !important; aspect-ratio: 4 / 3 !important; border-radius: 14px !important; }
+}
+@media (max-width: 699px) { #family p, #family li { font-size: 19px !important; line-height: 1.6; } }
+@media (max-width: 699px) {
+  .cf-cap p { font-size: 19px; }
+  .cf-spec dt { font-size: 13px; }
+  .cf-spec dd { font-size: 18px; }
+  .cf-teme { font-size: 17px; }
+}
