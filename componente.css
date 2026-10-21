@@ -163,7 +163,7 @@
 .cf-det summary::after { content: " +"; }
 .cf-det[open] summary::after { content: " –"; }
 .cf-teme { font-size: 14px; color: #5A4649; margin: 0 0 8px; }
-.cf-btn { margin-top: auto; width: 100%; font-size: 15px; min-height: 50px; padding: 0 16px; white-space: normal; text-align: center; }
+.cfm-btn { margin-top: auto; width: 100%; font-size: 15px; min-height: 50px; padding: 0 16px; white-space: normal; text-align: center; }
 .cf-cazuri { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px,100%),1fr)); gap: 12px; }
 .cf-caz { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; border: 1px solid rgba(36,21,24,0.1); border-radius: 14px; background: #FAF6F3; }
 .cf-caz img { height: 36px; width: auto; max-width: 70%; object-fit: contain; object-position: left; margin-bottom: 8px; }
