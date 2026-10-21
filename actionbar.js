@@ -28,7 +28,7 @@
     intrebari: ['SUSPECȚI', 'Calendar & bilete', '/calendar'],
     termeni: ['SUSPECȚI', 'Calendar & bilete', '/calendar'],
     confidentialitate: ['SUSPECȚI', 'Calendar & bilete', '/calendar'],
-    primavedere: ['Suspecți la Prima Vedere', 'Anunță-mă', '#inscriere'],
+    primavedere: ['Sippin’ Singles', 'Preînscrie-te', '#inscriere', 'Joi, 3 decembrie 2026 · Suspecți la Prima Vedere'],
     automachiaj: ['Suspecți la Automachiaj', 'Anunță-mă', '#inscriere'],
     povesti: ['Suspecți la Povești', 'Anunță-mă', '#inscriere'],
     corporate: ['Pentru companii', 'Cere o ofertă', '#oferta'],
@@ -73,7 +73,7 @@
       buton = '<a href="' + concept.anunta + '" style="' + BTN + '">Anunță-mă</a>';
     } else {
       var s = SIMPLU[pagina];
-      titlu = s[0]; detaliu = '';
+      titlu = s[0]; detaliu = s[3] ? esc(s[3]) : '';
       buton = '<a href="' + s[2] + '" style="' + BTN + '">' + esc(s[1]) + '</a>';
     }
 

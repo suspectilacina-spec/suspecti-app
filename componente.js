@@ -88,3 +88,47 @@ window.SuspectiUI = (function () {
 
   return { esc: esc, img: img, pret: pret, rand: rand, lista: lista, videoThumb: videoThumb, deschideVideo: deschideVideo };
 })();
+
+/* Video redat direct în pagină (.v-mare): pornește fără sunet când ajunge în ecran și se oprește când iese.
+   Are butoane pentru sunet și pauză. Dacă browserul blochează redarea automată sau vizitatorul a cerut
+   „mișcare redusă”, rămâne coperta cu un buton mare de redare. */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function stare(box) {
+    var v = box.querySelector('video');
+    box.classList.toggle('v-ruleaza', !v.paused);
+    var p = box.querySelector('[data-v="pauza"]');
+    if (p) { p.textContent = v.paused ? '▶ Pornește' : '❚❚ Pauză'; p.setAttribute('aria-label', v.paused ? 'Pornește videoul' : 'Pune videoul pe pauză'); }
+    var s = box.querySelector('[data-v="sunet"]');
+    if (s) { s.textContent = v.muted ? '🔈 Pornește sunetul' : '🔊 Oprește sunetul'; s.setAttribute('aria-label', v.muted ? 'Pornește sunetul' : 'Oprește sunetul'); }
+  }
+  function init() {
+    var boxes = [].slice.call(document.querySelectorAll('.v-mare'));
+    boxes.forEach(function (box) {
+      var v = box.querySelector('video');
+      v.muted = true; v.playsInline = true; v.loop = true;
+      ['play', 'pause', 'volumechange'].forEach(function (ev) { v.addEventListener(ev, function () { stare(box); }); });
+      box.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-v]');
+        if (!b) return;
+        var a = b.getAttribute('data-v');
+        if (a === 'pauza' || a === 'start') { box.dataset.oprit = v.paused ? '' : '1'; if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); }
+        if (a === 'sunet') {
+          v.muted = !v.muted;
+          if (!v.muted) boxes.forEach(function (alt) { var w = alt.querySelector('video'); if (w !== v) w.muted = true; });
+          if (!v.muted && v.paused) { var q = v.play(); if (q && q.catch) q.catch(function () {}); } }
+      });
+      stare(box);
+    });
+    if (reduce || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (intrari) {
+      intrari.forEach(function (it) {
+        var box = it.target, v = box.querySelector('video');
+        if (it.isIntersecting && it.intersectionRatio > 0.4) { if (!box.dataset.oprit && v.paused) { if (v.preload === 'none') v.preload = 'metadata'; var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
+        else if (!v.paused) v.pause();
+      });
+    }, { threshold: [0, 0.4, 0.8] });
+    boxes.forEach(function (b) { io.observe(b); });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();

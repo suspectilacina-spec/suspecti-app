@@ -101,6 +101,7 @@ input::placeholder,textarea::placeholder{color:#9C8A8C;}
 </nav>
 <div style="display:flex; align-items:center; gap:10px;">
 <a href="/calendar" class="btn snav-cta" style="display:inline-flex; align-items:center; min-height:44px; padding:0 20px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:14px; white-space:nowrap;">Cumpără Bilet</a>
+<a href="/corporate" class="snav-corp">Pentru companii</a>
 <details class="snav-menu">
 <summary aria-label="Meniu" style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:999px; border:1px solid rgba(235,193,190,0.35); color:#FBF3F1; cursor:pointer; font-size:20px; line-height:1;"><span class="snav-ico-o" aria-hidden="true">☰</span><span class="snav-ico-x" aria-hidden="true">✕</span></summary>
 <nav aria-label="Meniu mobil" style="position:absolute; left:0; right:0; top:72px; background:#2B0A12; padding:8px 20px 20px; max-height:calc(100vh - 72px); overflow-y:auto; border-bottom:1px solid rgba(235,193,190,0.2); box-shadow:0 24px 40px -20px rgba(0,0,0,0.6); z-index:50;">
@@ -155,9 +156,8 @@ input::placeholder,textarea::placeholder{color:#9C8A8C;}
 <a class="s-link" href="#formate">Vezi cele patru formate ↓</a>
 </div>
 <p class="ed-nota">Preferi să vorbim direct? <a href="https://wa.me/40755639871" target="_blank" rel="noopener noreferrer">Scrie-ne pe WhatsApp</a> sau la <a href="mailto:contact@suspectilacina.com">contact@suspectilacina.com</a>.</p>
-<div class="ed-vid-mob"><button type="button" class="v-thumb" data-video="/videos/v2/corp-hero2.mp4" aria-label="Pornește videoul despre evenimentele pentru companii"><img src="/images/v2/corp-hero2-poster.jpg" alt="" loading="lazy" width="540" height="960"><span class="v-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="v-lbl">Vezi videoul<small>Ce organizăm pentru companii</small></span></button></div>
 </div>
-<div class="ed-vid-desk" id="corpVidLoc" data-src="/videos/v2/corp-hero2.mp4" data-poster="/images/v2/corp-hero2-poster.jpg"></div>
+<div class="cf-hero-vid"><div class="v-mare"><video src="/videos/v2/corp-hero2.mp4" poster="/images/v2/corp-hero2-poster.jpg" muted loop playsinline preload="metadata" aria-label="Video: evenimente Suspecți pentru companii"></video><button type="button" class="v-start" data-v="start" aria-label="Pornește videoul">▶</button><div class="v-ctrl"><button type="button" data-v="pauza">▶ Pornește</button><button type="button" data-v="sunet">🔈 Pornește sunetul</button></div></div></div>
 </div>
 </section>
 
@@ -165,12 +165,12 @@ input::placeholder,textarea::placeholder{color:#9C8A8C;}
 <section style="background:#FFFFFF; padding:26px 0; border-bottom:1px solid rgba(36,21,24,0.08);">
 <div class="s-wrap">
 <span class="s-kick" style="margin-bottom:14px;">Companii cu care am lucrat</span>
-<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(130px, 45%), 1fr)); gap:12px; align-items:center;">
-<img src="images/eaf49cae6ea05868e3eb5ec1c203c70b.png" alt="Raiffeisen Bank" style="display:block; max-height:34px; max-width:80%; margin:0 auto; object-fit:contain;">
-<img loading="lazy" decoding="async" src="images/a4679f6d71889e6ada5ba3ddbd1dbf05.png" alt="Ursus Breweries" style="display:block; max-height:40px; max-width:80%; margin:0 auto; object-fit:contain;">
-<img loading="lazy" decoding="async" src="images/31be1249c35eb663a9b6587c3896ecff.png" alt="DataDive" style="display:block; max-height:44px; max-width:80%; margin:0 auto; object-fit:contain;">
-<img loading="lazy" decoding="async" src="images/42a58e763e1777abb77b8a0f139ef93b.png" alt="EDP" style="display:block; max-height:44px; max-width:80%; margin:0 auto; object-fit:contain;">
-<img loading="lazy" decoding="async" src="images/efcd095be3b1e3769de96878f96762d3.png" alt="Romanian Business Club" style="display:block; max-height:44px; max-width:80%; margin:0 auto; object-fit:contain;">
+<div class="logo-grid">
+<span class="logo-cel"><img class="lg-raif" src="images/eaf49cae6ea05868e3eb5ec1c203c70b.png" alt="Raiffeisen Bank" width="189" height="49"></span>
+<span class="logo-cel"><img class="lg-ursus" loading="lazy" decoding="async" src="images/a4679f6d71889e6ada5ba3ddbd1dbf05.png" alt="Ursus Breweries" width="126" height="46"></span>
+<span class="logo-cel"><img class="lg-dd" loading="lazy" decoding="async" src="images/31be1249c35eb663a9b6587c3896ecff.png" alt="DataDive" width="192" height="131"></span>
+<span class="logo-cel"><img class="lg-edp" loading="lazy" decoding="async" src="images/42a58e763e1777abb77b8a0f139ef93b.png" alt="EDP" width="116" height="184"></span>
+<span class="logo-cel"><img class="lg-rbc" loading="lazy" decoding="async" src="images/efcd095be3b1e3769de96878f96762d3.png" alt="Romanian Business Club" width="92" height="96"></span>
 </div>
 </div>
 </section>
@@ -184,85 +184,71 @@ input::placeholder,textarea::placeholder{color:#9C8A8C;}
 <div class="cf-grid">
 
 <article class="cf-card" id="f-cina">
-<div class="cf-foto"><img src="/images/corp/cina-mare.webp" alt="Victima serii și suspecții la Suspecți la Cină" loading="lazy" width="960" height="600"><img src="/images/v2/g-c6caad25fcffb0dfa3e4042590299290.webp" alt="Bani de joc schimbați între participanți" loading="lazy" width="480" height="360"><img src="/images/v2/g-1d28914c5e5f52725b8770673c347aa6.webp" alt="Victima serii, cu urma crimei pe gât" loading="lazy" width="480" height="360"></div>
+<div class="cf-cap"><h3>Suspecți la Cină</h3><p>Mystery dinner cu personaje. Fiecare coleg primește un rol cu obiective proprii, iar pe parcursul cinei aflați împreună cine e vinovatul.</p></div>
+<div class="v-mare cf-vid"><video src="/videos/v2/cina-desfasurare.mp4" poster="/images/v2/cina-desfasurare-poster.jpg" muted loop playsinline preload="none" aria-label="Video: cum decurge Suspecți la Cină"></video><button type="button" class="v-start" data-v="start" aria-label="Pornește videoul">▶</button><div class="v-ctrl"><button type="button" data-v="pauza">▶ Pornește</button><button type="button" data-v="sunet">🔈 Pornește sunetul</button></div></div>
 <div class="cf-in">
-<span class="s-kick">Mystery Dinner</span>
-<h3>Suspecți la Cină</h3>
-<p>Fiecare coleg primește un personaj cu obiective proprii. Pe parcursul cinei schimbă informații cu ceilalți, face alianțe și, din conversații, aflați împreună cine e vinovatul.</p>
+<ol class="s-pasi"><li><strong>Intrați în rol</strong><span>Rolurile se aleg după un chestionar scurt. Fiecare află cine este și ce știe.</span></li><li><strong>Căutați indicii</strong><span>Secrete, informații și provocări împărțite între oameni din echipe diferite.</span></li><li><strong>Negociați</strong><span>Alianțe, bani de joc și decizii luate împreună.</span></li><li><strong>Aflați vinovatul</strong><span>Un final la care a contribuit toată lumea.</span></li></ol>
 <dl class="cf-spec">
 <div><dt>Potrivit pentru</dt><dd>Petrecerea de Crăciun, cina de echipă, aniversarea companiei</dd></div>
 <div><dt>Participanți</dt><dd>25–65</dd></div>
 <div><dt>Durată</dt><dd>3–4 ore, cu tot cu cina</dd></div>
 <div><dt>Unde</dt><dd>Restaurantul ales de voi sau o locație propusă de noi</dd></div>
 </dl>
-<details class="cf-det"><summary>Cum decurge</summary>
-<ol class="s-pasi"><li><strong>Intrați în rol</strong><span>Rolurile se aleg după un chestionar scurt. Fiecare află cine este și ce știe.</span></li><li><strong>Căutați indicii</strong><span>Secrete, informații și provocări împărțite între oameni din echipe diferite.</span></li><li><strong>Negociați</strong><span>Alianțe, bani de joc și decizii luate împreună.</span></li><li><strong>Aflați vinovatul</strong><span>Un final la care a contribuit toată lumea.</span></li></ol>
 <p class="cf-teme">Tematici: Balul lui Gatsby, Mafia Night, Murder on the Dance Floor, Peaky Blinders, ’80s Disco.</p>
-</details>
+<div class="cf-foto"><img src="/images/corp/cina-mare.webp" alt="Victima serii și suspecții la Suspecți la Cină" loading="lazy" width="960" height="600"><img src="/images/v2/g-c6caad25fcffb0dfa3e4042590299290.webp" alt="Bani de joc schimbați între participanți" loading="lazy" width="480" height="360"><img src="/images/v2/g-1d28914c5e5f52725b8770673c347aa6.webp" alt="Victima serii, cu urma crimei pe gât" loading="lazy" width="480" height="360"></div>
 <button type="button" class="s-btn cfm-btn" data-format="Suspecți la Cină">Cere ofertă pentru Cină</button>
 </div>
 </article>
 
 <article class="cf-card" id="f-party">
-<div class="cf-foto"><img src="/images/v2/g-cea6d0b661f34d76acd424f61d1a3f33.webp" alt="Invitați la o petrecere Suspecți la Party" loading="lazy" width="960" height="600"><img src="/images/corp/party-dans.webp" alt="Ring de dans plin la Suspecți la Party" loading="lazy" width="480" height="360"><img src="/images/corp/party-prietene.webp" alt="Două invitate la Suspecți la Party" loading="lazy" width="480" height="360"></div>
+<div class="cf-cap"><h3>Suspecți la Party</h3><p>Invitații primesc roluri ușoare și misiuni, iar petrecerea continuă cu dans. Misiunile îi fac să vorbească și cu colegi din alte echipe.</p></div>
+<div class="v-mare cf-vid"><video src="/videos/v2/corp-party.mp4" poster="/images/v2/corp-party-poster.jpg" muted loop playsinline preload="none" aria-label="Video: Suspecți la Party pentru companii"></video><button type="button" class="v-start" data-v="start" aria-label="Pornește videoul">▶</button><div class="v-ctrl"><button type="button" data-v="pauza">▶ Pornește</button><button type="button" data-v="sunet">🔈 Pornește sunetul</button></div></div>
 <div class="cf-in">
-<span class="s-kick">Petrecere tematică</span>
-<h3>Suspecți la Party</h3>
-<p>O petrecere cu temă. În prima parte, invitații primesc roluri ușoare și misiuni care îi trimit prin toată sala, să vorbească și cu colegi din alte echipe. Apoi urmează muzica și dansul.</p>
-<div class="v-strip"><button type="button" class="v-thumb" data-video="/videos/v2/corp-party.mp4" aria-label="Pornește videoul: Suspecți la Party pentru companii"><img src="/images/v2/corp-party-poster.jpg" alt="" loading="lazy" width="540" height="960"><span class="v-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="v-lbl">Vezi videoul<small>Suspecți la Party pentru companii</small></span></button></div>
+<ol class="s-pasi"><li><strong>Rolurile</strong><span>Fiecare primește un personaj și un motiv să intre în joc.</span></li><li><strong>Misiunile</strong><span>Îi pun pe invitați în mișcare prin toată sala.</span></li><li><strong>Petrecerea</strong><span>Jocul se încheie pe ringul de dans.</span></li></ol>
 <dl class="cf-spec">
 <div><dt>Potrivit pentru</dt><dd>Petrecerea de Crăciun, petrecerea de final de an, aniversarea companiei</dd></div>
 <div><dt>Participanți</dt><dd>De la 50</dd></div>
 <div><dt>Durată</dt><dd>Jocul: aproximativ 2 ore, apoi petrecerea</dd></div>
 <div><dt>Unde</dt><dd>Locația voastră sau una propusă de noi</dd></div>
 </dl>
-<details class="cf-det"><summary>Cum decurge</summary>
-<ol class="s-pasi"><li><strong>Rolurile</strong><span>Fiecare primește un personaj și un motiv să intre în joc.</span></li><li><strong>Misiunile</strong><span>Îi pun pe invitați în mișcare prin toată sala.</span></li><li><strong>Petrecerea</strong><span>Jocul se încheie pe ringul de dans.</span></li></ol>
 <p class="cf-teme">Tematici: Familia Addams, Diamonds &amp; Cartels, Mafia, Clanuri &amp; Carteluri, Latino &amp; Tropical Glam.</p>
-</details>
+<div class="cf-foto"><img src="/images/v2/g-cea6d0b661f34d76acd424f61d1a3f33.webp" alt="Invitați la o petrecere Suspecți la Party" loading="lazy" width="960" height="600"><img src="/images/corp/party-dans.webp" alt="Ring de dans plin la Suspecți la Party" loading="lazy" width="480" height="360"><img src="/images/corp/party-prietene.webp" alt="Două invitate la Suspecți la Party" loading="lazy" width="480" height="360"></div>
 <button type="button" class="s-btn cfm-btn" data-format="Suspecți la Party">Cere ofertă pentru Party</button>
 </div>
 </article>
 
 <article class="cf-card" id="f-brunch">
-<div class="cf-foto"><img src="/images/v2/g-6613d8a6387d8b7cda8e1d90acdaa0fb.webp" alt="Colegi cântând cu microfoane gonflabile la The Singing Brunch" loading="lazy" width="960" height="600"><img src="/images/corp/brunch-solista.webp" alt="Solista la The Singing Brunch" loading="lazy" width="480" height="360"><img src="/images/corp/brunch-scena.webp" alt="Cântăm împreună, cu versurile pe ecran" loading="lazy" width="480" height="360"></div>
+<div class="cf-cap"><h3>The Singing Brunch</h3><p>Atmosferă de petrecere, cu DJ și MC, provocări muzicale, versuri pe ecrane și cântat împreună. Îl organizăm la ora care se potrivește programului echipei.</p></div>
+<div class="v-mare cf-vid"><video src="/videos/v2/corp-brunch.mp4" poster="/images/v2/corp-brunch-poster.jpg" muted loop playsinline preload="none" aria-label="Video: The Singing Brunch pentru companii"></video><button type="button" class="v-start" data-v="start" aria-label="Pornește videoul">▶</button><div class="v-ctrl"><button type="button" data-v="pauza">▶ Pornește</button><button type="button" data-v="sunet">🔈 Pornește sunetul</button></div></div>
 <div class="cf-in">
-<span class="s-kick">Brunch cu karaoke de grup</span>
-<h3>The Singing Brunch</h3>
-<p>DJ, MC, versuri pe ecrane și cântat împreună. Începem cu provocări muzicale pe echipe: ghicești melodia, completezi versul următor. Apoi microfoanele gonflabile circulă prin sală și cântă toată lumea.</p>
-<div class="v-strip"><button type="button" class="v-thumb" data-video="/videos/v2/corp-brunch.mp4" aria-label="Pornește videoul: The Singing Brunch pentru companii"><img src="/images/v2/corp-brunch-poster.jpg" alt="" loading="lazy" width="540" height="960"><span class="v-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="v-lbl">Vezi videoul<small>The Singing Brunch pentru companii</small></span></button></div>
+<ol class="s-pasi"><li><strong>Provocări muzicale pe echipe</strong><span>Ghicești melodii, completezi versuri, cauți „suspectul” potrivit unui indiciu.</span></li><li><strong>DJ-ul și MC-ul</strong><span>Versurile apar pe ecrane, microfoanele gonflabile circulă prin sală.</span></li><li><strong>Finalul</strong><span>Colegii ajung să cânte și să danseze împreună.</span></li></ol>
 <dl class="cf-spec">
-<div><dt>Potrivit pentru</dt><dd>Un eveniment de zi, relaxat, pentru toată echipa</dd></div>
+<div><dt>Potrivit pentru</dt><dd>Un eveniment relaxat pentru toată echipa, la ora potrivită programului vostru</dd></div>
 <div><dt>Participanți</dt><dd>De la 50</dd></div>
 <div><dt>Durată</dt><dd>Aprox. 4 ore, apoi dans</dd></div>
 <div><dt>Unde</dt><dd>Locația voastră sau una propusă de noi</dd></div>
 </dl>
-<details class="cf-det"><summary>Cum decurge</summary>
-<ol class="s-pasi"><li><strong>Provocări muzicale pe echipe</strong><span>Ghicești melodii, completezi versuri, cauți „suspectul” potrivit unui indiciu.</span></li><li><strong>DJ-ul și MC-ul</strong><span>Versurile apar pe ecrane, microfoanele gonflabile circulă prin sală.</span></li><li><strong>Finalul</strong><span>Colegii ajung să cânte și să danseze împreună.</span></li></ol>
-</details>
+<div class="cf-foto"><img src="/images/v2/g-6613d8a6387d8b7cda8e1d90acdaa0fb.webp" alt="Colegi cântând cu microfoane gonflabile la The Singing Brunch" loading="lazy" width="960" height="600"><img src="/images/corp/brunch-solista.webp" alt="Solista la The Singing Brunch" loading="lazy" width="480" height="360"><img src="/images/corp/brunch-scena.webp" alt="Cântăm împreună, cu versurile pe ecran" loading="lazy" width="480" height="360"></div>
 <button type="button" class="s-btn cfm-btn" data-format="The Singing Brunch">Cere ofertă pentru Brunch</button>
 </div>
 </article>
 
 <article class="cf-card" id="f-th">
-<div class="cf-foto"><img src="/images/v2/g-c7128f21a050b81cb9481e0a26b2950f.webp" alt="Echipe în misiune la Suspecți în Treasure Hunt" loading="lazy" width="960" height="600"><img src="/images/corp/th-ateneu.webp" alt="Echipe la o probă în fața Ateneului" loading="lazy" width="480" height="360"><img src="/images/corp/th-sarituri.webp" alt="Misiune foto: săritura echipei" loading="lazy" width="480" height="360"></div>
+<div class="cf-cap"><h3>Treasure Hunt</h3><p>Echipele pornesc prin oraș cu plicuri de misiuni, indicii și provocări contra cronometru. La final, indiciile formează codul care deschide cuferele cu premii.</p></div>
+<div class="v-mare cf-vid"><video src="/videos/v2/corp-th2.mp4" poster="/images/v2/corp-th2-poster.jpg" muted loop playsinline preload="none" aria-label="Video: Treasure Hunt pentru echipe"></video><button type="button" class="v-start" data-v="start" aria-label="Pornește videoul">▶</button><div class="v-ctrl"><button type="button" data-v="pauza">▶ Pornește</button><button type="button" data-v="sunet">🔈 Pornește sunetul</button></div></div>
 <div class="cf-in">
-<span class="s-kick">Misiuni în echipă</span>
-<h3>Suspecți în Treasure Hunt</h3>
-<p>Echipele pornesc prin oraș cu plicuri de misiuni, indicii și provocări contra cronometru. Fiecare echipă are un rol, iar un Game Master validează misiunile pe parcurs. La final, indiciile formează codul care deschide cuferele cu premii.</p>
-<div class="v-strip"><button type="button" class="v-thumb" data-video="/videos/v2/corp-th2.mp4" aria-label="Pornește videoul: Treasure Hunt pentru echipe"><img src="/images/v2/corp-th2-poster.jpg" alt="" loading="lazy" width="540" height="960"><span class="v-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="v-lbl">Vezi videoul<small>Treasure Hunt pentru echipe</small></span></button></div>
+<ol class="s-pasi"><li><strong>Rolurile echipelor</strong><span>Paparazzi, The Hacker, The Wildcard și altele.</span></li><li><strong>Misiunile</strong><span>Plicuri cu misiuni, validate pe parcurs de un Game Master.</span></li><li><strong>Cuferele</strong><span>Indiciile adunate formează codul final.</span></li></ol>
 <dl class="cf-spec">
 <div><dt>Potrivit pentru</dt><dd>Team building în aer liber</dd></div>
 <div><dt>Participanți</dt><dd>25–60</dd></div>
 <div><dt>Durată</dt><dd>2–3 ore</dd></div>
 <div><dt>Unde</dt><dd>Prin oraș, în București sau Timișoara</dd></div>
 </dl>
-<details class="cf-det"><summary>Cum decurge</summary>
-<ol class="s-pasi"><li><strong>Rolurile echipelor</strong><span>Paparazzi, The Hacker, The Wildcard și altele.</span></li><li><strong>Misiunile</strong><span>Plicuri cu misiuni, validate pe parcurs de un Game Master.</span></li><li><strong>Cuferele</strong><span>Indiciile adunate formează codul final.</span></li></ol>
-</details>
+<div class="cf-foto"><img src="/images/v2/g-7dcb35d0bad9a99e3d4b3075022facbd.webp" alt="Echipe în misiune la Treasure Hunt, în fața Ateneului" loading="lazy" width="960" height="600"><img src="/images/corp/th-ateneu.webp" alt="Echipe la o probă în fața Ateneului" loading="lazy" width="480" height="360"><img src="/images/corp/th-sarituri.webp" alt="Misiune foto: săritura echipei" loading="lazy" width="480" height="360"></div>
 <button type="button" class="s-btn cfm-btn" data-format="Suspecți în Treasure Hunt">Cere ofertă pentru Treasure Hunt</button>
 </div>
 </article>
+
 
 </div>
 <p class="ed-p" style="margin-top:22px;">Nu știi încă ce format se potrivește? <a href="#oferta" class="s-link cf-nustiu">Spune-ne ocazia și numărul de colegi</a>, iar noi îți propunem varianta potrivită.</p>
@@ -275,11 +261,11 @@ input::placeholder,textarea::placeholder{color:#9C8A8C;}
 <span class="s-kick">Exemple reale</span>
 <h2 class="s-h2">Evenimente organizate pentru companii</h2>
 <div class="cf-cazuri">
-<div class="cf-caz"><img src="images/eaf49cae6ea05868e3eb5ec1c203c70b.png" alt="Raiffeisen Bank" loading="lazy"><strong>Suspecți la Cină · Mafia Night</strong><span>30+ participanți</span></div>
-<div class="cf-caz"><img src="images/a4679f6d71889e6ada5ba3ddbd1dbf05.png" alt="Ursus Breweries" loading="lazy"><strong>Petrecere de Crăciun · Balul lui Gatsby</strong><span>40+ participanți</span></div>
-<div class="cf-caz"><img src="images/31be1249c35eb663a9b6587c3896ecff.png" alt="DataDive" loading="lazy"><strong>Petrecere de Crăciun · Balul lui Gatsby</strong><span>40+ participanți</span></div>
-<div class="cf-caz"><img src="images/42a58e763e1777abb77b8a0f139ef93b.png" alt="EDP" loading="lazy"><strong>Suspecți în Treasure Hunt</strong><span>30 de participanți</span></div>
-<div class="cf-caz"><img src="images/efcd095be3b1e3769de96878f96762d3.png" alt="Romanian Business Club" loading="lazy"><strong>Suspecți la Cină · Balul lui Gatsby</strong><span>50+ participanți</span></div>
+<div class="cf-caz"><img class="lg-raif" src="images/eaf49cae6ea05868e3eb5ec1c203c70b.png" alt="Raiffeisen Bank" loading="lazy"><strong>Suspecți la Cină · Mafia Night</strong><span>30+ participanți</span></div>
+<div class="cf-caz"><img class="lg-ursus" src="images/a4679f6d71889e6ada5ba3ddbd1dbf05.png" alt="Ursus Breweries" loading="lazy"><strong>Petrecere de Crăciun · Balul lui Gatsby</strong><span>40+ participanți</span></div>
+<div class="cf-caz"><img class="lg-dd" src="images/31be1249c35eb663a9b6587c3896ecff.png" alt="DataDive" loading="lazy"><strong>Petrecere de Crăciun · Balul lui Gatsby</strong><span>40+ participanți</span></div>
+<div class="cf-caz"><img class="lg-edp" src="images/42a58e763e1777abb77b8a0f139ef93b.png" alt="EDP" loading="lazy"><strong>Suspecți în Treasure Hunt</strong><span>30 de participanți</span></div>
+<div class="cf-caz"><img class="lg-rbc" src="images/efcd095be3b1e3769de96878f96762d3.png" alt="Romanian Business Club" loading="lazy"><strong>Suspecți la Cină · Balul lui Gatsby</strong><span>50+ participanți</span></div>
 </div>
 <div class="s-testim"><figure><blockquote>Am plecat cu zâmbetul pe buze și cu multe povești de spus la birou. Mulțumim pentru tot!</blockquote><figcaption>Cosmina · Marketing Events Executive, Ursus Breweries</figcaption></figure></div>
 <h3 class="ed-h3" style="margin-top:34px;">Fotografii de la evenimentele noastre</h3>
@@ -292,7 +278,10 @@ input::placeholder,textarea::placeholder{color:#9C8A8C;}
 <img src="/images/corp/party-bar.webp" alt="Invitate la bar, la Suspecți la Party" loading="lazy" width="1400" height="933">
 <img src="/images/corp/brunch-detaliu.webp" alt="Fișa unui personaj și un pahar, la un eveniment Suspecți" loading="lazy" width="1400" height="933">
 <img src="/images/v2/g-23e89225616de4f3571f5a3ac06a2af1.webp" alt="Invitată cu banii jocului la Suspecți la Cină" loading="lazy" width="960" height="720">
-<img src="/images/v2/g-68e54f03eb26e6c1496713d052f3b19b.webp" alt="Echipe alergând pe stradă la Treasure Hunt" loading="lazy" width="960" height="720">
+<img src="/images/v2/g-c3d8d42c019ba7dd61d87e2593ad252d.webp" alt="Participanți la Treasure Hunt care bat palma" loading="lazy" width="960" height="720">
+<img src="/images/v2/g-bdad519730e4d78e5f54b706c379924d.webp" alt="Colegi la un eveniment Suspecți pentru companii" loading="lazy" width="960" height="720">
+<img src="/images/v2/g-c7b375750bd73a01060470a4f618e5f1.webp" alt="Selfie de grup la un eveniment Suspecți" loading="lazy" width="960" height="720">
+<img src="/images/v2/g-a6e0c0554baf9093b1d713ec3e2713a4.webp" alt="Participanți cântând la microfon, la un eveniment Suspecți" loading="lazy" width="960" height="720">
 </div>
 </div>
 </section>
@@ -309,7 +298,6 @@ input::placeholder,textarea::placeholder{color:#9C8A8C;}
 <li>Materialele de joc: fișe, ziare, dosare, bani de joc, plicuri cu misiuni</li>
 <li>Gazda sau Game Master-ul, care conduce activitatea de la început până la final</li>
 <li>Un singur om de contact pentru tot evenimentul</li>
-<li>Contract și factură</li>
 </ul>
 <p class="ed-p" style="margin-top:14px;">La cerere, putem crea o poveste personalizată pentru compania ta.</p>
 </div>
@@ -445,13 +433,6 @@ input::placeholder,textarea::placeholder{color:#9C8A8C;}
 
 </div>
 <script>
-// Video în primul ecran pe desktop (pe telefon rămâne miniatura care deschide videoul).
-(function () {
-  var loc = document.getElementById('corpVidLoc');
-  if (!loc || !window.matchMedia('(min-width:900px)').matches) return;
-  loc.innerHTML = '<video id="corpVid" src="' + loc.getAttribute('data-src') + '" poster="' + loc.getAttribute('data-poster') + '" muted loop playsinline autoplay preload="metadata" aria-label="Video: un mystery dinner pentru o echipă"></video>' +
-    '<button type="button" class="ed-sunet" data-vid="corpVid" onclick="suspectiSunet(this)" aria-label="Pornește sunetul">🔈 Pornește sunetul</button>';
-})();
 suspectiAlegeFormat('cfFormat', 'oferta');
 suspectiOferta({
   form: 'corpForm', eroare: 'cfEroare', trimis: 'cfTrimis', trimisTitlu: 'cfTrimisTitlu', trimisText: 'cfTrimisText', wa: 'cfWa', mail: 'cfMail',
