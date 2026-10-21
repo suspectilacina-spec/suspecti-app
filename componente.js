@@ -50,11 +50,11 @@ window.SuspectiUI = (function () {
   }
 
   // Miniatura video: imagine + buton de redare. La click se deschide videoul cu sunet, în fereastră.
-  function videoThumb(src, poster, eticheta) {
+  function videoThumb(src, poster, eticheta, sub) {
     return '<button type="button" class="v-thumb" data-video="' + esc(src) + '" aria-label="Pornește videoul: ' + esc(eticheta || 'video') + '">' +
       '<img src="' + esc(poster) + '" alt="" loading="lazy" width="540" height="960">' +
       '<span class="v-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>' +
-      '<span class="v-lbl">' + esc(eticheta || 'Vezi videoul') + '</span></button>';
+      '<span class="v-lbl">' + esc(eticheta || 'Vezi videoul') + (sub ? '<small>' + esc(sub) + '</small>' : '') + '</span></button>';
   }
 
   var modal = null, ultimul = null;

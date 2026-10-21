@@ -31,7 +31,7 @@
     primavedere: ['Suspecți la Prima Vedere', 'Anunță-mă', '#inscriere'],
     automachiaj: ['Suspecți la Automachiaj', 'Anunță-mă', '#inscriere'],
     povesti: ['Suspecți la Povești', 'Anunță-mă', '#inscriere'],
-    corporate: ['Pentru companii', 'Cere o ofertă', '#contact'],
+    corporate: ['Pentru companii', 'Cere o ofertă', '#oferta'],
     private: ['Evenimente private', 'Cere o ofertă', '#oferta'],
     eveniment: ['SUSPECȚI', 'Calendar & bilete', '/calendar']
   };

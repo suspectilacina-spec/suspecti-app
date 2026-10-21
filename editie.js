@@ -106,12 +106,12 @@
       '<h1 class="ed-h1"><span class="ed-c">' + esc(ev.concept) + (cina ? ':' : ' · ' + esc(ev.city)) + '</span>' +
       '<span class="ed-t">' + esc(ev.title) + '</span>' + (ev.tip ? '<span class="ed-s">' + (cina ? '— ' : '') + esc(ev.tip) + '</span>' : '') + '</h1>' +
       (C.scurt ? '<p class="ed-scurt">' + esc(C.scurt) + '</p>' : '') +
-      '<div class="ed-facts-wrap"><dl class="ed-facts">' + fapte + '</dl>' +
-      (areVideo ? '<div class="ed-vid-mob">' + UI.videoThumb(ev.video, ev.poster, 'Vezi video') + '</div>' : '') + '</div>' +
+      '<dl class="ed-facts">' + fapte + '</dl>' +
       (ev.statusNote ? '<p style="margin:14px 0 0; padding:10px 14px; border-radius:12px; background:#F3DCD8; color:#A3172F; font-weight:700;">' + esc(ev.statusNote) + '</p>' : '') +
       '<div class="ed-cta" id="ed-cta">' + (ev.bookable ? butonBilet() : '<a class="s-btn" href="/calendar">Vezi alte ediții</a>') +
       '<a class="s-link" href="#ce-se-intampla">Ce se întâmplă la această ediție ↓</a></div>' +
       (ev.bookable ? '<p class="ed-nota">Biletele se cumpără prin AmBilet, partenerul nostru de ticketing. După plată, biletul vine pe email.</p>' : '') +
+      (areVideo ? '<div class="ed-vid-mob">' + UI.videoThumb(ev.video, ev.poster, 'Vezi videoul', 'Câteva momente de la ' + ev.concept) + '</div>' : '') +
       '</div>' +
       (areVideo ? '<div class="ed-vid-desk" id="ed-vid-desk"></div>' : '') +
       '</div></section>';

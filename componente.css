@@ -106,10 +106,14 @@
 .ed-h1 .ed-t { display: block; font-size: clamp(36px, 6vw, 54px); }
 .ed-h1 .ed-s { display: block; font-size: clamp(21px, 3vw, 26px); color: #5A4649; margin-top: 6px; }
 .ed-scurt { font-size: 18px; color: #3E2A2D; margin: 14px 0 18px; max-width: 60ch; }
-.ed-facts-wrap { display: grid; grid-template-columns: minmax(0,1fr) 116px; gap: 16px; align-items: start; }
-@media (min-width: 900px) { .ed-facts-wrap { grid-template-columns: minmax(0,1fr); } .ed-vid-mob { display: none; } }
-.ed-facts { margin: 0; display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1px solid rgba(36,21,24,0.12); }
-@media (min-width: 600px) { .ed-facts { grid-template-columns: 1fr 1fr; column-gap: 24px; } }
+.ed-facts { margin: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; border-top: 1px solid rgba(36,21,24,0.12); }
+.ed-vid-mob { margin-top: 16px; }
+.ed-vid-mob .v-thumb { display: grid; grid-template-columns: 84px 1fr; align-items: center; gap: 14px; padding: 8px; background: #FFFFFF; border: 1px solid rgba(36,21,24,0.12); text-align: left; }
+.ed-vid-mob .v-thumb img { width: 84px; border-radius: 8px; }
+.ed-vid-mob .v-thumb .v-play { left: 50px; top: 50%; width: 40px; height: 40px; }
+.ed-vid-mob .v-thumb .v-lbl { position: static; padding: 0; background: none; color: #241518; font-size: 16px; text-align: left; }
+.ed-vid-mob .v-thumb .v-lbl small { display: block; font-weight: 500; color: #5A4649; font-size: 14px; }
+@media (min-width: 900px) { .ed-vid-mob { display: none; } }
 .ed-facts > div { padding: 10px 0; border-bottom: 1px solid rgba(36,21,24,0.12); }
 .ed-facts dt { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #A3172F; }
 .ed-facts dd { margin: 2px 0 0; font-size: 17px; font-weight: 600; color: #241518; }
@@ -140,3 +144,52 @@
 .cal-chip { flex: 0 0 auto; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(36,21,24,0.22); background: #FFFFFF; color: #241518; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; white-space: nowrap; }
 .cal-chip[aria-pressed="true"] { background: #A3172F; border-color: #A3172F; color: #FFFFFF; }
 .cal-chip:hover { border-color: #A3172F; }
+
+/* ---------- Companii: formatele comparabile ---------- */
+.cf-grid { display: grid; grid-template-columns: minmax(0,1fr); gap: 16px; margin-top: 22px; }
+@media (min-width: 700px) { .cf-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (min-width: 1100px) { .cf-grid { grid-template-columns: repeat(4, minmax(0,1fr)); } }
+.cf-card { display: flex; flex-direction: column; background: #FFFFFF; border-radius: 16px; overflow: hidden; border: 1px solid rgba(36,21,24,0.08); }
+.cf-card > img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.cf-in { padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.cf-in h3 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 25px; line-height: 1.2; color: #241518; }
+.cf-in > p { margin: 0; font-size: 16px; color: #3E2A2D; }
+.cf-spec { margin: 6px 0 0; border-top: 1px solid rgba(36,21,24,0.1); }
+.cf-spec > div { padding: 8px 0; border-bottom: 1px solid rgba(36,21,24,0.1); }
+.cf-spec dt { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #A3172F; }
+.cf-spec dd { margin: 2px 0 0; font-size: 15px; font-weight: 600; color: #241518; }
+.cf-det summary { cursor: pointer; padding: 10px 0; font-weight: 700; color: #A3172F; list-style: none; }
+.cf-det summary::-webkit-details-marker { display: none; }
+.cf-det summary::after { content: " +"; }
+.cf-det[open] summary::after { content: " –"; }
+.cf-teme { font-size: 14px; color: #5A4649; margin: 0 0 8px; }
+.cf-btn { margin-top: auto; width: 100%; font-size: 15px; min-height: 50px; padding: 0 16px; white-space: normal; text-align: center; }
+.cf-cazuri { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px,100%),1fr)); gap: 12px; }
+.cf-caz { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; border: 1px solid rgba(36,21,24,0.1); border-radius: 14px; background: #FAF6F3; }
+.cf-caz img { height: 36px; width: auto; max-width: 70%; object-fit: contain; object-position: left; margin-bottom: 8px; }
+.cf-caz strong { font-size: 16px; color: #241518; }
+.cf-caz span { font-size: 14px; color: #5A4649; }
+
+/* ---------- Formulare de ofertă ---------- */
+.of-form { background: #FAF6F3; color: #241518; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 16px; }
+.of-grid { display: grid; grid-template-columns: minmax(0,1fr); gap: 14px 16px; }
+@media (min-width: 600px) { .of-grid { grid-template-columns: 1fr 1fr; } .of-full { grid-column: 1 / -1; } }
+.of-f { display: flex; flex-direction: column; gap: 4px; }
+.of-f label { font-size: 13px; font-weight: 700; color: #5A4649; }
+.of-f input, .of-f select, .of-f textarea { width: 100%; font: inherit; font-size: 16px; color: #241518; background: #FFFFFF; border: 1px solid rgba(36,21,24,0.25); border-radius: 10px; padding: 11px 12px; min-height: 48px; }
+.of-f input:focus, .of-f select:focus, .of-f textarea:focus { outline: 2px solid #A3172F; outline-offset: 1px; border-color: #A3172F; }
+.of-f [aria-invalid="true"] { border-color: #A3172F; background: #FFF4F4; }
+.of-f .of-msg { font-size: 13px; font-weight: 700; color: #A3172F; }
+.of-acord { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: #5A4649; }
+.of-acord input { margin-top: 3px; width: 20px; height: 20px; accent-color: #A3172F; flex: 0 0 auto; }
+.of-eroare { margin: 0; padding: 10px 14px; border-radius: 10px; background: #FFF4F4; color: #A3172F; font-weight: 700; font-size: 15px; }
+.of-trimis { background: #FAF6F3; color: #241518; border-radius: 18px; padding: 24px; }
+.of-trimis h3 { margin: 0 0 6px; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px; }
+.of-trimis p { margin: 0; color: #3E2A2D; }
+.of-alege { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* ---------- Evenimente private: ocazii ---------- */
+.pv-ocazii { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px,100%),1fr)); gap: 0 28px; border-top: 1px solid rgba(36,21,24,0.12); }
+.pv-ocazii > div { padding: 16px 0; border-bottom: 1px solid rgba(36,21,24,0.12); display: flex; flex-direction: column; gap: 4px; }
+.pv-ocazii strong { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 22px; color: #241518; }
+.pv-ocazii span { color: #3E2A2D; font-size: 16px; }
