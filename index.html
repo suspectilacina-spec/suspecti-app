@@ -69,6 +69,7 @@ input::placeholder{color:#9C8A8C;}
 <script src="https://bilete.suspectilacina.com/sync/events.js"></script>
 <script src="/evenimente-editorial.js"></script>
 <script src="/events.js"></script>
+<script src="/componente.js"></script>
 <script src="/actionbar.js"></script>
 </head>
 <body>
@@ -134,10 +135,14 @@ input::placeholder{color:#9C8A8C;}
 <span class="rise" style="display:block;">Ieșiri în care chiar vorbești</span>
 <span class="rise rise2" style="display:block; font-family:'Great Vibes',cursive; font-weight:400; font-size:1.25em; line-height:1.05; color:#EBC1BE; margin-top:2px;">cu oamenii.</span>
 </h1>
-<p class="fade" style="font-size:18px; color:#D9C8C6; max-width:54ch; margin:22px 0 30px;">La o cină cu personaje, într-o aventură prin oraș sau la un brunch cu muzică, ai mereu un motiv să intri în vorbă cu oamenii din jur.</p>
+<p class="fade" style="font-size:18px; color:#D9C8C6; max-width:54ch; margin:22px 0 26px;">Mystery dinner cu personaje, petreceri tematice, brunch la care cântă toată sala și treasure hunt pentru adulți sau familii. Poți veni singur: jocul te pune în vorbă cu ceilalți.</p>
 <div class="fade" style="display:flex; flex-wrap:wrap; gap:12px;">
-<a href="#urmeaza" class="btn" style="flex:1 1 200px; display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:54px; padding:0 28px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; box-shadow:0 12px 28px -12px rgba(163,23,47,0.8); white-space:nowrap;">Calendar &amp; bilete <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-<a href="#experiente" class="btn" style="flex:1 1 200px; display:inline-flex; align-items:center; justify-content:center; min-height:54px; padding:0 28px; border-radius:999px; border:1px solid rgba(251,243,241,0.35); color:#FBF3F1; text-decoration:none; font-weight:600; white-space:nowrap;">Vezi experiențele</a>
+<a href="#urmeaza" class="btn" style="flex:1 1 220px; display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:56px; padding:0 28px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:700; box-shadow:0 12px 28px -12px rgba(163,23,47,0.8); white-space:nowrap;">Vezi evenimentele următoare <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+<p class="fade" style="margin:20px 0 8px; font-size:16px; color:#D9C8C6;">Organizăm și evenimente pentru companii și grupuri private:</p>
+<div class="fade" style="display:flex; flex-wrap:wrap; gap:10px;">
+<a href="/corporate" class="btn" style="flex:1 1 180px; display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:0 20px; border-radius:999px; border:1px solid rgba(251,243,241,0.45); color:#FBF3F1; text-decoration:none; font-weight:600; white-space:nowrap;">Pentru companii →</a>
+<a href="/private" class="btn" style="flex:1 1 180px; display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:0 20px; border-radius:999px; border:1px solid rgba(251,243,241,0.45); color:#FBF3F1; text-decoration:none; font-weight:600; white-space:nowrap;">Evenimente private →</a>
 </div>
 <div class="fade" style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:12px; margin-top:30px; padding-top:20px; border-top:1px solid rgba(235,193,190,0.18);">
 <div><div style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(26px,5vw,36px); line-height:1; color:#FBF3F1;">50+</div><div style="font-size:13px; color:#D9C8C6; margin-top:4px;">ediții</div></div>
@@ -151,143 +156,59 @@ input::placeholder{color:#9C8A8C;}
 </div>
 <div style="position:absolute; left:14px; right:14px; bottom:14px; background:rgba(250,246,243,0.95); color:#241518; border-radius:14px; padding:14px 18px; box-shadow:0 18px 40px -18px rgba(0,0,0,0.6);">
 <span style="display:block; font-size:11px; letter-spacing:0.18em; font-weight:700; color:#A3172F;">EXPERIENȚE INTERACTIVE</span>
-<span style="font-weight:600; font-size:15px;">Evenimente despre care vrei să povestești</span>
+<span style="font-weight:600; font-size:15px;">Câteva momente de la Suspecți la Cină</span>
 </div>
 </div>
 </div>
 </section>
 
 <!-- URMEAZĂ -->
-<section id="urmeaza" style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); padding:80px 0;">
+<section id="urmeaza" style="background:#FAF6F3; padding:64px 0;">
 <div style="max-width:1180px; margin:0 auto; padding:0 20px;">
-<div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:28px;">
+<div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:22px;">
 <div>
-<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#A3172F;">Calendar &amp; bilete</span>
-<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:14px 0 0; text-wrap:balance;">Urmează</h2>
+<span class="s-kick">Calendar &amp; bilete</span>
+<h2 class="s-h2" style="margin-bottom:0;">Evenimentele următoare</h2>
 </div>
 <div role="group" aria-label="Alege orașul" style="display:flex; gap:8px; flex-wrap:wrap;">
-<button type="button" class="city-filter-btn" data-city="Toate" aria-pressed="true" onclick="suspectiFilterCity('Toate')" style="min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:#A3172F; color:#FFFFFF; border:1px solid #A3172F;">Toate</button>
-<button type="button" class="city-filter-btn" data-city="București" aria-pressed="false" onclick="suspectiFilterCity('București')" style="min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:rgba(255,255,255,0.6); color:#241518; border:1px solid rgba(36,21,24,0.2);">București</button>
-<button type="button" class="city-filter-btn" data-city="Timișoara" aria-pressed="false" onclick="suspectiFilterCity('Timișoara')" style="min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:rgba(255,255,255,0.6); color:#241518; border:1px solid rgba(36,21,24,0.2);">Timișoara</button>
+<button type="button" class="cal-chip city-filter-btn" data-city="Toate" aria-pressed="true" onclick="suspectiFilterCity('Toate')">Toate</button>
+<button type="button" class="cal-chip city-filter-btn" data-city="București" aria-pressed="false" onclick="suspectiFilterCity('București')">București</button>
+<button type="button" class="cal-chip city-filter-btn" data-city="Timișoara" aria-pressed="false" onclick="suspectiFilterCity('Timișoara')">Timișoara</button>
 </div>
 </div>
-
-
-<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap:16px;">
-
-<!-- Eveniment 1: Family Edition -->
-<article class="lift event-card" data-city="Timișoara" style="background:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.8); border-radius:18px; overflow:hidden; display:flex; flex-direction:column;">
-<div style="position:relative;">
-<a href="/treasurehunt/family-timisoara-24-octombrie" style="display:block;"><img src="images/7e2c1325ff3ce5e3efda7490acef4600.webp" alt="Family Edition" style="display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; object-position:center 22%;"></a>
-<span style="position:absolute; top:12px; left:12px; background:rgba(250,246,243,0.95); border-radius:12px; padding:8px 12px; text-align:center; line-height:1.1;"><span style="display:block; font-family:'Playfair Display',Georgia,serif; font-size:24px; color:#A3172F;">24</span><span style="font-size:11px; font-weight:700; letter-spacing:0.12em; color:#241518;">OCT</span></span>
-</div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:6px; flex:1;">
-<span style="font-size:11px; letter-spacing:0.18em; font-weight:700; color:#A3172F; text-transform:uppercase;">Suspecți în Treasure Hunt · Timișoara</span>
-<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:24px; line-height:1.2; margin:0;"><a href="/treasurehunt/family-timisoara-24-octombrie" style="color:inherit; text-decoration:none;">Family Edition</a></h3>
-<span style="color:#5A4649; font-size:14px;">10:00 · Parcul Copiilor, intrarea principală</span>
-<div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:auto; padding-top:14px; border-top:1px solid rgba(36,21,24,0.12);">
-<span style="font-weight:700;">60 lei</span>
-<a href="/treasurehunt/family-timisoara-24-octombrie" class="btn" style="display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:14px;">Vezi detalii</a>
-</div>
-</div>
-</article>
-
-
-<!-- Eveniment 2: Adults Edition -->
-<article class="lift event-card" data-city="Timișoara" style="background:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.8); border-radius:18px; overflow:hidden; display:flex; flex-direction:column;">
-<div style="position:relative;">
-<a href="/treasurehunt/adults-timisoara-24-octombrie" style="display:block;"><img src="images/5d290e437062693dcdb40fc99bb167c6.webp" alt="Adults Edition" style="display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; object-position:center 22%;"></a>
-<span style="position:absolute; top:12px; left:12px; background:rgba(250,246,243,0.95); border-radius:12px; padding:8px 12px; text-align:center; line-height:1.1;"><span style="display:block; font-family:'Playfair Display',Georgia,serif; font-size:24px; color:#A3172F;">24</span><span style="font-size:11px; font-weight:700; letter-spacing:0.12em; color:#241518;">OCT</span></span>
-</div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:6px; flex:1;">
-<span style="font-size:11px; letter-spacing:0.18em; font-weight:700; color:#A3172F; text-transform:uppercase;">Suspecți în Treasure Hunt · Timișoara</span>
-<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:24px; line-height:1.2; margin:0;"><a href="/treasurehunt/adults-timisoara-24-octombrie" style="color:inherit; text-decoration:none;">Adults Edition</a></h3>
-<span style="color:#5A4649; font-size:14px;">15:00 · Piața Unirii, Domul Catolic</span>
-<div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:auto; padding-top:14px; border-top:1px solid rgba(36,21,24,0.12);">
-<span style="font-weight:700;">70 lei</span>
-<a href="/treasurehunt/adults-timisoara-24-octombrie" class="btn" style="display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:14px;">Vezi detalii</a>
-</div>
-</div>
-</article>
-
-
-<!-- Eveniment 3: The Singing Brunch -->
-<article class="lift event-card" data-city="București" style="background:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.8); border-radius:18px; overflow:hidden; display:flex; flex-direction:column;">
-<div style="position:relative;">
-<a href="/brunch/25-octombrie" style="display:block;"><img src="images/c7b375750bd73a01060470a4f618e5f1.webp" alt="The Singing Brunch" style="display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; object-position:center 22%;"></a>
-<span style="position:absolute; top:12px; left:12px; background:rgba(250,246,243,0.95); border-radius:12px; padding:8px 12px; text-align:center; line-height:1.1;"><span style="display:block; font-family:'Playfair Display',Georgia,serif; font-size:24px; color:#A3172F;">25</span><span style="font-size:11px; font-weight:700; letter-spacing:0.12em; color:#241518;">OCT</span></span>
-</div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:6px; flex:1;">
-<span style="font-size:11px; letter-spacing:0.18em; font-weight:700; color:#A3172F; text-transform:uppercase;">Suspecți la Brunch · București</span>
-<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:24px; line-height:1.2; margin:0;"><a href="/brunch/25-octombrie" style="color:inherit; text-decoration:none;">The Singing Brunch</a></h3>
-<span style="color:#5A4649; font-size:14px;">14:00 · Naive</span>
-<div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:auto; padding-top:14px; border-top:1px solid rgba(36,21,24,0.12);">
-<span style="font-weight:700;">de la 70 lei</span>
-<a href="/brunch/25-octombrie" class="btn" style="display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:14px;">Vezi detalii</a>
-</div>
-</div>
-</article>
-
-
-<!-- Eveniment 4: Addams Family -->
-<article class="lift event-card" data-city="Timișoara" style="background:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.8); border-radius:18px; overflow:hidden; display:flex; flex-direction:column;">
-<div style="position:relative;">
-<a href="/party/addams-family-31-octombrie" style="display:block;"><img src="images/180881b877a3c92af6721923aab715f6.jpg" alt="Addams Family" style="display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; object-position:center 22%;"></a>
-<span style="position:absolute; top:12px; left:12px; background:rgba(250,246,243,0.95); border-radius:12px; padding:8px 12px; text-align:center; line-height:1.1;"><span style="display:block; font-family:'Playfair Display',Georgia,serif; font-size:24px; color:#A3172F;">31</span><span style="font-size:11px; font-weight:700; letter-spacing:0.12em; color:#241518;">OCT</span></span>
-</div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:6px; flex:1;">
-<span style="font-size:11px; letter-spacing:0.18em; font-weight:700; color:#A3172F; text-transform:uppercase;">Suspecți la Party · Timișoara</span>
-<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:24px; line-height:1.2; margin:0;"><a href="/party/addams-family-31-octombrie" style="color:inherit; text-decoration:none;">Addams Family</a></h3>
-<span style="color:#5A4649; font-size:14px;">20:00 · DaHUB</span>
-<div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:auto; padding-top:14px; border-top:1px solid rgba(36,21,24,0.12);">
-<span style="font-weight:700;">de la 89 lei</span>
-<a href="/party/addams-family-31-octombrie" class="btn" style="display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:14px;">Vezi detalii</a>
-</div>
-</div>
-</article>
-
-
-<!-- Eveniment 5: Ultimul Dans · ’80s Disco Party -->
-<article class="lift event-card" data-city="București" style="background:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.8); border-radius:18px; overflow:hidden; display:flex; flex-direction:column;">
-<div style="position:relative;">
-<a href="/cina/ultimul-dans-6-noiembrie" style="display:block;"><img src="images/4effe9715b4a5bae50ea64d83bdb1fe5.jpg" alt="Ultimul Dans · ’80s Disco Party" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 33.4074%"></a>
-<span style="position:absolute; top:12px; left:12px; background:rgba(250,246,243,0.95); border-radius:12px; padding:8px 12px; text-align:center; line-height:1.1;"><span style="display:block; font-family:'Playfair Display',Georgia,serif; font-size:24px; color:#A3172F;">6</span><span style="font-size:11px; font-weight:700; letter-spacing:0.12em; color:#241518;">NOI</span></span>
-</div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:6px; flex:1;">
-<span style="font-size:11px; letter-spacing:0.18em; font-weight:700; color:#A3172F; text-transform:uppercase;">Suspecți la Cină · București</span>
-<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:24px; line-height:1.2; margin:0;"><a href="/cina/ultimul-dans-6-noiembrie" style="color:inherit; text-decoration:none;">Ultimul Dans · ’80s Disco Party</a></h3>
-<span style="color:#5A4649; font-size:14px;">20:00 · Mirador Rooftop</span>
-<div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:auto; padding-top:14px; border-top:1px solid rgba(36,21,24,0.12);">
-<span style="font-weight:700;">de la 149 lei</span>
-<a href="/cina/ultimul-dans-6-noiembrie" class="btn" style="display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:14px;">Vezi detalii</a>
-</div>
-</div>
-</article>
-
-
-<!-- Eveniment 6: Adults Edition #2 -->
-<article class="lift event-card" data-city="București" style="background:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.8); border-radius:18px; overflow:hidden; display:flex; flex-direction:column;">
-<div style="position:relative;">
-<a href="/treasurehunt/adults-bucuresti-15-noiembrie" style="display:block;"><img src="images/46756a140b4d483b3cd121dd63dd0d90.webp" alt="Adults Edition #2" style="display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; object-position:center 22%;"></a>
-<span style="position:absolute; top:12px; left:12px; background:rgba(250,246,243,0.95); border-radius:12px; padding:8px 12px; text-align:center; line-height:1.1;"><span style="display:block; font-family:'Playfair Display',Georgia,serif; font-size:24px; color:#A3172F;">15</span><span style="font-size:11px; font-weight:700; letter-spacing:0.12em; color:#241518;">NOI</span></span>
-</div>
-<div style="padding:18px 20px 20px; display:flex; flex-direction:column; gap:6px; flex:1;">
-<span style="font-size:11px; letter-spacing:0.18em; font-weight:700; color:#A3172F; text-transform:uppercase;">Suspecți în Treasure Hunt · București</span>
-<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:24px; line-height:1.2; margin:0;"><a href="/treasurehunt/adults-bucuresti-15-noiembrie" style="color:inherit; text-decoration:none;">Adults Edition #2</a></h3>
-<span style="color:#5A4649; font-size:14px;">14:00 · Piața Victoriei</span>
-<div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:auto; padding-top:14px; border-top:1px solid rgba(36,21,24,0.12);">
-<span style="font-weight:700;">120 lei</span>
-<a href="/treasurehunt/adults-bucuresti-15-noiembrie" class="btn" style="display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:14px;">Vezi detalii</a>
-</div>
-</div>
-</article>
-
-</div>
-
-
-<div style="margin-top:28px; display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
-<a href="/calendar" class="btn" style="display:inline-flex; align-items:center; min-height:50px; padding:0 24px; border-radius:999px; border:1px solid rgba(36,21,24,0.3); color:#241518; text-decoration:none; font-weight:600;">Vezi tot calendarul</a>
+<div id="acasaEvenimente"><p><a href="/calendar">Vezi calendarul și biletele</a></p></div>
+<div style="margin-top:24px; display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
+<a href="/calendar" class="s-btn-2">Vezi tot calendarul</a>
 <span style="color:#5A4649; font-size:15px;">Nu găsești o dată potrivită? <a href="#newsletter" style="font-weight:600;">Află primul de edițiile noi</a></span>
+</div>
+</div>
+</section>
+
+<!-- COMPANII ȘI PRIVATE -->
+<section id="organizam" style="background:#F3E7E3; padding:64px 0;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px;">
+<span class="s-kick">Pentru grupul tău</span>
+<h2 class="s-h2">Organizăm și pentru companii și grupuri private</h2>
+<p class="s-lead">Aceleași experiențe, doar pentru oamenii tăi. Ne spui ocazia, câți sunteți și unde, iar noi îți propunem formatul potrivit.</p>
+<div class="s-oferte" style="margin-top:22px;">
+<a class="s-oferta lift" href="/corporate">
+<img src="/images/v2/g-bdad519730e4d78e5f54b706c379924d.webp" alt="Colegi la un eveniment Suspecți pentru companii" loading="lazy" width="960" height="540">
+<div>
+<span class="s-kick">Pentru companii</span>
+<h3>Team building și petreceri de firmă</h3>
+<p>Team building, petrecerea de Crăciun, aniversarea companiei sau un eveniment pentru clienți și parteneri. Alegi între mystery dinner, petrecere tematică, brunch cu karaoke de grup și treasure hunt. Noi pregătim jocul și îl conducem de la început până la final.</p>
+<span class="s-link">Vezi ce putem organiza pentru companii →</span>
+</div>
+</a>
+<a class="s-oferta lift" href="/private">
+<img src="/images/v2/g-16082bd1f3b2285360cad534f67916e8.webp" alt="Grup de prieteni la finalul unei petreceri Suspecți" loading="lazy" width="960" height="540">
+<div>
+<span class="s-kick">Evenimente private</span>
+<h3>Aniversări și petreceri pentru grupul tău</h3>
+<p>Ziua ta, un majorat sau o seară cu prietenii, de la 25 de persoane, în București sau Timișoara. Tu aduci invitații, noi pregătim povestea, jocul și moderarea.</p>
+<span class="s-link">Vezi evenimentele private →</span>
+</div>
+</a>
 </div>
 </div>
 </section>
@@ -380,28 +301,14 @@ input::placeholder{color:#9C8A8C;}
 </div>
 <img src="images/db668561ae5e63152f4f360a1efe55ef.webp" alt="Participanți la Treasure Hunt" style="flex: 1 1 340px; min-width: 0; width: 659px; max-width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 18px; display: block; object-position: 69.9635% 50%; height: 660px">
 </div>
-</section><section style="background:linear-gradient(180deg, #2B0A12 0%, #3B0D18 100%); color:#FBF3F1; padding:88px 0;">
-<div style="max-width:1180px; margin:0 auto; padding:0 20px;">
-<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Pentru grupuri și cadouri</span>
-<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(32px,6.4vw,52px); line-height:1.08; margin:14px 0 32px; text-wrap:balance;">SUSPECȚI pentru ocaziile tale <span style="font-family: &quot;Great Vibes&quot;, cursive; font-weight: 400; font-size: 1.3em; line-height: 0.9; color: rgb(235, 193, 190)">speciale</span></h2>
-<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap:16px;">
-<div id="companii" style="border:1px solid rgba(235,193,190,0.25); border-radius:20px; padding:28px 24px; background:rgba(255,255,255,0.04); display:flex; flex-direction:column; gap:12px;">
-<span style="font-size:11px; letter-spacing:0.2em; font-weight:700; color:#EBC1BE;">PENTRU COMPANII</span>
-<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:28px; margin:0;">Team building și petreceri de firmă</h3>
-<p style="margin:0; color:#D9C8C6;">O alternativă la team building-ul clasic, în care colegii vorbesc și lucrează împreună dincolo de departamentul lor. De obicei 25–120 de participanți. Pentru grupuri mai mari, discutăm.</p>
+</section><section id="cadou" style="background:linear-gradient(180deg, #2B0A12 0%, #3B0D18 100%); color:#FBF3F1; padding:64px 0;">
+<div style="max-width:1180px; margin:0 auto; padding:0 20px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px;">
+<div style="flex:1 1 420px; min-width:0;">
+<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;">Voucher cadou</span>
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(30px,5vw,44px); line-height:1.1; margin:10px 0 12px;">Oferă o seară <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; color:#EBC1BE;">de poveste</span></h2>
+<p style="margin:0; color:#D9C8C6; max-width:60ch;">De Crăciun, de ziua cuiva drag sau doar așa. Voucherul vine în format electronic și tipărit și este valabil trei luni. Îl personalizăm pentru persoana care îl primește, inclusiv cu un mesaj de la tine.</p>
 </div>
-<div id="privat" style="border:1px solid rgba(235,193,190,0.25); border-radius:20px; padding:28px 24px; background:rgba(255,255,255,0.04); display:flex; flex-direction:column; gap:12px;">
-<span style="font-size:11px; letter-spacing:0.2em; font-weight:700; color:#EBC1BE;">EVENIMENTE PRIVATE</span>
-<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:28px; margin:0;">Petrecerea ta, doar cu oamenii tăi</h3>
-<p style="margin:0; color:#D9C8C6;">Aniversări, burlăcii sau reuniuni de prieteni, de la 25 de persoane. Spune-ne câți sunteți și ce ai în minte, iar noi îți propunem formatul potrivit.</p>
-</div>
-<div id="cadou" style="border:1px solid rgba(235,193,190,0.45); border-radius:20px; padding:28px 24px; background:linear-gradient(160deg, rgba(163,23,47,0.35) 0%, rgba(92,18,34,0.25) 100%); display:flex; flex-direction:column; gap:12px;">
-<span style="font-size:11px; letter-spacing:0.2em; font-weight:700; color:#EBC1BE;">VOUCHER CADOU</span>
-<h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:28px; margin:0;">Oferă o seară <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; color:#EBC1BE;">de poveste</span></h3>
-<p style="margin:0; color:#D9C8C6;">De Crăciun, de ziua cuiva drag, la o aniversare sau doar așa. Voucherul vine în format electronic și tipărit și este valabil trei luni. Îl personalizăm pentru persoana care îl primește, inclusiv cu un mesaj de la tine.</p>
-</div>
-</div>
-<div style="margin-top:28px; text-align:center;"><a href="/private#oferta" class="btn" style="display:inline-flex; align-items:center; gap:10px; min-height:54px; padding:0 30px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Contactează-ne pentru ofertă personalizată <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+<a href="https://wa.me/40755639871" target="_blank" rel="noopener noreferrer" class="btn" style="display:inline-flex; align-items:center; min-height:54px; padding:0 28px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:700;">Comandă un voucher pe WhatsApp</a>
 </div>
 </section>
 
@@ -487,19 +394,17 @@ input::placeholder{color:#9C8A8C;}
 </div>
 
 <script>
-var SUSPECTI_CITY_ACTIVE = "min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:#A3172F; color:#FFFFFF; border:1px solid #A3172F;";
-var SUSPECTI_CITY_INACTIVE = "min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:rgba(255,255,255,0.6); color:#241518; border:1px solid rgba(36,21,24,0.2);";
+// Evenimentele următoare: aceeași listă ca în calendar (componente.js), cu filtru de oraș.
+var ACASA_ORAS = 'Toate';
 function suspectiFilterCity(city) {
-  document.querySelectorAll('.city-filter-btn').forEach(function (b) {
-    var on = b.getAttribute('data-city') === city;
-    b.setAttribute('aria-pressed', on ? 'true' : 'false');
-    b.style.cssText = on ? SUSPECTI_CITY_ACTIVE : SUSPECTI_CITY_INACTIVE;
-  });
-  document.querySelectorAll('.event-card').forEach(function (c) {
-    var cc = c.getAttribute('data-city');
-    c.style.display = (city === 'Toate' || cc === city) ? '' : 'none';
-  });
+  ACASA_ORAS = city;
+  document.querySelectorAll('.city-filter-btn').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-city') === city ? 'true' : 'false'); });
+  var list = (window.SUSPECTI_EVENTS || []).filter(function (e) { return city === 'Toate' || e.city === city; }).slice(0, 6);
+  var el = document.getElementById('acasaEvenimente');
+  if (!el) return;
+  el.innerHTML = list.length ? SuspectiUI.lista(list, false) : '<p style="color:#5A4649;">Nu avem încă o ediție programată aici. <a href="#newsletter">Află primul când apare una</a>.</p>';
 }
+document.addEventListener('DOMContentLoaded', function () { suspectiFilterCity('Toate'); });
 </script>
 </body>
 </html>

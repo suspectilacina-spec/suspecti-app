@@ -62,6 +62,7 @@ input::placeholder{color:#9C8A8C;}
 <script src="https://bilete.suspectilacina.com/sync/events.js"></script>
 <script src="/evenimente-editorial.js"></script>
 <script src="/events.js"></script>
+<script src="/componente.js"></script>
 </head>
 <body>
 <div style="font-family:'Manrope','Segoe UI',system-ui,sans-serif; color:#241518; background:#FAF6F3; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;">
@@ -117,47 +118,41 @@ input::placeholder{color:#9C8A8C;}
 </nav>
 </header>
 
-<!-- HERO + FILTRE -->
-<section id="top" style="background:radial-gradient(120% 70% at 85% 0%, rgba(163,23,47,0.45) 0%, transparent 60%), radial-gradient(90% 60% at 0% 100%, rgba(92,18,34,0.7) 0%, transparent 60%), #2B0A12; color:#FBF3F1; padding:48px 0 40px;">
-<div style="max-width:1180px; margin:0 auto; padding:0 20px;">
-<span style="font-size:12px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#EBC1BE;"><span id="calEyebrow">Calendar &amp; bilete</span></span>
-<h1 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(40px,8vw,68px); line-height:1.04; margin:14px 0 0;">Unde ne vedem <font color="#ebc1be" face="Great Vibes, cursive"><span style="font-size: 85px">data viitoare&nbsp;</span></font><span style="font-size: clamp(40px, 8vw, 68px)">?</span><span style="font-size: clamp(40px, 8vw, 68px)">&nbsp;</span></h1>
-<p class="fade" style="font-size:18px; color:#D9C8C6; max-width:56ch; margin:16px 0 28px;">Descoperă evenimentele din București și Timișoara și rezervă-ți locul la experiența care îți place.</p>
-
-<div style="display:flex; flex-direction:column; gap:14px; padding:18px; border-radius:18px; background:rgba(255,255,255,0.05); border:1px solid rgba(235,193,190,0.2);">
-<div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px;">
-<span style="min-width:96px; font-size:11px; letter-spacing:0.18em; font-weight:700; color:#EBC1BE;">ORAȘ</span>
-<button type="button" class="cal-city-btn" data-city="Toate" aria-pressed="true" onclick="calSetCity('Toate')" style="min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:#A3172F; color:#FFFFFF; border:1px solid #A3172F;">Toate</button>
-<button type="button" class="cal-city-btn" data-city="București" aria-pressed="false" onclick="calSetCity('București')" style="min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:transparent; color:#FBF3F1; border:1px solid rgba(251,243,241,0.3);">București</button>
-<button type="button" class="cal-city-btn" data-city="Timișoara" aria-pressed="false" onclick="calSetCity('Timișoara')" style="min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:transparent; color:#FBF3F1; border:1px solid rgba(251,243,241,0.3);">Timișoara</button>
+<!-- CALENDAR: TITLU, FILTRE, EVENIMENTE -->
+<section id="top" style="background:#FAF6F3; padding:30px 0 6px;">
+<div class="s-wrap">
+<h1 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(34px,5vw,46px); line-height:1.1; margin:0;"><span id="calEyebrow">Calendar &amp; bilete</span></h1>
+<p style="margin:6px 0 0; color:#5A4649; font-size:17px;">Evenimentele următoare din București și Timișoara, în ordinea datelor.</p>
+<div class="cal-filtre">
+<div class="cal-rand" role="group" aria-label="Oraș"><span class="cal-et">Oraș</span>
+<button type="button" class="cal-chip cal-city-btn" data-city="Toate" aria-pressed="true" onclick="calSetCity('Toate')">Toate</button>
+<button type="button" class="cal-chip cal-city-btn" data-city="București" aria-pressed="false" onclick="calSetCity('București')">București</button>
+<button type="button" class="cal-chip cal-city-btn" data-city="Timișoara" aria-pressed="false" onclick="calSetCity('Timișoara')">Timișoara</button>
 </div>
-<div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px;">
-<span style="min-width:96px; font-size:11px; letter-spacing:0.18em; font-weight:700; color:#EBC1BE;">EXPERIENȚĂ</span>
-<button type="button" class="cal-format-btn" data-format="Toate" aria-pressed="true" onclick="calSetFormat('Toate')" style="min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:#A3172F; color:#FFFFFF; border:1px solid #A3172F;">Toate</button>
-<button type="button" class="cal-format-btn" data-format="Cină" aria-pressed="false" onclick="calSetFormat('Cină')" style="min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:transparent; color:#FBF3F1; border:1px solid rgba(251,243,241,0.3);">Cină</button>
-<button type="button" class="cal-format-btn" data-format="Party" aria-pressed="false" onclick="calSetFormat('Party')" style="min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:transparent; color:#FBF3F1; border:1px solid rgba(251,243,241,0.3);">Party</button>
-<button type="button" class="cal-format-btn" data-format="Brunch" aria-pressed="false" onclick="calSetFormat('Brunch')" style="min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:transparent; color:#FBF3F1; border:1px solid rgba(251,243,241,0.3);">Brunch</button>
-<button type="button" class="cal-format-btn" data-format="Treasure Hunt" aria-pressed="false" onclick="calSetFormat('Treasure Hunt')" style="min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:transparent; color:#FBF3F1; border:1px solid rgba(251,243,241,0.3);">Treasure Hunt</button>
+<div class="cal-rand" role="group" aria-label="Experiență"><span class="cal-et">Experiență</span>
+<button type="button" class="cal-chip cal-format-btn" data-format="Toate" aria-pressed="true" onclick="calSetFormat('Toate')">Toate</button>
+<button type="button" class="cal-chip cal-format-btn" data-format="Cină" aria-pressed="false" onclick="calSetFormat('Cină')">Suspecți la Cină</button>
+<button type="button" class="cal-chip cal-format-btn" data-format="Party" aria-pressed="false" onclick="calSetFormat('Party')">Party</button>
+<button type="button" class="cal-chip cal-format-btn" data-format="Brunch" aria-pressed="false" onclick="calSetFormat('Brunch')">Singing Brunch</button>
+<button type="button" class="cal-chip cal-format-btn" data-format="Treasure Hunt Adults" aria-pressed="false" onclick="calSetFormat('Treasure Hunt Adults')">Treasure Hunt Adults</button>
+<button type="button" class="cal-chip cal-format-btn" data-format="Treasure Hunt Family" aria-pressed="false" onclick="calSetFormat('Treasure Hunt Family')">Treasure Hunt Family</button>
 </div>
 </div>
-<p id="calCountText" style="margin:12px 0 0; font-size:14px; color:#D9C8C6;" role="status"></p>
+<p id="calCountText" style="margin:14px 0 0; font-size:15px; color:#5A4649;" role="status"></p>
 </div>
 </section>
 
-<!-- LISTA -->
-<section id="lista" style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); padding:56px 0 80px;">
-<div style="max-width:1180px; margin:0 auto; padding:0 20px;">
-
+<section id="lista" style="background:#FAF6F3; padding:10px 0 64px;">
+<div class="s-wrap">
 <div id="calEventsList"></div>
-<div id="calNoEvents" style="display:none; text-align:center; padding:48px 24px; border-radius:20px; background:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.85);">
-<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:clamp(26px,4.6vw,36px); line-height:1.15; margin:0 0 10px;">Momentan nu avem ediții <span style="font-family:'Great Vibes',cursive; font-weight:400; font-size:1.3em; line-height:0.9; color:#A3172F;">aici</span></h2>
-<p style="color:#5A4649; margin:0 auto 22px; max-width:46ch;">Pregătim următoarele date. Lasă-ne emailul și îți scriem primul când apare o ediție în orașul tău.</p>
-<div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
-<a href="#newsletter" class="btn" style="display:inline-flex; align-items:center; min-height:52px; padding:0 26px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Anunță-mă</a>
-<button type="button" onclick="calResetFilters()" style="min-height:52px; padding:0 22px; border-radius:999px; border:1px solid rgba(36,21,24,0.25); background:transparent; color:#241518; font-weight:600; font-size:16px; cursor:pointer;">Vezi toate edițiile</button>
+<div id="calNoEvents" style="display:none; padding:32px 0; border-top:1px solid rgba(36,21,24,0.12); border-bottom:1px solid rgba(36,21,24,0.12);">
+<h2 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:28px; margin:0 0 8px;">Momentan nu avem ediții pentru filtrele alese</h2>
+<p style="color:#5A4649; margin:0 0 18px; max-width:52ch;">Pregătim următoarele date. Lasă-ne emailul și îți scriem primul când apare o ediție nouă.</p>
+<div style="display:flex; flex-wrap:wrap; gap:10px;">
+<a href="#preinscriere" class="s-btn">Anunță-mă</a>
+<button type="button" onclick="calResetFilters()" class="s-btn-2">Vezi toate edițiile</button>
 </div>
 </div>
-
 </div>
 </section>
 
@@ -355,8 +350,6 @@ function calPickPWith(btn) {
 var CAL_EVENTS = SUSPECTI_EVENTS;
 var CAL_MONTH_LABELS = SUSPECTI_MONTH_LABELS;
 var CAL_STATE = { city: "Toate", format: "Toate" };
-var CAL_ACTIVE = "min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:#A3172F; color:#FFFFFF; border:1px solid #A3172F;";
-var CAL_INACTIVE = "min-height:42px; padding:0 16px; border-radius:999px; font-size:14px; font-weight:600; cursor:pointer; background:transparent; color:#FBF3F1; border:1px solid rgba(251,243,241,0.3);";
 
 function calEsc(s) {
   return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -451,7 +444,7 @@ function calInit() {
     if (eb) eb.textContent = 'Calendar & bilete · ' + oras;
     calSetCity(oras);
   }
-  if (exp && document.querySelector('.cal-format-btn[data-format="' + exp + '"]')) calSetFormat(exp);
+  if (exp === "Treasure Hunt") { CAL_STATE.format = exp; } else if (exp && document.querySelector('.cal-format-btn[data-format="' + exp + '"]')) calSetFormat(exp);
   calRender();
 }
 document.addEventListener('DOMContentLoaded', calInit);
