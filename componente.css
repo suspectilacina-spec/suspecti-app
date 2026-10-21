@@ -5,7 +5,7 @@
 .ev-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(36,21,24,0.12); }
 .ev-row { display: grid; grid-template-columns: 128px minmax(0,1fr); gap: 4px 16px; padding: 18px 0; border-bottom: 1px solid rgba(36,21,24,0.12); align-items: start; }
 .ev-thumb { grid-row: span 2; display: block; border-radius: 10px; overflow: hidden; background: #EFE5E1; }
-.ev-thumb img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.ev-thumb img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
 .ev-info { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
 .ev-kick { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #A3172F; }
 .ev-title { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 23px; line-height: 1.2; }
@@ -46,7 +46,7 @@
 
 /* ---------- Video: miniatură + fereastră ---------- */
 .v-thumb { position: relative; display: block; width: 100%; padding: 0; border: 0; border-radius: 14px; overflow: hidden; cursor: pointer; background: #2B0A12; }
-.v-thumb img { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; }
+.v-thumb img { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; }
 .v-thumb .v-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 58px; height: 58px; border-radius: 50%; background: rgba(250,246,243,0.95); color: #A3172F; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px -8px rgba(0,0,0,0.6); }
 .v-thumb .v-lbl { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 10px 10px; background: linear-gradient(transparent, rgba(26,6,11,0.85)); color: #FBF3F1; font-size: 13px; font-weight: 700; text-align: center; }
 .v-modal { position: fixed; inset: 0; z-index: 100; background: rgba(15,3,6,0.92); display: flex; align-items: center; justify-content: center; padding: 16px; }
@@ -55,7 +55,7 @@
 
 /* ---------- Galerie și testimoniale ---------- */
 .s-galerie { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
-.s-galerie img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; }
+.s-galerie img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; }
 @media (min-width: 760px) { .s-galerie { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; } }
 .s-testim { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px,100%),1fr)); gap: 14px; margin-top: 22px; }
 .s-testim figure { margin: 0; padding: 20px 22px; border-left: 3px solid #A3172F; background: #FFFFFF; border-radius: 0 12px 12px 0; }
@@ -85,7 +85,7 @@
 .s-oferte { display: grid; grid-template-columns: 1fr; gap: 16px; }
 @media (min-width: 760px) { .s-oferte { grid-template-columns: 1fr 1fr; gap: 22px; } }
 .s-oferta { display: flex; flex-direction: column; background: #FFFFFF; border-radius: 16px; overflow: hidden; border: 1px solid rgba(36,21,24,0.08); text-decoration: none; color: #241518; }
-.s-oferta img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.s-oferta img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
 .s-oferta > div { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .s-oferta h3 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 26px; line-height: 1.2; }
 .s-oferta p { margin: 0; color: #3E2A2D; font-size: 16px; }
@@ -150,7 +150,7 @@
 @media (min-width: 700px) { .cf-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
 @media (min-width: 1100px) { .cf-grid { grid-template-columns: repeat(4, minmax(0,1fr)); } }
 .cf-card { display: flex; flex-direction: column; background: #FFFFFF; border-radius: 16px; overflow: hidden; border: 1px solid rgba(36,21,24,0.08); }
-.cf-card > img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.cf-card > img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; }
 .cf-in { padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .cf-in h3 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 25px; line-height: 1.2; color: #241518; }
 .cf-in > p { margin: 0; font-size: 16px; color: #3E2A2D; }
