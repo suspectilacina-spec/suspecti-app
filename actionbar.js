@@ -33,7 +33,8 @@
     povesti: ['Suspecți la Povești', 'Anunță-mă', '#inscriere'],
     corporate: ['Pentru companii', 'Cere o ofertă', '#oferta'],
     private: ['Evenimente private', 'Cere o ofertă', '#oferta'],
-    eveniment: ['SUSPECȚI', 'Calendar & bilete', '/calendar']
+    eveniment: ['SUSPECȚI', 'Calendar & bilete', '/calendar'],
+    revelion: ['Suspecți la Revelion', 'Calendar & bilete', '/calendar']
   };
   var concept = CONCEPT[pagina];
   if (!concept && !SIMPLU[pagina]) return;
@@ -55,7 +56,7 @@
 
     var titlu, detaliu, buton;
     // O singură ediție posibilă: pagina unei ediții sau un concept cu o singură ediție (la Treasure Hunt varianta se alege mereu).
-    var oSinguraEditie = (pagina === 'eveniment' && editie) || concept && (editie || (edConcept.length === 1 && concept.key !== 'Treasure Hunt'));
+    var oSinguraEditie = ((pagina === 'eveniment' || pagina === 'revelion') && editie) || concept && (editie || (edConcept.length === 1 && concept.key !== 'Treasure Hunt'));
     if (oSinguraEditie) {
       var ev = editie || edConcept[0];
       titlu = ev.title.split(' · ')[0];

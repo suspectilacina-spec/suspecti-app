@@ -107,12 +107,8 @@
 .ed-h1 .ed-s { display: block; font-size: clamp(21px, 3vw, 26px); color: #5A4649; margin-top: 6px; }
 .ed-scurt { font-size: 18px; color: #3E2A2D; margin: 14px 0 18px; max-width: 60ch; }
 .ed-facts { margin: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; border-top: 1px solid rgba(36,21,24,0.12); }
-.ed-vid-mob { margin-top: 16px; }
-.ed-vid-mob .v-thumb { display: grid; grid-template-columns: 84px 1fr; align-items: center; gap: 14px; padding: 8px; background: #FFFFFF; border: 1px solid rgba(36,21,24,0.12); text-align: left; }
-.ed-vid-mob .v-thumb img { width: 84px; border-radius: 8px; }
-.ed-vid-mob .v-thumb .v-play { left: 50px; top: 50%; width: 40px; height: 40px; }
-.ed-vid-mob .v-thumb .v-lbl { position: static; padding: 0; background: none; color: #241518; font-size: 16px; text-align: left; }
-.ed-vid-mob .v-thumb .v-lbl small { display: block; font-weight: 500; color: #5A4649; font-size: 14px; }
+.ed-vid-mob { margin-top: 22px; }
+.ed-vid-mob .v-mare { margin: 0 auto; }
 @media (min-width: 900px) { .ed-vid-mob { display: none; } }
 .ed-facts > div { padding: 10px 0; border-bottom: 1px solid rgba(36,21,24,0.12); }
 .ed-facts dt { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #A3172F; }
@@ -122,7 +118,7 @@
 .ed-nota { margin: 10px 0 0; font-size: 14px; color: #5A4649; }
 .ed-vid-desk { display: none; }
 @media (min-width: 900px) { .ed-vid-desk { display: block; position: relative; } }
-.ed-vid-desk video { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 16px; background: #2B0A12; }
+.ed-vid-desk video { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: contain; border-radius: 16px; background: #2B0A12; }
 .ed-sunet { position: absolute; top: 12px; right: 12px; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(251,243,241,0.5); background: rgba(43,10,18,0.65); color: #FBF3F1; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; }
 .ed-2col { display: grid; grid-template-columns: minmax(0,1fr); gap: 32px; }
 @media (min-width: 860px) { .ed-2col { grid-template-columns: 1fr 1fr; gap: 48px; } }
@@ -215,21 +211,28 @@
 .teme-sep { padding: 56px 0 8px; background: #FAF6F3; }
 
 /* Video ca rând compact (miniatură + text) sau ca poster vertical alături de text */
-.v-strip { margin-top: 16px; max-width: 420px; }
-.v-strip .v-thumb { display: grid; grid-template-columns: 84px 1fr; align-items: center; gap: 14px; padding: 8px; background: #FFFFFF; border: 1px solid rgba(36,21,24,0.12); text-align: left; }
-.v-strip .v-thumb img { width: 84px; border-radius: 8px; }
-.v-strip .v-thumb .v-play { left: 50px; top: 50%; width: 40px; height: 40px; }
-.v-strip .v-thumb .v-lbl { position: static; padding: 0; background: none; color: #241518; font-size: 16px; text-align: left; }
-.v-strip .v-thumb .v-lbl small { display: block; font-weight: 500; color: #5A4649; font-size: 14px; }
-.v-inline { flex: 0 1 300px; max-width: 300px; }
-.v-inline .v-lbl small { display: block; font-weight: 500; font-size: 12px; opacity: 0.85; }
+.v-strip { margin-top: 22px; max-width: 420px; }
+.v-inline { flex: 0 1 340px; width: 100%; max-width: 340px; margin: 0 auto; }
+@media (max-width: 759px) { .v-strip, .v-inline { max-width: 100%; margin-left: auto; margin-right: auto; } .v-strip .v-mare, .v-inline .v-mare { margin: 0 auto; } }
 
 /* Header pe mobil: „Pentru companii” vizibil lângă logo, separat de butonul de meniu */
 .snav-corp { display: none; }
 @media (max-width: 1079px) {
-  .snav-corp { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(235,193,190,0.55); color: #FBF3F1 !important; text-decoration: none; font-weight: 700; font-size: 15px; white-space: nowrap; }
+  .snav-corp { display: inline-flex; align-items: center; min-height: 44px; padding: 0 2px; color: #FBF3F1 !important; text-decoration: none; font-weight: 700; font-size: 15px; letter-spacing: 0.01em; white-space: nowrap; border-bottom: 2px solid transparent; }
+  .snav-corp[aria-current], .snav-corp:hover { border-bottom-color: #EBC1BE; }
+  header > div > div:last-child { gap: 18px !important; }
 }
-@media (max-width: 359px) { .snav-corp { padding: 0 12px; font-size: 14px; } }
+@media (max-width: 519px) {
+  header > div { padding: 0 16px !important; gap: 10px !important; }
+  header > div > a:first-child { font-size: 20px !important; letter-spacing: 0.06em !important; }
+  header > div > div:last-child { gap: 14px !important; }
+  .snav-corp { font-size: 16px; }
+}
+@media (max-width: 374px) {
+  header > div > a:first-child { font-size: 18px !important; letter-spacing: 0.04em !important; }
+  header > div > div:last-child { gap: 10px !important; }
+  .snav-corp { font-size: 15px; }
+}
 
 /* Pagina ediției pe telefon: fotografii mari, text mai mare */
 @media (max-width: 759px) {
@@ -245,7 +248,7 @@
 
 /* Video mare, vertical, redat în pagină */
 .v-mare { position: relative; width: 100%; max-width: 420px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #2B0A12; }
-.v-mare video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.v-mare video { display: block; width: 100%; height: 100%; object-fit: contain; background: #2B0A12; }
 .v-mare .v-ctrl { position: absolute; left: 10px; right: 10px; bottom: 10px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; }
 .v-mare .v-ctrl button { min-height: 44px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(251,243,241,0.55); background: rgba(43,10,18,0.72); color: #FBF3F1; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
 .v-mare .v-start { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 76px; height: 76px; border-radius: 50%; border: 0; background: rgba(250,246,243,0.95); color: #A3172F; font-size: 30px; cursor: pointer; box-shadow: 0 10px 30px -8px rgba(0,0,0,0.6); }
@@ -324,3 +327,39 @@
 .dn-valori h3 { margin: 0 0 8px; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 24px; color: #A3172F; }
 .dn-valori p { margin: 0; font-size: 17px; line-height: 1.6; color: #3E2A2D; max-width: 46ch; }
 @media (max-width: 699px) { .dn-mv p { font-size: 21px; } .dn-valori p { font-size: 19px; } .dn-valori h3 { font-size: 26px; } }
+
+/* Afișul ediției: orizontal pe calculator, vertical pe telefon; se vede întreg, fără decupare */
+.ed-afis { display: block; margin: 0 0 22px; border-radius: 16px; overflow: hidden; background: #111; }
+.ed-afis img { display: block; width: 100%; height: auto; max-height: 78vh; object-fit: contain; margin: 0 auto; }
+@media (min-width: 760px) { .ed-afis img { aspect-ratio: 800 / 420; max-height: none; } }
+
+/* Prețuri pe etape */
+.ed-preturi { display: grid; grid-template-columns: minmax(0,1fr); gap: 12px; }
+@media (min-width: 760px) { .ed-preturi { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; } }
+.ed-pret { display: flex; flex-direction: column; gap: 4px; padding: 18px 20px; border-radius: 16px; background: #FFFFFF; border: 1px solid rgba(36,21,24,0.12); }
+.ed-pret-et { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #A3172F; }
+.ed-pret strong { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 34px; line-height: 1.1; color: #241518; }
+.ed-pret > span:last-child { color: #5A4649; font-size: 15px; }
+.ed-pret-acum { background: #2B0A12; border-color: #2B0A12; box-shadow: 0 18px 40px -22px rgba(43,10,18,0.9); }
+.ed-pret-acum .ed-pret-et { color: #EBC1BE; }
+.ed-pret-acum strong { color: #FBF3F1; }
+.ed-pret-acum > span:last-child { color: #D9C8C6; }
+.ed-pret-trecut { opacity: 0.55; }
+.ed-pret-trecut strong { text-decoration: line-through; }
+
+/* Meniu și băuturi */
+.ed-meniu-grid { display: grid; grid-template-columns: minmax(0,1fr); gap: 14px; }
+@media (min-width: 760px) { .ed-meniu-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; } }
+.ed-meniu .ed-h3 { margin-top: 0; }
+.ed-meniu .s-lista li { font-size: 16px; padding: 7px 0 7px 24px; }
+.ed-meniu .s-lista li::before { top: 16px; width: 7px; height: 7px; }
+
+/* Culorile din dress code */
+.ed-culori { display: flex; gap: 8px; margin: 4px 0 12px; }
+.ed-culori span { width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(36,21,24,0.25); }
+
+.ed-final-motto { display: block; font-family: 'Playfair Display', Georgia, serif; font-style: italic; color: #EBC1BE; font-size: 18px; margin-bottom: 4px; }
+@media (max-width: 759px) {
+  .ed-meniu .s-lista li { font-size: 18px; }
+  .ed-pret strong { font-size: 36px; }
+}

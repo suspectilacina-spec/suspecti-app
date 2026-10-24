@@ -7,12 +7,15 @@
     { "source": "/brunch/:editie", "destination": "/editie" },
     { "source": "/party/:editie", "destination": "/editie" },
     { "source": "/treasurehunt/:editie", "destination": "/editie" },
+    { "source": "/revelion/:editie", "destination": "/editie" },
     { "source": "/calendar/bucuresti", "destination": "/calendar" },
     { "source": "/calendar/timisoara", "destination": "/calendar" },
     { "source": "/Calendar/bucuresti", "destination": "/calendar" },
     { "source": "/Calendar/timisoara", "destination": "/calendar" }
   ],
   "redirects": [
+    { "source": "/eveniment/suspecti-la-revelion-2027-scandalous-edition-5197", "destination": "/revelion/scandalous-2027", "permanent": false },
+    { "source": "/revelion", "destination": "/revelion/scandalous-2027", "permanent": false },
     { "source": "/Acasa", "destination": "/", "permanent": true },
     { "source": "/acasa", "destination": "/", "permanent": true },
     { "source": "/main", "destination": "/corporate", "permanent": true },

@@ -51,12 +51,12 @@ window.SuspectiUI = (function () {
     return html + (curent ? '</ul>' : '');
   }
 
-  // Miniatura video: imagine + buton de redare. La click se deschide videoul cu sunet, în fereastră.
+  // Video redat direct în pagină, întreg și fără sunet (pornirea și butoanele sunt în video.js).
+  // eticheta/sub descriu videoul pentru cititoarele de ecran; nu mai apar ca text pe pagină.
   function videoThumb(src, poster, eticheta, sub) {
-    return '<button type="button" class="v-thumb" data-video="' + esc(src) + '" aria-label="Pornește videoul: ' + esc(eticheta || 'video') + '">' +
-      '<img src="' + esc(poster) + '" alt="" loading="lazy" width="540" height="960">' +
-      '<span class="v-play" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>' +
-      '<span class="v-lbl">' + esc(eticheta || 'Vezi videoul') + (sub ? '<small>' + esc(sub) + '</small>' : '') + '</span></button>';
+    var desc = sub || eticheta || 'Video';
+    if (window.suspectiVideoHTML) return window.suspectiVideoHTML(src, poster, desc);
+    return '<div class="v-mare"><video src="' + esc(src) + '" poster="' + esc(poster) + '" muted loop playsinline autoplay controls preload="metadata" aria-label="' + esc(desc) + '"></video></div>';
   }
 
   var modal = null, ultimul = null;
@@ -87,48 +87,4 @@ window.SuspectiUI = (function () {
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchideVideo(); });
 
   return { esc: esc, img: img, pret: pret, rand: rand, lista: lista, videoThumb: videoThumb, deschideVideo: deschideVideo };
-})();
-
-/* Video redat direct în pagină (.v-mare): pornește fără sunet când ajunge în ecran și se oprește când iese.
-   Are butoane pentru sunet și pauză. Dacă browserul blochează redarea automată sau vizitatorul a cerut
-   „mișcare redusă”, rămâne coperta cu un buton mare de redare. */
-(function () {
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function stare(box) {
-    var v = box.querySelector('video');
-    box.classList.toggle('v-ruleaza', !v.paused);
-    var p = box.querySelector('[data-v="pauza"]');
-    if (p) { p.textContent = v.paused ? '▶ Pornește' : '❚❚ Pauză'; p.setAttribute('aria-label', v.paused ? 'Pornește videoul' : 'Pune videoul pe pauză'); }
-    var s = box.querySelector('[data-v="sunet"]');
-    if (s) { s.textContent = v.muted ? '🔈 Pornește sunetul' : '🔊 Oprește sunetul'; s.setAttribute('aria-label', v.muted ? 'Pornește sunetul' : 'Oprește sunetul'); }
-  }
-  function init() {
-    var boxes = [].slice.call(document.querySelectorAll('.v-mare'));
-    boxes.forEach(function (box) {
-      var v = box.querySelector('video');
-      v.muted = true; v.playsInline = true; v.loop = true;
-      ['play', 'pause', 'volumechange'].forEach(function (ev) { v.addEventListener(ev, function () { stare(box); }); });
-      box.addEventListener('click', function (e) {
-        var b = e.target.closest('[data-v]');
-        if (!b) return;
-        var a = b.getAttribute('data-v');
-        if (a === 'pauza' || a === 'start') { box.dataset.oprit = v.paused ? '' : '1'; if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); }
-        if (a === 'sunet') {
-          v.muted = !v.muted;
-          if (!v.muted) boxes.forEach(function (alt) { var w = alt.querySelector('video'); if (w !== v) w.muted = true; });
-          if (!v.muted && v.paused) { var q = v.play(); if (q && q.catch) q.catch(function () {}); } }
-      });
-      stare(box);
-    });
-    if (reduce || !('IntersectionObserver' in window)) return;
-    var io = new IntersectionObserver(function (intrari) {
-      intrari.forEach(function (it) {
-        var box = it.target, v = box.querySelector('video');
-        if (it.isIntersecting && it.intersectionRatio > 0.4) { if (!box.dataset.oprit && v.paused) { if (v.preload === 'none') v.preload = 'metadata'; var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
-        else if (!v.paused) v.pause();
-      });
-    }, { threshold: [0, 0.4, 0.8] });
-    boxes.forEach(function (b) { io.observe(b); });
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();

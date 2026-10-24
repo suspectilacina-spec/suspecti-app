@@ -54,7 +54,7 @@ var SUSPECTI_MONTH_LABELS = [];
 
     // Câmpuri comune pentru calendar, prima pagină și pagina ediției.
     e.varianta = e.key === 'Treasure Hunt' ? (e.theme === '#family' || /family/i.test(e.title + ' ' + (e.slug || '')) ? 'family' : 'adults') : '';
-    e.concept = { 'Cină': 'Suspecți la Cină', 'Party': 'Suspecți la Party', 'Brunch': 'The Singing Brunch', 'Treasure Hunt': 'Suspecți în Treasure Hunt' }[e.key] || e.format || 'SUSPECȚI';
+    e.concept = e.concept || { 'Cină': 'Suspecți la Cină', 'Party': 'Suspecți la Party', 'Brunch': 'The Singing Brunch', 'Treasure Hunt': 'Suspecți în Treasure Hunt' }[e.key] || e.format || 'SUSPECȚI';
     e.filtru = e.key === 'Treasure Hunt' ? (e.varianta === 'family' ? 'Treasure Hunt Family' : 'Treasure Hunt Adults') : e.key;
     e.tip = e.tip || { 'Cină': 'Mystery Dinner', 'Party': 'Petrecere tematică', 'Brunch': 'Brunch cu DJ, MC și karaoke de grup' }[e.key] ||
       (e.key === 'Treasure Hunt' ? (e.varianta === 'family' ? 'Treasure Hunt pentru părinți și copii' : 'Treasure Hunt pentru adulți') : '');
@@ -62,10 +62,12 @@ var SUSPECTI_MONTH_LABELS = [];
 
     // Prețuri cu termen: până la data „until” (inclusiv) se afișează prețul redus, evidențiat; apoi automat prețul obișnuit.
     e.priceNote = '';
-    (e.tiers || []).some(function (t) {
+    var tiers = e.tiers || [];
+    tiers.some(function (t, i) {
       if (acum > new Date(t.until + 'T23:59:59+03:00')) return false;
       var p = t.until.split('-');
-      e.priceNote = t.label + ': ' + t.price + ' până pe ' + parseInt(p[2], 10) + ' ' + LUNI[parseInt(p[1], 10) - 1] + ', apoi ' + e.price;
+      var urmator = tiers[i + 1] ? tiers[i + 1].price : e.price;
+      e.priceNote = t.label + ': ' + t.price + ' până pe ' + parseInt(p[2], 10) + ' ' + LUNI[parseInt(p[1], 10) - 1] + ', apoi ' + urmator;
       e.price = t.price;
       return true;
     });

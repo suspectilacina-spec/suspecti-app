@@ -15,7 +15,8 @@ var SUSPECTI_PAGINI = {
   'bucuresti': 'Calendar & bilete · București',
   'timisoara': 'Calendar & bilete · Timișoara',
   'corporate': 'Pentru companii',
-  'private': 'Evenimente private'
+  'private': 'Evenimente private',
+  'revelion': 'Suspecți la Revelion'
 };
 
 // Acordul e unul singur pentru tot domeniul: cookie-ul wl_ck (1 = da, 0 = nu) pe .suspectilacina.com
@@ -119,11 +120,33 @@ function suspectiCookieBanner() {
   d.id = 'suspecti-cookie';
   d.setAttribute('role', 'dialog');
   d.setAttribute('aria-label', 'Acord cookie-uri');
-  d.style.cssText = 'position:fixed; left:16px; right:16px; bottom:16px; z-index:100; max-width:560px; margin:0 auto; background:#2B0A12; color:#FBF3F1; border:1px solid rgba(235,193,190,0.3); border-radius:18px; padding:18px 20px; box-shadow:0 24px 50px -20px rgba(0,0,0,0.6); font-family:Manrope,system-ui,sans-serif; font-size:15px; line-height:1.5;';
-  d.innerHTML = '<p style="margin:0 0 14px;">Folosim cookie-uri de marketing (Meta) ca să vedem ce funcționează și să-ți arătăm evenimente potrivite. Le activăm doar dacă ești de acord. Alegerea e valabilă și pe pagina de bilete. <a href="/confidentialitate" style="color:#EBC1BE;">Detalii</a></p>' +
-    '<div style="display:flex; gap:10px; flex-wrap:wrap;">' +
-    '<button type="button" data-acord="da" style="min-height:44px; padding:0 22px; border:0; border-radius:999px; background:#A3172F; color:#FFFFFF; font:inherit; font-weight:600; cursor:pointer;">Accept</button>' +
-    '<button type="button" data-acord="nu" style="min-height:44px; padding:0 22px; border:1px solid rgba(251,243,241,0.4); border-radius:999px; background:transparent; color:#FBF3F1; font:inherit; font-weight:600; cursor:pointer;">Refuz</button>' +
+  d.setAttribute('aria-describedby', 'suspecti-cookie-text');
+  if (!document.getElementById('suspecti-cookie-css')) {
+    var css = document.createElement('style');
+    css.id = 'suspecti-cookie-css';
+    css.textContent =
+      '#suspecti-cookie{position:fixed;left:16px;right:16px;bottom:16px;z-index:1000;max-width:520px;margin:0 auto;background:#2B0A12;color:#FBF3F1;' +
+      'border:1px solid rgba(235,193,190,0.28);border-radius:20px;padding:20px 22px 18px;box-shadow:0 28px 60px -18px rgba(0,0,0,0.7);' +
+      'font-family:Manrope,system-ui,sans-serif;font-size:15px;line-height:1.55;animation:sc-in .35s ease-out;}' +
+      '#suspecti-cookie .sc-t{display:flex;align-items:center;gap:10px;margin:0 0 6px;font-family:"Playfair Display",Georgia,serif;font-size:21px;font-weight:500;color:#FFFFFF;}' +
+      '#suspecti-cookie p{margin:0 0 16px;color:#E9DCD6;}' +
+      '#suspecti-cookie a{color:#EBC1BE;text-decoration:underline;}' +
+      '#suspecti-cookie .sc-b{display:grid;grid-template-columns:1fr 1fr;gap:10px;}' +
+      '#suspecti-cookie button{min-height:48px;padding:0 18px;border-radius:999px;font:inherit;font-size:16px;font-weight:700;cursor:pointer;}' +
+      '#suspecti-cookie [data-acord=da]{border:0;background:#A3172F;color:#FFFFFF;box-shadow:0 10px 24px -12px rgba(163,23,47,0.9);}' +
+      '#suspecti-cookie [data-acord=nu]{border:1px solid rgba(251,243,241,0.55);background:transparent;color:#FBF3F1;}' +
+      '#suspecti-cookie button:focus-visible{outline:3px solid #EBC1BE;outline-offset:2px;}' +
+      '@media (max-width:519px){#suspecti-cookie{left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));padding:22px 20px 20px;font-size:17px;}' +
+      '#suspecti-cookie .sc-t{font-size:24px;}#suspecti-cookie button{min-height:54px;font-size:18px;}}' +
+      '@keyframes sc-in{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}' +
+      '@media (prefers-reduced-motion:reduce){#suspecti-cookie{animation:none;}}';
+    document.head.appendChild(css);
+  }
+  d.innerHTML = '<div class="sc-t"><span aria-hidden="true">🍪</span>Cookie-uri</div>' +
+    '<p id="suspecti-cookie-text">Folosim cookie-uri de marketing (Meta Pixel) ca să vedem ce funcționează și să-ți arătăm evenimente potrivite. Le pornim doar dacă ești de acord. Alegerea ta e valabilă și pe pagina de bilete. <a href="/confidentialitate">Detalii</a></p>' +
+    '<div class="sc-b">' +
+    '<button type="button" data-acord="nu">Refuz</button>' +
+    '<button type="button" data-acord="da">Accept</button>' +
     '</div>';
   d.addEventListener('click', function (e) {
     var v = e.target.getAttribute && e.target.getAttribute('data-acord');
