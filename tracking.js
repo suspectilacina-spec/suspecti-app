@@ -18,12 +18,39 @@ var SUSPECTI_PAGINI = {
   'private': 'Evenimente private'
 };
 
+// Acordul e unul singur pentru tot domeniul: cookie-ul wl_ck (1 = da, 0 = nu) pe .suspectilacina.com
+// este citit și de bilete.suspectilacina.com, care astfel nu mai afișează al doilea banner.
+var SUSPECTI_COOKIE_ACORD = 'wl_ck';
+
+function suspectiCitesteCookieAcord() {
+  var m = document.cookie.match(new RegExp('(?:^|; )' + SUSPECTI_COOKIE_ACORD + '=([01])'));
+  return m ? (m[1] === '1' ? 'da' : 'nu') : null;
+}
+
+function suspectiScrieCookieAcord(val) {
+  var domeniu = /(^|\.)suspectilacina\.com$/.test(location.hostname) ? '; domain=.suspectilacina.com' : '';
+  document.cookie = SUSPECTI_COOKIE_ACORD + '=' + (val === 'da' ? '1' : '0') + domeniu + '; path=/; max-age=31536000; SameSite=Lax' + (location.protocol === 'https:' ? '; Secure' : '');
+}
+
 function suspectiAcord() {
-  try { return localStorage.getItem('suspecti_cookie_acord'); } catch (e) { return null; }
+  var acord = suspectiCitesteCookieAcord();
+  if (acord) return acord;
+  // Alegerile făcute înainte de cookie-ul comun sunt mutate în cookie.
+  try { acord = localStorage.getItem('suspecti_cookie_acord'); } catch (e) { acord = null; }
+  if (acord === 'da' || acord === 'nu') suspectiScrieCookieAcord(acord);
+  return acord;
 }
 
 function suspectiSalveazaAcord(val) {
+  suspectiScrieCookieAcord(val);
   try { localStorage.setItem('suspecti_cookie_acord', val); } catch (e) {}
+}
+
+// Linkul „Schimbă preferințele pentru cookie-uri” din pagina Confidențialitate.
+function suspectiSchimbaAcord() {
+  var b = document.getElementById('suspecti-cookie');
+  if (b) b.remove();
+  suspectiCookieBanner();
 }
 
 // Trimite un eveniment către Meta, doar dacă Pixelul e pornit (vizitatorul a acceptat).
@@ -93,7 +120,7 @@ function suspectiCookieBanner() {
   d.setAttribute('role', 'dialog');
   d.setAttribute('aria-label', 'Acord cookie-uri');
   d.style.cssText = 'position:fixed; left:16px; right:16px; bottom:16px; z-index:100; max-width:560px; margin:0 auto; background:#2B0A12; color:#FBF3F1; border:1px solid rgba(235,193,190,0.3); border-radius:18px; padding:18px 20px; box-shadow:0 24px 50px -20px rgba(0,0,0,0.6); font-family:Manrope,system-ui,sans-serif; font-size:15px; line-height:1.5;';
-  d.innerHTML = '<p style="margin:0 0 14px;">Folosim cookie-uri de marketing (Meta) ca să vedem ce funcționează și să-ți arătăm evenimente potrivite. Le activăm doar dacă ești de acord. <a href="/confidentialitate" style="color:#EBC1BE;">Detalii</a></p>' +
+  d.innerHTML = '<p style="margin:0 0 14px;">Folosim cookie-uri de marketing (Meta) ca să vedem ce funcționează și să-ți arătăm evenimente potrivite. Le activăm doar dacă ești de acord. Alegerea e valabilă și pe pagina de bilete. <a href="/confidentialitate" style="color:#EBC1BE;">Detalii</a></p>' +
     '<div style="display:flex; gap:10px; flex-wrap:wrap;">' +
     '<button type="button" data-acord="da" style="min-height:44px; padding:0 22px; border:0; border-radius:999px; background:#A3172F; color:#FFFFFF; font:inherit; font-weight:600; cursor:pointer;">Accept</button>' +
     '<button type="button" data-acord="nu" style="min-height:44px; padding:0 22px; border:1px solid rgba(251,243,241,0.4); border-radius:999px; background:transparent; color:#FBF3F1; font:inherit; font-weight:600; cursor:pointer;">Refuz</button>' +
@@ -103,7 +130,8 @@ function suspectiCookieBanner() {
     if (!v) return;
     suspectiSalveazaAcord(v);
     d.remove();
-    if (v === 'da') suspectiPornestePixel();
+    if (window.fbq && window.suspectiPixelPornit) window.fbq('consent', v === 'da' ? 'grant' : 'revoke');
+    else if (v === 'da') suspectiPornestePixel();
   });
   document.body.appendChild(d);
 }
