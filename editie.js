@@ -22,7 +22,9 @@
     return '<section id="' + id + '" class="s-sec"' + (fundal ? ' style="background:' + fundal + ';"' : '') + '><div class="s-wrap">' +
       (kick ? '<span class="s-kick">' + esc(kick) + '</span>' : '') + (titlu ? '<h2 class="s-h2">' + esc(titlu) + '</h2>' : '') + interior + '</div></section>';
   }
-  function listaSimpla(arr) { return '<ul class="s-lista">' + arr.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'; }
+  // Textele ediției pot marca fragmente îngroșate cu **așa**.
+  function fmt(s) { return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>'); }
+  function listaSimpla(arr) { return '<ul class="s-lista">' + arr.map(function (x) { return '<li>' + fmt(x) + '</li>'; }).join('') + '</ul>'; }
   function butonBilet(text) {
     return '<a class="s-btn" href="' + esc(ev.link) + '" target="_blank" rel="noopener noreferrer" data-editie="' + esc(ev.title) + '">' + (text || 'Cumpără bilet') + ' ' + SAGEATA + '</a>';
   }
@@ -109,7 +111,8 @@
     var hero = '<section class="ed-hero" id="ed-hero">' + (afis ? '<div class="s-wrap">' + afis + '</div>' : '') + '<div class="s-wrap ed-grid"><div style="min-width:0;">' +
       '<h1 class="ed-h1"><span class="ed-c">' + esc(ev.concept) + (cina ? ':' : ' · ' + esc(ev.city)) + '</span>' +
       '<span class="ed-t">' + esc(ev.title) + '</span>' + (ev.tip ? '<span class="ed-s">' + (cina ? '— ' : '') + esc(ev.tip) + '</span>' : '') + '</h1>' +
-      (C.scurt ? '<p class="ed-scurt">' + esc(C.scurt) + '</p>' : '') +
+      (C.scurt ? '<p class="ed-scurt">' + fmt(C.scurt) + '</p>' : '') +
+      (C.peScurt ? '<ul class="ed-pescurt">' + C.peScurt.map(function (x) { return '<li>' + fmt(x) + '</li>'; }).join('') + '</ul>' : '') +
       '<dl class="ed-facts">' + fapte + '</dl>' +
       (ev.statusNote ? '<p style="margin:14px 0 0; padding:10px 14px; border-radius:12px; background:#F3DCD8; color:#A3172F; font-weight:700;">' + esc(ev.statusNote) + '</p>' : '') +
       '<div class="ed-cta" id="ed-cta">' + (ev.bookable ? butonBilet() : '<a class="s-btn" href="/calendar">Vezi alte ediții</a>') +
@@ -121,12 +124,12 @@
       '</div></section>';
 
     // 5: ce se întâmplă
-    var poveste = (v('poveste') || []).map(function (p) { return '<p class="ed-p">' + esc(p) + '</p>'; }).join('');
+    var poveste = (v('poveste') || []).map(function (p) { return '<p class="ed-p">' + fmt(p) + '</p>'; }).join('');
     if (!poveste && ev.description) poveste = '<div class="ed-p">' + ev.description + '</div>';
     var pasi = v('pasi') || [];
     var s5 = sectiune('ce-se-intampla', 'La această ediție', 'Ce se întâmplă', '<div class="ed-2col"><div>' + poveste +
       (CONCEPT_PAG[cale.split('/')[1]] ? '<a class="s-link" href="/' + cale.split('/')[1] + '">Mai multe despre ' + esc(ev.concept) + ' →</a>' : '') + '</div>' +
-      (pasi.length ? '<div><h3 class="ed-h3">Cum decurge</h3><ol class="s-pasi">' + pasi.map(function (p) { return '<li><strong>' + esc(p.t) + '</strong><span>' + esc(p.d) + '</span></li>'; }).join('') + '</ol></div>' : '') +
+      (pasi.length ? '<div><h3 class="ed-h3">Cum decurge</h3><ol class="s-pasi">' + pasi.map(function (p) { return '<li><strong>' + esc(p.t) + '</strong><span>' + fmt(p.d) + '</span></li>'; }).join('') + '</ol></div>' : '') +
       '</div>');
 
     // 6: ce include biletul + condiții
@@ -156,7 +159,7 @@
     // 6c: meniul și băuturile incluse
     function bloc(b) {
       return '<div class="ed-box ed-meniu"><h3 class="ed-h3">' + esc(b.titlu) + '</h3>' +
-        (b.lista ? listaSimpla(b.lista) : '<p class="ed-p" style="margin:0;">' + esc(b.text) + '</p>') + '</div>';
+        (b.lista ? listaSimpla(b.lista) : '<p class="ed-p" style="margin:0;">' + fmt(b.text) + '</p>') + '</div>';
     }
     var meniu = C.meniu || [], bauturi = C.bauturi || [];
     var s6c = meniu.length ? sectiune('meniu', 'Inclus în bilet', 'Meniul festiv', '<div class="ed-meniu-grid">' + meniu.map(bloc).join('') + '</div>', '#FFFFFF') : '';
@@ -167,7 +170,7 @@
     var s7 = (dress || practic.length) ? sectiune('practic', 'Înainte să vii', dress ? 'Dress code și informații practice' : 'Informații practice', '<div class="ed-2col">' +
       (dress ? '<div><h3 class="ed-h3">' + esc(dress.titlu) + '</h3>' +
         (dress.culori ? '<div class="ed-culori" aria-hidden="true">' + dress.culori.map(function (c) { return '<span style="background:' + esc(c) + ';"></span>'; }).join('') + '</div>' : '') +
-        '<p class="ed-p">' + esc(dress.text) + '</p></div>' : '') +
+        '<p class="ed-p">' + fmt(dress.text) + '</p></div>' : '') +
       (practic.length ? '<div><h3 class="ed-h3">Bine de știut</h3>' + listaSimpla(practic) + '</div>' : '') + '</div>') : '';
 
     // 8: fotografii + testimoniale + rețele
@@ -190,6 +193,7 @@
       (ev.bookable ? butonBilet() : '<a class="s-btn" href="/calendar">Vezi alte ediții</a>') + '</div>');
 
     root.innerHTML = hero + s5 + s6 + s6c + s6d + s7 + s8 + s9 + blocOrganizare();
+    root.className = 'ed-tip-' + tipKey;
 
     // Video pe desktop: pornește fără sunet, în buclă, cu buton de sunet. Pe telefon rămâne miniatura.
     var loc = document.getElementById('ed-vid-desk');

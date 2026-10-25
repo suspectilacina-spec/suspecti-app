@@ -65,7 +65,7 @@ input::placeholder{color:#9C8A8C;}
 <link rel="stylesheet" href="/componente.css">
 <link rel="stylesheet" href="mobile.css">
 <script src="video.js"></script>
-<script src="/bilete.js"></script>
+<script src="/bilete.js"></script><script src="/cautare.js" defer></script>
 <script src="tracking.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script src="https://bilete.suspectilacina.com/sync/events.js"></script>
@@ -81,7 +81,7 @@ input::placeholder{color:#9C8A8C;}
 <!-- HEADER -->
 <header style="background:#2B0A12; color:#FBF3F1; position:relative; z-index:30;">
 <div style="max-width:1180px; margin:0 auto; padding:0 20px; height:72px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
-<a href="/" style="text-decoration:none; color:#FBF3F1; font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:22px; letter-spacing:0.08em;">SUSPECȚI</a>
+<div class="snav-brand"><a href="/" class="snav-logo" style="text-decoration:none; color:#FBF3F1; font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:22px; letter-spacing:0.08em;">SUSPECȚI</a><a href="/revelion/scandalous-2027" class="snav-rev">Revelion 2027</a></div>
 <nav class="snav-top" aria-label="Navigare principală" style="gap:22px; font-size:14px; align-items:center;">
 <a href="/" aria-current="page" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid #EBC1BE; font-weight:700;">Acasă</a>
 <a href="/calendar" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Calendar &amp; bilete</a>
@@ -129,6 +129,29 @@ input::placeholder{color:#9C8A8C;}
 </div>
 </nav>
 </header>
+
+<!-- REVELION 2027 -->
+<section class="rev-banner" aria-labelledby="rev-titlu">
+<div class="rev-in">
+<div class="rev-text">
+<span class="rev-kick">Suspecți la Revelion 2027 · Scandalous Edition</span>
+<h2 id="rev-titlu" class="rev-h">Nu ai planuri <span>de Revelion?</span></h2>
+<p class="rev-p">Pe <strong>31 decembrie</strong>, în București, primești un personaj cu secrete într-un <strong>mystery dinner</strong>, apoi continuăm cu <strong>petrecerea</strong>. Meniul festiv și băuturile sunt incluse.</p>
+<ul class="rev-pct"><li>🎭 Personajul tău</li><li>🍽️ Meniu festiv inclus</li><li>🥂 Băuturi incluse</li><li>💃 Petrecere</li></ul>
+<p class="rev-pret" data-rev-pret>Early Bird: <strong>750 lei</strong> de persoană, până pe 13 noiembrie</p>
+<div class="rev-cta"><a class="rev-btn" href="https://bilete.suspectilacina.com/suspecti-la-revelion-2027-scandalous-edition-5197" target="_blank" rel="noopener noreferrer" data-editie="Scandalous Edition">Rezervă-ți locul</a><a class="rev-btn-2" href="/revelion/scandalous-2027">Vezi meniul și detaliile →</a></div>
+</div>
+<a class="rev-img" href="/revelion/scandalous-2027" tabindex="-1" aria-hidden="true"><picture><source media="(max-width: 759px)" srcset="/images/revelion/scandalous-desktop.webp"><img src="/images/revelion/scandalous-desktop.webp" alt="" width="800" height="420"></picture></a>
+</div>
+</section>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var ev = (window.SUSPECTI_EVENTS || []).filter(function (e) { return e.id === '5197'; })[0], p = document.querySelector('[data-rev-pret]');
+  if (!ev || !p) return;
+  if (!ev.bookable) { p.textContent = ev.status === 'anulat' ? 'Ediție anulată' : 'Bilete epuizate'; return; }
+  p.innerHTML = ev.priceNote ? ev.priceNote.replace(/(\d+ lei)/, '<strong>$1</strong>') : 'Bilet: <strong>' + ev.price + '</strong> de persoană';
+});
+</script>
 
 <!-- HERO -->
 <section id="top" style="background:radial-gradient(120% 70% at 85% 0%, rgba(163,23,47,0.45) 0%, transparent 60%), radial-gradient(90% 60% at 0% 100%, rgba(92,18,34,0.7) 0%, transparent 60%), #2B0A12; color:#FBF3F1; padding:56px 0 72px;">

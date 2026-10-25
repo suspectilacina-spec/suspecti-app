@@ -224,12 +224,12 @@
 }
 @media (max-width: 519px) {
   header > div { padding: 0 16px !important; gap: 10px !important; }
-  header > div > a:first-child { font-size: 20px !important; letter-spacing: 0.06em !important; }
+  header .snav-logo { font-size: 20px !important; letter-spacing: 0.06em !important; }
   header > div > div:last-child { gap: 14px !important; }
   .snav-corp { font-size: 16px; }
 }
 @media (max-width: 374px) {
-  header > div > a:first-child { font-size: 18px !important; letter-spacing: 0.04em !important; }
+  header .snav-logo { font-size: 18px !important; letter-spacing: 0.04em !important; }
   header > div > div:last-child { gap: 10px !important; }
   .snav-corp { font-size: 15px; }
 }
@@ -362,4 +362,66 @@
 @media (max-width: 759px) {
   .ed-meniu .s-lista li { font-size: 18px; }
   .ed-pret strong { font-size: 36px; }
+}
+
+/* „Pe scurt”: ce primești, dintr-o privire */
+.ed-pescurt { list-style: none; margin: 0 0 18px; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
+@media (min-width: 760px) { .ed-pescurt { grid-template-columns: repeat(4, minmax(0,1fr)); } }
+.ed-pescurt li { padding: 12px 14px; border-radius: 14px; background: #FFFFFF; border: 1px solid rgba(36,21,24,0.1); font-family: 'Manrope', system-ui, sans-serif; font-size: 15px; line-height: 1.35; color: #3E2A2D; }
+.ed-pescurt strong { color: #241518; font-weight: 700; }
+@media (max-width: 759px) { .ed-pescurt li { font-size: 17px; } }
+
+/* Revelion: titluri și subtitluri bold, cu fonturile site-ului (Playfair Display pentru titluri, Manrope pentru text) */
+.ed-tip-revelion .ed-h1 .ed-t { font-weight: 700; letter-spacing: -0.01em; }
+.ed-tip-revelion .ed-h1 .ed-s { font-family: 'Manrope', system-ui, sans-serif; font-weight: 700; font-size: clamp(17px, 2.4vw, 20px); color: #5A4649; }
+.ed-tip-revelion .s-h2, .ed-tip-revelion .ed-h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; }
+.ed-tip-revelion .s-kick { font-family: 'Manrope', system-ui, sans-serif; font-weight: 800; }
+.ed-tip-revelion .s-pasi strong { font-family: 'Manrope', system-ui, sans-serif; font-weight: 800; }
+.ed-tip-revelion .ed-p, .ed-tip-revelion .s-lista li, .ed-tip-revelion .ed-scurt { font-family: 'Manrope', system-ui, sans-serif; }
+.ed-tip-revelion .ed-p strong, .ed-tip-revelion .s-lista li strong, .ed-tip-revelion .ed-scurt strong { font-weight: 700; color: #241518; }
+.ed-tip-revelion .ed-pret-et { font-weight: 800; }
+.ed-tip-revelion .ed-pret strong, .ed-tip-revelion .ed-final strong { font-weight: 700; }
+
+/* Logo + „Revelion 2027” în bara de sus */
+.snav-brand { display: flex; align-items: center; gap: 12px; min-width: 0; flex: 0 0 auto; }
+.snav-rev { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0 12px; border-radius: 999px; background: #A3172F; color: #FFFFFF !important; text-decoration: none; font-family: 'Manrope', system-ui, sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.04em; white-space: nowrap; box-shadow: 0 8px 20px -10px rgba(163,23,47,0.9); }
+.snav-rev::before { content: "✦"; font-size: 11px; color: #EBC1BE; }
+.snav-rev:hover { background: #8C1227; }
+@media (max-width: 1079px) {
+  .snav-brand { flex-direction: column; align-items: flex-start; gap: 3px; }
+  .snav-rev { min-height: 24px; padding: 0 9px; font-size: 12px; box-shadow: none; }
+  .snav-rev::before { font-size: 9px; }
+  header .cauta-btn { width: 42px; height: 42px; }
+}
+@media (max-width: 374px) {
+  .snav-rev { font-size: 11px; padding: 0 8px; }
+  header .cauta-btn, header .snav-menu > summary { width: 38px !important; height: 38px !important; }
+}
+
+/* Bannerul de Revelion de pe prima pagină */
+.rev-banner { background: radial-gradient(90% 120% at 100% 0%, rgba(163,23,47,0.55) 0%, transparent 60%), #0E0E0E; color: #FBF3F1; padding: 40px 0 44px; border-bottom: 3px solid #A3172F; }
+.rev-in { max-width: 1180px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: minmax(0,1fr); gap: 26px; align-items: center; }
+@media (min-width: 900px) { .rev-in { grid-template-columns: minmax(0,1fr) minmax(0,1.05fr); gap: 48px; } }
+.rev-kick { display: block; font-family: 'Manrope', system-ui, sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #EBC1BE; }
+.rev-h { margin: 10px 0 14px; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(38px, 6vw, 62px); line-height: 1.04; color: #FFFFFF; text-wrap: balance; }
+.rev-h span { color: #E0314F; font-style: italic; }
+.rev-p { margin: 0 0 16px; font-family: 'Manrope', system-ui, sans-serif; font-size: 18px; line-height: 1.6; color: #E9DCD6; max-width: 54ch; }
+.rev-p strong { color: #FFFFFF; }
+.rev-pct { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.rev-pct li { padding: 8px 14px; border-radius: 999px; border: 1px solid rgba(235,193,190,0.35); background: rgba(255,255,255,0.05); font-family: 'Manrope', system-ui, sans-serif; font-size: 14px; font-weight: 700; color: #FBF3F1; }
+.rev-pret { display: inline-block; margin: 0 0 18px; padding: 8px 14px; border-radius: 12px; background: #A3172F; color: #FFFFFF; font-family: 'Manrope', system-ui, sans-serif; font-size: 15px; font-weight: 600; }
+.rev-pret strong { font-weight: 800; }
+.rev-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.rev-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 28px; border-radius: 999px; background: #FFFFFF; color: #A3172F !important; text-decoration: none; font-family: 'Manrope', system-ui, sans-serif; font-size: 17px; font-weight: 800; box-shadow: 0 14px 30px -14px rgba(0,0,0,0.8); }
+.rev-btn:hover { background: #FBF3F1; }
+.rev-btn-2 { color: #FBF3F1 !important; font-family: 'Manrope', system-ui, sans-serif; font-weight: 700; font-size: 16px; text-decoration: underline; text-underline-offset: 4px; }
+.rev-img { display: block; border-radius: 18px; overflow: hidden; box-shadow: 0 30px 60px -28px rgba(0,0,0,0.9); border: 1px solid rgba(235,193,190,0.2); }
+.rev-img img { display: block; width: 100%; height: auto; aspect-ratio: 800 / 420; object-fit: cover; }
+@media (max-width: 899px) { .rev-img { order: -1; } }
+@media (max-width: 519px) {
+  .rev-banner { padding: 26px 0 32px; }
+  .rev-p { font-size: 19px; }
+  .rev-pct li { font-size: 15px; }
+  .rev-btn { width: 100%; min-height: 58px; font-size: 19px; }
+  .rev-btn-2 { font-size: 17px; }
 }

@@ -118,9 +118,16 @@ window.SUSPECTI_FAQ_COMUN = [
   ['Cum primesc biletul?', 'Biletele se cumpără prin AmBilet, partenerul nostru de ticketing. După plată, biletul vine pe email.']
 ];
 
-/* Revelion: fotografiile și testimonialele sunt cele de la Suspecți la Cină (același mystery dinner). */
+/* Revelion: fotografii elegante din edițiile anterioare (Balul lui Gatsby și serile cu ținute de gală). */
 window.SUSPECTI_CONCEPTE.revelion = {
-  foto: window.SUSPECTI_CONCEPTE.cina.foto,
+  foto: [
+    ['/images/v2/h-9758c336ac71a77e0f04e392fe11088a.webp', 'Invitați în ținute de gală la Balul lui Gatsby'],
+    ['/images/v2/h-a019def1c58433595774a3cb33a22863.webp', 'Invitate în roșu și auriu, cu șampanie, la Balul lui Gatsby'],
+    ['/images/v2/h-ee5d8795c05d54b56dfbcfb8f5e4d27c.webp', 'Invitate în rochii cu dantelă și perle'],
+    ['/images/v2/h-3067d053826b36e949c62eb048e3a23b.webp', 'Momentul dezvăluirii la Balul lui Gatsby'],
+    ['/images/v2/g-0f08b49843983eb53aa57c7893e2b01b.webp', 'Gazda serii, în rochie neagră de seară, arată spre un suspect'],
+    ['/images/v2/h-3a49be23427ad034b3c1f7622a58c9e0.webp', 'Invitați eleganți la un pahar de șampanie']
+  ],
   testimoniale: window.SUSPECTI_CONCEPTE.cina.testimoniale,
   faq: [
     ['Pot veni singur?', 'Da. Personajul tău are legături cu alți invitați, așa că ai de la început motive să intri în vorbă cu ei.'],
@@ -133,28 +140,29 @@ window.SUSPECTI_CONCEPTE.revelion = {
 window.SUSPECTI_EDITII = {
   /* Suspecți la Revelion 2027 — Scandalous Edition · Naïve, București · 31 decembrie 2026 */
   '5197': {
-    scurt: 'Un Revelion în care toată lumea te cunoaște, doar că sub alt nume. Începem cu un mystery dinner în care ai propriul personaj, cu meniu festiv și băuturi incluse, apoi continuăm cu petrecerea.',
+    scurt: 'Un Revelion în care **toată lumea te cunoaște, doar că sub alt nume**. Începem cu un mystery dinner în care ai propriul personaj, apoi continuăm cu petrecerea. Meniul și băuturile sunt incluse.',
+    peScurt: ['🎭 **Personajul tău**, cu secrete', '🍽️ **Meniu festiv** inclus', '🥂 **Băuturi** incluse', '💃 **Petrecere** după cină'],
     poveste: [
-      'Pe 31 decembrie primești povestea personajului tău și afli ce legături ai cu ceilalți invitați. Ai lucruri de obținut, informații pe care alții le caută și motive să păstrezi unele detalii doar pentru tine.',
-      'În sală sunt familii cu bani și relații complicate, prietenii de fațadă și oameni care ar prefera ca trecutul să rămână în trecut. Iar tu ai locul tău în poveste.',
-      'Nu ai replici de memorat și nici nevoie de experiență actoricească. Doar curiozitatea de a vedea cum te descurci în rolul primit. Cât despre ce urmează… păstrăm puțin mister.'
+      '**Pe 31 decembrie primești povestea personajului tău.** Afli ce legături ai cu ceilalți invitați, ce ai de obținut și ce informații caută alții de la tine.',
+      'În sală sunt familii cu bani și relații complicate, prietenii de fațadă și oameni care ar prefera ca trecutul să rămână în trecut. **Iar tu ai locul tău în poveste.**',
+      '**Nu ai replici de memorat** și nici nevoie de experiență actoricească. Ai nevoie doar de curiozitate. Cât despre ce urmează… păstrăm puțin mister.'
     ],
     pasi: [
-      { t: 'Mystery dinner', d: 'Intri în rol, afli secretele personajului și cauți informațiile de care ai nevoie, la o cină cu meniu festiv.' },
-      { t: 'Petrecerea', d: 'După mystery dinner continuăm cu muzică și dans. Avem un an întreg de lăsat în urmă.' }
+      { t: 'Mystery dinner', d: 'Intri în rol, afli secretele personajului și cauți informațiile de care ai nevoie, la o **cină cu meniu festiv**.' },
+      { t: 'Petrecerea', d: 'Continuăm cu **muzică și dans**. Avem un an întreg de lăsat în urmă.' }
     ],
     include: [
-      'Experiența de mystery dinner, cu povestea și personajul tău',
-      'Petrecerea de după mystery dinner, cu muzică și dans',
-      'Meniul festiv, de la aperitive până la desert',
-      'Băuturile din selecția evenimentului: cocktailuri, vin, spumant, bere și opțiuni fără alcool'
+      '**Mystery dinner**, cu povestea și personajul tău',
+      '**Petrecerea** de după, cu muzică și dans',
+      '**Meniul festiv**, de la aperitive până la desert',
+      '**Băuturile serii**: cocktailuri, vin, spumant, bere și opțiuni fără alcool'
     ],
     preturi: [
       { label: 'Early Bird', price: '750 lei', perioada: 'până pe 13 noiembrie 2026', until: '2026-11-13' },
       { label: 'Second Wave', price: '819 lei', perioada: '14 – 30 noiembrie 2026', until: '2026-11-30' },
       { label: 'Last Call', price: '885 lei', perioada: 'de la 1 decembrie 2026, în limita locurilor', until: '2026-12-31' }
     ],
-    preturiNota: 'Prețul este de persoană. Fiecare categorie include experiența, meniul festiv și selecția de băuturi. Locurile sunt limitate.',
+    preturiNota: 'Prețul este **de persoană** și include experiența, meniul festiv și băuturile. **Locurile sunt limitate.**',
     meniu: [
       { titlu: 'Selecție de aperitive', lista: [
         'Ton roșu, avocado și cremă fină de brânză',
@@ -174,21 +182,21 @@ window.SUSPECTI_EDITII = {
     bauturi: [
       { titlu: 'Cocktailuri', text: 'Aperol Spritz · Gin Tonic · Hugo · Cuba Libre · Whisky Juice / Pepsi · Vodka Juice / Pepsi · Bitter Orange cu Petroni Aperitivo · Negroni · Whisky Sour · Lillet Vive · Amaretto Sour · Margarita' },
       { titlu: 'Vinuri și spumant', lista: [
-        'Vin alb: Sauvignon Blanc, Chardonnay și Pinot Grigio — Crama Aproape',
-        'Vin rosé: Motiv Rosé — Crama Ceptura; Implicit Rosé — Crama Recaș',
-        'Vin roșu: Cabernet Sauvignon & Merlot — Crama Aproape',
-        'Spumant: Pinot Blanc — Crama Aproape'
+        '**Vin alb:** Sauvignon Blanc, Chardonnay și Pinot Grigio — Crama Aproape',
+        '**Vin rosé:** Motiv Rosé — Crama Ceptura; Implicit Rosé — Crama Recaș',
+        '**Vin roșu:** Cabernet Sauvignon & Merlot — Crama Aproape',
+        '**Spumant:** Pinot Blanc — Crama Aproape'
       ] },
       { titlu: 'Spirtoase și digestive', text: 'Vodka Absolut · Gin Beefeater · Whisky · Rom Havana 3 · Petroni Aperitivo · Vermut alb Petroni · Baileys · Ramazzotti Amaro · Limoncello' },
       { titlu: 'Bere', text: 'Carlsberg · Carlsberg Zero · Bucur blondă și brună' },
       { titlu: 'Fără alcool', lista: [
-        'Limonade: mango, căpșuni, aloe vera, citrice și mentă; Gin Tonic Zero',
-        'Răcoritoare: Pepsi, Pepsi Max, 7UP, Mirinda și Evervess',
-        'Sucuri Granini: mere, portocale și cranberry',
-        'Cafea: espresso, espresso dublu, cappuccino și latte; selecție de ceaiuri Dilmah'
+        '**Limonade:** mango, căpșuni, aloe vera, citrice și mentă; Gin Tonic Zero',
+        '**Răcoritoare:** Pepsi, Pepsi Max, 7UP, Mirinda și Evervess',
+        '**Sucuri Granini:** mere, portocale și cranberry',
+        '**Cafea și ceai:** espresso, espresso dublu, cappuccino, latte; ceaiuri Dilmah'
       ] }
     ],
-    dress: { titlu: 'Dress code: Scandalous', text: 'Bold looks. Wild details. Negru, roșu și alb. Dantelă, piele sau accente de animal print, bijuterii statement. O ținută elegantă, cu puțină extravaganță, în stilul tău.', culori: ['#111111', '#A3172F', '#FFFFFF'] },
+    dress: { titlu: 'Dress code: Scandalous', text: '**Bold looks. Wild details.** Negru, roșu și alb. Dantelă, piele sau accente de animal print, bijuterii statement. **O ținută elegantă, cu puțină extravaganță**, în stilul tău.', culori: ['#111111', '#A3172F', '#FFFFFF'] },
     final: 'Be bold. Be a little scandalous.',
     faqFaraComun: []
   },
