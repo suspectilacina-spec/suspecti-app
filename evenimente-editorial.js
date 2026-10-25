@@ -8,6 +8,8 @@
      durata  durata afișată (ex. '2 ore'); pentru Treasure Hunt există valori implicite în events.js
      theme   ancora tematicii pe pagina conceptului (ex. '#disco')
      img,pos poza și încadrarea ei      venue  numele locației, cu diacritice
+     imgMobil  poza verticală afișată pe telefon în primul ecran al ediției (img rămâne pentru calculator)
+     concept   numele conceptului afișat deasupra titlului (ex. 'Suspecți la Revelion')
      video,poster  videoul din primul ecran al paginii ediției
      price   prețul afișat (în loc de cel calculat din AmBilet)
      tiers   prețuri cu termen: [{ until: 'AAAA-LL-ZZ', price: '149 lei', label: 'Early Bird' }]
@@ -61,5 +63,18 @@ window.SUSPECTI_EDITORIAL = {
     tip: 'Treasure Hunt pentru adulți, cu Hai să Socializăm', durata: '3 ore',
     img: '/images/46756a140b4d483b3cd121dd63dd0d90.webp', pos: 'center 22%', venue: 'Piața Victoriei',
     video: '/videos/v2/ed-adults-buc.mp4', poster: '/images/v2/ed-adults-buc-poster.jpg'
+  },
+  '5197': {
+    page: '/revelion/scandalous-2027', concept: 'Suspecți la Revelion', title: 'Scandalous Edition',
+    tip: 'Mystery Dinner, meniu festiv, băuturi incluse și petrecere',
+    venue: 'Naïve',
+    img: '/images/revelion/scandalous-desktop.webp', pos: 'right center',
+    imgMobil: '/images/revelion/scandalous-mobil.webp',
+    price: '885 lei',
+    tiers: [
+      { until: '2026-11-13', price: '750 lei', label: 'Early Bird' },
+      { until: '2026-11-30', price: '819 lei', label: 'Second Wave' }
+    ],
+    extra: 'Biletul include experiența, meniul festiv și selecția de băuturi.'
   }
 };

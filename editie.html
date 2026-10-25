@@ -44,13 +44,14 @@ input::placeholder{color:#9C8A8C;}
 </style>
 <link rel="stylesheet" href="/componente.css">
 <link rel="stylesheet" href="/mobile.css">
-<script src="/bilete.js"></script>
+<script src="/bilete.js"></script><script src="/cautare.js" defer></script>
 <script src="/tracking.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script src="https://bilete.suspectilacina.com/sync/events.js"></script>
 <script src="/evenimente-editorial.js"></script>
 <script src="/events.js"></script>
 <script src="/editii-continut.js"></script>
+<script src="/video.js"></script>
 <script src="/componente.js"></script>
 <script src="/actionbar.js"></script>
 </head>
@@ -60,7 +61,7 @@ input::placeholder{color:#9C8A8C;}
 <!-- HEADER -->
 <header style="background:#2B0A12; color:#FBF3F1; position:relative; z-index:30;">
 <div style="max-width:1180px; margin:0 auto; padding:0 20px; height:72px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
-<a href="/" style="text-decoration:none; color:#FBF3F1; font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:22px; letter-spacing:0.08em;">SUSPECȚI</a>
+<div class="snav-brand"><a href="/" class="snav-logo" style="text-decoration:none; color:#FBF3F1; font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:22px; letter-spacing:0.08em;">SUSPECȚI</a><a href="/revelion/scandalous-2027" class="snav-rev">Revelion 2027</a></div>
 <nav class="snav-top" aria-label="Navigare principală" style="gap:22px; font-size:14px; align-items:center;">
 <a href="/" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Acasă</a>
 <a href="/calendar" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Calendar &amp; bilete</a>
@@ -72,7 +73,7 @@ input::placeholder{color:#9C8A8C;}
 </nav>
 <div style="display:flex; align-items:center; gap:10px;">
 <a href="/calendar" class="btn snav-cta" style="display:inline-flex; align-items:center; min-height:44px; padding:0 20px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:14px; white-space:nowrap;">Cumpără Bilet</a>
-<a href="/corporate" class="snav-corp">Pentru companii</a>
+<a href="/corporate" class="snav-corp">Pentru companii</a><a href="/despre" class="snav-corp">Despre noi</a>
 <details class="snav-menu">
 <summary aria-label="Meniu" style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:999px; border:1px solid rgba(235,193,190,0.35); color:#FBF3F1; cursor:pointer; font-size:20px; line-height:1;"><span class="snav-ico-o" aria-hidden="true">☰</span><span class="snav-ico-x" aria-hidden="true">✕</span></summary>
 <nav aria-label="Meniu mobil" style="position:absolute; left:0; right:0; top:72px; background:#2B0A12; padding:8px 20px 20px; max-height:calc(100vh - 72px); overflow-y:auto; border-bottom:1px solid rgba(235,193,190,0.2); box-shadow:0 24px 40px -20px rgba(0,0,0,0.6); z-index:50;">

@@ -65,7 +65,7 @@ input::placeholder{color:#9C8A8C;}
 <link rel="stylesheet" href="/componente.css">
 <link rel="stylesheet" href="mobile.css">
 <script src="video.js"></script>
-<script src="/bilete.js"></script>
+<script src="/bilete.js"></script><script src="/cautare.js" defer></script>
 <script src="tracking.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script src="https://bilete.suspectilacina.com/sync/events.js"></script>
@@ -81,7 +81,7 @@ input::placeholder{color:#9C8A8C;}
 <!-- HEADER -->
 <header style="background:#2B0A12; color:#FBF3F1; position:relative; z-index:30;">
 <div style="max-width:1180px; margin:0 auto; padding:0 20px; height:72px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
-<a href="/" style="text-decoration:none; color:#FBF3F1; font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:22px; letter-spacing:0.08em;">SUSPECȚI</a>
+<div class="snav-brand"><a href="/" class="snav-logo" style="text-decoration:none; color:#FBF3F1; font-family:'Playfair Display',Georgia,serif; font-weight:600; font-size:22px; letter-spacing:0.08em;">SUSPECȚI</a><a href="/revelion/scandalous-2027" class="snav-rev">Revelion 2027</a></div>
 <nav class="snav-top" aria-label="Navigare principală" style="gap:22px; font-size:14px; align-items:center;">
 <a href="/" aria-current="page" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid #EBC1BE; font-weight:700;">Acasă</a>
 <a href="/calendar" style="color:#FBF3F1; text-decoration:none; padding:4px 0; border-bottom:2px solid transparent;">Calendar &amp; bilete</a>
@@ -93,7 +93,7 @@ input::placeholder{color:#9C8A8C;}
 </nav>
 <div style="display:flex; align-items:center; gap:10px;">
 <a href="/calendar" class="btn snav-cta" style="display:inline-flex; align-items:center; min-height:44px; padding:0 20px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600; font-size:14px; white-space:nowrap;">Cumpără Bilet</a>
-<a href="/corporate" class="snav-corp">Pentru companii</a>
+<a href="/corporate" class="snav-corp">Pentru companii</a><a href="/despre" class="snav-corp">Despre noi</a>
 <details class="snav-menu">
 <summary aria-label="Meniu" style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:999px; border:1px solid rgba(235,193,190,0.35); color:#FBF3F1; cursor:pointer; font-size:20px; line-height:1;"><span class="snav-ico-o" aria-hidden="true">☰</span><span class="snav-ico-x" aria-hidden="true">✕</span></summary>
 <nav aria-label="Meniu mobil" style="position:absolute; left:0; right:0; top:72px; background:#2B0A12; padding:8px 20px 20px; max-height:calc(100vh - 72px); overflow-y:auto; border-bottom:1px solid rgba(235,193,190,0.2); box-shadow:0 24px 40px -20px rgba(0,0,0,0.6); z-index:50;">
@@ -130,6 +130,29 @@ input::placeholder{color:#9C8A8C;}
 </nav>
 </header>
 
+<!-- REVELION 2027 -->
+<section class="rev-banner" aria-labelledby="rev-titlu">
+<div class="rev-in">
+<div class="rev-text">
+<span class="rev-kick">Suspecți la Revelion 2027 · Scandalous Edition</span>
+<h2 id="rev-titlu" class="rev-h">Nu ai planuri <span>de Revelion?</span></h2>
+<p class="rev-p">Pe <strong>31 decembrie</strong>, în București, primești un personaj cu secrete într-un <strong>mystery dinner</strong>, apoi continuăm cu <strong>petrecerea</strong>. Meniul festiv și băuturile sunt incluse.</p>
+<ul class="rev-pct"><li>🎭 Personajul tău</li><li>🍽️ Meniu festiv inclus</li><li>🥂 Băuturi incluse</li><li>💃 Petrecere</li></ul>
+<p class="rev-pret" data-rev-pret>Early Bird: <strong>750 lei</strong> de persoană, până pe 13 noiembrie</p>
+<div class="rev-cta"><a class="rev-btn" href="https://bilete.suspectilacina.com/suspecti-la-revelion-2027-scandalous-edition-5197" target="_blank" rel="noopener noreferrer" data-editie="Scandalous Edition">Rezervă-ți locul</a><a class="rev-btn-2" href="/revelion/scandalous-2027">Vezi meniul și detaliile →</a></div>
+</div>
+<a class="rev-img" href="/revelion/scandalous-2027" tabindex="-1" aria-hidden="true"><picture><source media="(max-width: 759px)" srcset="/images/revelion/scandalous-desktop.webp"><img src="/images/revelion/scandalous-desktop.webp" alt="" width="800" height="420"></picture></a>
+</div>
+</section>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var ev = (window.SUSPECTI_EVENTS || []).filter(function (e) { return e.id === '5197'; })[0], p = document.querySelector('[data-rev-pret]');
+  if (!ev || !p) return;
+  if (!ev.bookable) { p.textContent = ev.status === 'anulat' ? 'Ediție anulată' : 'Bilete epuizate'; return; }
+  p.innerHTML = ev.priceNote ? ev.priceNote.replace(/(\d+ lei)/, '<strong>$1</strong>') : 'Bilet: <strong>' + ev.price + '</strong> de persoană';
+});
+</script>
+
 <!-- HERO -->
 <section id="top" style="background:radial-gradient(120% 70% at 85% 0%, rgba(163,23,47,0.45) 0%, transparent 60%), radial-gradient(90% 60% at 0% 100%, rgba(92,18,34,0.7) 0%, transparent 60%), #2B0A12; color:#FBF3F1; padding:56px 0 72px;">
 <div style="max-width:1180px; margin:0 auto; padding:0 20px; display:flex; flex-wrap:wrap; gap:48px; align-items:center;">
@@ -155,7 +178,7 @@ input::placeholder{color:#9C8A8C;}
 </div>
 </div>
 <div class="fade" style="flex:1 1 340px; min-width:0; position:relative;">
-<div class="hero-vid" style="position:relative; width:100%; max-width:100%; aspect-ratio:4 / 5; border-radius:18px; overflow:hidden;">
+<div class="hero-vid" style="position:relative; width:100%; max-width:420px; margin:0 auto; aspect-ratio:9 / 16; border-radius:18px; overflow:hidden;">
 <video id="heroVid" src="videos/0c4b0c9d19e467a6e9d5a579aded1951.mp4" poster="images/e4088a9414f384a97909a7543da0b849.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Momente de la Suspecți la Cină" style="display:block; width:100%; height:100%; object-fit:cover;"></video><button type="button" class="vid-sound" data-vid="heroVid" onclick="suspectiSunet(this)" aria-label="Pornește sunetul" style="position:absolute; top:14px; right:14px; z-index:3; display:inline-flex; align-items:center; gap:8px; min-height:40px; padding:0 14px; border-radius:999px; border:1px solid rgba(251,243,241,0.45); background:rgba(43,10,18,0.6); color:#FBF3F1; font-size:13px; font-weight:600; cursor:pointer; backdrop-filter:blur(6px);">🔈 Pornește sunetul</button>
 </div>
 <div style="position:absolute; left:14px; right:14px; bottom:14px; background:rgba(250,246,243,0.95); color:#241518; border-radius:14px; padding:14px 18px; box-shadow:0 18px 40px -18px rgba(0,0,0,0.6);">
