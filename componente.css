@@ -436,3 +436,14 @@
 @media (min-width: 1080px) and (max-width: 1180px) {
   .snav-top a[href="/colaboratori"] { display: none; }
 }
+
+/* Pe telefon și tabletă, banda roșie Revelion de deasupra meniului ține locul etichetei de lângă logo */
+@media (max-width: 1079px) {
+  .snav-brand { flex-direction: row; align-items: center; }
+  .snav-rev { display: none !important; }
+}
+/* Pe calculator, eticheta de lângă logo e mai mare */
+@media (min-width: 1080px) {
+  .snav-rev { min-height: 36px; padding: 0 14px; font-size: 14px; }
+}
+.ed-foto-poveste { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 18px; box-shadow: 0 24px 50px -28px rgba(43,10,18,0.6); }

@@ -140,22 +140,23 @@ window.SUSPECTI_CONCEPTE.revelion = {
 window.SUSPECTI_EDITII = {
   /* Suspecți la Revelion 2027 — Scandalous Edition · Naïve, București · 31 decembrie 2026 */
   '5197': {
-    scurt: 'Un Revelion în care **toată lumea te cunoaște, doar că sub alt nume**. Începem cu un mystery dinner în care ai propriul personaj, apoi continuăm cu petrecerea. Meniul și băuturile sunt incluse.',
+    scurt: '**Imaginează-ți că la petrecerea de Revelion toată lumea te cunoaște. Doar că sub alt nume.** Pe 31 decembrie, pregătim un Revelion diferit, cu surprize pe care abia așteptăm să le descoperi.',
+    titluPoveste: 'O seară în care și tu ai locul tău în poveste',
+    fotoPoveste: ['/images/v2/h-9758c336ac71a77e0f04e392fe11088a.webp', 'Invitați în ținute de gală la o seară Suspecți'],
     peScurt: ['🎭 **Personajul tău**, cu secrete', '🍽️ **Meniu festiv** inclus', '🥂 **Băuturi** incluse', '💃 **Petrecere** după cină'],
     poveste: [
-      '**Pe 31 decembrie primești povestea personajului tău.** Afli ce legături ai cu ceilalți invitați, ce ai de obținut și ce informații caută alții de la tine.',
+      'Începem cu un **mystery dinner**. Primești povestea personajului tău și afli ce legături ai cu ceilalți invitați. Ai câteva lucruri de obținut, informații pe care alții le caută și motive să păstrezi unele detalii pentru tine.',
       'În sală sunt familii cu bani și relații complicate, prietenii de fațadă și oameni care ar prefera ca trecutul să rămână în trecut. **Iar tu ai locul tău în poveste.**',
-      '**Nu ai replici de memorat** și nici nevoie de experiență actoricească. Ai nevoie doar de curiozitate. Cât despre ce urmează… păstrăm puțin mister.'
+      '**Nu ai replici de memorat și nici nevoie de experiență actoricească.** Doar curiozitatea de a vedea cum te descurci în rolul primit.',
+      '**Cât despre ce urmează… păstrăm puțin mister.**',
+      'După mystery dinner, continuăm cu petrecerea. Avem un an întreg de lăsat în urmă și suficiente motive să mai stăm la un dans.'
     ],
-    pasi: [
-      { t: 'Mystery dinner', d: 'Intri în rol, afli secretele personajului și cauți informațiile de care ai nevoie, la o **cină cu meniu festiv**.' },
-      { t: 'Petrecerea', d: 'Continuăm cu **muzică și dans**. Avem un an întreg de lăsat în urmă.' }
-    ],
+    pasi: [],
     include: [
-      '**Mystery dinner**, cu povestea și personajul tău',
-      '**Petrecerea** de după, cu muzică și dans',
-      '**Meniul festiv**, de la aperitive până la desert',
-      '**Băuturile serii**: cocktailuri, vin, spumant, bere și opțiuni fără alcool'
+      '**Experiența de mystery dinner**, cu povestea și personajul tău.',
+      '**Petrecerea de după mystery dinner**, cu muzică și dans.',
+      '**Meniul festiv**, de la selecția de aperitive până la desert.',
+      '**Băuturile din selecția evenimentului**, inclusiv cocktailuri, vin, spumant și opțiuni fără alcool.'
     ],
     preturi: [
       { label: 'Early Bird', price: '750 lei', perioada: 'până pe 13 noiembrie 2026', until: '2026-11-13' },
@@ -196,8 +197,8 @@ window.SUSPECTI_EDITII = {
         '**Cafea și ceai:** espresso, espresso dublu, cappuccino, latte; ceaiuri Dilmah'
       ] }
     ],
-    dress: { titlu: 'Dress code: Scandalous', text: '**Bold looks. Wild details.** Negru, roșu și alb. Dantelă, piele sau accente de animal print, bijuterii statement. **O ținută elegantă, cu puțină extravaganță**, în stilul tău.', culori: ['#111111', '#A3172F', '#FFFFFF'] },
-    final: 'Be bold. Be a little scandalous.',
+    dress: { titlu: 'Dress code Scandalous', text: '**BOLD LOOKS. WILD DETAILS.** **NEGRU · ROȘU · ALB.** Dantelă, piele sau accente de animal print. Bijuterii statement. O ținută elegantă, cu puțină extravaganță, în stilul tău.', culori: ['#111111', '#A3172F', '#FFFFFF'] },
+    final: 'Rezervă-ți locul și pregătește-ți ținuta. Povestea personajului tău o afli mai târziu. Be bold. Be a little scandalous.',
     faqFaraComun: []
   },
 

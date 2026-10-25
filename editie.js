@@ -127,9 +127,9 @@
     var poveste = (v('poveste') || []).map(function (p) { return '<p class="ed-p">' + fmt(p) + '</p>'; }).join('');
     if (!poveste && ev.description) poveste = '<div class="ed-p">' + ev.description + '</div>';
     var pasi = v('pasi') || [];
-    var s5 = sectiune('ce-se-intampla', 'La această ediție', 'Ce se întâmplă', '<div class="ed-2col"><div>' + poveste +
+    var s5 = sectiune('ce-se-intampla', 'La această ediție', C.titluPoveste || 'Ce se întâmplă','<div class="ed-2col"><div>' + poveste +
       (CONCEPT_PAG[cale.split('/')[1]] ? '<a class="s-link" href="/' + cale.split('/')[1] + '">Mai multe despre ' + esc(ev.concept) + ' →</a>' : '') + '</div>' +
-      (pasi.length ? '<div><h3 class="ed-h3">Cum decurge</h3><ol class="s-pasi">' + pasi.map(function (p) { return '<li><strong>' + esc(p.t) + '</strong><span>' + fmt(p.d) + '</span></li>'; }).join('') + '</ol></div>' : '') +
+      (pasi.length ? '<div><h3 class="ed-h3">Cum decurge</h3><ol class="s-pasi">' + pasi.map(function (p) { return '<li><strong>' + esc(p.t) + '</strong><span>' + fmt(p.d) + '</span></li>'; }).join('') + '</ol></div>' : (C.fotoPoveste ? '<div><img class="ed-foto-poveste" src="' + esc(C.fotoPoveste[0]) + '" alt="' + esc(C.fotoPoveste[1]) + '" loading="lazy"></div>' : '')) +
       '</div>');
 
     // 6: ce include biletul + condiții
@@ -152,7 +152,7 @@
           '<strong>' + esc(p.price) + '</strong><span>' + esc(p.perioada) + '</span></div>';
       }).join('');
       var s6b = '<div class="ed-preturi">' + carduri + '</div>' + (C.preturiNota ? '<p class="ed-p" style="margin-top:16px;">' + esc(C.preturiNota) + '</p>' : '') +
-        (ev.bookable ? '<div style="margin-top:18px;">' + butonBilet('Rezervă-ți locul') + '</div>' : '');
+        (ev.bookable ? '<div style="margin-top:18px;">' + butonBilet() + '</div>' : '');
       s6 = s6 + sectiune('preturi', 'Bilete', 'Prețuri', s6b);
     }
 
