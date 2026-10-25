@@ -105,8 +105,8 @@
       '<div><dt>Preț</dt><dd>' + (ev.bookable ? esc(ev.price) + (ev.priceNote ? '<small>' + esc(ev.priceNote) + '</small>' : '') : esc(ev.status === 'anulat' ? 'Ediție anulată' : 'Bilete epuizate')) + '</dd></div>';
     var areVideo = !!(ev.video && ev.poster);
     // Afișul ediției (când nu are video): orizontal pe calculator, vertical pe telefon (imgMobil), ales automat de browser.
-    var afis = (!areVideo && ev.imgMobil) ? '<picture class="ed-afis">' +
-      '<source media="(max-width: 759px)" srcset="' + esc(ev.imgMobil) + '">' +
+    var afis = (!areVideo && (ev.imgMobil || C.afis)) ? '<picture class="ed-afis">' +
+      (ev.imgMobil ? '<source media="(max-width: 759px)" srcset="' + esc(ev.imgMobil) + '">' : '') +
       '<img src="' + esc(ev.img) + '" alt="' + esc(ev.concept + ' — ' + ev.title) + '" width="1600" height="840" fetchpriority="high"></picture>' : '';
     var hero = '<section class="ed-hero" id="ed-hero">' + (afis ? '<div class="s-wrap">' + afis + '</div>' : '') + '<div class="s-wrap ed-grid"><div style="min-width:0;">' +
       '<h1 class="ed-h1"><span class="ed-c">' + esc(ev.concept) + (cina ? ':' : ' · ' + esc(ev.city)) + '</span>' +
@@ -129,7 +129,8 @@
     var pasi = v('pasi') || [];
     var s5 = sectiune('ce-se-intampla', 'La această ediție', C.titluPoveste || 'Ce se întâmplă','<div class="ed-2col"><div>' + poveste +
       (CONCEPT_PAG[cale.split('/')[1]] ? '<a class="s-link" href="/' + cale.split('/')[1] + '">Mai multe despre ' + esc(ev.concept) + ' →</a>' : '') + '</div>' +
-      (pasi.length ? '<div><h3 class="ed-h3">Cum decurge</h3><ol class="s-pasi">' + pasi.map(function (p) { return '<li><strong>' + esc(p.t) + '</strong><span>' + fmt(p.d) + '</span></li>'; }).join('') + '</ol></div>' : (C.fotoPoveste ? '<div><img class="ed-foto-poveste" src="' + esc(C.fotoPoveste[0]) + '" alt="' + esc(C.fotoPoveste[1]) + '" loading="lazy"></div>' : '')) +
+      (pasi.length ? '<div><h3 class="ed-h3">Cum decurge</h3><ol class="s-pasi">' + pasi.map(function (p) { return '<li><strong>' + esc(p.t) + '</strong><span>' + fmt(p.d) + '</span></li>'; }).join('') + '</ol></div>' : (C.videoPoveste ? '<div class="ed-video-poveste">' + UI.videoThumb(C.videoPoveste[0], C.videoPoveste[1], C.videoPoveste[2]) + '</div>' :
+        C.fotoPoveste ? '<div><img class="ed-foto-poveste" src="' + esc(C.fotoPoveste[0]) + '" alt="' + esc(C.fotoPoveste[1]) + '" loading="lazy"></div>' : '')) +
       '</div>');
 
     // 6: ce include biletul + condiții

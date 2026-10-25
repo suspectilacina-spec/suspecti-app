@@ -121,12 +121,18 @@ window.SUSPECTI_FAQ_COMUN = [
 /* Revelion: fotografii elegante din edițiile anterioare (Balul lui Gatsby și serile cu ținute de gală). */
 window.SUSPECTI_CONCEPTE.revelion = {
   foto: [
+    ['/images/revelion/editii/ed-08.webp', 'Trei invitate în ținute anii ’20, la apus'],
     ['/images/v2/h-9758c336ac71a77e0f04e392fe11088a.webp', 'Invitați în ținute de gală la Balul lui Gatsby'],
+    ['/images/revelion/editii/ed-02.webp', 'Două invitate în roșu și argintiu, cu pene și mănuși'],
+    ['/images/revelion/editii/ed-06.webp', 'Invitată în rochie roșie și invitat cu joben, la șampanie'],
+    ['/images/revelion/editii/ed-04.webp', 'Doi suspecți, într-un moment de tensiune'],
     ['/images/v2/h-a019def1c58433595774a3cb33a22863.webp', 'Invitate în roșu și auriu, cu șampanie, la Balul lui Gatsby'],
-    ['/images/v2/h-ee5d8795c05d54b56dfbcfb8f5e4d27c.webp', 'Invitate în rochii cu dantelă și perle'],
-    ['/images/v2/h-3067d053826b36e949c62eb048e3a23b.webp', 'Momentul dezvăluirii la Balul lui Gatsby'],
-    ['/images/v2/g-0f08b49843983eb53aa57c7893e2b01b.webp', 'Gazda serii, în rochie neagră de seară, arată spre un suspect'],
-    ['/images/v2/h-3a49be23427ad034b3c1f7622a58c9e0.webp', 'Invitați eleganți la un pahar de șampanie']
+    ['/images/revelion/editii/ed-03.webp', 'Suspect la pian, cu un trandafir roșu'],
+    ['/images/revelion/editii/ed-11.webp', 'Invitați eleganți, adunați în jurul unei descoperiri'],
+    ['/images/revelion/editii/ed-07.webp', 'Victima serii și suspecții din jurul ei'],
+    ['/images/revelion/editii/ed-05.webp', 'Conversație între suspecți la cină'],
+    ['/images/revelion/editii/ed-01.webp', 'Bani de joc schimbați între suspecți'],
+    ['/images/revelion/editii/ed-09.webp', 'Cătușe pentru vinovatul serii']
   ],
   testimoniale: window.SUSPECTI_CONCEPTE.cina.testimoniale,
   faq: [
@@ -142,7 +148,8 @@ window.SUSPECTI_EDITII = {
   '5197': {
     scurt: '**Imaginează-ți că la petrecerea de Revelion toată lumea te cunoaște. Doar că sub alt nume.** Pe 31 decembrie, pregătim un Revelion diferit, cu surprize pe care abia așteptăm să le descoperi.',
     titluPoveste: 'O seară în care și tu ai locul tău în poveste',
-    fotoPoveste: ['/images/v2/h-9758c336ac71a77e0f04e392fe11088a.webp', 'Invitați în ținute de gală la o seară Suspecți'],
+    afis: true,
+    videoPoveste: ['/videos/v2/cina-peaky.mp4', '/images/v2/cina-peaky-poster.jpg', 'Momente de la o seară Suspecți la Cină'],
     peScurt: ['🎭 **Personajul tău**, cu secrete', '🍽️ **Meniu festiv** inclus', '🥂 **Băuturi** incluse', '💃 **Petrecere** după cină'],
     poveste: [
       'Începem cu un **mystery dinner**. Primești povestea personajului tău și afli ce legături ai cu ceilalți invitați. Ai câteva lucruri de obținut, informații pe care alții le caută și motive să păstrezi unele detalii pentru tine.',
