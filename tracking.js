@@ -136,18 +136,19 @@ function suspectiCookieBanner() {
       '#suspecti-cookie [data-acord=da]{border:0;background:#A3172F;color:#FFFFFF;box-shadow:0 10px 24px -12px rgba(163,23,47,0.9);}' +
       '#suspecti-cookie [data-acord=nu]{border:1px solid rgba(251,243,241,0.55);background:transparent;color:#FBF3F1;}' +
       '#suspecti-cookie button:focus-visible{outline:3px solid #EBC1BE;outline-offset:2px;}' +
+      '#suspecti-cookie .sc-det{display:block;margin-top:12px;text-align:center;font-size:14px;font-weight:600;}' +
       '@media (max-width:519px){#suspecti-cookie{left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));padding:22px 20px 20px;font-size:17px;}' +
       '#suspecti-cookie .sc-t{font-size:24px;}#suspecti-cookie button{min-height:54px;font-size:18px;}}' +
       '@keyframes sc-in{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}' +
       '@media (prefers-reduced-motion:reduce){#suspecti-cookie{animation:none;}}';
     document.head.appendChild(css);
   }
-  d.innerHTML = '<div class="sc-t"><span aria-hidden="true">🍪</span>Cookie-uri</div>' +
-    '<p id="suspecti-cookie-text">Folosim cookie-uri de marketing (Meta Pixel) ca să vedem ce funcționează și să-ți arătăm evenimente potrivite. Le pornim doar dacă ești de acord. Alegerea ta e valabilă și pe pagina de bilete. <a href="/confidentialitate">Detalii</a></p>' +
+  d.innerHTML = '<p id="suspecti-cookie-text">Folosim tehnologii de tip cookies pentru a-ți asigura o experiență cât mai plăcută de utilizare a site-ului.</p>' +
     '<div class="sc-b">' +
-    '<button type="button" data-acord="nu">Refuz</button>' +
     '<button type="button" data-acord="da">Accept</button>' +
-    '</div>';
+    '<button type="button" data-acord="nu">Doar cele necesare</button>' +
+    '</div>' +
+    '<a class="sc-det" href="/confidentialitate">Detalii și preferințe</a>';
   d.addEventListener('click', function (e) {
     var v = e.target.getAttribute && e.target.getAttribute('data-acord');
     if (!v) return;

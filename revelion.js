@@ -1,7 +1,7 @@
 /* Revelion 2027 pe tot site-ul:
    1. banda roșie de deasupra meniului (pe toate paginile);
-   2. pop-up-ul „Nu ai planuri de Revelion? Hai cu noi!” pe prima pagină. Apare după alegerea pentru cookie-uri,
-      iar „Nu mă interesează” îl ascunde pentru 7 zile. Pe pagina Revelionului nu apare.
+   2. pop-up-ul „Nu ai planuri de Revelion? Hai cu noi!”, pentru oricine intră pe site, la fiecare vizită
+      (o dată pe vizită, pe pagina pe care intră). Apare după alegerea pentru cookie-uri. Pe pagina Revelionului nu apare.
    După 31 decembrie 2026 dispar singure. */
 
 (function () {
@@ -56,9 +56,9 @@
   }
 
   function popup() {
-    if (cale !== '/' && cale !== '/index' && cale !== '/index.html') return;
-    var ascuns = parseInt(citeste('suspecti_revelion_pop') || '0', 10);
-    if (ascuns && Date.now() < ascuns) return;
+    if (cale.indexOf('/revelion') === 0) return;
+    // O dată pe vizită: apare la intrarea pe site (pe orice pagină), nu la fiecare click din aceeași vizită.
+    try { if (sessionStorage.getItem('suspecti_revelion_pop_vazut')) return; } catch (e) {}
     var incercari = 0;
     (function asteapta() {
       // Mai întâi bannerul de cookie-uri; pop-up-ul vine după alegere.
@@ -79,18 +79,15 @@
         '<div class="rv-pop-in"><h2 class="rv-pop-h" id="rv-pop-h">Nu ai planuri de Revelion? <span>Hai cu noi!</span></h2>' +
         '<p class="rv-pop-p"><strong>Imaginează-ți că la petrecerea de Revelion toată lumea te cunoaște. Doar că sub alt nume.</strong> Mystery dinner, meniu festiv, băuturi și petrecere, pe 31 decembrie.</p>' +
         '<div class="rv-pop-b"><a href="' + PAGINA + '">Vezi programul</a><button type="button" data-nu>Nu mă interesează</button></div></div></div>';
-      function inchide(definitiv) {
-        if (definitiv) scrie('suspecti_revelion_pop', String(Date.now() + 7 * 864e5));
-        else scrie('suspecti_revelion_pop', String(Date.now() + 864e5)); // închis cu ✕: revine peste o zi
+      function inchide() {
         p.remove();
         if (ultimul && ultimul.focus) ultimul.focus();
       }
       p.addEventListener('click', function (e) {
-        if (e.target.hasAttribute('data-nu')) inchide(true);
-        else if (e.target === p || e.target.classList.contains('rv-pop-x')) inchide(false);
-        else if (e.target.closest('a')) scrie('suspecti_revelion_pop', String(Date.now() + 864e5));
+        if (e.target.hasAttribute('data-nu') || e.target === p || e.target.classList.contains('rv-pop-x')) inchide();
       });
-      document.addEventListener('keydown', function esc(e) { if (e.key === 'Escape' && document.body.contains(p)) { inchide(false); document.removeEventListener('keydown', esc); } });
+      document.addEventListener('keydown', function esc(e) { if (e.key === 'Escape' && document.body.contains(p)) { inchide(); document.removeEventListener('keydown', esc); } });
+      try { sessionStorage.setItem('suspecti_revelion_pop_vazut', '1'); } catch (e) {}
       document.body.appendChild(p);
       p.querySelector('.rv-pop-b a').focus();
     }
