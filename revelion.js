@@ -62,7 +62,8 @@
     var incercari = 0;
     (function asteapta() {
       // Mai întâi bannerul de cookie-uri; pop-up-ul vine după alegere.
-      if (document.getElementById('suspecti-cookie') && incercari++ < 600) return setTimeout(asteapta, 500);
+      var faraAlegere = typeof window.suspectiAcord === 'function' && window.suspectiAcord() === null;
+      if ((faraAlegere || document.getElementById('suspecti-cookie')) && incercari++ < 1200) return setTimeout(asteapta, 500);
       setTimeout(arata, 1800);
     })();
     function arata() {
