@@ -1,7 +1,7 @@
 /* Revelion 2027 pe tot site-ul:
    1. banda roșie de deasupra meniului (pe toate paginile);
    2. pop-up-ul „Nu ai planuri de Revelion? Hai cu noi!” pe prima pagină. Apare după alegerea pentru cookie-uri,
-      iar „Nu mă interesează” îl ascunde pentru 30 de zile. Pe pagina Revelionului nu apare.
+      iar „Nu mă interesează” îl ascunde pentru 7 zile. Pe pagina Revelionului nu apare.
    După 31 decembrie 2026 dispar singure. */
 
 (function () {
@@ -80,7 +80,7 @@
         '<p class="rv-pop-p"><strong>Imaginează-ți că la petrecerea de Revelion toată lumea te cunoaște. Doar că sub alt nume.</strong> Mystery dinner, meniu festiv, băuturi și petrecere, pe 31 decembrie.</p>' +
         '<div class="rv-pop-b"><a href="' + PAGINA + '">Vezi programul</a><button type="button" data-nu>Nu mă interesează</button></div></div></div>';
       function inchide(definitiv) {
-        if (definitiv) scrie('suspecti_revelion_pop', String(Date.now() + 30 * 864e5));
+        if (definitiv) scrie('suspecti_revelion_pop', String(Date.now() + 7 * 864e5));
         else scrie('suspecti_revelion_pop', String(Date.now() + 864e5)); // închis cu ✕: revine peste o zi
         p.remove();
         if (ultimul && ultimul.focus) ultimul.focus();
