@@ -14,7 +14,7 @@
     ['Balul lui Gatsby', '/cina#gatsby', 'Tematică Suspecți la Cină · anii ’20', 'gatsby anii 20 charleston elegant'],
     ['Peaky Blinders', '/cina#peaky', 'Tematică Suspecți la Cină · Birmingham, anii ’20', 'peaky blinders shelby'],
     ['’80s Disco · Ultimul Dans', '/cina#disco', 'Tematică Suspecți la Cină · Mirador Rooftop', 'disco 80 ultimul dans mirador'],
-    ['Suspecți la Party', '/party', 'Petreceri tematice cu roluri și misiuni', 'party petrecere halloween addams tematic'],
+    ['Suspecți la Party', '/party', 'Petreceri tematice cu roluri și misiuni', 'party petrecere addams tematic'],
     ['Suspecți în Treasure Hunt', '/treasurehunt', 'Vânătoare de comori prin oraș, pentru adulți și familii', 'treasure hunt comori oras echipe copii family adults'],
     ['The Singing Brunch', '/brunch', 'Brunch cu DJ, MC și karaoke de grup', 'brunch karaoke cantat singing'],
     ['Suspecți la Prima Vedere', '/primavedere', 'Seri pentru singles', 'singles prima vedere dating intalnire'],
