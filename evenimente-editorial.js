@@ -43,6 +43,7 @@ window.SUSPECTI_EDITORIAL = {
     extra: 'Early Bird: 70 lei, apoi 89 lei. Ofertă de grup 4 + 1 gratis. Include un pahar de Prosecco.'
   },
   '5061': {
+    hidden: true, /* Halloween Timișoara – scos de pe site la cererea Alexandrei, 31.10.2026 */
     page: '/party/addams-family-31-octombrie', title: 'Addams Family', theme: '#wednesday',
     tip: 'Petrecere tematică de Halloween', durata: 'Joc aprox. 2 ore, apoi petrecere',
     img: '/images/180881b877a3c92af6721923aab715f6.jpg', pos: 'center 22%', venue: 'DaHUB',
