@@ -162,7 +162,7 @@ window.SUSPECTI_EDITII = {
     include: [
       '**Experiența de mystery dinner**, cu povestea și personajul tău.',
       '**Petrecerea de după mystery dinner**, cu muzică și dans.',
-      '**Meniul festiv**, de la selecția de aperitive până la desert.',
+      '**Meniul festiv Festive Grandeur**, cu aperitive, salate, preparate calde, pește și fructe de mare, garnituri și candy bar.',
       '**Băuturile din selecția evenimentului**, inclusiv cocktailuri, vin, spumant și opțiuni fără alcool.'
     ],
     preturi: [
@@ -171,21 +171,41 @@ window.SUSPECTI_EDITII = {
       { label: 'Last Call', price: '885 lei', perioada: 'de la 1 decembrie 2026, în limita locurilor', until: '2026-12-31' }
     ],
     preturiNota: 'Prețul este **de persoană** și include experiența, meniul festiv și băuturile. **Locurile sunt limitate.**',
+    meniuTitlu: 'Festive Grandeur',
     meniu: [
       { titlu: 'Selecție de aperitive', lista: [
-        'Ton roșu, avocado și cremă fină de brânză',
-        'Brânzeturi maturate și Brie, cu struguri și dulceață de portocale',
-        'Ruladă de curcan cu fistic și fructe confiate',
-        'Tartine cu somon afumat, cremă de chives și icre tobiko',
-        'Choux cu mousse de pecorino și prosciutto',
-        'Mini quiche cu spanac și parmezan',
-        'Ardei copți umpluți cu feta și măsline verzi',
-        'Involtini de dovlecei cu roșii uscate',
-        'Vol-au-vent cu vinete și gem de roșii'
+        'Platou de antipasti cu mezeluri fine, brânzeturi românești maturate, Brie, Gorgonzola, nuci prăjite, miere picantă și fructe uscate · 50 g',
+        'Pachețele de primăvară cu legume, sos de mango și sos teriyaki · 30 g',
+        'Macaron sărat cu somon afumat, cremă de brânză cu lime și icre tobiko roșii · 30 g',
+        'Terină de foie gras cu marmeladă de portocale, pandișpan cu mirodenii și coacăze roșii · 30 g',
+        'Creveți tempura cu edamame, aioli și avocado · 30 g',
+        'Tataki de ton roșu cu susan, sos de ghimbir și castravete · 30 g',
+        'Sufleu de spanac cu cremă de parmezan și ou de prepeliță marinat în sfeclă roșie · 30 g',
+        'Crostată cu mousse de brânză de capră, smochine, nuci glazurate cu miere, chili și cimbru · 30 g',
+        'Mini quiche Lorraine cu bacon, praz și brânză Gruyère'
       ] },
-      { titlu: 'Starter cald', text: 'Balotină de cod negru cu zucchini și sparanghel, servită cu beurre blanc cu șampanie.' },
-      { titlu: 'Fel principal', text: 'Beef Wellington cu duxelles cu trufe, demi-glace, cartofi duchesse și legume de iarnă.' },
-      { titlu: 'Desert', text: 'Entremet de șampanie, vanilie și ciocolată albă, cu pară și yuzu.' }
+      { titlu: 'Salate și hummus', lista: [
+        'Salată mediteraneeană cu halloumi la grătar, avocado, dovlecel și dressing de citrice',
+        'Salată cu piept de rață afumat, radicchio, legume coapte și dressing cu sirop de arțar',
+        'Salată în stil fattoush cu legume, quinoa, rodie, muguri de pin și lipie crocantă cu susan',
+        'Hummus cu ardei roșu copt, tabbouleh și lipie'
+      ] },
+      { titlu: 'Preparate calde din carne', lista: [
+        'Frigărui de pui cu sos de muștar Dijon și smântână',
+        'Coaste de porc gătite lent, glazurate cu sos afumat',
+        'Vită bourguignon în sos de vin roșu',
+        'Arrosticini de miel cu sos de mentă'
+      ] },
+      { titlu: 'Pește și fructe de mare', lista: [
+        'Midii în sos de vin alb cu pătrunjel și roșii cherry, servite cu pâine de casă',
+        'Somon glazurat cu miso, cu susan și edamame'
+      ] },
+      { titlu: 'Garnituri', lista: [
+        'Cartofi la cuptor cu unt și ierburi aromatice',
+        'Orez cu șofran, semințe crocante și fructe confiate',
+        'Legume în stil provensal'
+      ] },
+      { titlu: 'Candy bar', text: 'Între două dansuri, te așteaptă și un candy bar, de unde îți poți alege ceva dulce.' }
     ],
     bauturi: [
       { titlu: 'Cocktailuri', text: 'Aperol Spritz · Gin Tonic · Hugo · Cuba Libre · Whisky Juice / Pepsi · Vodka Juice / Pepsi · Bitter Orange cu Petroni Aperitivo · Negroni · Whisky Sour · Lillet Vive · Amaretto Sour · Margarita' },
@@ -232,7 +252,7 @@ window.SUSPECTI_EDITII = {
     ],
     conditii: [
       'Consumația nu este inclusă în bilet; participarea presupune comanda unui preparat din meniu.',
-      'Early Bird: 149 lei, până pe 23 octombrie. Apoi biletul costă 179 lei.',
+      'Black Friday: 149 lei, până pe 4 noiembrie, inclusiv. Apoi biletul costă 179 lei.',
       'Dacă vii doar la petrecerea de după joc, există bilet „Doar After Party”, 60 lei.',
       'Vârsta minimă: 16 ani.',
       'Poți veni singur, în cuplu sau cu prietenii.'
