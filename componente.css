@@ -116,6 +116,10 @@
 .ed-facts dd small { display: block; font-weight: 500; font-size: 14px; color: #5A4649; }
 .ed-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-top: 20px; }
 .ed-nota { margin: 10px 0 0; font-size: 14px; color: #5A4649; }
+.ed-live { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0 0; padding: 9px 14px; border-radius: 12px; background: rgba(163,23,47,0.08); color: #A3172F; font-size: 14px; font-weight: 600; width: fit-content; max-width: 100%; }
+.ed-live[hidden] { display: none; }
+.ed-live-punct { width: 8px; height: 8px; border-radius: 50%; background: #C42A43; box-shadow: 0 0 0 3px rgba(196,42,67,0.22); }
+.ed-live-sep { opacity: .5; }
 .ed-vid-desk { display: none; }
 @media (min-width: 900px) { .ed-vid-desk { display: block; position: relative; } }
 .ed-vid-desk video { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: contain; border-radius: 16px; background: #2B0A12; }

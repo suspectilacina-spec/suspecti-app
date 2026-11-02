@@ -56,7 +56,7 @@ window.SUSPECTI_EDITORIAL = {
     tip: 'Mystery Dinner & ’80s Disco Party', durata: 'Aprox. 4 ore, apoi petrecere',
     img: '/images/4effe9715b4a5bae50ea64d83bdb1fe5.jpg', pos: 'center 33%',
     video: '/videos/v2/ed-cina-disco2.mp4', poster: '/images/v2/ed-cina-disco2-poster.jpg',
-    price: '179 lei', tiers: [{ until: '2026-10-23', price: '149 lei', label: 'Early Bird' }],
+    price: '179 lei', tiers: [{ until: '2026-11-04', price: '149 lei', label: 'Black Friday' }],
     extra: 'Consumația nu este inclusă în bilet; participarea presupune comanda unui preparat din meniu. Bilet „Doar After Party”: 60 lei.'
   },
   '5089': {

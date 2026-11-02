@@ -118,6 +118,7 @@
       '<div class="ed-cta" id="ed-cta">' + (ev.bookable ? butonBilet() : '<a class="s-btn" href="/calendar">Vezi alte ediții</a>') +
       '<a class="s-link" href="#ce-se-intampla">Ce se întâmplă la această ediție ↓</a></div>' +
       (ev.bookable ? '<p class="ed-nota">Biletele se cumpără prin AmBilet, partenerul nostru de ticketing. După plată, biletul vine pe email.</p>' : '') +
+      (ev.bookable ? '<p class="ed-live" id="ed-live" hidden></p>' : '') +
       (areVideo ? '<div class="ed-vid-mob">' + UI.videoThumb(ev.video, ev.poster, 'Vezi videoul', 'Câteva momente de la ' + ev.concept) + '</div>' : '') +
       '</div>' +
       (areVideo ? '<div class="ed-vid-desk" id="ed-vid-desk"></div>' : '') +
@@ -163,7 +164,7 @@
         (b.lista ? listaSimpla(b.lista) : '<p class="ed-p" style="margin:0;">' + fmt(b.text) + '</p>') + '</div>';
     }
     var meniu = C.meniu || [], bauturi = C.bauturi || [];
-    var s6c = meniu.length ? sectiune('meniu', 'Inclus în bilet', 'Meniul festiv', '<div class="ed-meniu-grid">' + meniu.map(bloc).join('') + '</div>', '#FFFFFF') : '';
+    var s6c = meniu.length ? sectiune('meniu', C.meniuTitlu ? 'Meniul festiv inclus în bilet' : 'Inclus în bilet', C.meniuTitlu || 'Meniul festiv', '<div class="ed-meniu-grid">' + meniu.map(bloc).join('') + '</div>', '#FFFFFF') : '';
     var s6d = bauturi.length ? sectiune('bauturi', 'Inclus în bilet', 'Băuturile serii', '<div class="ed-meniu-grid">' + bauturi.map(bloc).join('') + '</div>') : '';
 
     // 7: dress code + informații practice
@@ -195,6 +196,7 @@
 
     root.innerHTML = hero + s5 + s6 + s6c + s6d + s7 + s8 + s9 + blocOrganizare();
     root.className = 'ed-tip-' + tipKey;
+    if (ev.bookable) prezenta(ev);
 
     // Video pe desktop: pornește fără sunet, în buclă, cu buton de sunet. Pe telefon rămâne miniatura.
     var loc = document.getElementById('ed-vid-desk');
@@ -203,6 +205,32 @@
         '<button type="button" class="ed-sunet" data-vid="edVid" onclick="suspectiSunet(this)" aria-label="Pornește sunetul">🔈 Pornește sunetul</button>';
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { var vd = document.getElementById('edVid'); vd.removeAttribute('autoplay'); vd.controls = true; }
     }
+  }
+
+  // Câte persoane se uită acum la ediție și de câte ori a fost văzută — date reale, de la bilete.suspectilacina.com/api/prezenta.php
+  // (aceeași numărătoare ca pe pagina de bilete). „Acum” apare de la 2 persoane în sus, vizualizările de la 50.
+  function prezenta(ev) {
+    var el = document.getElementById('ed-live'), m = /\/([a-z0-9-]+-(\d+))\/?$/.exec(ev.link || '');
+    if (!el || !m || !window.fetch) return;
+    var s;
+    try { s = sessionStorage.getItem('wl_s'); } catch (e) {}
+    if (!s) { s = Math.random().toString(36).slice(2) + Date.now().toString(36); try { sessionStorage.setItem('wl_s', s); } catch (e) {} }
+    function nr(n, unu, multe) { return n === 1 ? '1 ' + unu : n + (n % 100 >= 20 || (n % 100 === 0 && n > 0) ? ' de ' : ' ') + multe; }
+    function ping() {
+      if (document.hidden) return;
+      fetch('https://bilete.suspectilacina.com/api/prezenta.php?e=' + m[2] + '&s=' + s + '&slug=' + m[1], { cache: 'no-store' })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          var parti = [];
+          if (d.acum >= 2) parti.push('<span class="ed-live-punct"></span>' + nr(d.acum, 'persoană se uită', 'persoane se uită') + ' acum');
+          if (d.vizualizari >= 50) parti.push(nr(d.vizualizari, 'vizualizare', 'vizualizări') + ' ale ediției');
+          el.innerHTML = parti.join('<span class="ed-live-sep">·</span>');
+          el.hidden = !parti.length;
+        }).catch(function () {});
+    }
+    ping();
+    setInterval(ping, 20000);
+    document.addEventListener('visibilitychange', ping);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', construieste);
