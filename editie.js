@@ -153,7 +153,7 @@
           '<span class="ed-pret-et">' + esc(p.label) + (curent ? ' · acum' : trecut ? ' · încheiat' : '') + '</span>' +
           '<strong>' + esc(p.price) + '</strong><span>' + esc(p.perioada) + '</span></div>';
       }).join('');
-      var s6b = '<div class="ed-preturi">' + carduri + '</div>' + (C.preturiNota ? '<p class="ed-p" style="margin-top:16px;">' + esc(C.preturiNota) + '</p>' : '') +
+      var s6b = '<div class="ed-preturi">' + carduri + '</div>' + (C.preturiNota ? '<p class="ed-p" style="margin-top:16px;">' + fmt(C.preturiNota) + '</p>' : '') +
         (ev.bookable ? '<div style="margin-top:18px;">' + butonBilet() + '</div>' : '');
       s6 = s6 + sectiune('preturi', 'Bilete', 'Prețuri', s6b);
     }
