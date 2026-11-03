@@ -229,7 +229,7 @@ window.SUSPECTI_EDITII = {
     faqFaraComun: []
   },
 
-  /* Suspecți la Cină: Ultimul Dans — Mystery Dinner & ’80s Disco Party · Mirador Rooftop, București */
+  /* Suspecți la Cină: Ultimul Dans — Mystery Dinner & ’80s Disco Party · The Moon Braserie, București */
   '5044': {
     scurt: 'Primești un personaj cu secrete și obiective proprii. La cină vorbești cu ceilalți invitați, faci schimb de informații și afli, din conversații, cine ascunde ce. După ce se descoperă vinovatul, seara continuă cu o petrecere disco, cu DJ.',
     poveste: [
@@ -262,7 +262,7 @@ window.SUSPECTI_EDITII = {
       text: 'Paiete, materiale metalizate, culori puternice, umeri accentuați, sacouri oversized, denim, piele sau un accesoriu care se vede de departe. Nu ai nevoie de costum. O ținută de azi, cu câteva accente din anii ’80, e suficientă.'
     },
     practic: [
-      'Începem la 20:00, la Mirador Rooftop, București.',
+      'Începem la 20:00, la The Moon Braserie, Bd. Unirii 32, București.',
       'Personajul îl primești la intrare. Ai câteva minute să-l citești înainte să înceapă jocul.',
       'Pe parcursul serii facem fotografii. Dacă nu vrei să apari, spune-i gazdei la început.'
     ],
