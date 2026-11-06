@@ -13,6 +13,7 @@
      video,poster  videoul din primul ecran al paginii ediției
      price   prețul afișat (în loc de cel calculat din AmBilet)
      tiers   prețuri cu termen: [{ until: 'AAAA-LL-ZZ', price: '149 lei', label: 'Early Bird' }]
+     notaPret  eticheta de lângă preț (ex. 'SOLD OUT · ...'); un preț cu termen activ o înlocuiește
      extra   mențiuni sub preț          prize  premiul ediției
      hidden  true = nu se afișează pe site, deși e publicat în AmBilet
    Textele lungi ale paginii de ediție sunt în editii-continut.js. */
@@ -56,8 +57,8 @@ window.SUSPECTI_EDITORIAL = {
     tip: 'Mystery Dinner & ’80s Disco Party', durata: 'Aprox. 4 ore, apoi petrecere',
     img: '/images/4effe9715b4a5bae50ea64d83bdb1fe5.jpg', pos: 'center 33%',
     video: '/videos/v2/ed-cina-disco2.mp4', poster: '/images/v2/ed-cina-disco2-poster.jpg',
-    price: '179 lei', tiers: [{ until: '2026-11-04', price: '149 lei', label: 'Black Friday' }],
-    extra: 'Consumația nu este inclusă în bilet; participarea presupune comanda unui preparat din meniu. Bilet „Doar After Party”: 60 lei.'
+    price: '60 lei', notaPret: 'SOLD OUT · Mai sunt doar bilete pentru After Party',
+    extra: 'Locurile la Mystery Dinner s-au epuizat. Mai sunt disponibile doar bilete „Doar After Party”, 60 lei.'
   },
   '5089': {
     page: '/treasurehunt/adults-bucuresti-15-noiembrie', title: 'Adults Edition', theme: '#adults',
