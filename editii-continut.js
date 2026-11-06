@@ -252,8 +252,7 @@ window.SUSPECTI_EDITII = {
     ],
     conditii: [
       'Consumația nu este inclusă în bilet; participarea presupune comanda unui preparat din meniu.',
-      'Black Friday: 149 lei, până pe 4 noiembrie, inclusiv. Apoi biletul costă 179 lei.',
-      'Dacă vii doar la petrecerea de după joc, există bilet „Doar After Party”, 60 lei.',
+      'SOLD OUT: locurile la Mystery Dinner s-au epuizat. Mai sunt disponibile doar bilete „Doar After Party”, 60 lei.',
       'Vârsta minimă: 16 ani.',
       'Poți veni singur, în cuplu sau cu prietenii.'
     ],

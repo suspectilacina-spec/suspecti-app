@@ -60,7 +60,7 @@ var SUSPECTI_MONTH_LABELS = [];
     e.durata = e.durata || (e.key === 'Treasure Hunt' ? (e.varianta === 'family' ? '2 ore' : '3 ore') : '');
 
     // Prețuri cu termen: până la data „until” (inclusiv) se afișează prețul redus, evidențiat; apoi automat prețul obișnuit.
-    e.priceNote = '';
+    e.priceNote = e.notaPret || '';
     var tiers = e.tiers || [];
     tiers.some(function (t, i) {
       if (acum > new Date(t.until + 'T23:59:59+03:00')) return false;
