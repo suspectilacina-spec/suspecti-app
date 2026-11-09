@@ -6,7 +6,7 @@ var SUSPECTI_PIXEL_ID = '2155243451986484'; // Suspecti La Cina Main Pixel
 // Google Analytics 4 (Admin → Fluxuri de date → ID de măsurare, ex. 'G-ABC123XYZ').
 // Același ID se pune și pe bilete.suspectilacina.com, ca vizita să fie urmărită de la site până la plată.
 // Cât timp e gol, GA4 nu se încarcă. Pornește doar după „Accept” în bannerul de cookie-uri, ca și Pixelul.
-var SUSPECTI_GA4_ID = '';
+var SUSPECTI_GA4_ID = 'G-CTGST9EV81';
 
 var SUSPECTI_PAGINI = {
   'cina': 'Suspecți la Cină',
