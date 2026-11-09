@@ -13,7 +13,6 @@ var SUSPECTI_EVENTS_REZERVA = [
   { id: '5032', iso: '2026-10-24', time: '15:00', key: 'Treasure Hunt', format: 'Suspecți în Treasure Hunt', city: 'Timișoara', venue: 'Piața Unirii', price: '70 lei', status: 'activ', link: 'https://bilete.suspectilacina.com/suspecti-in-treasure-hunt-adults-only-timisoara-5032' },
   { id: '5024', iso: '2026-10-25', time: '14:00', key: 'Brunch', format: 'Suspecți la Brunch', city: 'București', venue: 'Naive', price: 'de la 70 lei', status: 'activ', link: 'https://bilete.suspectilacina.com/the-singing-brunch-suspecti-la-brunch-5024' },
   { id: '5044', iso: '2026-11-06', time: '20:00', key: 'Cină', format: 'Suspecți la Cină', city: 'București', venue: 'The Moon Braserie', price: '179 lei', status: 'activ', link: 'https://bilete.suspectilacina.com/suspecti-la-cina-ultimul-dans-5044' },
-  { id: '5089', iso: '2026-11-15', time: '14:00', key: 'Treasure Hunt', format: 'Suspecți în Treasure Hunt', city: 'București', venue: 'Piața Victoriei', price: '120 lei', status: 'activ', link: 'https://bilete.suspectilacina.com/suspecti-in-treasure-hunt-aduls-edition-2-bucuresti-5089' }
 ];
 
 var SUSPECTI_EVENTS = [];

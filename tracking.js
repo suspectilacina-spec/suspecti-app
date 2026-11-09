@@ -3,6 +3,11 @@
 
 var SUSPECTI_PIXEL_ID = '2155243451986484'; // Suspecti La Cina Main Pixel
 
+// Google Analytics 4 (Admin → Fluxuri de date → ID de măsurare, ex. 'G-ABC123XYZ').
+// Același ID se pune și pe bilete.suspectilacina.com, ca vizita să fie urmărită de la site până la plată.
+// Cât timp e gol, GA4 nu se încarcă. Pornește doar după „Accept” în bannerul de cookie-uri, ca și Pixelul.
+var SUSPECTI_GA4_ID = '';
+
 var SUSPECTI_PAGINI = {
   'cina': 'Suspecți la Cină',
   'party': 'Suspecți la Party',
@@ -57,6 +62,31 @@ function suspectiSchimbaAcord() {
 // Trimite un eveniment către Meta, doar dacă Pixelul e pornit (vizitatorul a acceptat).
 function suspectiTrack(eveniment, parametri) {
   if (window.fbq && window.suspectiPixelPornit) window.fbq('track', eveniment, parametri || {});
+  suspectiTrackGA(eveniment, parametri);
+}
+
+// Aceleași evenimente, cu numele standard din GA4.
+var SUSPECTI_GA4_NUME = { InitiateCheckout: 'click_bilete', Lead: 'generate_lead', Contact: 'contact', ViewContent: 'view_item' };
+function suspectiTrackGA(eveniment, parametri) {
+  if (!window.gtag || !window.suspectiGA4Pornit) return;
+  var p = parametri || {}, nume = SUSPECTI_GA4_NUME[eveniment] || eveniment;
+  // Cererile de ofertă corporate și preînscrierile sunt separate: în GA4 doar ofertele sunt „generate_lead”.
+  if (eveniment === 'Lead' && p.content_category === 'Preînscriere') nume = 'preinscriere';
+  window.gtag('event', nume, { item_name: p.content_name || '', item_category: p.content_category || '' });
+}
+
+function suspectiPornesteGA4() {
+  if (!SUSPECTI_GA4_ID || window.suspectiGA4Pornit) return;
+  window.suspectiGA4Pornit = true;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + SUSPECTI_GA4_ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  // cookie_domain: același vizitator pe www și pe bilete.suspectilacina.com
+  window.gtag('config', SUSPECTI_GA4_ID, { cookie_domain: 'suspectilacina.com' });
 }
 
 function suspectiPornestePixel() {
@@ -156,12 +186,14 @@ function suspectiCookieBanner() {
     d.remove();
     if (window.fbq && window.suspectiPixelPornit) window.fbq('consent', v === 'da' ? 'grant' : 'revoke');
     else if (v === 'da') suspectiPornestePixel();
+    if (v === 'da') suspectiPornesteGA4();
+    else if (window.suspectiGA4Pornit && window.gtag) window.gtag('consent', 'update', { analytics_storage: 'denied' });
   });
   document.body.appendChild(d);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   var acord = suspectiAcord();
-  if (acord === 'da') suspectiPornestePixel();
+  if (acord === 'da') { suspectiPornesteGA4(); suspectiPornestePixel(); }
   else if (acord === null) suspectiCookieBanner();
 });

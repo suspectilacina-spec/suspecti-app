@@ -61,6 +61,7 @@ window.SUSPECTI_EDITORIAL = {
     extra: 'Locurile la Mystery Dinner s-au epuizat. Mai sunt disponibile doar bilete „Doar After Party”, 60 lei.'
   },
   '5089': {
+    hidden: true, // anulat (09.11.2026), șters și din AmBilet
     page: '/treasurehunt/adults-bucuresti-15-noiembrie', title: 'Adults Edition', theme: '#adults',
     tip: 'Treasure Hunt pentru adulți, cu Hai să Socializăm', durata: '3 ore',
     img: '/images/46756a140b4d483b3cd121dd63dd0d90.webp', pos: 'center 22%', venue: 'Piața Victoriei',
