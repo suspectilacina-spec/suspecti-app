@@ -97,6 +97,7 @@ window.SUSPECTI_EDITORIAL = {
     tip: 'Mystery Dinner, meniu festiv, băuturi incluse și petrecere',
     venue: 'Loom · Magazinul București, etaj 4',
     img: '/images/revelion/scandalous-desktop.webp', pos: 'right center',
+    thumb: '/images/revelion/scandalous-vertical.webp', thumbV: true, // afișul vertical, pentru cardurile din calendar
     price: '885 lei',
     tiers: [
       { until: '2026-11-13', price: '750 lei', label: 'Early Bird' },
