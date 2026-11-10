@@ -24,7 +24,7 @@ window.SuspectiUI = (function () {
   function rand(ev) {
     var meta = [ev.dataScurta, ev.time, ev.durata].filter(Boolean).join(' · ');
     return '<li class="ev-row" data-city="' + esc(ev.city) + '" data-filtru="' + esc(ev.filtru) + '">' +
-      '<a class="ev-thumb" href="' + esc(ev.page) + '" tabindex="-1" aria-hidden="true"><img src="' + esc(img(ev.img, 't')) + '" alt="" loading="lazy" width="480" height="360" style="object-position:' + esc(ev.pos || 'center 30%') + ';"></a>' +
+      '<a class="ev-thumb' + (ev.thumbV ? ' ev-thumb-v' : '') + '" href="' + esc(ev.page) + '" tabindex="-1" aria-hidden="true"><img src="' + esc(img(ev.img, 't')) + '" alt="" loading="lazy" width="480" height="360" style="object-position:' + esc(ev.pos || 'center 30%') + ';"></a>' +
       '<div class="ev-info">' +
       '<span class="ev-kick">' + esc(SCURT[ev.key] || ev.concept) + ' · ' + esc(ev.city) + '</span>' +
       '<h3 class="ev-title"><a href="' + esc(ev.page) + '">' + esc(ev.title) + '</a></h3>' +

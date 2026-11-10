@@ -504,7 +504,7 @@ window.SUSPECTI_EDITII = {
     },
     practic: [
       'Începem la 20:00, la Paso Local Cuisine, Str. Eugeniu de Savoya 6B, Timișoara.',
-      'Ajunge cu 10–15 minute mai devreme, ca să ai timp să-ți citești personajul.',
+      'Vino cu 10–15 minute înainte, ca să ai timp să-ți citești personajul.',
       'Pe parcursul serii facem fotografii. Dacă nu vrei să apari, spune-i gazdei la început.'
     ],
     final: 'Familia te așteaptă. Nu întârzia.'
@@ -548,7 +548,7 @@ window.SUSPECTI_EDITII = {
     },
     practic: [
       'Începem la 19:00, la Moon Brasserie, Bd. Unirii 32, sector 3, București.',
-      'Ajunge cu 10–15 minute mai devreme, ca să ai timp să-ți citești personajul.',
+      'Vino cu 10–15 minute înainte, ca să ai timp să-ți citești personajul.',
       'Pe parcursul serii facem fotografii. Dacă nu vrei să apari, spune-i gazdei la început.'
     ],
     final: 'Familia te așteaptă. Nu întârzia.'
@@ -596,7 +596,7 @@ window.SUSPECTI_EDITII = {
     },
     practic: [
       'Începem la 20:00, la Paso Local Cuisine, Str. Eugeniu de Savoya 6B, Timișoara.',
-      'Ajunge cu 10–15 minute mai devreme, ca să ai timp să-ți citești personajul.',
+      'Vino cu 10–15 minute înainte, ca să ai timp să-ți citești personajul.',
       'Pe parcursul serii facem fotografii. Dacă nu vrei să apari, spune-i gazdei la început.'
     ],
     faq: [
