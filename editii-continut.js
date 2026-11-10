@@ -144,7 +144,7 @@ window.SUSPECTI_CONCEPTE.revelion = {
 };
 
 window.SUSPECTI_EDITII = {
-  /* Suspecți la Revelion 2027 — Scandalous Edition · Naïve, București · 31 decembrie 2026 */
+  /* Suspecți la Revelion 2027 — Scandalous Edition · Loom, Magazinul București (etaj 4) · 31 decembrie 2026 */
   '5197': {
     scurt: '**Imaginează-ți că la petrecerea de Revelion toată lumea te cunoaște. Doar că sub alt nume.** Pe 31 decembrie, pregătim un Revelion diferit, cu surprize pe care abia așteptăm să le descoperi.',
     titluPoveste: 'O seară în care și tu ai locul tău în poveste',
@@ -226,6 +226,15 @@ window.SUSPECTI_EDITII = {
     ],
     dress: { titlu: 'Dress code Scandalous', text: '**BOLD LOOKS. WILD DETAILS.** **NEGRU · ROȘU · ALB.** Dantelă, piele sau accente de animal print. Bijuterii statement. O ținută elegantă, cu puțină extravaganță, în stilul tău.', culori: ['#111111', '#A3172F', '#FFFFFF'] },
     final: 'Rezervă-ți locul și pregătește-ți ținuta. Povestea personajului tău o afli mai târziu. Be bold. Be a little scandalous.',
+    conditii: [
+      'Ne vedem la **Loom**, la etajul 4 al Magazinului București.',
+      '**Rambursare:** biletele se rambursează doar dacă ne anunți până pe **1 decembrie 2026**.',
+      '**Transfer:** după această dată biletele nu se mai rambursează, dar sunt transmisibile. Anunță-ne în prealabil și spune-ne numele persoanei care vine în locul tău.'
+    ],
+    faq: [
+      ['Pot anula și primi banii înapoi?', 'Da, dacă ne anunți până pe 1 decembrie 2026, la contact@suspectilacina.com sau pe <a href="https://wa.me/40755639871" target="_blank" rel="noopener noreferrer">WhatsApp</a>. După această dată biletele nu se mai rambursează.'],
+      ['Pot da biletul altcuiva?', 'Da. Biletele sunt transmisibile: anunță-ne înainte de eveniment și spune-ne numele persoanei care vine în locul tău.']
+    ],
     faqFaraComun: []
   },
 
