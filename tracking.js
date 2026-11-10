@@ -163,8 +163,13 @@ function suspectiCookieBanner() {
       '#suspecti-cookie a{color:#EBC1BE;text-decoration:underline;}' +
       '#suspecti-cookie .sc-b{display:grid;grid-template-columns:1fr 1fr;gap:10px;}' +
       '#suspecti-cookie button{min-height:48px;padding:0 18px;border-radius:999px;font:inherit;font-size:16px;font-weight:700;cursor:pointer;}' +
-      '#suspecti-cookie [data-acord=da]{border:0;background:#A3172F;color:#FFFFFF;box-shadow:0 10px 24px -12px rgba(163,23,47,0.9);}' +
-      '#suspecti-cookie [data-acord=nu]{border:1px solid rgba(251,243,241,0.55);background:transparent;color:#FBF3F1;}' +
+      '#suspecti-cookie [data-acord=da],#suspecti-cookie [data-salveaza]{border:0;background:#A3172F;color:#FFFFFF;box-shadow:0 10px 24px -12px rgba(163,23,47,0.9);}' +
+      '#suspecti-cookie [data-acord=nu],#suspecti-cookie [data-gestionare]{border:1px solid rgba(251,243,241,0.55);background:transparent;color:#FBF3F1;}' +
+      '#suspecti-cookie .sc-gest{margin:0 0 4px;}' +
+      '#suspecti-cookie .sc-opt{display:flex;gap:10px;align-items:flex-start;margin:0 0 12px;font-size:14px;line-height:1.45;color:#E9DCD6;cursor:pointer;}' +
+      '#suspecti-cookie .sc-opt input{width:20px;height:20px;margin:2px 0 0;accent-color:#A3172F;flex:0 0 auto;}' +
+      '#suspecti-cookie .sc-opt strong{color:#FFFFFF;}' +
+      '#suspecti-cookie [hidden]{display:none !important;}' +
       '#suspecti-cookie button:focus-visible{outline:3px solid #EBC1BE;outline-offset:2px;}' +
       '#suspecti-cookie .sc-det{display:block;margin-top:12px;text-align:center;font-size:14px;font-weight:600;}' +
       '@media (max-width:519px){#suspecti-cookie{left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));padding:22px 20px 20px;font-size:17px;}' +
@@ -173,14 +178,27 @@ function suspectiCookieBanner() {
       '@media (prefers-reduced-motion:reduce){#suspecti-cookie{animation:none;}}';
     document.head.appendChild(css);
   }
-  d.innerHTML = '<p id="suspecti-cookie-text">Folosim tehnologii de tip cookies pentru a-ți asigura o experiență cât mai plăcută de utilizare a site-ului.</p>' +
-    '<div class="sc-b">' +
-    '<button type="button" data-acord="da">Accept</button>' +
-    '<button type="button" data-acord="nu">Doar cele necesare</button>' +
+  d.innerHTML = '<p id="suspecti-cookie-text">Acest site folosește cookie-uri pentru a vă asigura că beneficiați de cea mai bună experiență pe site-ul nostru. <a href="/confidentialitate">Aflați mai multe</a></p>' +
+    '<div class="sc-gest" hidden>' +
+    '<label class="sc-opt"><input type="checkbox" checked disabled> <span><strong>Strict necesare</strong> · fac site-ul să funcționeze (mereu active)</span></label>' +
+    '<label class="sc-opt"><input type="checkbox" data-stat> <span><strong>Statistică și marketing</strong> · Google Analytics și Meta Pixel, ca să știm ce funcționează și să vă arătăm reclame relevante</span></label>' +
+    '<div class="sc-b"><button type="button" data-acord="nu">Doar cele necesare</button><button type="button" data-salveaza>Salvează alegerea</button></div>' +
     '</div>' +
-    '<a class="sc-det" href="/confidentialitate">Detalii și preferințe</a>';
+    '<div class="sc-b sc-prim">' +
+    '<button type="button" data-gestionare>Gestionare cookie-uri</button>' +
+    '<button type="button" data-acord="da">Permite toate</button>' +
+    '</div>';
   d.addEventListener('click', function (e) {
-    var v = e.target.getAttribute && e.target.getAttribute('data-acord');
+    var t = e.target;
+    if (!t.getAttribute) return;
+    if (t.hasAttribute('data-gestionare')) {
+      d.querySelector('.sc-gest').hidden = false;
+      d.querySelector('.sc-prim').hidden = true;
+      d.querySelector('[data-stat]').focus();
+      return;
+    }
+    var v = t.getAttribute('data-acord');
+    if (t.hasAttribute('data-salveaza')) v = d.querySelector('[data-stat]').checked ? 'da' : 'nu';
     if (!v) return;
     suspectiSalveazaAcord(v);
     d.remove();
