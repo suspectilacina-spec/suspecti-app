@@ -502,8 +502,8 @@
 /* Rândul de linkuri rapide de sub antet (în locul benzii „Experiențe”): doar pe telefon și tabletă,
    pe calculator aceleași linkuri sunt în meniul de sus. Experiențele sunt în meniu și pe prima pagină. */
 .snav-linkuri { border-top: 1px solid rgba(235,193,190,0.14); background: #1F070D; }
-.snav-linkuri > div { max-width: 1180px; margin: 0 auto; padding: 4px 12px; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 4px; }
-.snav-linkuri a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 10px; color: #EBC1BE; text-decoration: none; font-weight: 700; font-size: 14px; white-space: nowrap; border-bottom: 2px solid transparent; }
+.snav-linkuri > div { max-width: 1180px; margin: 0 auto; padding: 2px 8px; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 2px; }
+.snav-linkuri a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 9px; color: #EBC1BE; text-decoration: none; font-weight: 700; font-size: 14px; white-space: nowrap; border-bottom: 2px solid transparent; }
 .snav-linkuri a[aria-current], .snav-linkuri a:hover { color: #FFFFFF; border-bottom-color: #EBC1BE; }
 @media (min-width: 1080px) { .snav-linkuri { display: none; } }
 @media (max-width: 1079px) { .snav-corp { display: none !important; } }
