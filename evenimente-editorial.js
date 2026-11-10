@@ -70,7 +70,7 @@ window.SUSPECTI_EDITORIAL = {
   '5197': {
     page: '/revelion/scandalous-2027', concept: 'Suspecți la Revelion', title: 'Scandalous Edition',
     tip: 'Mystery Dinner, meniu festiv, băuturi incluse și petrecere',
-    venue: 'Naïve',
+    venue: 'Loom · Magazinul București, etaj 4',
     img: '/images/revelion/scandalous-desktop.webp', pos: 'right center',
     price: '885 lei',
     tiers: [
