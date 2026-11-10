@@ -28,6 +28,12 @@
   function butonBilet(text) {
     return '<a class="s-btn" href="' + esc(ev.link) + '" target="_blank" rel="noopener noreferrer" data-editie="' + esc(ev.title) + '">' + (text || 'Cumpără bilet') + ' ' + SAGEATA + '</a>';
   }
+  // Prețul redus activ (Early Bird), afișat lângă butonul de cumpărare.
+  function etichetaPret() {
+    var eb = ev.earlyBird;
+    if (!eb || !ev.bookable) return '';
+    return '<p class="ed-eb"><span class="ed-eb-tag">' + esc(eb.label) + '</span><span><strong>' + esc(eb.price) + '</strong> până pe ' + esc(eb.termen) + '<small>apoi ' + esc(eb.apoi) + '</small></span></p>';
+  }
   function blocOrganizare() {
     return '<section class="s-sec ed-org"><div class="s-wrap ed-org-in">' +
       '<p>Vrei să organizezi o experiență Suspecți pentru compania ta sau pentru un eveniment privat?</p>' +
@@ -102,12 +108,15 @@
     var fapte = '<div><dt>Când</dt><dd>' + esc(dataLunga) + '</dd></div>' +
       '<div><dt>Unde</dt><dd>' + esc(ev.venue) + '<small>' + esc(ev.city) + '</small></dd></div>' +
       (ev.durata ? '<div><dt>Durată</dt><dd>' + esc(ev.durata) + '</dd></div>' : '') +
-      '<div><dt>Preț</dt><dd>' + (ev.bookable ? esc(ev.price) + (ev.priceNote ? '<small>' + esc(ev.priceNote) + '</small>' : '') : esc(ev.status === 'anulat' ? 'Ediție anulată' : 'Bilete epuizate')) + '</dd></div>';
+      '<div><dt>Preț</dt><dd>' + (ev.bookable ? esc(ev.price) + (ev.priceNote && !ev.earlyBird ? '<small>' + esc(ev.priceNote) + '</small>' : '') : esc(ev.status === 'anulat' ? 'Ediție anulată' : 'Bilete epuizate')) + '</dd></div>';
     var areVideo = !!(ev.video && ev.poster);
     // Afișul ediției (când nu are video): orizontal pe calculator, vertical pe telefon (imgMobil), ales automat de browser.
     var afis = (!areVideo && (ev.imgMobil || C.afis)) ? '<picture class="ed-afis">' +
       (ev.imgMobil ? '<source media="(max-width: 759px)" srcset="' + esc(ev.imgMobil) + '">' : '') +
       '<img src="' + esc(ev.img) + '" alt="' + esc(ev.concept + ' — ' + ev.title) + '" width="1600" height="840" fetchpriority="high"></picture>' : '';
+    // Afișul vertical al ediției, în coloana din dreapta (în locul videoului).
+    var afisV = (!areVideo && C.afisVertical && ev.img) ? '<div class="ed-afis-v"><img src="' + esc(ev.img) + '" alt="Afișul ediției ' + esc(ev.title + ', ' + ev.city + ', ' + ev.date) + '" width="1080" height="1350" fetchpriority="high"></div>' : '';
+    if (afisV) afis = '';
     var hero = '<section class="ed-hero" id="ed-hero">' + (afis ? '<div class="s-wrap">' + afis + '</div>' : '') + '<div class="s-wrap ed-grid"><div style="min-width:0;">' +
       '<h1 class="ed-h1"><span class="ed-c">' + esc(ev.concept) + (cina ? ':' : ' · ' + esc(ev.city)) + '</span>' +
       '<span class="ed-t">' + esc(ev.title) + '</span>' + (ev.tip ? '<span class="ed-s">' + (cina ? '— ' : '') + esc(ev.tip) + '</span>' : '') + '</h1>' +
@@ -115,13 +124,14 @@
       (C.peScurt ? '<ul class="ed-pescurt">' + C.peScurt.map(function (x) { return '<li>' + fmt(x) + '</li>'; }).join('') + '</ul>' : '') +
       '<dl class="ed-facts">' + fapte + '</dl>' +
       (ev.statusNote ? '<p style="margin:14px 0 0; padding:10px 14px; border-radius:12px; background:#F3DCD8; color:#A3172F; font-weight:700;">' + esc(ev.statusNote) + '</p>' : '') +
+      etichetaPret() +
       '<div class="ed-cta" id="ed-cta">' + (ev.bookable ? butonBilet() : '<a class="s-btn" href="/calendar">Vezi alte ediții</a>') +
       '<a class="s-link" href="#ce-se-intampla">Ce se întâmplă la această ediție ↓</a></div>' +
       (ev.bookable ? '<p class="ed-nota">Biletele se cumpără prin AmBilet, partenerul nostru de ticketing. După plată, biletul vine pe email.</p>' : '') +
       (ev.bookable ? '<p class="ed-live" id="ed-live" hidden></p>' : '') +
       (areVideo ? '<div class="ed-vid-mob">' + UI.videoThumb(ev.video, ev.poster, 'Vezi videoul', 'Câteva momente de la ' + ev.concept) + '</div>' : '') +
       '</div>' +
-      (areVideo ? '<div class="ed-vid-desk" id="ed-vid-desk"></div>' : '') +
+      (areVideo ? '<div class="ed-vid-desk" id="ed-vid-desk"></div>' : afisV) +
       '</div></section>';
 
     // 5: ce se întâmplă
@@ -154,7 +164,7 @@
           '<strong>' + esc(p.price) + '</strong><span>' + esc(p.perioada) + '</span></div>';
       }).join('');
       var s6b = '<div class="ed-preturi">' + carduri + '</div>' + (C.preturiNota ? '<p class="ed-p" style="margin-top:16px;">' + fmt(C.preturiNota) + '</p>' : '') +
-        (ev.bookable ? '<div style="margin-top:18px;">' + butonBilet() + '</div>' : '');
+        (ev.bookable ? '<div style="margin-top:18px;">' + etichetaPret() + butonBilet() + '</div>' : '');
       s6 = s6 + sectiune('preturi', 'Bilete', 'Prețuri', s6b);
     }
 
@@ -169,11 +179,13 @@
 
     // 7: dress code + informații practice
     var dress = v('dress'), practic = v('practic') || [];
-    var s7 = (dress || practic.length) ? sectiune('practic', 'Înainte să vii', dress ? 'Dress code și informații practice' : 'Informații practice', '<div class="ed-2col">' +
-      (dress ? '<div><h3 class="ed-h3">' + esc(dress.titlu) + '</h3>' +
+    // Dress code: bloc separat, cu titlu vizibil. Informațiile practice au secțiunea lor.
+    var s7 = (dress ? '<section id="dress-code" class="s-sec"><div class="s-wrap"><div class="ed-dress">' +
+        '<span class="ed-dress-kick">Dress code' + (dress.tema ? ' · ' + esc(dress.tema) : '') + '</span>' +
+        '<h2 class="ed-dress-t">' + esc(dress.titlu) + '</h2>' +
         (dress.culori ? '<div class="ed-culori" aria-hidden="true">' + dress.culori.map(function (c) { return '<span style="background:' + esc(c) + ';"></span>'; }).join('') + '</div>' : '') +
-        '<p class="ed-p">' + fmt(dress.text) + '</p></div>' : '') +
-      (practic.length ? '<div><h3 class="ed-h3">Bine de știut</h3>' + listaSimpla(practic) + '</div>' : '') + '</div>') : '';
+        '<p class="ed-dress-p">' + fmt(dress.text) + '</p></div></div></section>' : '') +
+      (practic.length ? sectiune('practic', 'Înainte să vii', 'Bine de știut', listaSimpla(practic)) : '');
 
     // 8: fotografii + testimoniale + rețele
     var foto = v('foto') || [], testim = v('testimoniale') || [];
@@ -188,10 +200,15 @@
     var faq = (C.faq || []).concat(D.faq || []).concat((window.SUSPECTI_FAQ_COMUN || []).filter(function (q) { return exclus.indexOf(q[0]) < 0; }));
     var vazute = {};
     faq = faq.filter(function (q) { if (vazute[q[0]]) return false; vazute[q[0]] = 1; return true; });
-    var s9 = sectiune('intrebari', 'Întrebări frecvente', 'Înainte să-ți iei bilet', '<div class="s-faq">' + faq.map(function (q) {
+    // Politica biletelor, evidențiată deasupra întrebărilor (o ediție poate avea regula ei: politicaBilete).
+    var politica = '<div class="ed-retur" role="note"><span class="ed-retur-ic" aria-hidden="true">!</span><div>' +
+      '<strong class="ed-retur-t">' + esc(C.politicaTitlu || 'Biletele nu sunt rambursabile') + '</strong>' +
+      '<p>' + fmt(C.politicaBilete || 'După cumpărare, biletele nu se returnează și nu se rambursează, inclusiv în caz de neprezentare. Le poți **transfera altei persoane**, doar dacă ne anunți în scris (la contact@suspectilacina.com sau pe WhatsApp), cu numele noului participant, și primești confirmarea noastră.') +
+      ' Dacă noi anulăm sau reprogramăm ediția, îți returnăm banii.</p></div></div>';
+    var s9 = sectiune('intrebari', 'Întrebări frecvente', 'Înainte să-ți iei bilet', politica + '<div class="s-faq">' + faq.map(function (q) {
         return '<details><summary>' + esc(q[0]) + '</summary><p>' + q[1] + '</p></details>'; }).join('') + '</div>' +
       '<p class="ed-p" style="margin-top:16px;">Ai altă întrebare? <a href="https://wa.me/40755639871" target="_blank" rel="noopener noreferrer">Scrie-ne pe WhatsApp</a>.</p>' +
-      '<div class="ed-final"><div>' + (C.final ? '<em class="ed-final-motto">' + esc(C.final) + '</em>' : '') + '<strong>' + esc(ev.title) + '</strong><span>' + esc(dataLunga + ' · ' + ev.venue + ', ' + ev.city) + (ev.bookable ? ' · ' + esc(ev.price) : '') + '</span></div>' +
+      '<div class="ed-final"><div>' + (C.final ? '<em class="ed-final-motto">' + esc(C.final) + '</em>' : '') + '<strong>' + esc(ev.title) + '</strong><span>' + esc(dataLunga + ' · ' + ev.venue + ', ' + ev.city) + (ev.bookable ? ' · ' + esc(ev.price) + (ev.earlyBird ? ' (' + esc(ev.earlyBird.label) + ' până pe ' + esc(ev.earlyBird.termen) + ')' : '') : '') + '</span></div>' +
       (ev.bookable ? butonBilet() : '<a class="s-btn" href="/calendar">Vezi alte ediții</a>') + '</div>');
 
     root.innerHTML = hero + s5 + s6 + s6c + s6d + s7 + s8 + s9 + blocOrganizare();

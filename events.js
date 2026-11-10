@@ -66,6 +66,7 @@ var SUSPECTI_MONTH_LABELS = [];
       var p = t.until.split('-');
       var urmator = tiers[i + 1] ? tiers[i + 1].price : e.price;
       e.priceNote = t.label + ': ' + t.price + ' până pe ' + parseInt(p[2], 10) + ' ' + LUNI[parseInt(p[1], 10) - 1] + ', apoi ' + urmator;
+      e.earlyBird = { label: t.label, price: t.price, termen: parseInt(p[2], 10) + ' ' + LUNI[parseInt(p[1], 10) - 1], apoi: urmator };
       e.price = t.price;
       return true;
     });
@@ -90,12 +91,12 @@ var SUSPECTI_MONTH_LABELS = [];
       var a = document.querySelector('article.event-card a.btn[href="' + ev.page + '"]');
       if (!a) return;
       var pret = a.parentNode.querySelector('span');
-      if (pret) pret.textContent = ev.bookable ? ev.price : (ev.status === 'anulat' ? 'Anulat' : 'Bilete epuizate');
-      if (ev.priceNote && ev.bookable && !a.parentNode.parentNode.querySelector('.pret-termen')) {
+      if (pret) pret.textContent = ev.bookable ? '' : (ev.status === 'anulat' ? 'Anulat' : 'Bilete epuizate');
+      if (ev.earlyBird && ev.bookable && !a.parentNode.parentNode.querySelector('.pret-termen')) {
         var n = document.createElement('span');
         n.className = 'pret-termen';
         n.style.cssText = 'display:inline-block; margin-top:8px; padding:4px 10px; border-radius:999px; background:#A3172F; color:#FFFFFF; font-size:12px; font-weight:700;';
-        n.textContent = ev.priceNote;
+        n.textContent = ev.earlyBird.label + ' · până pe ' + ev.earlyBird.termen;
         a.parentNode.parentNode.insertBefore(n, a.parentNode);
       }
     });

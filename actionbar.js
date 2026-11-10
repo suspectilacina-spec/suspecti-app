@@ -22,7 +22,6 @@
                   party: { key: 'Party', nume: 'Suspecți la Party', anunta: '#inscriere' },
                   treasurehunt: { key: 'Treasure Hunt', nume: 'Suspecți în Treasure Hunt', anunta: '#inscriere' } };
   var SIMPLU = {
-    acasa: ['Experiențe în București și Timișoara', 'Calendar & bilete', '/calendar'],
     despre: ['SUSPECȚI', 'Calendar & bilete', '/calendar'],
     colaboratori: ['Colaboratori', 'Calendar & bilete', '/calendar'],
     intrebari: ['SUSPECȚI', 'Calendar & bilete', '/calendar'],

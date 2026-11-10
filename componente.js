@@ -10,10 +10,12 @@ window.SuspectiUI = (function () {
     return m ? '/images/v2/' + (marime || 'g') + '-' + m[1] + '.webp' : src;
   }
 
-  // Prețul afișat: prețul curent + termenul prețului redus (dacă există).
+  // În liste (calendar, prima pagină) nu afișăm prețul: el apare pe pagina ediției, după click.
+  // Rămân doar starea (anulat / epuizat) și eticheta ofertei active (ex. „Early Bird · până pe 20 noiembrie”).
   function pret(ev) {
     if (!ev.bookable) return '<span class="ev-stare">' + (ev.status === 'anulat' ? 'Anulat' : 'Bilete epuizate') + '</span>';
-    return '<span class="ev-pret">' + esc(ev.price) + (ev.priceNote ? '<small>' + esc(ev.priceNote) + '</small>' : '') + '</span>';
+    if (ev.earlyBird) return '<span class="ev-pret"><span class="ev-eb">' + esc(ev.earlyBird.label) + ' · până pe ' + esc(ev.earlyBird.termen) + '</span></span>';
+    return '';
   }
 
   var SCURT = { 'Cină': 'Suspecți la Cină', 'Party': 'Suspecți la Party', 'Brunch': 'Singing Brunch', 'Treasure Hunt': 'Treasure Hunt' };
