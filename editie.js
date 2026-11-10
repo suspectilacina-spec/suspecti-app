@@ -108,7 +108,7 @@
     var fapte = '<div><dt>Când</dt><dd>' + esc(dataLunga) + '</dd></div>' +
       '<div><dt>Unde</dt><dd>' + esc(ev.venue) + '<small>' + esc(ev.city) + '</small></dd></div>' +
       (ev.durata ? '<div><dt>Durată</dt><dd>' + esc(ev.durata) + '</dd></div>' : '') +
-      '<div><dt>Preț</dt><dd>' + (ev.bookable ? esc(ev.price) + (ev.priceNote ? '<small>' + esc(ev.priceNote) + '</small>' : '') : esc(ev.status === 'anulat' ? 'Ediție anulată' : 'Bilete epuizate')) + '</dd></div>';
+      '<div><dt>Preț</dt><dd>' + (ev.bookable ? esc(ev.price) + (ev.priceNote && !ev.earlyBird ? '<small>' + esc(ev.priceNote) + '</small>' : '') : esc(ev.status === 'anulat' ? 'Ediție anulată' : 'Bilete epuizate')) + '</dd></div>';
     var areVideo = !!(ev.video && ev.poster);
     // Afișul ediției (când nu are video): orizontal pe calculator, vertical pe telefon (imgMobil), ales automat de browser.
     var afis = (!areVideo && (ev.imgMobil || C.afis)) ? '<picture class="ed-afis">' +
