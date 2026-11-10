@@ -1,5 +1,5 @@
 /* Revelion 2027 pe tot site-ul:
-   1. banda roșie de deasupra meniului (pe toate paginile);
+   1. banda roșie de deasupra meniului (pe toate paginile, în afară de prima pagină);
    2. pop-up-ul „Nu ai planuri de Revelion? Hai cu noi!”, pentru oricine intră pe site, la fiecare vizită
       (o dată pe vizită, pe pagina pe care intră). Apare după alegerea pentru cookie-uri. Pe pagina Revelionului nu apare.
    După 31 decembrie 2026 dispar singure. */
@@ -82,6 +82,9 @@
         '<div class="rv-pop-b"><a href="' + PAGINA + '">Vezi programul</a><button type="button" data-nu>Nu mă interesează</button></div></div></div>';
       function inchide() {
         p.remove();
+        // Pe prima pagină, cine nu vrea Revelionul ajunge direct la calendarul edițiilor.
+        var cal = acasa && document.getElementById('urmeaza');
+        if (cal) { cal.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); return; }
         if (ultimul && ultimul.focus) ultimul.focus();
       }
       p.addEventListener('click', function (e) {
@@ -95,6 +98,8 @@
     }
   }
 
-  function start() { stiluri(); banda(); popup(); }
+  // Pe prima pagină Revelionul apare doar ca pop-up (fără bandă), ca primul ecran să rămână curat.
+  var acasa = cale === '/' || cale === '/index' || cale === '/index.html';
+  function start() { stiluri(); if (!acasa) banda(); popup(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();
