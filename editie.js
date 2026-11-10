@@ -137,6 +137,7 @@
     // 5: ce se întâmplă
     var poveste = (v('poveste') || []).map(function (p) { return '<p class="ed-p">' + fmt(p) + '</p>'; }).join('');
     if (!poveste && ev.description) poveste = '<div class="ed-p">' + ev.description + '</div>';
+    if (areVideo && C.afisVertical && ev.img) poveste += '<img class="ed-afis-s5" src="' + esc(ev.img) + '" alt="Afișul ediției ' + esc(ev.title + ', ' + ev.city + ', ' + ev.date) + '" width="1080" height="1350" loading="lazy">';
     var pasi = v('pasi') || [];
     var s5 = sectiune('ce-se-intampla', 'La această ediție', C.titluPoveste || 'Ce se întâmplă','<div class="ed-2col"><div>' + poveste +
       (CONCEPT_PAG[cale.split('/')[1]] ? '<a class="s-link" href="/' + cale.split('/')[1] + '">Mai multe despre ' + esc(ev.concept) + ' →</a>' : '') + '</div>' +

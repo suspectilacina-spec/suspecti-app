@@ -481,3 +481,20 @@
 .ed-retur-ic { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #A3172F; color: #FFFFFF; font-weight: 800; font-size: 17px; }
 .ed-retur-t { display: block; margin: 3px 0 6px; font-size: 18px; font-weight: 800; color: #A3172F; }
 .ed-retur p { margin: 0; font-size: 16px; line-height: 1.55; }
+
+/* Afișele verticale din calendar rămân verticale (nu se taie capetele) */
+.ev-thumb-v img { aspect-ratio: 4 / 5; object-position: center top !important; }
+/* Afișul ediției, în „Ce se întâmplă”, când primul ecran are video */
+.ed-afis-s5 { display: block; width: 100%; max-width: 340px; height: auto; margin: 22px 0 8px; border-radius: 16px; box-shadow: 0 22px 44px -24px rgba(43,10,18,0.55); }
+
+/* Telefon: antet mai aerisit (Despre noi rămâne în meniu), indiciu că bara Experiențe se derulează, zone de apăsare mai mari */
+@media (max-width: 519px) {
+  .snav-corp[href="/despre"] { display: none !important; }
+}
+@media (max-width: 759px) {
+  nav[aria-label="Experiențe"] { position: relative; }
+  nav[aria-label="Experiențe"]::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 48px; pointer-events: none; background: linear-gradient(90deg, rgba(31,7,13,0) 0%, #1F070D 85%); }
+  nav[aria-label="Experiențe"] .snav-sub { padding-right: 48px !important; }
+  footer a { display: inline-block; padding-top: 8px; padding-bottom: 8px; }
+  .s-link { display: inline-block; padding: 8px 0; }
+}

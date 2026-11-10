@@ -393,6 +393,13 @@ function calInit() {
   if (exp === 'Treasure Hunt') { CAL_STATE.format = exp; calApasa('.cal-format-btn', 'data-format', ''); }
   else if (exp && document.querySelector('.cal-format-btn[data-format="' + exp + '"]')) { CAL_STATE.format = exp; calApasa('.cal-format-btn', 'data-format', exp); }
   calRender();
+  // Ascunde filtrele de experiență pentru care nu există nicio ediție programată.
+  document.querySelectorAll('.cal-format-btn').forEach(function (b) {
+    var f = b.getAttribute('data-format');
+    if (f === 'Toate') return;
+    var are = (window.SUSPECTI_EVENTS || []).some(function (e) { return e.filtru === f || e.key === f; });
+    if (!are && CAL_STATE.format !== f) b.hidden = true;
+  });
 }
 document.addEventListener('DOMContentLoaded', calInit);
 </script>
