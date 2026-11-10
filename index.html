@@ -166,6 +166,18 @@ input::placeholder{color:#9C8A8C;}
 </div>
 </section>
 
+<script>
+// Pe telefon, videoul din primul ecran se mută sub calendar, ca edițiile să apară imediat după primul ecran.
+document.addEventListener('DOMContentLoaded', function () {
+  if (!window.matchMedia('(max-width: 759px)').matches) return;
+  var vid = document.querySelector('#top .hero-vid'), cal = document.getElementById('urmeaza');
+  if (!vid || !cal) return;
+  var bloc = vid.parentNode, s = document.createElement('section');
+  s.style.cssText = 'background:#2B0A12; padding:40px 20px;';
+  s.appendChild(bloc);
+  cal.parentNode.insertBefore(s, cal.nextSibling);
+});
+</script>
 <!-- URMEAZĂ -->
 <section id="urmeaza" style="background:#FAF6F3; padding:64px 0;">
 <div style="max-width:1180px; margin:0 auto; padding:0 20px;">

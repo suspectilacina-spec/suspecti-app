@@ -38,6 +38,7 @@
       '.rv-pop-b button{min-height:48px;border-radius:999px;border:1px solid rgba(251,243,241,0.4);background:transparent;color:#E9DCD6;font:inherit;font-size:16px;font-weight:700;cursor:pointer;}' +
       '.rv-pop-x{position:absolute;top:10px;right:10px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(0,0,0,0.55);color:#FFFFFF;font-size:18px;cursor:pointer;}' +
       '@media (max-width:519px){.rv-pop-h{font-size:34px;}.rv-pop-p{font-size:18px;}.rv-pop-b a{min-height:58px;font-size:19px;}.rv-pop-b button{min-height:52px;font-size:18px;}}' +
+      '@media (max-width:759px){.rv-banda{display:none;}}' +
       '@keyframes rvf{from{opacity:0}to{opacity:1}}@media (prefers-reduced-motion:reduce){.rv-pop{animation:none}}';
     document.head.appendChild(s);
   }
@@ -100,6 +101,7 @@
 
   // Pe prima pagină Revelionul apare doar ca pop-up (fără bandă), ca primul ecran să rămână curat.
   var acasa = cale === '/' || cale === '/index' || cale === '/index.html';
-  function start() { stiluri(); if (!acasa) banda(); popup(); }
+  var corporate = cale.indexOf('/corporate') === 0;
+  function start() { stiluri(); if (!acasa && !corporate) banda(); popup(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();
