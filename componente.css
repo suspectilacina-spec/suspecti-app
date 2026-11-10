@@ -454,3 +454,24 @@
 /* Revelion: fotografiile apar întregi, în format orizontal; videoul stă lângă poveste */
 .ed-tip-revelion .s-galerie img { aspect-ratio: 3 / 2; }
 .ed-video-poveste .v-mare { margin: 0 auto; max-width: 360px; }
+
+/* Early Bird: pe carduri și lângă butonul de cumpărare */
+.ev-eb { display: block; width: max-content; max-width: 100%; margin: 0 0 4px auto; padding: 3px 9px; border-radius: 999px; background: #A3172F; color: #FFFFFF; font-size: 11.5px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; white-space: normal; }
+@media (max-width: 759px) { .ev-eb { margin-left: 0; } }
+.ed-eb { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 18px 0 0; padding: 12px 14px; border-radius: 14px; background: #F3DCD8; color: #241518; font-size: 16px; line-height: 1.35; }
+.ed-eb strong { font-size: 19px; font-weight: 800; color: #A3172F; }
+.ed-eb small { display: block; font-size: 13.5px; color: #5A4649; }
+.ed-eb-tag { padding: 5px 11px; border-radius: 999px; background: #A3172F; color: #FFFFFF; font-size: 12.5px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+#preturi .ed-eb { margin: 0 0 14px; }
+
+/* Afișul vertical al ediției, lângă textul din primul ecran */
+.ed-afis-v img { display: block; width: 100%; max-width: 360px; height: auto; margin: 0 auto; border-radius: 16px; box-shadow: 0 22px 44px -24px rgba(43,10,18,0.55); }
+
+/* Dress code: bloc vizual separat */
+.ed-dress { max-width: 760px; margin: 0 auto; padding: 30px 28px; border-radius: 22px; background: #2B0A12; color: #FBF3F1; text-align: center; box-shadow: 0 26px 50px -30px rgba(43,10,18,0.8); }
+.ed-dress-kick { display: block; font-size: 12.5px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #EBC1BE; }
+.ed-dress-t { margin: 10px 0 14px; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: clamp(26px, 4.4vw, 36px); line-height: 1.15; color: #FFFFFF; }
+.ed-dress-p { margin: 0 auto; max-width: 600px; font-size: 17px; line-height: 1.6; color: #F1E4E0; }
+.ed-dress .ed-culori { justify-content: center; margin: 0 0 16px; }
+.ed-dress .ed-culori span { border-color: rgba(255,255,255,0.5); }
+@media (max-width: 759px) { .ed-dress { padding: 24px 18px; border-radius: 18px; } .ed-dress-p { font-size: 16px; } }

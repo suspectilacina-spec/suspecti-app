@@ -67,6 +67,28 @@ window.SUSPECTI_EDITORIAL = {
     img: '/images/46756a140b4d483b3cd121dd63dd0d90.webp', pos: 'center 22%', venue: 'Piața Victoriei',
     video: '/videos/v2/ed-adults-buc.mp4', poster: '/images/v2/ed-adults-buc-poster.jpg'
   },
+  '5344': {
+    page: '/cina/the-godfather-timisoara-27-noiembrie', title: 'The Godfather',
+    tip: 'Mystery Dinner · Timișoara Edition', durata: 'Aprox. 3 ore, apoi petrecere', theme: '#godfather',
+    img: '/images/editii/godfather-timisoara.webp', pos: 'center 25%', venue: 'Paso Local Cuisine',
+    price: '139 lei',
+    tiers: [{ until: '2026-11-20', price: '99 lei', label: 'Early Bird' }]
+  },
+  '5345': {
+    page: '/cina/the-godfather-bucuresti-28-noiembrie', title: 'The Godfather',
+    tip: 'Mystery Dinner · București Edition', durata: 'Aprox. 3 ore, apoi petrecere', theme: '#godfather',
+    img: '/images/editii/godfather-bucuresti.webp', pos: 'center 20%', venue: 'Moon Brasserie',
+    price: '139 lei',
+    tiers: [{ until: '2026-11-20', price: '119 lei', label: 'Early Bird' }]
+  },
+  '5348': { hidden: true }, // copie de lucru („[Duplicat]”) a ediției 5345 în AmBilet, fără preț
+  '5347': {
+    page: '/cina/who-killed-santa-timisoara-11-decembrie', title: 'Who Killed Santa?',
+    tip: 'Mystery Dinner de Crăciun · Timișoara Edition', durata: 'Aprox. 3 ore, apoi petrecere', theme: '#craciun',
+    img: '/images/editii/santa-timisoara.webp', pos: 'center 35%', venue: 'Paso Local Cuisine',
+    price: '139 lei',
+    tiers: [{ until: '2026-11-24', price: '99 lei', label: 'Early Bird' }]
+  },
   '5197': {
     page: '/revelion/scandalous-2027', concept: 'Suspecți la Revelion', title: 'Scandalous Edition',
     tip: 'Mystery Dinner, meniu festiv, băuturi incluse și petrecere',

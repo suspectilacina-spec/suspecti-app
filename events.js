@@ -66,6 +66,7 @@ var SUSPECTI_MONTH_LABELS = [];
       var p = t.until.split('-');
       var urmator = tiers[i + 1] ? tiers[i + 1].price : e.price;
       e.priceNote = t.label + ': ' + t.price + ' până pe ' + parseInt(p[2], 10) + ' ' + LUNI[parseInt(p[1], 10) - 1] + ', apoi ' + urmator;
+      e.earlyBird = { label: t.label, price: t.price, termen: parseInt(p[2], 10) + ' ' + LUNI[parseInt(p[1], 10) - 1], apoi: urmator };
       e.price = t.price;
       return true;
     });

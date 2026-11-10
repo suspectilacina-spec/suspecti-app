@@ -453,5 +453,144 @@ window.SUSPECTI_EDITII = {
       'Ajungi în Piața Victoriei la 13:45, pentru check-in și formarea echipelor. Pornim la 14:00.',
       'Încălțăminte comodă și telefonul încărcat.'
     ]
+  },
+  /* Suspecți la Cină · The Godfather · Timișoara, Paso Local Cuisine */
+  '5344': {
+    afisVertical: true,
+    scurt: 'O familie respectată. O cină rafinată, lumânări, vin roșu și oameni care zâmbesc prea frumos ca să nu ascundă ceva. Primești un personaj cu secrete și obiective proprii, vorbești cu ceilalți invitați și cauți indicii până afli cine e vinovatul.',
+    poveste: [
+      'În seara asta toată lumea e invitată, iar până la final cineva va trebui să dea socoteală. Pe 27 noiembrie aducem în Timișoara o seară inspirată de lumea **The Godfather**: loialitate, afaceri de familie, secrete bine păzite și o crimă care îi transformă pe toți invitații în suspecți.',
+      'Nu e un spectacol la care te uiți. E un joc în care intri. Vorbești, negociezi, faci alianțe, pui întrebări incomode și cauți indicii. Iar dacă ești chiar tu vinovatul, încerci să scapi nedescoperit.',
+      '**Poți veni și singur.** Personajele sunt gândite să te pună în legătură cu ceilalți încă din primele minute, așa că nimeni nu rămâne deoparte.'
+    ],
+    pasi: [
+      { t: 'La sosire', d: 'Primești plicul cu personajul tău. Afli cine ești, ce vrei și pe cine poți (sau nu poți) să crezi.' },
+      { t: 'Rundele de joc', d: 'Vorbești cu ceilalți, faci alianțe și aduni indicii. Jocul are mai multe runde.' },
+      { t: 'Pauza de cină', d: 'Între runde, cină pe îndelete, numai bună de socializat și de tras cu urechea.' },
+      { t: 'Finalul', d: 'Acuzațiile, votul și marea dezvăluire. Jocul durează în jur de 3 ore.' },
+      { t: 'Petrecerea', d: 'Dacă vrei, rămâi după joc. Avem DJ toată seara, cu muzică potrivită temei.' }
+    ],
+    include: [
+      'Experiența completă de joc, cu scenariu original',
+      'Personajul tău și materialele de joc',
+      'Facilitarea pe toată durata serii, de către echipa Suspecți',
+      'DJ și atmosfera tematică'
+    ],
+    conditii: [
+      'Consumația nu este inclusă în bilet și se achită la locație. Restaurantul a pregătit un meniu special pentru această seară.',
+      'Vârsta minimă: 16 ani.',
+      'Poți veni singur, în cuplu sau cu prietenii. Dacă vii cu cineva, vă așezăm împreună.',
+      'Biletele se pot returna la cerere cu cel puțin 7 zile calendaristice înainte de eveniment și se pot transfera altei persoane, cu anunț scris în prealabil.'
+    ],
+    preturi: [
+      { label: 'Early Bird', price: '99 lei', perioada: 'până pe 20 noiembrie', until: '2026-11-20' },
+      { label: 'Standard', price: '139 lei', perioada: '21–27 noiembrie', until: '2026-11-27' }
+    ],
+    dress: {
+      tema: 'The Godfather',
+      titlu: 'Dress to Impress · Gents & Ladies',
+      text: 'Alege o ținută elegantă, cu un detaliu care te duce cu gândul la The Godfather. Un costum bine croit, o rochie de seară sau un accesoriu vintage se potrivesc cu atmosfera.'
+    },
+    practic: [
+      'Începem la 20:00, la Paso Local Cuisine, Str. Eugeniu de Savoya 6B, Timișoara.',
+      'Ajunge cu 10–15 minute mai devreme, ca să ai timp să-ți citești personajul.',
+      'Pe parcursul serii facem fotografii. Dacă nu vrei să apari, spune-i gazdei la început.'
+    ],
+    final: 'Familia te așteaptă. Nu întârzia.'
+  },
+
+  /* Suspecți la Cină · The Godfather · București, Moon Brasserie */
+  '5345': {
+    afisVertical: true,
+    scurt: 'O familie respectată. O cină rafinată, lumânări, vin roșu și oameni care zâmbesc prea frumos ca să nu ascundă ceva. Primești un personaj cu secrete și obiective proprii, vorbești cu ceilalți invitați și cauți indicii până afli cine e vinovatul.',
+    poveste: [
+      'În seara asta toată lumea e invitată, iar până la final cineva va trebui să dea socoteală. Pe 28 noiembrie aducem în București o seară inspirată de lumea **The Godfather**: loialitate, afaceri de familie, secrete bine păzite și o crimă care îi transformă pe toți invitații în suspecți.',
+      'Nu e un spectacol la care te uiți. E un joc în care intri. Vorbești, negociezi, faci alianțe, pui întrebări incomode și cauți indicii. Iar dacă ești chiar tu vinovatul, încerci să scapi nedescoperit.',
+      '**Poți veni și singur.** Personajele sunt gândite să te pună în legătură cu ceilalți încă din primele minute, așa că nimeni nu rămâne deoparte.'
+    ],
+    pasi: [
+      { t: 'La sosire', d: 'Primești plicul cu personajul tău. Afli cine ești, ce vrei și pe cine poți (sau nu poți) să crezi.' },
+      { t: 'Rundele de joc', d: 'Vorbești cu ceilalți, faci alianțe și aduni indicii. Jocul are mai multe runde.' },
+      { t: 'Pauza de cină', d: 'Între runde, cină pe îndelete, numai bună de socializat și de tras cu urechea.' },
+      { t: 'Finalul', d: 'Acuzațiile, votul și marea dezvăluire. Jocul durează în jur de 3 ore.' },
+      { t: 'După joc', d: 'Poți rămâne la petrecerea de după, dacă dorești.' }
+    ],
+    include: [
+      'Experiența completă de joc, cu scenariu original',
+      'Personajul tău și materialele de joc',
+      'Facilitarea pe toată durata serii, de către echipa Suspecți'
+    ],
+    conditii: [
+      'Consumația nu este inclusă în bilet și se achită la locație. Moon Brasserie a pregătit un meniu special pentru această seară.',
+      'Vârsta minimă: 16 ani.',
+      'Poți veni singur, în cuplu sau cu prietenii. Dacă vii cu cineva, vă așezăm împreună.',
+      'Biletele se pot returna la cerere cu cel puțin 7 zile calendaristice înainte de eveniment și se pot transfera altei persoane, cu anunț scris în prealabil.'
+    ],
+    preturi: [
+      { label: 'Early Bird', price: '119 lei', perioada: 'până pe 20 noiembrie', until: '2026-11-20' },
+      { label: 'Standard', price: '139 lei', perioada: '21–28 noiembrie', until: '2026-11-28' }
+    ],
+    dress: {
+      tema: 'The Godfather',
+      titlu: 'Dress to Impress · Gents & Ladies',
+      text: 'Alege o ținută elegantă, cu un detaliu care te duce cu gândul la The Godfather. Un costum bine croit, o rochie de seară sau un accesoriu vintage se potrivesc cu atmosfera.'
+    },
+    practic: [
+      'Începem la 19:00, la Moon Brasserie, Bd. Unirii 32, sector 3, București.',
+      'Ajunge cu 10–15 minute mai devreme, ca să ai timp să-ți citești personajul.',
+      'Pe parcursul serii facem fotografii. Dacă nu vrei să apari, spune-i gazdei la început.'
+    ],
+    final: 'Familia te așteaptă. Nu întârzia.'
+  },
+
+  /* Suspecți la Cină · Who Killed Santa? · Timișoara, Paso Local Cuisine */
+  '5347': {
+    afisVertical: true,
+    scurt: 'Câteva sute de ani la rând, Moș Crăciun n-a întârziat niciodată. Anul ăsta nu mai pleacă nicăieri. Primești un personaj, cu un secret al lui, și afli din conversații, alianțe și indicii cine a stricat Crăciunul.',
+    titluPoveste: 'Cine a stricat Crăciunul?',
+    poveste: [
+      'Cu o seară înainte de marele drum, Moșul își adună acasă oamenii dragi pentru cea mai frumoasă petrecere din an. Vin prietenii vechi, familia, vecinii din sat, colegii de la fabrica de jucării și câțiva musafiri pe care nu-i știe nimeni prea bine. Toată lumea e acolo. Și aproape toată lumea are un motiv.',
+      'Pentru că, între două colinde, Moșul e găsit lângă brad, cu un biscuit mușcat în mână și o privire foarte, foarte surprinsă. Lista copiilor cuminți a dispărut. Sania nu mai pornește. Iar până dimineață, cineva trebuie să dea socoteală.',
+      'Să fie prietenul din copilărie, care n-a uitat niciodată o datorie veche? Nepoata care tocmai a aflat ce scrie în testament? Contabilul fabricii de jucării? Elful șef, care așteaptă o promovare de 300 de ani? Sau Mama Crăciun, care zâmbește un pic prea liniștit?',
+      '**Tu ești printre invitați.** Și, ca orice invitat la petrecerea Moșului, ai și tu un secret. Vii singur? Perfect: personajele sunt legate între ele, așa că din primele minute ai cu cine să vorbești (și pe cine să bănuiești).'
+    ],
+    pasi: [
+      { t: 'La intrare', d: 'Primești un plic cu personajul tău: cine ești, ce ascunzi și ce trebuie să afli până la final.' },
+      { t: 'Rundele de joc', d: 'Vorbești cu ceilalți, pui întrebări, faci alianțe, schimbi indicii și, când e nevoie, minți frumos.' },
+      { t: 'Pauza de cină', d: 'Între runde, perfectă pentru bârfe, suspiciuni și un pahar de ceva bun.' },
+      { t: 'Finalul', d: 'Acuzațiile, votul și marea dezvăluire. Jocul durează în jur de 3 ore.' },
+      { t: 'Petrecerea', d: 'DJ toată seara: colinde, hituri de iarnă și muzică de petrecere. Dansăm cu toții, inclusiv vinovatul.' }
+    ],
+    include: [
+      'Experiența completă de joc, cu scenariu original',
+      'Personajul tău și materialele de joc',
+      'Facilitarea pe toată durata serii, de către echipa Suspecți',
+      'DJ și atmosfera de Crăciun'
+    ],
+    conditii: [
+      'Consumația nu este inclusă în bilet și se achită la locație. Restaurantul a pregătit un meniu special pentru această seară.',
+      'Vârsta minimă: 16 ani.',
+      'Poți veni singur, în cuplu sau cu prietenii. Dacă vii cu gașca sau cu partenerul, vă așezăm împreună.',
+      'Biletele se pot returna la cerere cu cel puțin 7 zile calendaristice înainte de eveniment și se pot transfera altei persoane, cu anunț scris în prealabil.'
+    ],
+    preturi: [
+      { label: 'Early Bird', price: '99 lei', perioada: 'până pe 24 noiembrie', until: '2026-11-24' },
+      { label: 'Standard', price: '139 lei', perioada: '25 noiembrie – 11 decembrie', until: '2026-12-11' }
+    ],
+    dress: {
+      tema: 'Who Killed Santa?',
+      titlu: 'Christmas Glam · Dress to Impress',
+      text: 'Alege o ținută elegantă, în alb sau roșu. Poți combina cele două culori sau poți purta una dintre ele ca accent. Dacă ai o piesă cu puțină strălucire pe care abia aștepți s-o porți, acum e momentul.',
+      culori: ['#B3121B', '#FFFFFF']
+    },
+    practic: [
+      'Începem la 20:00, la Paso Local Cuisine, Str. Eugeniu de Savoya 6B, Timișoara.',
+      'Ajunge cu 10–15 minute mai devreme, ca să ai timp să-ți citești personajul.',
+      'Pe parcursul serii facem fotografii. Dacă nu vrei să apari, spune-i gazdei la început.'
+    ],
+    faq: [
+      ['Pot face cadou un bilet?', 'Da. Avem și vouchere cadou pentru Suspecți la Cină. <a href="https://wa.me/40755639871" target="_blank" rel="noopener noreferrer">Scrie-ne pe WhatsApp</a> și ți-l pregătim.']
+    ],
+    final: 'Locurile la petrecerea de la Polul Nord sunt limitate.'
   }
 };

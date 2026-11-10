@@ -13,6 +13,8 @@ window.SuspectiUI = (function () {
   // Prețul afișat: prețul curent + termenul prețului redus (dacă există).
   function pret(ev) {
     if (!ev.bookable) return '<span class="ev-stare">' + (ev.status === 'anulat' ? 'Anulat' : 'Bilete epuizate') + '</span>';
+    if (ev.earlyBird) return '<span class="ev-pret"><span class="ev-eb">' + esc(ev.earlyBird.label) + ' · până pe ' + esc(ev.earlyBird.termen) + '</span>' +
+      esc(ev.price) + '<small>apoi ' + esc(ev.earlyBird.apoi) + '</small></span>';
     return '<span class="ev-pret">' + esc(ev.price) + (ev.priceNote ? '<small>' + esc(ev.priceNote) + '</small>' : '') + '</span>';
   }
 
