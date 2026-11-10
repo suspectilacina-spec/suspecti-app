@@ -158,6 +158,13 @@ input::placeholder{color:#9C8A8C;}
 </div>
 </section>
 
+<style>
+.cal-concept { display:flex; flex-direction:column; gap:10px; padding:22px; border-radius:18px; background:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.85); color:inherit; text-decoration:none; transition:transform .18s ease, box-shadow .18s ease, background .18s ease; }
+.cal-concept:hover { background:#FFFFFF; transform:translateY(-3px); box-shadow:0 18px 36px -24px rgba(92,18,34,0.55); }
+.cal-concept:focus-visible { outline:3px solid #A3172F; outline-offset:3px; }
+.cal-concept-mai { margin-top:auto; padding-top:4px; color:#A3172F; font-weight:700; font-size:15px; }
+@media (prefers-reduced-motion: reduce) { .cal-concept { transition:none; } .cal-concept:hover { transform:none; } }
+</style>
 <!-- REVIN CURÂND -->
 <section style="background:linear-gradient(170deg, #FAF6F3 0%, #FAF6F3 18%, #F3DCD8 62%, #EBC1BE 100%); padding:80px 0;">
 <div style="max-width:1180px; margin:0 auto; padding:0 20px;">
@@ -165,23 +172,23 @@ input::placeholder{color:#9C8A8C;}
 <h2 style="font-family: 'Playfair Display',Georgia,serif; font-weight: 500; font-size: clamp(30px,5.6vw,46px); line-height: 1.1; margin: 14px 0 10px; text-wrap: balance; color: #a3172f">Pregătim următoarele ediții</h2>
 <p style="color:#5A4649; font-size:17px; margin:0 0 28px; max-width:56ch;">Alege experiența care te interesează și lasă-ne adresa de email. <br>Te anunțăm când stabilim o nouă dată.</p>
 <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap:14px;">
-<div style="display:flex; flex-direction:column; gap:10px; padding:22px; border-radius:18px; background:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.85);">
+<a href="/primavedere" class="cal-concept">
 <h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; margin:0;">Prima Vedere</h3>
 <p style="margin:0; color:#5A4649; font-size:15px;">O seară pentru cei care vor să cunoască pe cineva altfel decât din aplicații. Jocurile și discuțiile ghidate te ajută să intri ușor în vorbă, iar conversațiile pornesc firesc, la un pahar.</p>
-<p style="margin:0; font-size:15px; color:#241518;"><strong style="color:#A3172F;">Sippin’ Singles · joi, 3 decembrie 2026</strong><br>Locația o anunțăm în curând. <a href="/primavedere" style="color:#A3172F; font-weight:600;">Vezi detalii</a></p>
-</div>
-<div style="display:flex; flex-direction:column; gap:10px; padding:22px; border-radius:18px; background:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.85);">
+<p style="margin:0; font-size:15px; color:#241518;"><strong style="color:#A3172F;">Sippin’ Singles · joi, 3 decembrie 2026</strong><br>Locația o anunțăm în curând.</p>
+<span class="cal-concept-mai">Află ce este →</span></a>
+<a href="/automachiaj" class="cal-concept">
 <h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; margin:0;">Automachiaj</h3>
 <p style="margin:0; color:#5A4649; font-size:15px;">Un workshop în care înveți să te machiezi singură, pas cu pas, pe trăsăturile tale.</p>
-</div>
-<div style="display:flex; flex-direction:column; gap:10px; padding:22px; border-radius:18px; background:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.85);">
+<span class="cal-concept-mai">Află ce este →</span></a>
+<a href="/povesti" class="cal-concept">
 <h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; margin:0;">Suspecți la Povești<br>&nbsp;&nbsp;<em style="font-family: &quot;Great Vibes&quot;, cursive; font-style: normal; font-weight: 400; color: rgb(163, 23, 47)">with a touch of tarot</em></h3>
 <p style="margin:0; color:#5A4649; font-size:15px;">O seară de conversații despre relații, atracție și alegeri, pornind de la întrebările pregătite de noi. Într-un colț dedicat, poți încerca și o scurtă citire de tarot.</p>
-</div>
-<div style="display:flex; flex-direction:column; gap:10px; padding:22px; border-radius:18px; background:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.85);">
+<span class="cal-concept-mai">Află ce este →</span></a>
+<a href="/treasurehunt" class="cal-concept">
 <h3 style="font-family:'Playfair Display',Georgia,serif; font-weight:500; font-size:22px; margin:0;">Treasure Hunt</h3>
 <p style="margin:0; color:#5A4649; font-size:15px;">Misiuni, indicii și provocări în echipă, cu cronometrul pornit. Avem o variantă pentru adulți, prin oraș, și una pentru familii cu copii, în parc.</p>
-</div>
+<span class="cal-concept-mai">Află ce este →</span></a>
 </div>
 <div style="margin-top:28px;"><a href="#preinscriere" class="btn" style="display:inline-flex; align-items:center; gap:10px; min-height:54px; padding:0 30px; border-radius:999px; background:#A3172F; color:#FFFFFF; text-decoration:none; font-weight:600;">Anunță-mă când revine <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
 <div id="preinscriere" style="max-width:760px; margin:48px auto 0; scroll-margin-top:24px;">

@@ -57,7 +57,8 @@
 
   function popup() {
     if (cale.indexOf('/revelion') === 0) return;
-    // O dată pe vizită: apare la intrarea pe site (pe orice pagină), nu la fiecare click din aceeași vizită.
+    // O singură dată: la prima intrare pe site (pe orice pagină). După ce a fost văzut, nu mai apare.
+    if (citeste('suspecti_revelion_pop_vazut')) return;
     try { if (sessionStorage.getItem('suspecti_revelion_pop_vazut')) return; } catch (e) {}
     var incercari = 0;
     (function asteapta() {
@@ -88,6 +89,7 @@
       });
       document.addEventListener('keydown', function esc(e) { if (e.key === 'Escape' && document.body.contains(p)) { inchide(); document.removeEventListener('keydown', esc); } });
       try { sessionStorage.setItem('suspecti_revelion_pop_vazut', '1'); } catch (e) {}
+      scrie('suspecti_revelion_pop_vazut', '1');
       document.body.appendChild(p);
       p.querySelector('.rv-pop-b a').focus();
     }

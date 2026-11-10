@@ -200,7 +200,12 @@
     var faq = (C.faq || []).concat(D.faq || []).concat((window.SUSPECTI_FAQ_COMUN || []).filter(function (q) { return exclus.indexOf(q[0]) < 0; }));
     var vazute = {};
     faq = faq.filter(function (q) { if (vazute[q[0]]) return false; vazute[q[0]] = 1; return true; });
-    var s9 = sectiune('intrebari', 'Întrebări frecvente', 'Înainte să-ți iei bilet', '<div class="s-faq">' + faq.map(function (q) {
+    // Politica biletelor, evidențiată deasupra întrebărilor (o ediție poate avea regula ei: politicaBilete).
+    var politica = '<div class="ed-retur" role="note"><span class="ed-retur-ic" aria-hidden="true">!</span><div>' +
+      '<strong class="ed-retur-t">' + esc(C.politicaTitlu || 'Biletele nu sunt rambursabile') + '</strong>' +
+      '<p>' + fmt(C.politicaBilete || 'După cumpărare, biletele nu se returnează și nu se rambursează, inclusiv în caz de neprezentare. Le poți **transfera altei persoane**, doar dacă ne anunți în scris (la contact@suspectilacina.com sau pe WhatsApp), cu numele noului participant, și primești confirmarea noastră.') +
+      ' Dacă noi anulăm sau reprogramăm ediția, îți returnăm banii.</p></div></div>';
+    var s9 = sectiune('intrebari', 'Întrebări frecvente', 'Înainte să-ți iei bilet', politica + '<div class="s-faq">' + faq.map(function (q) {
         return '<details><summary>' + esc(q[0]) + '</summary><p>' + q[1] + '</p></details>'; }).join('') + '</div>' +
       '<p class="ed-p" style="margin-top:16px;">Ai altă întrebare? <a href="https://wa.me/40755639871" target="_blank" rel="noopener noreferrer">Scrie-ne pe WhatsApp</a>.</p>' +
       '<div class="ed-final"><div>' + (C.final ? '<em class="ed-final-motto">' + esc(C.final) + '</em>' : '') + '<strong>' + esc(ev.title) + '</strong><span>' + esc(dataLunga + ' · ' + ev.venue + ', ' + ev.city) + (ev.bookable ? ' · ' + esc(ev.price) + (ev.earlyBird ? ' (' + esc(ev.earlyBird.label) + ' până pe ' + esc(ev.earlyBird.termen) + ')' : '') : '') + '</span></div>' +

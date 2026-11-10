@@ -113,8 +113,8 @@ window.SUSPECTI_CONCEPTE = {
 
 // Întrebări valabile pentru toate edițiile publice (se adaugă după cele ale conceptului).
 window.SUSPECTI_FAQ_COMUN = [
-  ['Pot anula și primi banii înapoi?', 'Poți cere rambursarea biletului cu cel puțin 7 zile calendaristice înainte de eveniment, scriindu-ne la contact@suspectilacina.com cu numele, ediția și numărul comenzii. Comisionul platformei de ticketing nu se returnează. Detalii în <a href="/termeni">Termenii de participare</a>.'],
-  ['Pot da biletul altcuiva?', 'Da, dacă ne anunți în scris înainte de eveniment. Transferul e valabil după ce îl confirmăm.'],
+  ['Pot anula și primi banii înapoi?', 'Nu. <strong>Biletele nu sunt rambursabile.</strong> Dacă nu mai poți ajunge, poți transfera biletul altei persoane (vezi mai jos). Dacă noi anulăm sau reprogramăm ediția, îți returnăm banii.'],
+  ['Pot da biletul altcuiva?', 'Da, doar dacă ne anunți în scris (la contact@suspectilacina.com sau pe WhatsApp), înainte de eveniment, cu numele persoanei care vine în locul tău. Transferul e valabil după ce îl confirmăm.'],
   ['Cum primesc biletul?', 'Biletele se cumpără prin AmBilet, partenerul nostru de ticketing. După plată, biletul vine pe email.']
 ];
 
@@ -229,12 +229,14 @@ window.SUSPECTI_EDITII = {
     conditii: [
       'Ne vedem la **Loom**, la etajul 4 al Magazinului București.',
       '**Rambursare:** biletele se rambursează doar dacă ne anunți până pe **1 decembrie 2026**.',
-      '**Transfer:** după această dată biletele nu se mai rambursează, dar sunt transmisibile. Anunță-ne în prealabil și spune-ne numele persoanei care vine în locul tău.'
+      '**Transfer:** după această dată biletele nu se mai rambursează, dar le poți transfera altei persoane, doar dacă ne anunți în scris, cu numele noului participant, și primești confirmarea noastră.'
     ],
     faq: [
       ['Pot anula și primi banii înapoi?', 'Da, dacă ne anunți până pe 1 decembrie 2026, la contact@suspectilacina.com sau pe <a href="https://wa.me/40755639871" target="_blank" rel="noopener noreferrer">WhatsApp</a>. După această dată biletele nu se mai rambursează.'],
-      ['Pot da biletul altcuiva?', 'Da. Biletele sunt transmisibile: anunță-ne înainte de eveniment și spune-ne numele persoanei care vine în locul tău.']
+      ['Pot da biletul altcuiva?', 'Da, doar dacă ne anunți în scris (la contact@suspectilacina.com sau pe WhatsApp), înainte de eveniment, cu numele persoanei care vine în locul tău. Transferul e valabil după ce îl confirmăm.']
     ],
+    politicaBilete: 'Biletele se rambursează doar dacă ne anunți **până pe 1 decembrie 2026**. După această dată nu mai sunt rambursabile, dar le poți **transfera altei persoane**, doar dacă ne anunți în scris (la contact@suspectilacina.com sau pe WhatsApp), cu numele noului participant, și primești confirmarea noastră.',
+    politicaTitlu: 'Rambursare până pe 1 decembrie',
     faqFaraComun: []
   },
 
@@ -489,7 +491,7 @@ window.SUSPECTI_EDITII = {
       'Consumația nu este inclusă în bilet și se achită la locație. Restaurantul a pregătit un meniu special pentru această seară.',
       'Vârsta minimă: 16 ani.',
       'Poți veni singur, în cuplu sau cu prietenii. Dacă vii cu cineva, vă așezăm împreună.',
-      'Biletele se pot returna la cerere cu cel puțin 7 zile calendaristice înainte de eveniment și se pot transfera altei persoane, cu anunț scris în prealabil.'
+      '**Biletele nu sunt rambursabile.** Le poți transfera altei persoane doar dacă ne anunți în scris și primești confirmarea noastră.'
     ],
     preturi: [
       { label: 'Early Bird', price: '99 lei', perioada: 'până pe 20 noiembrie', until: '2026-11-20' },
@@ -533,7 +535,7 @@ window.SUSPECTI_EDITII = {
       'Consumația nu este inclusă în bilet și se achită la locație. Moon Brasserie a pregătit un meniu special pentru această seară.',
       'Vârsta minimă: 16 ani.',
       'Poți veni singur, în cuplu sau cu prietenii. Dacă vii cu cineva, vă așezăm împreună.',
-      'Biletele se pot returna la cerere cu cel puțin 7 zile calendaristice înainte de eveniment și se pot transfera altei persoane, cu anunț scris în prealabil.'
+      '**Biletele nu sunt rambursabile.** Le poți transfera altei persoane doar dacă ne anunți în scris și primești confirmarea noastră.'
     ],
     preturi: [
       { label: 'Early Bird', price: '119 lei', perioada: 'până pe 20 noiembrie', until: '2026-11-20' },
@@ -580,7 +582,7 @@ window.SUSPECTI_EDITII = {
       'Consumația nu este inclusă în bilet și se achită la locație. Restaurantul a pregătit un meniu special pentru această seară.',
       'Vârsta minimă: 16 ani.',
       'Poți veni singur, în cuplu sau cu prietenii. Dacă vii cu gașca sau cu partenerul, vă așezăm împreună.',
-      'Biletele se pot returna la cerere cu cel puțin 7 zile calendaristice înainte de eveniment și se pot transfera altei persoane, cu anunț scris în prealabil.'
+      '**Biletele nu sunt rambursabile.** Le poți transfera altei persoane doar dacă ne anunți în scris și primești confirmarea noastră.'
     ],
     preturi: [
       { label: 'Early Bird', price: '99 lei', perioada: 'până pe 24 noiembrie', until: '2026-11-24' },
