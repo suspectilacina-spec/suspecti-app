@@ -77,7 +77,7 @@ window.SUSPECTI_EDITORIAL = {
   },
   '5345': {
     page: '/cina/the-godfather-bucuresti-28-noiembrie', title: 'The Godfather',
-    tip: 'Mystery Dinner · București Edition', durata: 'Aprox. 3 ore, apoi petrecere', theme: '#godfather',
+    tip: 'Mystery Dinner · București Edition', durata: 'Aprox. 3 ore', theme: '#godfather',
     img: '/images/editii/godfather-bucuresti.webp', thumbV: true,
     video: '/videos/v2/cina-peaky.mp4', poster: '/images/v2/cina-peaky-poster.jpg', pos: 'center 20%', venue: 'Moon Brasserie',
     price: '139 lei',
@@ -85,7 +85,7 @@ window.SUSPECTI_EDITORIAL = {
   },
   '5348': { // fostul duplicat al lui 5345, transformat în AmBilet în Who Killed Santa? București (11.11.2026)
     page: '/cina/who-killed-santa-bucuresti-13-decembrie', title: 'Who Killed Santa?',
-    tip: 'Mystery Dinner de Crăciun · București Edition', durata: 'Aprox. 3 ore, apoi petrecere', theme: '#craciun',
+    tip: 'Mystery Dinner de Crăciun · București Edition', durata: 'Aprox. 3 ore', theme: '#craciun',
     img: '/images/editii/santa-bucuresti.webp', thumbV: true,
     video: '/videos/v2/cina-desfasurare.mp4', poster: '/images/v2/cina-desfasurare-poster.jpg', pos: 'center 35%', venue: 'Moon Brasserie',
     price: '139 lei',

@@ -523,8 +523,7 @@ window.SUSPECTI_EDITII = {
       { t: 'La sosire', d: 'Primești plicul cu personajul tău. Afli cine ești, ce vrei și pe cine poți (sau nu poți) să crezi.' },
       { t: 'Rundele de joc', d: 'Vorbești cu ceilalți, faci alianțe și aduni indicii. Jocul are mai multe runde.' },
       { t: 'Pauza de cină', d: 'Între runde, cină pe îndelete, numai bună de socializat și de tras cu urechea.' },
-      { t: 'Finalul', d: 'Acuzațiile, votul și marea dezvăluire. Jocul durează în jur de 3 ore.' },
-      { t: 'După joc', d: 'Poți rămâne la petrecerea de după, dacă dorești.' }
+      { t: 'Finalul', d: 'Acuzațiile, votul și marea dezvăluire. Jocul durează în jur de 3 ore.' }
     ],
     include: [
       'Experiența completă de joc, cu scenariu original',
@@ -620,8 +619,7 @@ window.SUSPECTI_EDITII = {
       { t: 'La intrare', d: 'Primești un plic cu personajul tău: cine ești, ce ascunzi și ce trebuie să afli până la final.' },
       { t: 'Rundele de joc', d: 'Vorbești cu ceilalți, pui întrebări, faci alianțe, schimbi indicii și, când e nevoie, minți frumos.' },
       { t: 'Pauza de cină', d: 'Între runde, perfectă pentru bârfe, suspiciuni și un pahar de ceva bun.' },
-      { t: 'Finalul', d: 'Acuzațiile, votul și marea dezvăluire. Jocul durează în jur de 3 ore.' },
-      { t: 'După joc', d: 'Poți rămâne la petrecere, dacă dorești.' }
+      { t: 'Finalul', d: 'Acuzațiile, votul și marea dezvăluire. Jocul durează în jur de 3 ore.' }
     ],
     include: [
       'Experiența completă de joc, cu scenariu original',
@@ -653,6 +651,6 @@ window.SUSPECTI_EDITII = {
     faq: [
       ['Pot face cadou un bilet?', 'Da. Avem și vouchere cadou pentru Suspecți la Cină. <a href="https://wa.me/40755639871" target="_blank" rel="noopener noreferrer">Scrie-ne pe WhatsApp</a> și ți-l pregătim.']
     ],
-    final: 'Locurile la petrecerea de la Polul Nord sunt limitate.'
+    final: 'Locurile la masa Moșului sunt limitate.'
   }
 };
