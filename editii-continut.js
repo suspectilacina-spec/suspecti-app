@@ -603,5 +603,56 @@ window.SUSPECTI_EDITII = {
       ['Pot face cadou un bilet?', 'Da. Avem și vouchere cadou pentru Suspecți la Cină. <a href="https://wa.me/40755639871" target="_blank" rel="noopener noreferrer">Scrie-ne pe WhatsApp</a> și ți-l pregătim.']
     ],
     final: 'Locurile la petrecerea de la Polul Nord sunt limitate.'
+  },
+
+  /* Suspecți la Cină · Who Killed Santa? · București, Moon Brasserie (13 decembrie, 16:30) */
+  '5348': {
+    afisVertical: true,
+    scurt: 'Câteva sute de ani la rând, Moș Crăciun n-a întârziat niciodată. Anul ăsta nu mai pleacă nicăieri. Primești un personaj, cu un secret al lui, și afli din conversații, alianțe și indicii cine a stricat Crăciunul.',
+    titluPoveste: 'Cine a stricat Crăciunul?',
+    poveste: [
+      'Cu o seară înainte de marele drum, Moșul își adună acasă oamenii dragi pentru cea mai frumoasă petrecere din an. Vin prietenii vechi, familia, vecinii din sat, colegii de la fabrica de jucării și câțiva musafiri pe care nu-i știe nimeni prea bine. Toată lumea e acolo. Și aproape toată lumea are un motiv.',
+      'Pentru că, între două colinde, Moșul e găsit lângă brad, cu un biscuit mușcat în mână și o privire foarte, foarte surprinsă. Lista copiilor cuminți a dispărut. Sania nu mai pornește. Iar până dimineață, cineva trebuie să dea socoteală.',
+      'Să fie prietenul din copilărie, care n-a uitat niciodată o datorie veche? Nepoata care tocmai a aflat ce scrie în testament? Contabilul fabricii de jucării? Elful șef, care așteaptă o promovare de 300 de ani? Sau Mama Crăciun, care zâmbește un pic prea liniștit?',
+      '**Tu ești printre invitați.** Și, ca orice invitat la petrecerea Moșului, ai și tu un secret. Vii singur? Perfect: personajele sunt legate între ele, așa că din primele minute ai cu cine să vorbești (și pe cine să bănuiești).'
+    ],
+    pasi: [
+      { t: 'La intrare', d: 'Primești un plic cu personajul tău: cine ești, ce ascunzi și ce trebuie să afli până la final.' },
+      { t: 'Rundele de joc', d: 'Vorbești cu ceilalți, pui întrebări, faci alianțe, schimbi indicii și, când e nevoie, minți frumos.' },
+      { t: 'Pauza de cină', d: 'Între runde, perfectă pentru bârfe, suspiciuni și un pahar de ceva bun.' },
+      { t: 'Finalul', d: 'Acuzațiile, votul și marea dezvăluire. Jocul durează în jur de 3 ore.' },
+      { t: 'După joc', d: 'Poți rămâne la petrecere, dacă dorești.' }
+    ],
+    include: [
+      'Experiența completă de joc, cu scenariu original',
+      'Personajul tău și materialele de joc',
+      'Facilitarea pe toată durata serii, de către echipa Suspecți',
+      'Atmosfera de Crăciun'
+    ],
+    conditii: [
+      'Consumația nu este inclusă în bilet și se achită la locație. Moon Brasserie a pregătit un meniu special pentru această seară.',
+      'Vârsta minimă: 16 ani.',
+      'Poți veni singur, în cuplu sau cu prietenii. Dacă vii cu gașca sau cu partenerul, vă așezăm împreună.',
+      '**Biletele nu sunt rambursabile.** Le poți transfera altei persoane doar dacă ne anunți în scris și primești confirmarea noastră.'
+    ],
+    preturi: [
+      { label: 'Early Bird', price: '119 lei', perioada: 'până pe 1 decembrie', until: '2026-12-01' },
+      { label: 'Standard', price: '139 lei', perioada: '2–13 decembrie', until: '2026-12-13' }
+    ],
+    dress: {
+      tema: 'Who Killed Santa?',
+      titlu: 'Roșu, alb și negru',
+      text: 'Ținuta face parte din poveste. Joacă-te cu roșu, alb și negru: pulovere de Crăciun, căciuli de Moș, coarne de ren, urechi de elf, catifea, paiete, un papion roșu sau o rochie neagră cu un accesoriu festiv. Ținutele de zi cu zi, fără nimic de sărbătoare, nu sunt acceptate.',
+      culori: ['#B3121B', '#FFFFFF', '#111111']
+    },
+    practic: [
+      'Începem la 16:30, la Moon Brasserie, Bd. Unirii 32, sector 3, București.',
+      'Vino cu 10–15 minute înainte, ca să ai timp să-ți citești personajul.',
+      'Pe parcursul serii facem fotografii. Dacă nu vrei să apari, spune-i gazdei la început.'
+    ],
+    faq: [
+      ['Pot face cadou un bilet?', 'Da. Avem și vouchere cadou pentru Suspecți la Cină. <a href="https://wa.me/40755639871" target="_blank" rel="noopener noreferrer">Scrie-ne pe WhatsApp</a> și ți-l pregătim.']
+    ],
+    final: 'Locurile la petrecerea de la Polul Nord sunt limitate.'
   }
 };
