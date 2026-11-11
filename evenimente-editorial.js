@@ -83,7 +83,14 @@ window.SUSPECTI_EDITORIAL = {
     price: '139 lei',
     tiers: [{ until: '2026-11-20', price: '119 lei', label: 'Early Bird' }]
   },
-  '5348': { hidden: true }, // copie de lucru („[Duplicat]”) a ediției 5345 în AmBilet, fără preț
+  '5348': { // fostul duplicat al lui 5345, transformat în AmBilet în Who Killed Santa? București (11.11.2026)
+    page: '/cina/who-killed-santa-bucuresti-13-decembrie', title: 'Who Killed Santa?',
+    tip: 'Mystery Dinner de Crăciun · București Edition', durata: 'Aprox. 3 ore, apoi petrecere', theme: '#craciun',
+    img: '/images/editii/santa-bucuresti.webp', thumbV: true,
+    video: '/videos/v2/cina-desfasurare.mp4', poster: '/images/v2/cina-desfasurare-poster.jpg', pos: 'center 35%', venue: 'Moon Brasserie',
+    price: '139 lei',
+    tiers: [{ until: '2026-12-01', price: '119 lei', label: 'Early Bird' }]
+  },
   '5347': {
     page: '/cina/who-killed-santa-timisoara-11-decembrie', title: 'Who Killed Santa?',
     tip: 'Mystery Dinner de Crăciun · Timișoara Edition', durata: 'Aprox. 3 ore, apoi petrecere', theme: '#craciun',
