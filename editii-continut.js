@@ -228,15 +228,13 @@ window.SUSPECTI_EDITII = {
     final: 'Rezervă-ți locul și pregătește-ți ținuta. Povestea personajului tău o afli mai târziu. Be bold. Be a little scandalous.',
     conditii: [
       'Ne vedem la **Loom**, la etajul 4 al Magazinului București.',
-      '**Rambursare:** biletele se rambursează doar dacă ne anunți până pe **1 decembrie 2026**.',
-      '**Transfer:** după această dată biletele nu se mai rambursează, dar le poți transfera altei persoane, doar dacă ne anunți în scris, cu numele noului participant, și primești confirmarea noastră.'
+      '**Biletele nu sunt rambursabile.** Le poți transfera altei persoane doar dacă ne anunți în scris, cu numele noului participant, și primești confirmarea noastră.'
     ],
     faq: [
-      ['Pot anula și primi banii înapoi?', 'Da, dacă ne anunți până pe 1 decembrie 2026, la contact@suspectilacina.com sau pe <a href="https://wa.me/40755639871" target="_blank" rel="noopener noreferrer">WhatsApp</a>. După această dată biletele nu se mai rambursează.'],
+      ['Pot anula și primi banii înapoi?', 'Nu. <strong>Biletele nu sunt rambursabile.</strong> Dacă nu mai poți ajunge, poți transfera biletul altei persoane (vezi mai jos). Dacă noi anulăm sau reprogramăm evenimentul, îți returnăm banii.'],
       ['Pot da biletul altcuiva?', 'Da, doar dacă ne anunți în scris (la contact@suspectilacina.com sau pe WhatsApp), înainte de eveniment, cu numele persoanei care vine în locul tău. Transferul e valabil după ce îl confirmăm.']
     ],
-    politicaBilete: 'Biletele se rambursează doar dacă ne anunți **până pe 1 decembrie 2026**. După această dată nu mai sunt rambursabile, dar le poți **transfera altei persoane**, doar dacă ne anunți în scris (la contact@suspectilacina.com sau pe WhatsApp), cu numele noului participant, și primești confirmarea noastră.',
-    politicaTitlu: 'Rambursare până pe 1 decembrie',
+    politicaBilete: 'Biletele nu sunt rambursabile. Le poți **transfera altei persoane**, doar dacă ne anunți în scris (la contact@suspectilacina.com sau pe WhatsApp), cu numele noului participant, și primești confirmarea noastră.',
     faqFaraComun: []
   },
 
