@@ -492,8 +492,8 @@ window.SUSPECTI_EDITII = {
       '**Biletele nu sunt rambursabile.** Le poți transfera altei persoane doar dacă ne anunți în scris și primești confirmarea noastră.'
     ],
     preturi: [
-      { label: 'Early Bird', price: '99 lei', perioada: 'până pe 20 noiembrie', until: '2026-11-20' },
-      { label: 'Standard', price: '139 lei', perioada: '21–27 noiembrie', until: '2026-11-27' }
+      { label: 'Early Bird', price: '99 lei', perioada: 'până pe 23 noiembrie', until: '2026-11-23' },
+      { label: 'Standard', price: '119 lei', perioada: '24–27 noiembrie', until: '2026-11-27' }
     ],
     dress: {
       tema: 'The Godfather',
@@ -535,8 +535,8 @@ window.SUSPECTI_EDITII = {
       '**Biletele nu sunt rambursabile.** Le poți transfera altei persoane doar dacă ne anunți în scris și primești confirmarea noastră.'
     ],
     preturi: [
-      { label: 'Early Bird', price: '119 lei', perioada: 'până pe 20 noiembrie', until: '2026-11-20' },
-      { label: 'Standard', price: '139 lei', perioada: '21–28 noiembrie', until: '2026-11-28' }
+      { label: 'Early Bird', price: '119 lei', perioada: 'până pe 23 noiembrie', until: '2026-11-23' },
+      { label: 'Standard', price: '139 lei', perioada: '24–28 noiembrie', until: '2026-11-28' }
     ],
     dress: {
       tema: 'The Godfather',
@@ -602,7 +602,7 @@ window.SUSPECTI_EDITII = {
     final: 'Locurile la petrecerea de la Polul Nord sunt limitate.'
   },
 
-  /* Suspecți la Cină · Who Killed Santa? · București, Moon Brasserie (13 decembrie, 16:30) */
+  /* Suspecți la Cină · Who Killed Santa? · București, Red Room by Naive (13 decembrie, 16:30) – mutat de la Moon pe 23.11.2026 */
   '5348': {
     afisVertical: true,
     scurt: 'Câteva sute de ani la rând, Moș Crăciun n-a întârziat niciodată. Anul ăsta nu mai pleacă nicăieri. Primești un personaj, cu un secret al lui, și afli din conversații, alianțe și indicii cine a stricat Crăciunul.',
@@ -626,7 +626,7 @@ window.SUSPECTI_EDITII = {
       'Atmosfera de Crăciun'
     ],
     conditii: [
-      'Consumația nu este inclusă în bilet și se achită la locație. Moon Brasserie a pregătit un meniu special pentru această seară.',
+      'Consumația nu este inclusă în bilet și se achită la locație. Restaurantul a pregătit un meniu special pentru această seară.',
       'Vârsta minimă: 16 ani.',
       'Poți veni singur, în cuplu sau cu prietenii. Dacă vii cu gașca sau cu partenerul, vă așezăm împreună.',
       '**Biletele nu sunt rambursabile.** Le poți transfera altei persoane doar dacă ne anunți în scris și primești confirmarea noastră.'
@@ -642,7 +642,7 @@ window.SUSPECTI_EDITII = {
       culori: ['#B3121B', '#FFFFFF', '#111111']
     },
     practic: [
-      'Începem la 16:30, la Moon Brasserie, Bd. Unirii 32, sector 3, București.',
+      'Începem la 16:30, la Red Room by Naive, Magazinul București, etajul 5, București.',
       'Vino cu 10–15 minute înainte, ca să ai timp să-ți citești personajul.',
       'Pe parcursul serii facem fotografii. Dacă nu vrei să apari, spune-i gazdei la început.'
     ],
