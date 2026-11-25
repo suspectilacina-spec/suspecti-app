@@ -113,3 +113,22 @@ window.SUSPECTI_EDITORIAL = {
     extra: 'Biletul include experiența, meniul festiv și selecția de băuturi.'
   }
 };
+
+/* Viteză: pe pagina unei ediții, cere imediat poza principală (posterul videoului sau afișul),
+   ca să nu aștepte până se construiește pagina. Rulează cât mai devreme, fiind primul fișier al ediției. */
+(function () {
+  try {
+    var cale = location.pathname.replace(/\/$/, '');
+    var ed = window.SUSPECTI_EDITORIAL || {};
+    for (var id in ed) {
+      var e = ed[id];
+      if (!e || e.page !== cale) continue;
+      var src = (e.video && e.poster) ? e.poster : e.img;
+      if (!src) return;
+      var l = document.createElement('link');
+      l.rel = 'preload'; l.as = 'image'; l.href = src; l.setAttribute('fetchpriority', 'high');
+      document.head.appendChild(l);
+      return;
+    }
+  } catch (err) {}
+})();
