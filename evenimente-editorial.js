@@ -69,7 +69,7 @@ window.SUSPECTI_EDITORIAL = {
   },
   '5344': {
     page: '/cina/the-godfather-timisoara-27-noiembrie', title: 'The Godfather',
-    tip: 'Mystery Dinner · Timișoara Edition', durata: 'Aprox. 3 ore, apoi petrecere', theme: '#godfather',
+    tip: 'Mystery Dinner · Timișoara Edition', durata: 'Aprox. 3 ore', theme: '#godfather',
     img: '/images/editii/godfather-timisoara.webp', thumbV: true,
     video: '/videos/v2/cina-peaky.mp4', poster: '/images/v2/cina-peaky-poster.jpg', pos: 'center 25%', venue: 'Paso Local Cuisine',
     price: '119 lei',
@@ -93,7 +93,7 @@ window.SUSPECTI_EDITORIAL = {
   },
   '5347': {
     page: '/cina/who-killed-santa-timisoara-11-decembrie', title: 'Who Killed Santa?',
-    tip: 'Mystery Dinner de Crăciun · Timișoara Edition', durata: 'Aprox. 3 ore, apoi petrecere', theme: '#craciun',
+    tip: 'Mystery Dinner de Crăciun · Timișoara Edition', durata: 'Aprox. 3 ore', theme: '#craciun',
     img: '/images/editii/santa-timisoara.webp', thumbV: true,
     video: '/videos/v2/cina-desfasurare.mp4', poster: '/images/v2/cina-desfasurare-poster.jpg', pos: 'center 35%', venue: 'Paso Local Cuisine',
     price: '139 lei',
