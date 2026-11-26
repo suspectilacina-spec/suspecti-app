@@ -476,14 +476,12 @@ window.SUSPECTI_EDITII = {
       { t: 'La sosire', d: 'Primești plicul cu personajul tău. Afli cine ești, ce vrei și pe cine poți (sau nu poți) să crezi.' },
       { t: 'Rundele de joc', d: 'Vorbești cu ceilalți, faci alianțe și aduni indicii. Jocul are mai multe runde.' },
       { t: 'Pauza de cină', d: 'Între runde, cină pe îndelete, numai bună de socializat și de tras cu urechea.' },
-      { t: 'Finalul', d: 'Acuzațiile, votul și marea dezvăluire. Jocul durează în jur de 3 ore.' },
-      { t: 'Petrecerea', d: 'Dacă vrei, rămâi după joc. Avem DJ toată seara, cu muzică potrivită temei.' }
+      { t: 'Finalul', d: 'Acuzațiile, votul și marea dezvăluire. Jocul durează în jur de 3 ore.' }
     ],
     include: [
       'Experiența completă de joc, cu scenariu original',
       'Personajul tău și materialele de joc',
-      'Facilitarea pe toată durata serii, de către echipa Suspecți',
-      'DJ și atmosfera tematică'
+      'Facilitarea pe toată durata serii, de către echipa Suspecți'
     ],
     conditii: [
       'Consumația nu este inclusă în bilet și se achită la locație. Restaurantul a pregătit un meniu special pentru această seară.',
@@ -566,14 +564,12 @@ window.SUSPECTI_EDITII = {
       { t: 'La intrare', d: 'Primești un plic cu personajul tău: cine ești, ce ascunzi și ce trebuie să afli până la final.' },
       { t: 'Rundele de joc', d: 'Vorbești cu ceilalți, pui întrebări, faci alianțe, schimbi indicii și, când e nevoie, minți frumos.' },
       { t: 'Pauza de cină', d: 'Între runde, perfectă pentru bârfe, suspiciuni și un pahar de ceva bun.' },
-      { t: 'Finalul', d: 'Acuzațiile, votul și marea dezvăluire. Jocul durează în jur de 3 ore.' },
-      { t: 'Petrecerea', d: 'DJ toată seara: colinde, hituri de iarnă și muzică de petrecere. Dansăm cu toții, inclusiv vinovatul.' }
+      { t: 'Finalul', d: 'Acuzațiile, votul și marea dezvăluire. Jocul durează în jur de 3 ore.' }
     ],
     include: [
       'Experiența completă de joc, cu scenariu original',
       'Personajul tău și materialele de joc',
-      'Facilitarea pe toată durata serii, de către echipa Suspecți',
-      'DJ și atmosfera de Crăciun'
+      'Facilitarea pe toată durata serii, de către echipa Suspecți'
     ],
     conditii: [
       'Consumația nu este inclusă în bilet și se achită la locație. Restaurantul a pregătit un meniu special pentru această seară.',
@@ -599,7 +595,7 @@ window.SUSPECTI_EDITII = {
     faq: [
       ['Pot face cadou un bilet?', 'Da. Avem și vouchere cadou pentru Suspecți la Cină. <a href="https://wa.me/40755639871" target="_blank" rel="noopener noreferrer">Scrie-ne pe WhatsApp</a> și ți-l pregătim.']
     ],
-    final: 'Locurile la petrecerea de la Polul Nord sunt limitate.'
+    final: 'Locurile la masa Moșului sunt limitate.'
   },
 
   /* Suspecți la Cină · Who Killed Santa? · București, Red Room by Naive (13 decembrie, 16:30) – mutat de la Moon pe 23.11.2026 */
